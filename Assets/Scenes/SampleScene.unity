@@ -1550,7 +1550,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 3895
 --- !u!114 &799480021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7005,7 +7005,7 @@ GameObject:
   - component: {fileID: 1794630385}
   - component: {fileID: 1794630384}
   - component: {fileID: 1794630383}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7748,12 +7748,12 @@ PrefabInstance:
     - target: {fileID: 1544188812562984236, guid: 2f1391ecba445ab4cb84645916d1bd90,
         type: 3}
       propertyPath: PlayerSpeed
-      value: 20
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 1544188812562984236, guid: 2f1391ecba445ab4cb84645916d1bd90,
         type: 3}
       propertyPath: JumpHeight
-      value: 5
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 1544188812562984236, guid: 2f1391ecba445ab4cb84645916d1bd90,
         type: 3}
@@ -7773,17 +7773,17 @@ PrefabInstance:
     - target: {fileID: 1544188812562984237, guid: 2f1391ecba445ab4cb84645916d1bd90,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.7289746
+      value: -48.6
       objectReference: {fileID: 0}
     - target: {fileID: 1544188812562984237, guid: 2f1391ecba445ab4cb84645916d1bd90,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.6
+      value: 17.9
       objectReference: {fileID: 0}
     - target: {fileID: 1544188812562984237, guid: 2f1391ecba445ab4cb84645916d1bd90,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 20.868013
+      value: 100.1
       objectReference: {fileID: 0}
     - target: {fileID: 1544188812562984237, guid: 2f1391ecba445ab4cb84645916d1bd90,
         type: 3}
@@ -7825,6 +7825,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1544188812562984239, guid: 2f1391ecba445ab4cb84645916d1bd90,
+        type: 3}
+      propertyPath: MouseSensitivity
+      value: 260
+      objectReference: {fileID: 0}
     - target: {fileID: 1544188813381312850, guid: 2f1391ecba445ab4cb84645916d1bd90,
         type: 3}
       propertyPath: m_Layer
@@ -7839,6 +7844,16 @@ PrefabInstance:
         type: 3}
       propertyPath: FloorLayer.m_Bits
       value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935927313023135402, guid: 2f1391ecba445ab4cb84645916d1bd90,
+        type: 3}
+      propertyPath: GravityForce
+      value: 9.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935927313023135402, guid: 2f1391ecba445ab4cb84645916d1bd90,
+        type: 3}
+      propertyPath: Drag
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6753745373102805773, guid: 2f1391ecba445ab4cb84645916d1bd90,
         type: 3}
