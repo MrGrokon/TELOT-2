@@ -140,7 +140,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 LerpMotionToGravity(Vector3 _Motion)
     {
         elapsedTimeToLerp++;
-        return Vector3.Lerp(_Motion, new Vector3(transform.forward.x, -2, transform.forward.z), elapsedTimeToLerp / timeToLerp);
+        return Vector3.Lerp(_Motion, transform.forward * 2 + new Vector3(0, -2, 0), elapsedTimeToLerp / timeToLerp);
     }
     
 }

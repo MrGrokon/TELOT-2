@@ -928,6 +928,7 @@
             <e p="Weapon.cs" t="Include" />
           </e>
         </e>
+        <e p="Turret.cs" t="Include" />
       </e>
       <e p="FMODUnity.csproj" t="IncludeRecursive" />
       <e p="FMODUnityEditor.csproj" t="IncludeRecursive" />
