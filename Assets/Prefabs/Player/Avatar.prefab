@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2126411240193025925}
   - component: {fileID: 4935927313023135402}
   - component: {fileID: 6753745373102805773}
+  - component: {fileID: 6293217574641557816}
   m_Layer: 0
   m_Name: Avatar
   m_TagString: Untagged
@@ -70,6 +71,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MouseSensitivity: 380
+  Z_Rotation: 0
 --- !u!114 &1544188812562984236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,10 +84,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fcc6e1c5f181924fa33d15d4144e258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerSpeed: 16.5
-  JumpHeight: 2
-  DashForce: 60
-  DashTime: 0.5
+  PlayerSpeed: 35
+  DashForce: 80
+  DashTime: 0.2
 --- !u!114 &2126411240193025925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,8 +101,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FloorLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
+  WallDistanceDetection: 1.5
+  RunnableWallLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  LastWall_Normal: {x: 0, y: 0, z: 0}
+  WallOnRight: 0
+  WallOnLeft: 0
   OnGround: 0
+  IsOnWall: 0
 --- !u!114 &4935927313023135402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,8 +123,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b386c8f8b8677ca4ba01c9a3fac88c0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GravityForce: 9.81
-  Drag: 0
+  GravityForce: 29.43
+  Drag: 1
   _velocity: {x: 0, y: 0, z: 0}
 --- !u!114 &6753745373102805773
 MonoBehaviour:
@@ -129,12 +138,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3bb702b0a324134aba4bb270ea33180, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WallDistanceDetection: 1.5
-  RunnableWallLayer:
-    serializedVersion: 2
-    m_Bits: 512
-  WallOnRight: 0
-  WallOnLeft: 0
   GravityVariationOverTime:
     serializedVersion: 2
     m_Curve:
@@ -160,8 +163,53 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   TimeToStickToWall: 5
-  JumpForce: 20
-  JumpPersistance: 2
+--- !u!114 &6293217574641557816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544188812562984144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91fc67a8c7a815149b4822c45633427b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  JumpForce: 15
+  JumpPersistance: 1
+  JumpForceOvertime:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1.5
+      inSlope: -0.9972663
+      outSlope: -0.9972663
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5
+      value: 1.0013669
+      inSlope: -1.5
+      outSlope: -1.5
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -2.0027337
+      outSlope: -2.0027337
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1544188813381312850
 GameObject:
   m_ObjectHideFlags: 0
