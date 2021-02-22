@@ -7,10 +7,11 @@ public class EnergieStored : MonoBehaviour
     [Range(1, 10)]
     public int MaxAmountOfEnergieStored = 5;
 
-    private int _actualEnergieStored = 0;
+    public int _actualEnergieStored = 0;
 
     #region Energie Related Functions
         public void StoreEnergie(int OptionalAmount = 1){
+            Debug.Log("Energie is stocked");
             if((_actualEnergieStored + OptionalAmount) >= MaxAmountOfEnergieStored){
                 _actualEnergieStored = MaxAmountOfEnergieStored;
             }
