@@ -7,7 +7,7 @@ public class EnergieStored : MonoBehaviour
     [Range(1, 10)]
     public int MaxAmountOfEnergieStored = 5;
 
-    public int _actualEnergieStored = 0;
+    private int _actualEnergieStored = 0;
 
     #region Energie Related Functions
         public void StoreEnergie(int OptionalAmount = 1){
@@ -18,6 +18,10 @@ public class EnergieStored : MonoBehaviour
             else{
                 _actualEnergieStored += OptionalAmount;
             }
+        }
+
+        public int GetEnergieStored(){
+            return _actualEnergieStored;
         }
 
         public bool HasEnergieStored(){

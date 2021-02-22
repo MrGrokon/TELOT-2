@@ -16,8 +16,9 @@ GameObject:
   - component: {fileID: 4935927313023135402}
   - component: {fileID: 6753745373102805773}
   - component: {fileID: 6293217574641557816}
-  - component: {fileID: 456085414426150719}
   - component: {fileID: 524690583227914729}
+  - component: {fileID: 6725551851244642076}
+  - component: {fileID: 436841297802542538}
   m_Layer: 0
   m_Name: Avatar
   m_TagString: Untagged
@@ -215,20 +216,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &456085414426150719
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1544188812562984144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83bcdd5ed1f5aef4bb1a48bbce75245b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Shield: {fileID: 8309504664201081180, guid: a6bd249a59445d849a95dfe612ec0fc8, type: 3}
-  TimeForShieldToBeActive: 1.5
 --- !u!114 &524690583227914729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,6 +229,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxAmountOfEnergieStored: 5
+--- !u!114 &6725551851244642076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544188812562984144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53937e3fa50c24644a0cbec07a8f06a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerProjectile: {fileID: 1980909233911585130, guid: aa3cb4428f0e5a5458a0adf9c17da30a,
+    type: 3}
+  TimeBetweenShots: 0.3
+  ProjectileSpeed: 50
+--- !u!114 &436841297802542538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544188812562984144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9379595946a87cc4b8e9759808ca63c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShieldArea: 2
+  ShieldTime: 1
+  EnemieProjectileLayer:
+    serializedVersion: 2
+    m_Bits: 4096
 --- !u!1 &1544188813381312850
 GameObject:
   m_ObjectHideFlags: 0
