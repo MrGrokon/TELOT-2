@@ -15,6 +15,8 @@ public class PlayerMovementRigidbody : MonoBehaviour
 
     [SerializeField] private float dashForce;
     [SerializeField] private float jumpForce; //Pas le jeu à la con hein
+    [SerializeField] private float airControl;
+    private float actualAirControl;
 
     public bool onGround = true;
     // Start is called before the first frame update
@@ -26,8 +28,8 @@ public class PlayerMovementRigidbody : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(onGround)
-            Move();
+        
+        Move();
         if(Input.GetKeyDown(KeyCode.Space))
             Jump();
         actualDashCD -= 1 * Time.deltaTime;
@@ -35,10 +37,19 @@ public class PlayerMovementRigidbody : MonoBehaviour
 
     private void Move()
     {
+        
+        if (onGround)
+        {
+            actualAirControl = airControl;
+        }
+        else
+        {
+            actualAirControl = airControl / 4;
+        }
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 
-        Vector3 Motion = h * transform.right + v * transform.forward;
+        Vector3 Motion = (h * transform.right + v * transform.forward) * actualAirControl;
 
         _rb.position += Motion * speed * Time.deltaTime;
 
@@ -68,19 +79,21 @@ public class PlayerMovementRigidbody : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        RaycastHit ray;
-        if (Physics.Raycast(transform.position, -transform.up, out ray, 5f))
+        if (onGround == false)
         {
-            if (Vector3.Dot(ray.normal, transform.up) == 1)
+            RaycastHit ray;
+            if (Physics.Raycast(transform.position, -transform.up, out ray, 5f))
             {
-                onGround = true;
+                if (Vector3.Dot(ray.normal, transform.up) == 1)
+                {
+                    onGround = true;
+                }
+                else
+                {
+                    print("Pas une surface" + Vector3.Dot(ray.normal, transform.up));
+                } 
             }
-            else
-            {
-                print("Pas une surface" + Vector3.Dot(ray.normal, transform.up));
-            } 
         }
-        
     }
 
     private void OnCollisionExit(Collision other)
