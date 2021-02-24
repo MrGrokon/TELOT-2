@@ -49,6 +49,7 @@ public class WallRunningRigidbody : MonoBehaviour
         if (WallOnRight || WallOnLeft)
         {
             _rb.useGravity = false;
+            _rb.velocity = Vector3.zero;
             if(WallOnLeft){
                 StartCoroutine(FeedbackManager.Instance.AngularCameraRotation(FeedbackManager.CameraDirection.Left));
             }
