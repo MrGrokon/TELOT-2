@@ -78,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
             yield return null;
         }
 
-        _Physic.GravityForce = 9.81f;
+        _Physic.GravityForce = _Physic.GetBaseGravity();
         _CanMove = true;
         yield return null;
     }
