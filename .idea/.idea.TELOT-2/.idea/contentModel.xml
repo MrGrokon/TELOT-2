@@ -921,7 +921,11 @@
               <e p="TriggerManager.cs" t="Include" />
               <e p="WallRunning.cs" t="Include" />
             </e>
+<<<<<<< HEAD
             <e p="PlayerMouvementRigidbody" t="Include">
+=======
+            <e p="PlayerMovementRemade" t="Include">
+>>>>>>> THéo
               <e p="PlayerMovementRigidbody.cs" t="Include" />
               <e p="WallRunningRigidbody.cs" t="Include" />
             </e>
