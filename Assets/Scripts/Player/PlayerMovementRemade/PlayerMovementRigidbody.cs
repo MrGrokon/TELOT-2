@@ -17,6 +17,7 @@ public class PlayerMovementRigidbody : MonoBehaviour
     [SerializeField] private float jumpForce; //Pas le jeu à la con hein
     [SerializeField] private float airControl;
     private float actualAirControl;
+    public Vector3 Motion;
 
     public bool onGround = true;
     // Start is called before the first frame update
@@ -37,19 +38,21 @@ public class PlayerMovementRigidbody : MonoBehaviour
 
     private void Move()
     {
-        
-        if (onGround)
+        float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
+        if (onGround || GetComponent<WallRunningRigidbody>().OnWallRun)
         {
             actualAirControl = airControl;
+            if(Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0) 
+                Motion = (h * transform.right + v * transform.forward) * actualAirControl;
         }
         else
         {
             actualAirControl = airControl / 4;
         }
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
+        
 
-        Vector3 Motion = (h * transform.right + v * transform.forward) * actualAirControl;
+        
 
         _rb.position += Motion * speed * Time.deltaTime;
 
@@ -72,33 +75,35 @@ public class PlayerMovementRigidbody : MonoBehaviour
     {
         if (onGround)
         {
-            _rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+            _rb.AddForce((transform.up + Motion).normalized * jumpForce, ForceMode.Impulse);
             onGround = false;
+        }
+    }
+
+    private void OnCollisionStay(Collision other)
+    {
+        if (onGround == false)
+        {
+            if (other.gameObject.layer == 8)
+            {
+                onGround = true;
+                
+            }
         }
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        if (onGround == false)
+        if (other.gameObject.layer == 8)
         {
-            RaycastHit ray;
-            if (Physics.Raycast(transform.position, -transform.up, out ray, 5f))
-            {
-                if (Vector3.Dot(ray.normal, transform.up) == 1)
-                {
-                    onGround = true;
-                }
-                else
-                {
-                    print("Pas une surface" + Vector3.Dot(ray.normal, transform.up));
-                } 
-            }
+            _rb.velocity = Vector3.zero;
         }
     }
 
+
     private void OnCollisionExit(Collision other)
     {
-        RaycastHit ray;
+        /*RaycastHit ray;
         if (Physics.Raycast(transform.position, -transform.up, out ray, 5f))
         {
             if (Vector3.Dot(ray.normal, transform.up) == 1)
@@ -109,6 +114,10 @@ public class PlayerMovementRigidbody : MonoBehaviour
             {
                 print("Pas une surface" + Vector3.Dot(ray.normal, transform.up));
             } 
+        }*/
+        if (other.gameObject.layer == 8)
+        {
+            onGround = false;
         }
     }
 }

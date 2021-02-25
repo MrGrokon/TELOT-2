@@ -90,7 +90,7 @@ public class FeedbackManager : MonoBehaviour
         while(_elapsedTime < TimeToRotate){
             _elapsedTime += Time.deltaTime;
 
-            RotateZ_offset = Mathf.Lerp(Avatar_Object.GetComponent<MouseLook>().Z_Rotation, 0f, _elapsedTime/TimeToRotate);
+            RotateZ_offset = Mathf.Lerp(this.GetComponent<MouseLook>().Z_Rotation, 0f, _elapsedTime/TimeToRotate);
             this.GetComponent<MouseLook>().Z_Rotation = RotateZ_offset;
             yield return null;
         }

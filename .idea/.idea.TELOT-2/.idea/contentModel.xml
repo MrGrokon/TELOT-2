@@ -766,7 +766,6 @@
             </e>
           </e>
         </e>
-        <e p="PlayerMovementRigidbody.cs" t="Include" />
         <e p="Plugins" t="Include">
           <e p="FMOD" t="Include">
             <e p="addons" t="Include">
@@ -922,6 +921,10 @@
               <e p="TriggerManager.cs" t="Include" />
               <e p="WallRunning.cs" t="Include" />
             </e>
+            <e p="PlayerMovementRemade" t="Include">
+              <e p="PlayerMovementRigidbody.cs" t="Include" />
+              <e p="WallRunningRigidbody.cs" t="Include" />
+            </e>
           </e>
           <e p="Weapons" t="Include">
             <e p="Blaster.cs" t="Include" />
@@ -930,7 +933,6 @@
           </e>
         </e>
         <e p="Turret.cs" t="Include" />
-        <e p="WallRunningRigidbody.cs" t="Include" />
       </e>
       <e p="FMODUnity.csproj" t="IncludeRecursive" />
       <e p="FMODUnityEditor.csproj" t="IncludeRecursive" />
