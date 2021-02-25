@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 7410964059810033541}
   - component: {fileID: 3455552598347246004}
   - component: {fileID: 1522249918244502211}
-  - component: {fileID: -4266706648498260786}
   - component: {fileID: -7726656087285821579}
+  - component: {fileID: 1194494110364846233}
   m_Layer: 12
   m_Name: EnemyOrb
   m_TagString: EnemyProjectile
@@ -95,19 +95,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-4266706648498260786
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6820640431255633222}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df817a048016b6f4cb6a004af9ef6c4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LifeTime: 5
 --- !u!54 &-7726656087285821579
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -124,3 +111,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1194494110364846233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6820640431255633222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7ff33ead2e241228caee052b430b961, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LifeTime: 5

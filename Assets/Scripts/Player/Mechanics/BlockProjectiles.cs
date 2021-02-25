@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BlockProjectiles : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class BlockProjectiles : MonoBehaviour
     private Transform _counter_Pivot;
     private bool IsDebuging = false;
     private EnergieStored _Energie;
+    public Text shieldStateText;
+    public GameObject shieldDebugProps;
 
     private void Awake() {
         _counter_Pivot = GameObject.Find("Shield_Pivot").transform;
@@ -43,6 +46,8 @@ public class BlockProjectiles : MonoBehaviour
         if(_debugState){
             Debug.Log("Start shield");
             IsDebuging = true;
+            shieldDebugProps.SetActive(true);
+            shieldStateText.text = "Shield State : " + "On";
         }
         
         float _elapsedTime = 0f;
@@ -63,6 +68,8 @@ public class BlockProjectiles : MonoBehaviour
         }
 
         IsDebuging = false;
+        shieldStateText.text = "Shield State : " + "Off";
+        shieldDebugProps.SetActive(false);
             Debug.Log("Finish shield");
 
         yield return null;
