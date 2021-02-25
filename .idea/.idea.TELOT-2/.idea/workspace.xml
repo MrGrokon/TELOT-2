@@ -19,8 +19,8 @@
       <option value="$PROJECT_DIR$/Assets/PlayerMovementRigidbody.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMouvementRigidbody/WallRunningRigidbody.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Feedbacks/FeedbackManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovementRemade/PlayerMovementRigidbody.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovementRemade/WallRunningRigidbody.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovementRemade/PlayerMovementRigidbody.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1ohtdW9xSpIGpjT50LXGFp67Yso" />
@@ -69,7 +69,11 @@
       <workItem from="1614174033810" duration="6100000" />
       <workItem from="1614204712401" duration="612000" />
       <workItem from="1614205395203" duration="6207000" />
+<<<<<<< HEAD
       <workItem from="1614249497189" duration="68000" />
+=======
+      <workItem from="1614267133699" duration="1055000" />
+>>>>>>> THéo
     </task>
     <servers />
   </component>

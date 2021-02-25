@@ -18,8 +18,12 @@ public class PlayerMovementRigidbody : MonoBehaviour
     [SerializeField] private float airControl;
     private float actualAirControl;
     public Vector3 Motion;
-
     public bool onGround = true;
+    [Header("Jump Improve Parameters")]
+    [SerializeField] private float fallMultiplier;
+    [SerializeField] private float lowJumpMultiplier;
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +37,7 @@ public class PlayerMovementRigidbody : MonoBehaviour
         Move();
         if(Input.GetKeyDown(KeyCode.Space))
             Jump();
+        BetterJump();
         actualDashCD -= 1 * Time.deltaTime;
     }
 
@@ -75,8 +80,20 @@ public class PlayerMovementRigidbody : MonoBehaviour
     {
         if (onGround)
         {
-            _rb.AddForce((transform.up + Motion).normalized * jumpForce, ForceMode.Impulse);
+            _rb.AddForce(((transform.up + Motion).normalized + transform.up).normalized * jumpForce, ForceMode.Impulse);
             onGround = false;
+        }
+    }
+
+    private void BetterJump()
+    {
+        if (_rb.velocity.y < 0)
+        {
+            _rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+        }
+        else if (_rb.velocity.y > 0 && !Input.GetKey(KeyCode.Space))
+        {
+            _rb.velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
     }
 
