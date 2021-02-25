@@ -724,25 +724,15 @@
                 <e p="ASESShaderSelectorUnlit.shader" t="Include" />
                 <e p="Unlit-ColoredAlpha.shader" t="Include" />
               </e>
-              <e p="Templates" t="Include">
-                <e p="Legacy" t="Include">
-                  <e p="DefaultUnlit.shader" t="Include" />
-                  <e p="Lit.shader" t="Include" />
-                  <e p="MultiPassUnlit.shader" t="Include" />
-                  <e p="Particle Alpha Blend.shader" t="Include" />
-                  <e p="PostProcess.shader" t="Include" />
-                  <e p="Sprites-Default.shader" t="Include" />
-                  <e p="UIDefault.shader" t="Include" />
-                  <e p="Unlit.shader" t="Include" />
-                  <e p="UnlitLightmap.shader" t="Include" />
-                </e>
-                <e p="SRP (Legacy)" t="Include">
-                  <e p="README.txt" t="Include" />
-                </e>
-              </e>
             </e>
           </e>
           <e p="README.txt" t="Include" />
+        </e>
+        <e p="Deprecated_Files" t="Include">
+          <e p="Blaster.cs" t="Include" />
+          <e p="ProjectilBehavior.cs" t="Include" />
+          <e p="Weapon.cs" t="Include" />
+          <e p="WeaponHandlingSystem.cs" t="Include" />
         </e>
         <e p="nTools" t="Include">
           <e p="PrefabPainter" t="Include">
@@ -905,19 +895,27 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="Player" t="Include">
-            <e p="Feedbacks" t="Include">
-              <e p="FeedbackManager.cs" t="Include" />
+          <e p="Enemies" t="Include">
+            <e p="EnemieProjectileBehavior.cs" t="Include" />
+            <e p="Turret" t="Include">
+              <e p="TurretBehavior.cs" t="Include" />
             </e>
+          </e>
+          <e p="Managers" t="Include">
+            <e p="FeedbackManager.cs" t="Include" />
+            <e p="ObjectReferencer.cs" t="Include" />
+          </e>
+          <e p="Player" t="Include">
             <e p="Mechanics" t="Include">
-              <e p="WeaponHandlingSystem.cs" t="Include" />
+              <e p="BlockProjectiles.cs" t="Include" />
+              <e p="EnergieStored.cs" t="Include" />
+              <e p="ProjectEnergie.cs" t="Include" />
             </e>
             <e p="PlayerMouvement" t="Include">
               <e p="CustomPhysic.cs" t="Include" />
               <e p="MouseLook.cs" t="Include" />
-              <e p="MoveCamera.cs" t="Include" />
+              <e p="PlayerJumper.cs" t="Include" />
               <e p="PlayerMovement.cs" t="Include" />
-              <e p="PlayerMovement1.cs" t="Include" />
               <e p="TriggerManager.cs" t="Include" />
               <e p="WallRunning.cs" t="Include" />
             </e>
@@ -925,11 +923,6 @@
               <e p="PlayerMovementRigidbody.cs" t="Include" />
               <e p="WallRunningRigidbody.cs" t="Include" />
             </e>
-          </e>
-          <e p="Weapons" t="Include">
-            <e p="Blaster.cs" t="Include" />
-            <e p="ProjectilBehavior.cs" t="Include" />
-            <e p="Weapon.cs" t="Include" />
           </e>
         </e>
         <e p="Turret.cs" t="Include" />

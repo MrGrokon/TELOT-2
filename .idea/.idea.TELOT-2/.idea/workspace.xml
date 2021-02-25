@@ -17,13 +17,13 @@
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMouvement/CustomPhysic.cs" />
       <option value="$PROJECT_DIR$/Assets/Turret.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMouvement/PlayerMovement.cs" />
       <option value="$PROJECT_DIR$/Assets/WallRunningRigidbody.cs" />
       <option value="$PROJECT_DIR$/Assets/PlayerMovementRigidbody.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMouvementRigidbody/WallRunningRigidbody.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Feedbacks/FeedbackManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovementRemade/WallRunningRigidbody.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovementRemade/PlayerMovementRigidbody.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMouvement/PlayerMovement.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1ohtdW9xSpIGpjT50LXGFp67Yso" />

@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void Update() {
-        #region Mouvement
+        /*#region Mouvement
         //get values from input systeme
         if (_States.OnGround ||_wallManager.WallOnLeft ||_wallManager.WallOnRight)
         {
@@ -74,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
         if(_CanMove == true){
             _controller.Move(_Motion * PlayerSpeed * Time.deltaTime);
         }
-        #endregion
+        #endregion*/
     
         #region Dash
         if(Input.GetButtonDown("Dash") ){
