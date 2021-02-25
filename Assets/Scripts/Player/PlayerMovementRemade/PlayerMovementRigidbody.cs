@@ -50,6 +50,8 @@ public class PlayerMovementRigidbody : MonoBehaviour
             actualAirControl = airControl;
             if(Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0) 
                 Motion = (h * transform.right + v * transform.forward) * actualAirControl;
+            else
+                Motion = Vector3.zero;
         }
         else
         {

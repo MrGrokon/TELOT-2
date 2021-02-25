@@ -925,6 +925,7 @@
             </e>
           </e>
         </e>
+        <e p="ShieldtestShader.shader" t="Include" />
         <e p="Turret.cs" t="Include" />
       </e>
       <e p="FMODUnity.csproj" t="IncludeRecursive" />
