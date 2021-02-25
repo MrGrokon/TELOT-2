@@ -7,7 +7,7 @@ public class MouseLook : MonoBehaviour
     [Range(10f, 400f)]
     public float MouseSensitivity = 100f;
     
-    //[HideInInspector]
+    [HideInInspector]
     public float Z_Rotation = 0f;
 
     private Transform PlayerBody;

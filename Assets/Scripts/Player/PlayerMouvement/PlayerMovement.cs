@@ -10,10 +10,6 @@ public class PlayerMovement : MonoBehaviour
     public float PlayerSpeed = 10f;
     private bool _CanMove = true;
 
-    [Header("Jump Variables")]
-    [Range(1f, 50f)]
-    public float JumpHeight = 2f;
-
     [Header("Dash Variables")]
     public float DashForce = 60f;
     [Range(0.1f, 3f)]
@@ -72,25 +68,11 @@ public class PlayerMovement : MonoBehaviour
         
         
 
-        _Motion = this.transform.right * Horizontal_Value + this.transform.forward * Forward_Value;
-
-        if (!_States.OnGround && isDashing == false)
-        {
-            _Motion = LerpMotionToGravity(_Motion);
-        }
-        else
-        {
-            elapsedTimeToLerp = 0;
-        }
+        Vector3 _Motion = (this.transform.right * Horizontal_Value + this.transform.forward * Forward_Value);
+        //Vector3 _Motion = (this.transform.right * Horizontal_Value + this.transform.forward * Forward_Value).normalized;
         
         if(_CanMove == true){
             _controller.Move(_Motion * PlayerSpeed * Time.deltaTime);
-        }
-        #endregion
-    
-        #region Jump
-        if(Input.GetButtonDown("Jump") && _States.OnGround == true){
-            _Physic._velocity.y += Mathf.Sqrt(JumpHeight * -2f * -_Physic.GravityForce);
         }
         #endregion
     
@@ -110,10 +92,6 @@ public class PlayerMovement : MonoBehaviour
         #endregion
     }
 
-    #region Functions
-        //void Jump(Vector3 JumpDirection = )
-    #endregion
-
     #region Coroutines
     IEnumerator MotionLocking_Dash(Vector3 Motion, bool UseGravity = false){
         _CanMove = false;
@@ -130,7 +108,7 @@ public class PlayerMovement : MonoBehaviour
             yield return null;
         }
 
-        _Physic.GravityForce = 9.81f;
+        _Physic.GravityForce = _Physic.GetBaseGravity();
         _CanMove = true;
         isDashing = false;
         yield return null;
