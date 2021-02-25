@@ -724,22 +724,6 @@
                 <e p="ASESShaderSelectorUnlit.shader" t="Include" />
                 <e p="Unlit-ColoredAlpha.shader" t="Include" />
               </e>
-              <e p="Templates" t="Include">
-                <e p="Legacy" t="Include">
-                  <e p="DefaultUnlit.shader" t="Include" />
-                  <e p="Lit.shader" t="Include" />
-                  <e p="MultiPassUnlit.shader" t="Include" />
-                  <e p="Particle Alpha Blend.shader" t="Include" />
-                  <e p="PostProcess.shader" t="Include" />
-                  <e p="Sprites-Default.shader" t="Include" />
-                  <e p="UIDefault.shader" t="Include" />
-                  <e p="Unlit.shader" t="Include" />
-                  <e p="UnlitLightmap.shader" t="Include" />
-                </e>
-                <e p="SRP (Legacy)" t="Include">
-                  <e p="README.txt" t="Include" />
-                </e>
-              </e>
             </e>
           </e>
           <e p="README.txt" t="Include" />
@@ -921,11 +905,7 @@
               <e p="TriggerManager.cs" t="Include" />
               <e p="WallRunning.cs" t="Include" />
             </e>
-<<<<<<< HEAD
-            <e p="PlayerMouvementRigidbody" t="Include">
-=======
             <e p="PlayerMovementRemade" t="Include">
->>>>>>> THéo
               <e p="PlayerMovementRigidbody.cs" t="Include" />
               <e p="WallRunningRigidbody.cs" t="Include" />
             </e>
