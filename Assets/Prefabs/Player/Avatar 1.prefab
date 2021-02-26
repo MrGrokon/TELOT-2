@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 693659680}
   - component: {fileID: 693659682}
   - component: {fileID: 1448301894}
+  - component: {fileID: 5776894925316817838}
   m_Layer: 0
   m_Name: Avatar 1
   m_TagString: Player
@@ -237,6 +238,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9379595946a87cc4b8e9759808ca63c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TimeToBeActive: 0.75
+  ShieldHitboxRange: 1
+  ProjectileLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &693659682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,6 +270,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 3.6446052, z: 1}
   m_Center: {x: -0, y: 0.016012669, z: 0}
+--- !u!114 &5776894925316817838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544188812562984144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53937e3fa50c24644a0cbec07a8f06a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Projectil_Object: {fileID: 1980909233911585130, guid: aa3cb4428f0e5a5458a0adf9c17da30a,
+    type: 3}
+  AmountOfSpread: 10
 --- !u!1 &1544188813381312850
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,6 +390,7 @@ GameObject:
   - component: {fileID: 1544188813995310427}
   - component: {fileID: 1544188813995310428}
   - component: {fileID: 1417848643}
+  - component: {fileID: 7190748642292243000}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -494,6 +516,23 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &7190748642292243000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544188813995310430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: 94729a7acae360047911ce58db51387d, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
 --- !u!1 &1883823195903777957
 GameObject:
   m_ObjectHideFlags: 0

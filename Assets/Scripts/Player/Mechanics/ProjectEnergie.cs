@@ -5,7 +5,8 @@ using UnityEngine;
 public class ProjectEnergie : MonoBehaviour
 {
     public GameObject Projectil_Object;
-    public float AmountOfSpread = 30f;
+    [Range(5f, 15f)]
+    public float AmountOfSpread = 10f;
 
     private EnergieStored _Energie;
 

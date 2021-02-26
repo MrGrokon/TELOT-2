@@ -37,7 +37,7 @@ public class ProjectilBehavior : MonoBehaviour
 
     private void OnCollisionEnter(Collision col) {
         if(col.gameObject.tag != "Enemie"){
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
         }
         else{
             //do some damage
