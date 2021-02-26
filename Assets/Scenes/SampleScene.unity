@@ -134,12 +134,12 @@ GameObject:
   - component: {fileID: 13731868}
   - component: {fileID: 13731867}
   - component: {fileID: 13731866}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &13731865
 Transform:
@@ -149,7 +149,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 13731864}
   m_LocalRotation: {x: 0.16721451, y: -0.6870503, z: 0.16721405, w: 0.6870522}
-  m_LocalPosition: {x: 101.23, y: 53.68, z: 232.3}
+  m_LocalPosition: {x: 100.86, y: 53.34, z: 232.3}
   m_LocalScale: {x: 10, y: 0.60112, z: 30}
   m_Children: []
   m_Father: {fileID: 675955114}
@@ -393,7 +393,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!65 &229175935
 BoxCollider:
@@ -843,7 +843,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!64 &455968696
 MeshCollider:
@@ -1510,6 +1510,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 2.33
       objectReference: {fileID: 0}
+    - target: {fileID: 1860506956, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
+      propertyPath: WallDistanceDetection
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860506956, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
+      propertyPath: JumpForce
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 1544188812562984144, guid: f6540eafabbd2364c9b59fba55b80675,
         type: 3}
       propertyPath: m_Name
@@ -1578,12 +1586,12 @@ PrefabInstance:
     - target: {fileID: 6945830922706310441, guid: f6540eafabbd2364c9b59fba55b80675,
         type: 3}
       propertyPath: dashForce
-      value: 20
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 6945830922706310441, guid: f6540eafabbd2364c9b59fba55b80675,
         type: 3}
       propertyPath: jumpForce
-      value: 15
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6945830922706310441, guid: f6540eafabbd2364c9b59fba55b80675,
         type: 3}
@@ -1746,7 +1754,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!65 &782442942
 BoxCollider:
@@ -2289,7 +2297,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1200780887}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 92.1, y: 68.7, z: 50.328125}
+  m_LocalPosition: {x: 99.6, y: 68.7, z: 52}
   m_LocalScale: {x: 27.9715, y: 1.9012625, z: 30}
   m_Children: []
   m_Father: {fileID: 675955114}
@@ -3008,7 +3016,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1765933395}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 133.14348, y: 67.3, z: 64.92812}
+  m_LocalPosition: {x: 140.1, y: 67.3, z: 77.6}
   m_LocalScale: {x: 27.9715, y: 1.9012625, z: 30}
   m_Children: []
   m_Father: {fileID: 675955114}
@@ -3031,7 +3039,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!65 &1794630383
 BoxCollider:
@@ -3589,7 +3597,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!65 &2129022880
 BoxCollider:

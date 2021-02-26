@@ -35,6 +35,10 @@ public class PlayerMovementRigidbody : MonoBehaviour
     {
         
         Move();
+    }
+
+    private void Update()
+    {
         if(Input.GetKeyDown(KeyCode.Space))
             Jump();
         BetterJump();
@@ -48,8 +52,14 @@ public class PlayerMovementRigidbody : MonoBehaviour
         if (onGround || GetComponent<WallRunningRigidbody>().OnWallRun)
         {
             actualAirControl = airControl;
-            if(Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0) 
+            if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+            {
+                if (GetComponent<WallRunningRigidbody>().OnWallRun)
+                {
+                    h = 0; 
+                }
                 Motion = (h * transform.right + v * transform.forward) * actualAirControl;
+            }
             else
                 Motion = Vector3.zero;
         }
@@ -57,9 +67,6 @@ public class PlayerMovementRigidbody : MonoBehaviour
         {
             actualAirControl = airControl / 4;
         }
-        
-
-        
 
         _rb.position += Motion * speed * Time.deltaTime;
 
@@ -101,6 +108,11 @@ public class PlayerMovementRigidbody : MonoBehaviour
 
     private void OnCollisionStay(Collision other)
     {
+        
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
         if (onGround == false)
         {
             if (other.gameObject.layer == 8)
@@ -109,10 +121,6 @@ public class PlayerMovementRigidbody : MonoBehaviour
                 
             }
         }
-    }
-
-    private void OnCollisionEnter(Collision other)
-    {
         if (other.gameObject.layer == 8)
         {
             _rb.velocity = Vector3.zero;
