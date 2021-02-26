@@ -85,11 +85,6 @@ public class WallRunningRigidbody : MonoBehaviour
             }
             #endregion
         }
-        else
-        {
-            print(other.gameObject.layer);
-            print(other.gameObject);
-        }
     }
 
     private void OnCollisionExit(Collision other)
@@ -98,15 +93,8 @@ public class WallRunningRigidbody : MonoBehaviour
         {
             WallOnLeft = false;
             WallOnRight = false;
-            GetComponent<MouseLook>().canLook = true;
+            GetComponent<MouseLook>().ResetCameraAndBody();
         }
     }
-
-    private void OnCollisionStay(Collision other)
-    {
-        if (other.gameObject.layer == 9)
-        {
-            GetComponent<MouseLook>().canLook = false;
-        }
-    }
+    
 }

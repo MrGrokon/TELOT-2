@@ -43,6 +43,7 @@ public class PlayerMovementRigidbody : MonoBehaviour
             Jump();
         BetterJump();
         actualDashCD -= 1 * Time.deltaTime;
+        DetectGround();
     }
 
     private void Move()
@@ -106,21 +107,23 @@ public class PlayerMovementRigidbody : MonoBehaviour
         }
     }
 
-    private void OnCollisionStay(Collision other)
+    private void DetectGround()
     {
-        
+        if (Physics.Raycast(transform.position, -transform.up, out RaycastHit hit, 3f))
+        {
+            if (hit.transform.gameObject.layer == 8)
+            {
+                onGround = true;
+            }
+        }
+        else
+        {
+            onGround = false;
+        }
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        if (onGround == false)
-        {
-            if (other.gameObject.layer == 8)
-            {
-                onGround = true;
-                
-            }
-        }
         if (other.gameObject.layer == 8)
         {
             _rb.velocity = Vector3.zero;
@@ -128,23 +131,5 @@ public class PlayerMovementRigidbody : MonoBehaviour
     }
 
 
-    private void OnCollisionExit(Collision other)
-    {
-        /*RaycastHit ray;
-        if (Physics.Raycast(transform.position, -transform.up, out ray, 5f))
-        {
-            if (Vector3.Dot(ray.normal, transform.up) == 1)
-            {
-                onGround = false;
-            }
-            else
-            {
-                print("Pas une surface" + Vector3.Dot(ray.normal, transform.up));
-            } 
-        }*/
-        if (other.gameObject.layer == 8)
-        {
-            onGround = false;
-        }
-    }
+
 }
