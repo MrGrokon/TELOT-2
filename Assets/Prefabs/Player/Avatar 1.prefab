@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 367756284}
   - component: {fileID: 367756283}
   - component: {fileID: 367756282}
-  - component: {fileID: 367756281}
   m_Layer: 0
   m_Name: ShieldDebug
   m_TagString: Untagged
@@ -80,19 +79,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &367756281
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 367756280}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1832179516
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,9 +123,7 @@ GameObject:
   - component: {fileID: -7900705843077656738}
   - component: {fileID: 6945830922706310441}
   - component: {fileID: 1860506956}
-  - component: {fileID: 1860506957}
   - component: {fileID: 693659680}
-  - component: {fileID: 693659681}
   - component: {fileID: 693659682}
   - component: {fileID: 1448301894}
   m_Layer: 0
@@ -241,21 +225,6 @@ MonoBehaviour:
   JumpForce: 25
   JumpPersistance: 2
   WallOnRun: {fileID: 0}
---- !u!114 &1860506957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1544188812562984144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1369f062c597ef143841b9a272d1022d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotationDegree: 30
-  TimeToRotate: 1
-  ParticuleSystemeDistanceFromPlayer: 5
 --- !u!114 &693659680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,29 +237,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9379595946a87cc4b8e9759808ca63c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShieldArea: 2
-  ShieldTime: 1
-  EnemieProjectileLayer:
-    serializedVersion: 2
-    m_Bits: 4096
-  shieldStateText: {fileID: 0}
-  shieldDebugProps: {fileID: 367756280}
---- !u!114 &693659681
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1544188812562984144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53937e3fa50c24644a0cbec07a8f06a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerProjectile: {fileID: 1980909233911585130, guid: aa3cb4428f0e5a5458a0adf9c17da30a,
-    type: 3}
-  TimeBetweenShots: 0.3
-  ProjectileSpeed: 50
 --- !u!114 &693659682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,9 +249,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccad118127313a14a84f4161b6997cc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxAmountOfEnergieStored: 5
-  _actualEnergieStored: 3
-  ammoText: {fileID: 0}
+  MaxEnergieStorable: 5
+  EnergieFeedback_Text: {fileID: 0}
 --- !u!65 &1448301894
 BoxCollider:
   m_ObjectHideFlags: 0

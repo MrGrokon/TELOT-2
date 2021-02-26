@@ -51,7 +51,7 @@ public class PlayerMovementRigidbody : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetButtonDown("Jump"))
             Jump();
         BetterJump();
         actualDashCD -= 1 * Time.deltaTime;
@@ -84,7 +84,7 @@ public class PlayerMovementRigidbody : MonoBehaviour
 
         _rb.position += Motion * speed * Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetButton("Dash"))
         {
             Dash(Motion);
         }
