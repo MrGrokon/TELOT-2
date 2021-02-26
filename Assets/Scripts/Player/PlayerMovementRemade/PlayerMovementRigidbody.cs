@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
 public class PlayerMovementRigidbody : MonoBehaviour
 {
@@ -22,12 +23,23 @@ public class PlayerMovementRigidbody : MonoBehaviour
     [Header("Jump Improve Parameters")]
     [SerializeField] private float fallMultiplier;
     [SerializeField] private float lowJumpMultiplier;
+    
+    
+    [Header("Post Processing Parameters")]
+    private ChromaticAberration CA;
+    public PostProcessVolume volume;
+    [SerializeField] private float chromaticLerpTime;
+    private float actualChromaticLerpTimeValue;
+
+    [Header("Particle System")] 
+    public ParticleSystem DashParticle;
 
     
     // Start is called before the first frame update
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
+        volume.profile.TryGetSettings(out CA);
     }
 
     // Update is called once per frame
@@ -44,6 +56,7 @@ public class PlayerMovementRigidbody : MonoBehaviour
         BetterJump();
         actualDashCD -= 1 * Time.deltaTime;
         DetectGround();
+        PostProcessValueManager();
     }
 
     private void Move()
@@ -83,6 +96,9 @@ public class PlayerMovementRigidbody : MonoBehaviour
         {
             _rb.AddForce(motion.normalized * dashForce, ForceMode.Impulse);
             actualDashCD = dashCD;
+            CA.intensity.value = 1f;
+            actualChromaticLerpTimeValue = 0;
+            DashParticle.Play();
         }
     }
 
@@ -119,6 +135,15 @@ public class PlayerMovementRigidbody : MonoBehaviour
         else
         {
             onGround = false;
+        }
+    }
+
+    private void PostProcessValueManager()
+    {
+        if (actualChromaticLerpTimeValue < chromaticLerpTime)
+        {
+            CA.intensity.value = Mathf.Lerp(CA.intensity.value, 0, actualChromaticLerpTimeValue / chromaticLerpTime);
+            actualChromaticLerpTimeValue += 1 * Time.deltaTime;
         }
     }
 
