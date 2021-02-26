@@ -1,14 +1,16 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnergieStored : MonoBehaviour
 {
     [Range(1, 10)]
     public int MaxAmountOfEnergieStored = 5;
 
-    //[HideInInspector]
     public int _actualEnergieStored = 0;
+    public Text ammoText;
 
     #region Energie Related Functions
         public void StoreEnergie(int OptionalAmount = 1){
@@ -55,5 +57,8 @@ public class EnergieStored : MonoBehaviour
         }
     #endregion
 
-    
+    private void Update()
+    {
+        ammoText.text = _actualEnergieStored + " Energie Shot";
+    }
 }

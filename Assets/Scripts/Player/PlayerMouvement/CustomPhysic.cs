@@ -16,6 +16,8 @@ public class CustomPhysic : MonoBehaviour
     private TriggerManager _States;
     private CharacterController _Controller;
 
+    
+
     private void Awake() {
         BaseGravity = GravityForce;
         _States = this.GetComponent<TriggerManager>();
@@ -60,4 +62,5 @@ public class CustomPhysic : MonoBehaviour
     public float GetBaseGravity(){
         return BaseGravity;
     }
+    
 }

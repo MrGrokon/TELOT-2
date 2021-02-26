@@ -38,7 +38,8 @@ public class ProjectEnergie : MonoBehaviour
             }
             _Energie.SpendEnergie(1);
             Debug.Log("ShootFired");
-            Instantiate(PlayerProjectile, Camera.main.transform.position, Camera.main.transform.rotation).GetComponent<ProjectilBehavior>().SetSpeed(ProjectileSpeed);
+            var proj = Instantiate(PlayerProjectile, Camera.main.transform.position + transform.forward * 2f, Camera.main.transform.rotation);
+            proj.GetComponent<ProjectilBehavior>().SetSpeed(ProjectileSpeed);
             yield return null;
         }
 

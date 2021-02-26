@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BlockProjectiles : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class BlockProjectiles : MonoBehaviour
     private GameObject _shield_rendr;
     private bool IsDebuging = false;
     private EnergieStored _Energie;
+    public Text shieldStateText;
+    public GameObject shieldDebugProps;
 
     private void Awake() {
         _shield_rendr = GameObject.Find("Shield_Rendr");
@@ -47,6 +50,8 @@ public class BlockProjectiles : MonoBehaviour
         if(_debugState){
             Debug.Log("Start shield");
             IsDebuging = true;
+            shieldDebugProps.SetActive(true);
+            shieldStateText.text = "Shield State : " + "On";
         }
         _shield_rendr.SetActive(true);
         
@@ -69,6 +74,8 @@ public class BlockProjectiles : MonoBehaviour
 
         _shield_rendr.SetActive(false);
         IsDebuging = false;
+        shieldStateText.text = "Shield State : " + "Off";
+        shieldDebugProps.SetActive(false);
             Debug.Log("Finish shield");
 
         yield return null;

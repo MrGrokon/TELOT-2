@@ -18,6 +18,6 @@ public class ObjectReferencer : MonoBehaviour
             }
         #endregion
 
-        Avatar_Object = GameObject.Find("Avatar");
+        Avatar_Object = GameObject.FindWithTag("Player");
     }
 }

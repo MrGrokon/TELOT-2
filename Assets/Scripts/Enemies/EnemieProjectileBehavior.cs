@@ -36,6 +36,7 @@ public class EnemieProjectileBehavior : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        Debug.Log("collide with " + other.gameObject.name);
+        //Debug.Log("collide with " + other.gameObject.name);
+        Destroy(gameObject);
     }
 }

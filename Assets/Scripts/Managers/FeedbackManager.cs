@@ -42,13 +42,13 @@ public class FeedbackManager : MonoBehaviour
         if(Camera_Transform == null){
             Debug.Log("Main camera not found");
         }
-        Avatar_Object = GameObject.Find("Avatar");
+        Avatar_Object = GameObject.Find("Avatar1");
         if(Avatar_Object == null){
             Debug.Log("Avatar object not found");
         }
 
-        PS_Pivot = GameObject.Find("DashParticule_Pivot").transform;
-        PS_Dash = GameObject.Find("PS_Dash").GetComponent<ParticleSystem>();
+       /* PS_Pivot = GameObject.Find("DashParticule_Pivot").transform;
+        PS_Dash = GameObject.Find("PS_Dash").GetComponent<ParticleSystem>();*/
         if(PS_Dash == null || PS_Pivot == null){
             Debug.Log("Particule element not defined");
         }
@@ -75,8 +75,8 @@ public class FeedbackManager : MonoBehaviour
         while(_elapsedTime < TimeToRotate){
             _elapsedTime += Time.deltaTime;
 
-            RotateZ_offset = Mathf.Lerp(Avatar_Object.GetComponent<MouseLook>().Z_Rotation, RotationDegree * DirMultiplier, _elapsedTime/TimeToRotate);
-            Avatar_Object.GetComponent<MouseLook>().Z_Rotation = RotateZ_offset;
+            RotateZ_offset = Mathf.Lerp(this.GetComponent<MouseLook>().Z_Rotation, RotationDegree * DirMultiplier, _elapsedTime/TimeToRotate);
+            this.GetComponent<MouseLook>().Z_Rotation = RotateZ_offset;
             //Camera_Transform.Rotate(Camera_Transform.rotation.x, Camera_Transform.rotation.y, Camera_Transform.rotation.z + (RotateZ_offset * DirMultiplier ));
             yield return null;
         }
@@ -90,8 +90,8 @@ public class FeedbackManager : MonoBehaviour
         while(_elapsedTime < TimeToRotate){
             _elapsedTime += Time.deltaTime;
 
-            RotateZ_offset = Mathf.Lerp(Avatar_Object.GetComponent<MouseLook>().Z_Rotation, 0f, _elapsedTime/TimeToRotate);
-            Avatar_Object.GetComponent<MouseLook>().Z_Rotation = RotateZ_offset;
+            RotateZ_offset = Mathf.Lerp(this.GetComponent<MouseLook>().Z_Rotation, 0f, _elapsedTime/TimeToRotate);
+            this.GetComponent<MouseLook>().Z_Rotation = RotateZ_offset;
             yield return null;
         }
         yield return null;
