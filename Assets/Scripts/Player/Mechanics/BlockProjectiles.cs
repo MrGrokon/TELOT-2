@@ -1,84 +1,57 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class BlockProjectiles : MonoBehaviour
 {
-    
-    [Range(1f, 3f)]
-    public float ShieldArea = 1.5f;
-    [Range(0.5f, 1.5f)]
-    public float ShieldTime = 1f;
+    [Range(0.3f, 1.5f)]
+    public float TimeToBeActive = 0.75f;
+    public float ShieldHitboxRange = 1f;
+    public LayerMask ProjectileLayerMask;
 
-    public LayerMask EnemieProjectileLayer;
-
-    private Transform _counter_Pivot;
-    private GameObject _shield_rendr;
-    private bool IsDebuging = false;
+    private GameObject _Shield_Rendr;
+    private Transform _Shield_Pivot;
     private EnergieStored _Energie;
-    public Text shieldStateText;
-    public GameObject shieldDebugProps;
 
-    private void Awake() {
-        _shield_rendr = GameObject.Find("Shield_Rendr");
-        _shield_rendr.SetActive(false);
+    #region Unity Functions
 
-        _counter_Pivot = GameObject.Find("Shield_Pivot").transform;
-        if(_counter_Pivot == null){
-            Debug.Log("CounterPivot not defined");
-        }
-        _Energie = this.GetComponent<EnergieStored>();
-        if(_Energie == null){
-            Debug.Log("EnergieStored not defined");
-        }
-    }
-
-    private void Update() {
-        if(Input.GetButtonDown("Fire2")){
-            StartCoroutine(ActiveShield());
-        }
-    }
-
-    private void OnDrawGizmos() {
-        if(IsDebuging == true){
-            Gizmos.DrawWireSphere(_counter_Pivot.position, ShieldArea);
-        }
-    }
-
-    IEnumerator ActiveShield(bool _debugState = true){
-        if(_debugState){
-            Debug.Log("Start shield");
-            IsDebuging = true;
-            shieldDebugProps.SetActive(true);
-            shieldStateText.text = "Shield State : " + "On";
-        }
-        _shield_rendr.SetActive(true);
-        
-        float _elapsedTime = 0f;
-
-        while(_elapsedTime < ShieldTime){
-            _elapsedTime += Time.deltaTime;
-
-            Collider[] _ObjectsBlocked = Physics.OverlapSphere(_counter_Pivot.position, ShieldArea, EnemieProjectileLayer.value);
-            if(_ObjectsBlocked.Length > 0){
-                foreach (var proj in _ObjectsBlocked)
-                {
-                    Destroy(proj.gameObject);
-                    _Energie.StoreEnergie();
-                    
-                }
+        private void Awake() {
+            _Shield_Rendr = GameObject.Find("ShieldDebug");
+            _Shield_Pivot = GameObject.Find("Shield_Pivot").transform;
+            _Shield_Rendr.SetActive(false);
+            _Energie = this.GetComponent<EnergieStored>();
+            if(_Energie == null){
+                Debug.Log("EnergieStored not defined");
             }
+        }
+
+        private void Update() {
+            if(Input.GetButtonDown("Fire2")){
+                StartCoroutine(ActivateShield());
+            }
+        }
+
+    #endregion
+
+    #region Coroutines
+        IEnumerator ActivateShield(){
+            float _elapsedTime = 0f;
+            _Shield_Rendr.SetActive(true);
+
+            while(_elapsedTime < TimeToBeActive){
+                _elapsedTime += Time.deltaTime;
+                Collider[] _hits = Physics.OverlapSphere(_Shield_Pivot.position, ShieldHitboxRange, ProjectileLayerMask);
+                
+                foreach(var Projectiles in _hits){
+                    Destroy(Projectiles);
+                    _Energie.StoreEnergie();
+                }
+
+                yield return null;
+            }
+
+            _Shield_Rendr.SetActive(false);
             yield return null;
         }
-
-        _shield_rendr.SetActive(false);
-        IsDebuging = false;
-        shieldStateText.text = "Shield State : " + "Off";
-        shieldDebugProps.SetActive(false);
-            Debug.Log("Finish shield");
-
-        yield return null;
-    }
-
+    #endregion
 }
