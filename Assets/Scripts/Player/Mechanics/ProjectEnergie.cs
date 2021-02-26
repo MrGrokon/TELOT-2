@@ -21,8 +21,8 @@ public class ProjectEnergie : MonoBehaviour
     }
 
     private void Update() {
-        if(Input.GetButtonDown("Fire1")){
-            StartCoroutine(ShootProcedure());
+        if(Input.GetButtonDown("Fire1") && _Energie.HasEnergieStored()){
+            StartCoroutine(ShotgunShoot());
         }
     }
 
@@ -43,6 +43,21 @@ public class ProjectEnergie : MonoBehaviour
         }
 
         Debug.Log("Shoot Procedure end");
+        yield return null;
+    }
+
+    IEnumerator ShotgunShoot(){
+        Debug.Log("shotgun procedure start");
+
+        for (int i = 0; i < _Energie.GetEnergieStored()+1; i++)
+        {
+            _Energie.SpendEnergie();
+            //Quaternion PelletOffsets = new Quaternion(Random.Range(0f, 30f), Random.Range(0f, 30f), Random.Range(0f, 30f), 0f);
+
+            Instantiate(PlayerProjectile, Camera.main.transform.position, Camera.main.transform.rotation/* PelletOffsets*/).GetComponent<ProjectilBehavior>().SetSpeed(ProjectileSpeed);
+            yield return null;
+        }
+
         yield return null;
     }
 }

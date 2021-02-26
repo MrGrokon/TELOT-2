@@ -13,10 +13,14 @@ public class BlockProjectiles : MonoBehaviour
     public LayerMask EnemieProjectileLayer;
 
     private Transform _counter_Pivot;
+    private GameObject _shield_rendr;
     private bool IsDebuging = false;
     private EnergieStored _Energie;
 
     private void Awake() {
+        _shield_rendr = GameObject.Find("Shield_Rendr");
+        _shield_rendr.SetActive(false);
+
         _counter_Pivot = GameObject.Find("Shield_Pivot").transform;
         if(_counter_Pivot == null){
             Debug.Log("CounterPivot not defined");
@@ -44,6 +48,7 @@ public class BlockProjectiles : MonoBehaviour
             Debug.Log("Start shield");
             IsDebuging = true;
         }
+        _shield_rendr.SetActive(true);
         
         float _elapsedTime = 0f;
 
@@ -62,6 +67,7 @@ public class BlockProjectiles : MonoBehaviour
             yield return null;
         }
 
+        _shield_rendr.SetActive(false);
         IsDebuging = false;
             Debug.Log("Finish shield");
 
