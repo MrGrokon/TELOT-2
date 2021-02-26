@@ -4,15 +4,40 @@ using UnityEngine;
 
 public class ProjectEnergie : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject Projectil_Object;
+    public float AmountOfSpread = 30f;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private EnergieStored _Energie;
+
+    #region Unity Functions
+        private void Awake() {
+            _Energie = this.GetComponent<EnergieStored>();
+            if(_Energie == null){
+                Debug.Log("EnergieStored not defined");
+            }
+        }
+
+        private void Update() {
+            if(Input.GetButtonDown("Fire1") && _Energie.HasEnergieStored()){
+                Debug.Log("Shoot");
+                StartCoroutine(ShootProcedure_Shootgun(_Energie.GetEnergieAmountStocked()));
+            }
+        }
+    #endregion
+
+    #region Coroutines
+        IEnumerator ShootProcedure_Shootgun(int _nmbOfPellet){
+            Debug.Log("shoot " + _nmbOfPellet + " pellets");
+            
+            for (int i = 0; i < _nmbOfPellet; i++)
+            {
+                Quaternion Spread = Quaternion.Euler(Camera.main.transform.rotation.eulerAngles + new Vector3( (Random.Range(-AmountOfSpread, AmountOfSpread)), (Random.Range(-AmountOfSpread, AmountOfSpread)), 0f));
+                GameObject _proj = Instantiate(Projectil_Object, Camera.main.transform.position, Spread);
+                _proj.GetComponent<ProjectilBehavior>().SetSpeed(50f);
+            }
+
+            _Energie.SpendAllEnergie();
+            yield return null;
+        }
+    #endregion
 }
