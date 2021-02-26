@@ -4,12 +4,24 @@ using UnityEngine;
 
 public class TriggerManager : MonoBehaviour
 {
-    [Header("Trigger Parameters")]
+    [Header("Ground Parameters")]
     public LayerMask FloorLayer;
+
+    [Header("WallRun Parameters")]
+    [Range(0.1f, 3f)] [SerializeField]
+    private float WallDistanceDetection = 1f;
+    public LayerMask RunnableWallLayer;
+    [HideInInspector]
+    public Vector3 LastWall_Normal;
+
+    [HideInInspector]
+    public bool WallOnRight = false, WallOnLeft = false;
+    
 
     [Header("Booleans States")]
     #region Booleans that'll be passed to other scripts, handled over there
         public bool OnGround;
+        public bool IsOnWall;
     #endregion
 
     private Transform _floorDetector;
@@ -25,12 +37,34 @@ public class TriggerManager : MonoBehaviour
         #region On Ground Management
         if(Physics.OverlapSphere(_floorDetector.position, 0.3f, FloorLayer.value).Length > 0)
         {
-            //Debug.Log("I walk on something");
             OnGround = true;
         }
         else{
-            //Debug.Log("I don't walk on anything");
             OnGround = false;
+        }
+        #endregion
+
+        #region Detect & Assign the wall i walk on
+        if(OnGround == false){
+            WallOnRight = Physics.Raycast(this.transform.position, this.transform.right, out RaycastHit RightHit, WallDistanceDetection, RunnableWallLayer.value);
+            WallOnLeft = Physics.Raycast(this.transform.position, -this.transform.right, out RaycastHit LeftHit, WallDistanceDetection, RunnableWallLayer.value);
+            
+            if(WallOnLeft == true){
+                //Debug.Log("wall on left");
+                LastWall_Normal = LeftHit.normal;
+                IsOnWall = true;
+            }
+
+            else if(WallOnRight == true){
+                //Debug.Log("wall on right");
+                LastWall_Normal = RightHit.normal;
+                IsOnWall = true;
+            }
+
+            else{
+                //Debug.Log("no wall to walk on");
+                IsOnWall = false;
+            }
         }
         #endregion
     }

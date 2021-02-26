@@ -35,10 +35,15 @@ public class PlayerMovementRigidbody : MonoBehaviour
     {
         
         Move();
+    }
+
+    private void Update()
+    {
         if(Input.GetKeyDown(KeyCode.Space))
             Jump();
         BetterJump();
         actualDashCD -= 1 * Time.deltaTime;
+        DetectGround();
     }
 
     private void Move()
@@ -48,16 +53,21 @@ public class PlayerMovementRigidbody : MonoBehaviour
         if (onGround || GetComponent<WallRunningRigidbody>().OnWallRun)
         {
             actualAirControl = airControl;
-            if(Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0) 
+            if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+            {
+                if (GetComponent<WallRunningRigidbody>().OnWallRun)
+                {
+                    h = 0; 
+                }
                 Motion = (h * transform.right + v * transform.forward) * actualAirControl;
+            }
+            else
+                Motion = Vector3.zero;
         }
         else
         {
             actualAirControl = airControl / 4;
         }
-        
-
-        
 
         _rb.position += Motion * speed * Time.deltaTime;
 
@@ -97,15 +107,18 @@ public class PlayerMovementRigidbody : MonoBehaviour
         }
     }
 
-    private void OnCollisionStay(Collision other)
+    private void DetectGround()
     {
-        if (onGround == false)
+        if (Physics.Raycast(transform.position, -transform.up, out RaycastHit hit, 3f))
         {
-            if (other.gameObject.layer == 8)
+            if (hit.transform.gameObject.layer == 8)
             {
                 onGround = true;
-                
             }
+        }
+        else
+        {
+            onGround = false;
         }
     }
 
@@ -118,23 +131,5 @@ public class PlayerMovementRigidbody : MonoBehaviour
     }
 
 
-    private void OnCollisionExit(Collision other)
-    {
-        /*RaycastHit ray;
-        if (Physics.Raycast(transform.position, -transform.up, out ray, 5f))
-        {
-            if (Vector3.Dot(ray.normal, transform.up) == 1)
-            {
-                onGround = false;
-            }
-            else
-            {
-                print("Pas une surface" + Vector3.Dot(ray.normal, transform.up));
-            } 
-        }*/
-        if (other.gameObject.layer == 8)
-        {
-            onGround = false;
-        }
-    }
+
 }

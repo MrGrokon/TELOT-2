@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1832179516
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1832179517}
+  m_Layer: 11
+  m_Name: Shield_Pivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1832179517
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832179516}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -7.0300283, y: -2.2738953, z: 23.235947}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1544188813995310427}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1544188812562984144
 GameObject:
   m_ObjectHideFlags: 0
@@ -15,6 +45,9 @@ GameObject:
   - component: {fileID: 6945830922706310441}
   - component: {fileID: 1860506956}
   - component: {fileID: 1860506957}
+  - component: {fileID: 693659680}
+  - component: {fileID: 693659681}
+  - component: {fileID: 693659682}
   m_Layer: 0
   m_Name: Avatar 1
   m_TagString: Untagged
@@ -99,7 +132,11 @@ MonoBehaviour:
   dashCD: 2
   dashForce: 2000
   jumpForce: 30
+  airControl: 1
+  Motion: {x: 0, y: 0, z: 0}
   onGround: 1
+  fallMultiplier: 2.5
+  lowJumpMultiplier: 2
 --- !u!114 &1860506956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,6 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d02a6035675ca7b419129c8990cc3be8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnWallRun: 0
   WallDistanceDetection: 3
   RunnableWallLayer:
     serializedVersion: 2
@@ -133,6 +171,52 @@ MonoBehaviour:
   RotationDegree: 30
   TimeToRotate: 1
   ParticuleSystemeDistanceFromPlayer: 5
+--- !u!114 &693659680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544188812562984144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9379595946a87cc4b8e9759808ca63c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShieldArea: 2
+  ShieldTime: 1
+  EnemieProjectileLayer:
+    serializedVersion: 2
+    m_Bits: 4096
+--- !u!114 &693659681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544188812562984144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53937e3fa50c24644a0cbec07a8f06a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerProjectile: {fileID: 1980909233911585130, guid: aa3cb4428f0e5a5458a0adf9c17da30a,
+    type: 3}
+  TimeBetweenShots: 0.3
+  ProjectileSpeed: 50
+--- !u!114 &693659682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544188812562984144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccad118127313a14a84f4161b6997cc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxAmountOfEnergieStored: 5
 --- !u!1 &1544188813381312850
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,7 +338,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.164, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1832179517}
   m_Father: {fileID: 1544188812562984237}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
