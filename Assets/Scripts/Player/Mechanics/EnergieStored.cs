@@ -50,5 +50,10 @@ public class EnergieStored : MonoBehaviour
             Debug.Log(_energieStored + " Energie Stocked");
             return _energieStored;
         }
+
+        public void SetEnergieStored(int ammo)
+        {
+            _energieStored = ammo;
+        }
     #endregion
 }

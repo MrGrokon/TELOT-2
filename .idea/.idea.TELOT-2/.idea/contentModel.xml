@@ -907,6 +907,9 @@
               <e p="TurretBehavior.cs" t="Include" />
             </e>
           </e>
+          <e p="Level Design" t="Include">
+            <e p="CollectiblesManager.cs" t="Include" />
+          </e>
           <e p="Managers" t="Include">
             <e p="FeedbackManager.cs" t="Include" />
             <e p="ObjectReferencer.cs" t="Include" />
