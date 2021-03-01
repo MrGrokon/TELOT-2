@@ -64,7 +64,7 @@ public class WallRunningRigidbody : MonoBehaviour
             Debug.Log("Jump From a wall");
             WallOnLeft = false;
             WallOnRight = false;
-            _rb.AddForce((LastWall_normal * 3 + Vector3.up * 2).normalized * (JumpForce * 2), ForceMode.Impulse);
+            _rb.AddForce((LastWall_normal * 3 + Vector3.up * 2 + Camera.main.transform.forward).normalized * (JumpForce * 2), ForceMode.Impulse);
         }
     }
 
@@ -78,8 +78,9 @@ public class WallRunningRigidbody : MonoBehaviour
             if(WallOnLeft == true){
                 WallRunnedOn = LeftHit.collider;
                 LastWall_normal = transform.right;
-                orientation.transform.rotation = Quaternion.LookRotation(LeftHit.normal, Vector3.up);
-                wallForwardRun = -orientation.transform.right;
+                wallForwardRun = Vector3.ProjectOnPlane(transform.forward, LeftHit.normal);
+                /*orientation.transform.rotation = Quaternion.LookRotation(LeftHit.normal, Vector3.up);
+                wallForwardRun = -orientation.transform.right;*/
             }
 
             if(WallOnRight == true){
@@ -90,7 +91,9 @@ public class WallRunningRigidbody : MonoBehaviour
             }
             #endregion
             transform.rotation = Quaternion.LookRotation(wallForwardRun, Vector3.up);
+            Camera.main.transform.rotation = Quaternion.identity;
             GetComponent<MouseLook>().locked = true;
+            GetComponent<MouseLook>().ResetRotation();
             Debug.DrawRay(transform.position, wallForwardRun, Color.red, Mathf.Infinity);
         }
     }
