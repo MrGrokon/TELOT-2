@@ -70,9 +70,13 @@ public class PlayerMovementRigidbody : MonoBehaviour
             {
                 if (GetComponent<WallRunningRigidbody>().OnWallRun)
                 {
-                    h = 0; 
+                    Motion = (v * GetComponent<WallRunningRigidbody>().wallForwardRun) * actualAirControl;
                 }
-                Motion = (h * transform.right + v * transform.forward) * actualAirControl;
+                else
+                {
+                    Motion = (h * transform.right + v * transform.forward) * actualAirControl;
+                }
+                
             }
             else
                 Motion = Vector3.zero;
