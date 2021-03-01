@@ -149,6 +149,7 @@ Transform:
   - {fileID: 1544188813995310427}
   - {fileID: 3033436003648575147}
   - {fileID: 7585694794632808620}
+  - {fileID: 3046105397502710754}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -210.59099, z: 0}
@@ -223,6 +224,7 @@ MonoBehaviour:
   RunnableWallLayer:
     serializedVersion: 2
     m_Bits: 512
+  orientation: {fileID: 8427309977932703072}
   JumpForce: 25
   JumpPersistance: 2
   WallOnRun: {fileID: 0}
@@ -5405,4 +5407,34 @@ Transform:
   - {fileID: 8941741986434944752}
   m_Father: {fileID: 1544188812562984237}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8427309977932703072
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3046105397502710754}
+  m_Layer: 0
+  m_Name: OrientationWallRunning
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3046105397502710754
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8427309977932703072}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1544188812562984237}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -1875,6 +1875,11 @@ PrefabInstance:
       propertyPath: DashParticle
       value: 
       objectReference: {fileID: 979157549}
+    - target: {fileID: 8308807594980650275, guid: f6540eafabbd2364c9b59fba55b80675,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
 --- !u!1 &705507993

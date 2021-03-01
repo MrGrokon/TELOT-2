@@ -734,6 +734,11 @@
           <e p="Weapon.cs" t="Include" />
           <e p="WeaponHandlingSystem.cs" t="Include" />
         </e>
+        <e p="Graphics" t="Include">
+          <e p="Shader" t="Include">
+            <e p="ShieldtestShader.shader" t="Include" />
+          </e>
+        </e>
         <e p="nTools" t="Include">
           <e p="PrefabPainter" t="Include">
             <e p="Presets" t="Include">
@@ -898,6 +903,7 @@
           <e p="Enemies" t="Include">
             <e p="EnemieProjectileBehavior.cs" t="Include" />
             <e p="Turret" t="Include">
+              <e p="Turret.cs" t="Include" />
               <e p="TurretBehavior.cs" t="Include" />
             </e>
           </e>
@@ -925,8 +931,6 @@
             </e>
           </e>
         </e>
-        <e p="ShieldtestShader.shader" t="Include" />
-        <e p="Turret.cs" t="Include" />
       </e>
       <e p="FMODUnity.csproj" t="IncludeRecursive" />
       <e p="FMODUnityEditor.csproj" t="IncludeRecursive" />
