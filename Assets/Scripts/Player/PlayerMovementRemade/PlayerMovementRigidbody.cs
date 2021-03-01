@@ -51,7 +51,7 @@ public class PlayerMovementRigidbody : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetButtonDown("Jump"))
             Jump();
         BetterJump();
         actualDashCD -= 1 * Time.deltaTime;
@@ -70,9 +70,13 @@ public class PlayerMovementRigidbody : MonoBehaviour
             {
                 if (GetComponent<WallRunningRigidbody>().OnWallRun)
                 {
-                    h = 0; 
+                    Motion = (v * GetComponent<WallRunningRigidbody>().wallForwardRun) * actualAirControl;
                 }
-                Motion = (h * transform.right + v * transform.forward) * actualAirControl;
+                else
+                {
+                    Motion = (h * transform.right + v * transform.forward) * actualAirControl;
+                }
+                
             }
             else
                 Motion = Vector3.zero;
@@ -84,7 +88,7 @@ public class PlayerMovementRigidbody : MonoBehaviour
 
         _rb.position += Motion * speed * Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetButton("Dash"))
         {
             Dash(Motion);
         }

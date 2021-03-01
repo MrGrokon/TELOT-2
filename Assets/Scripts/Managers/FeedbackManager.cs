@@ -42,7 +42,7 @@ public class FeedbackManager : MonoBehaviour
         if(Camera_Transform == null){
             Debug.Log("Main camera not found");
         }
-        Avatar_Object = GameObject.Find("Avatar1");
+        Avatar_Object = ObjectReferencer.Instance.Avatar_Object;
         if(Avatar_Object == null){
             Debug.Log("Avatar object not found");
         }

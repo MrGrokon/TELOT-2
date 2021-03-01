@@ -13,6 +13,7 @@ public class WallRunningRigidbody : MonoBehaviour
     public float WallDistanceDetection = 1f;
     public LayerMask RunnableWallLayer;
     private float _elapsedTime = 0f;
+    public GameObject orientation;
     
     [Header("Jump From a wall")]
     [Range(5f, 30f)]
@@ -21,6 +22,7 @@ public class WallRunningRigidbody : MonoBehaviour
     public float JumpPersistance = 2f;
     Vector3 LastWall_normal = Vector3.zero;
     public GameObject WallOnRun;
+    public Vector3 wallForwardRun;
     
 
     private Rigidbody _rb;
@@ -33,7 +35,6 @@ public class WallRunningRigidbody : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Debug.DrawRay(transform.position, (LastWall_normal + Vector3.up).normalized * 3, Color.red);
         if (WallOnRight || WallOnLeft)
         {
             _rb.useGravity = false;
@@ -77,13 +78,20 @@ public class WallRunningRigidbody : MonoBehaviour
             if(WallOnLeft == true){
                 WallRunnedOn = LeftHit.collider;
                 LastWall_normal = transform.right;
+                orientation.transform.rotation = Quaternion.LookRotation(LeftHit.normal, Vector3.up);
+                wallForwardRun = -orientation.transform.right;
             }
 
             if(WallOnRight == true){
                 WallRunnedOn = RightHit.collider;
                 LastWall_normal = -transform.right;
+                orientation.transform.rotation = Quaternion.LookRotation(RightHit.normal, Vector3.up);
+                wallForwardRun = orientation.transform.right;
             }
             #endregion
+            transform.rotation = Quaternion.LookRotation(wallForwardRun, Vector3.up);
+            GetComponent<MouseLook>().locked = true;
+            Debug.DrawRay(transform.position, wallForwardRun, Color.red, Mathf.Infinity);
         }
     }
 
