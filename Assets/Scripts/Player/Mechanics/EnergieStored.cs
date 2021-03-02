@@ -4,49 +4,56 @@ using UnityEngine;
 
 public class EnergieStored : MonoBehaviour
 {
-    [Range(1, 10)]
-    public int MaxAmountOfEnergieStored = 5;
+    [Range(3, 10)]
+    public int MaxEnergieStorable = 5;
+    public UnityEngine.UI.Text EnergieFeedback_Text;
 
-    private int _actualEnergieStored = 0;
+    private int _energieStored = 0;
 
-    #region Energie Related Functions
-        public void StoreEnergie(int OptionalAmount = 1){
-            Debug.Log("Energie is stocked");
-            if((_actualEnergieStored + OptionalAmount) >= MaxAmountOfEnergieStored){
-                _actualEnergieStored = MaxAmountOfEnergieStored;
+    #region Unity Functions
+        private void Update() {
+            if(HasEnergieStored() == false){
+                EnergieFeedback_Text.text = "No Energie";
             }
             else{
-                _actualEnergieStored += OptionalAmount;
+                EnergieFeedback_Text.text = _energieStored.ToString();
             }
+            
         }
+    #endregion
 
-        public int GetEnergieStored(){
-            return _actualEnergieStored;
-        }
-
+    #region Custom Functions
         public bool HasEnergieStored(){
-            if(_actualEnergieStored >= 1){
+            if(_energieStored>0){
                 return true;
             }
             return false;
         }
 
-        public void SpendEnergie(int OptionalAmount = -1){
-            if(HasEnergieStored()){
-                if(OptionalAmount <= 0){
-                    _actualEnergieStored = 0;
-                }
-                else{
-                    if((_actualEnergieStored - OptionalAmount) <= 0){
-                        _actualEnergieStored = 0;
-                    }
-                    else{
-                        _actualEnergieStored -= OptionalAmount;
-                    }
-                }
+        public void StoreEnergie(int EnergieQT = 1){
+            if(_energieStored + EnergieQT > MaxEnergieStorable){
+                Debug.Log("No more energie storable");
+                _energieStored = MaxEnergieStorable;
+            }
+            else
+            {
+                _energieStored += EnergieQT;
+                Debug.Log("stock energie");
             }
         }
-    #endregion
 
-    
+        public void SpendAllEnergie(){
+            _energieStored = 0;
+        }
+
+        public int GetEnergieAmountStocked(){
+            Debug.Log(_energieStored + " Energie Stocked");
+            return _energieStored;
+        }
+
+        public void SetEnergieStored(int ammo)
+        {
+            _energieStored = ammo;
+        }
+    #endregion
 }

@@ -22,8 +22,10 @@ public class ProjectilBehavior : MonoBehaviour
     #endregion
     
     #region Unity Functions
-    private void Update() {
-        this.transform.Translate(Vector3.forward * projectilSpeed * Time.deltaTime, Space.Self);
+    private void Update()
+    {
+        transform.position += transform.forward * projectilSpeed * Time.deltaTime;
+        Debug.DrawRay(transform.position, transform.forward, Color.red);
 
         #region Projectile Autodestroy
         _elapsedLifeTime += Time.deltaTime;
@@ -35,7 +37,7 @@ public class ProjectilBehavior : MonoBehaviour
 
     private void OnCollisionEnter(Collision col) {
         if(col.gameObject.tag != "Enemie"){
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
         }
         else{
             //do some damage

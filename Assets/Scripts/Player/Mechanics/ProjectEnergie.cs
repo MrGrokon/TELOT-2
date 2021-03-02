@@ -4,45 +4,41 @@ using UnityEngine;
 
 public class ProjectEnergie : MonoBehaviour
 {
-    public GameObject PlayerProjectile;
-
-    [Range(0.1f, 1f)]
-    public float TimeBetweenShots = 0.3f;
-    [Range(10f, 80f)]
-    public float ProjectileSpeed = 50f;
+    public GameObject Projectil_Object;
+    [Range(5f, 15f)]
+    public float AmountOfSpread = 10f;
 
     private EnergieStored _Energie;
 
-    private void Awake() {
-        _Energie = this.GetComponent<EnergieStored>();
-        if(_Energie == null){
-            Debug.Log("EnergieStored not defined");
-        }
-    }
-
-    private void Update() {
-        if(Input.GetButtonDown("Fire1")){
-            StartCoroutine(ShootProcedure());
-        }
-    }
-
-    IEnumerator ShootProcedure(){
-        Debug.Log("Shoot Procedure strart");
-
-        for (int i = 0; i < _Energie.GetEnergieStored(); i++)
-        {
-            float _elapsedTime = 0f; // reseting _elapsedtime here create a delay on 1st projectile.
-            while(_elapsedTime < TimeBetweenShots){
-                _elapsedTime += Time.deltaTime;
-                yield return null;
+    #region Unity Functions
+        private void Awake() {
+            _Energie = this.GetComponent<EnergieStored>();
+            if(_Energie == null){
+                Debug.Log("EnergieStored not defined");
             }
-            _Energie.SpendEnergie(1);
-            Debug.Log("ShootFired");
-            Instantiate(PlayerProjectile, Camera.main.transform.position, Camera.main.transform.rotation).GetComponent<ProjectilBehavior>().SetSpeed(ProjectileSpeed);
+        }
+
+        private void Update() {
+            if(Input.GetButtonDown("Fire1") && _Energie.HasEnergieStored()){
+                Debug.Log("Shoot");
+                StartCoroutine(ShootProcedure_Shootgun(_Energie.GetEnergieAmountStocked()));
+            }
+        }
+    #endregion
+
+    #region Coroutines
+        IEnumerator ShootProcedure_Shootgun(int _nmbOfPellet){
+            Debug.Log("shoot " + _nmbOfPellet + " pellets");
+            
+            for (int i = 0; i < _nmbOfPellet; i++)
+            {
+                Quaternion Spread = Quaternion.Euler(Camera.main.transform.rotation.eulerAngles + new Vector3( (Random.Range(-AmountOfSpread, AmountOfSpread)), (Random.Range(-AmountOfSpread, AmountOfSpread)), 0f));
+                GameObject _proj = Instantiate(Projectil_Object, Camera.main.transform.position, Spread);
+                _proj.GetComponent<ProjectilBehavior>().SetSpeed(50f);
+            }
+
+            _Energie.SpendAllEnergie();
             yield return null;
         }
-
-        Debug.Log("Shoot Procedure end");
-        yield return null;
-    }
+    #endregion
 }
