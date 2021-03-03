@@ -28,10 +28,12 @@ public class CollectiblesManager : MonoBehaviour
             switch (collectibleType)
             {
                 case T.Ammunition:
-                    other.GetComponent<EnergieStored>().SetEnergieStored(5);
+                    if(other.GetComponent<EnergieStored>().GetEnergieAmountStocked() < other.GetComponent<EnergieStored>().MaxEnergieStorable)
+                        other.GetComponent<EnergieStored>().AddEnergie(5);
                     break;
                 case T.Health:
-                    //+20 Player Health;
+                    if(other.GetComponent<PlayerLife>().getLifePoint() < other.GetComponent<PlayerLife>().startingLifePoint)
+                        other.GetComponent<PlayerLife>().AddLifePoint(25);
                     break;
             }
             Destroy(gameObject);

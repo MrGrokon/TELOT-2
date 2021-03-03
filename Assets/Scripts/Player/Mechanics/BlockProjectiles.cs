@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BlockProjectiles : MonoBehaviour
 {
-    [Range(0.3f, 1.5f)]
+    [Range(0.3f, 5f)]
     public float TimeToBeActive = 0.75f;
     public float ShieldHitboxRange = 1f;
     public LayerMask ProjectileLayerMask;

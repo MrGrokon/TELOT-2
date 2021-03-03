@@ -734,6 +734,7 @@
           <e p="Weapon.cs" t="Include" />
           <e p="WeaponHandlingSystem.cs" t="Include" />
         </e>
+        <e p="DummyBehavior.cs" t="Include" />
         <e p="Graphics" t="Include">
           <e p="Shader" t="Include">
             <e p="ShieldtestShader.shader" t="Include" />
@@ -899,6 +900,7 @@
             </e>
           </e>
         </e>
+        <e p="ReloadScene.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="Enemies" t="Include">
             <e p="EnemieProjectileBehavior.cs" t="Include" />
@@ -931,6 +933,9 @@
             <e p="PlayerMovementRemade" t="Include">
               <e p="PlayerMovementRigidbody.cs" t="Include" />
               <e p="WallRunningRigidbody.cs" t="Include" />
+            </e>
+            <e p="PlayerStats" t="Include">
+              <e p="PlayerLife.cs" t="Include" />
             </e>
           </e>
         </e>

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class ProjectilBehavior : MonoBehaviour
@@ -27,6 +28,15 @@ public class ProjectilBehavior : MonoBehaviour
         transform.position += transform.forward * projectilSpeed * Time.deltaTime;
         Debug.DrawRay(transform.position, transform.forward, Color.red);
 
+        if (Physics.Raycast(transform.position, transform.forward , out RaycastHit hit, 2f))
+        {
+            if (hit.transform.CompareTag("Ennemy"))
+            {
+                Destroy(hit.transform.gameObject);
+                Destroy(this.gameObject);
+            }
+        }
+
         #region Projectile Autodestroy
         _elapsedLifeTime += Time.deltaTime;
         if(_elapsedLifeTime >= LifeTime){
@@ -36,11 +46,13 @@ public class ProjectilBehavior : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision col) {
-        if(col.gameObject.tag != "Enemie"){
-            //Destroy(this.gameObject);
+        if(col.gameObject.tag != "Ennemy"){
+            Destroy(this.gameObject);
         }
-        else{
-            //do some damage
+        else if (col.gameObject.CompareTag("Ennemy"))
+        {
+            Destroy(col.gameObject);
+            Destroy(this.gameObject);
         }
     }
     #endregion
