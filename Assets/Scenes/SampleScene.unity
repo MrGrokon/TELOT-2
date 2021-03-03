@@ -2012,6 +2012,10 @@ PrefabInstance:
       propertyPath: ProjectileLayerMask.m_Bits
       value: 4096
       objectReference: {fileID: 0}
+    - target: {fileID: 693659680, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
+      propertyPath: TimeToBeActive
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 693659682, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
       propertyPath: ammoText
       value: 
@@ -2047,7 +2051,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1860506956, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
       propertyPath: JumpForce
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1544188812562984144, guid: f6540eafabbd2364c9b59fba55b80675,
         type: 3}
@@ -2132,7 +2136,7 @@ PrefabInstance:
     - target: {fileID: 5776894925316817838, guid: f6540eafabbd2364c9b59fba55b80675,
         type: 3}
       propertyPath: projectileSpeed
-      value: 150
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 6945830922706310441, guid: f6540eafabbd2364c9b59fba55b80675,
         type: 3}
@@ -3280,7 +3284,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1460570176}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.02}
+  m_LocalPosition: {x: -0, y: 0, z: 2.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 932959732}
