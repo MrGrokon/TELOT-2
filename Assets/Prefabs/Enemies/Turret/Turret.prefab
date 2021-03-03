@@ -205,9 +205,9 @@ MonoBehaviour:
     type: 3}
   projectileThrower: {fileID: 2727038761024645114}
   _state: 0
-  attackInterval: 0.5
+  attackInterval: 0.8
   attackDistance: 200
-  ProjectileSpeed: 50
+  ProjectileSpeed: 90
   distanceToPlayer: 0
 --- !u!1 &2727038761024645114
 GameObject:
