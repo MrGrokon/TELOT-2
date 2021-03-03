@@ -28,6 +28,15 @@ public class ProjectilBehavior : MonoBehaviour
         transform.position += transform.forward * projectilSpeed * Time.deltaTime;
         Debug.DrawRay(transform.position, transform.forward, Color.red);
 
+        if (Physics.Raycast(transform.position, transform.forward , out RaycastHit hit, 2f))
+        {
+            if (hit.transform.CompareTag("Ennemy"))
+            {
+                Destroy(hit.transform.gameObject);
+                Destroy(this.gameObject);
+            }
+        }
+
         #region Projectile Autodestroy
         _elapsedLifeTime += Time.deltaTime;
         if(_elapsedLifeTime >= LifeTime){

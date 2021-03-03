@@ -116,7 +116,7 @@ public class PlayerMovementRigidbody : MonoBehaviour
             _rb.AddForce(((transform.up + Motion).normalized + transform.up).normalized * jumpForce, ForceMode.Impulse);
             onGround = false;
         }
-        else if (doubleJump)
+        else if (doubleJump && !GetComponent<WallRunningRigidbody>().OnWallRun)
         {
             _rb.AddForce(((transform.up + Motion).normalized + transform.up).normalized * jumpForce * dJumpFactor, ForceMode.Impulse);
             doubleJump = false;
