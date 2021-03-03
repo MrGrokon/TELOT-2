@@ -64,7 +64,11 @@ public class WallRunningRigidbody : MonoBehaviour
             Debug.Log("Jump From a wall");
             WallOnLeft = false;
             WallOnRight = false;
-            _rb.AddForce((LastWall_normal * 3 + Vector3.up * 2 + Camera.main.transform.forward).normalized * (JumpForce * 2), ForceMode.Impulse);
+            
+            _rb.AddForce((LastWall_normal * 5 + Vector3.up * 2.2f).normalized * (JumpForce * 2), ForceMode.Impulse);
+            //_rb.AddForce(( Vector3.up).normalized * (JumpForce * 2), ForceMode.Impulse);
+            if(_rb.velocity.magnitude > 0)
+                _rb.AddForce(-_rb.transform.forward * 45, ForceMode.Impulse);
         }
     }
 

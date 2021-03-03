@@ -35,18 +35,18 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Feedbacks/FeedbackManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMouvement/PlayerMovement.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/ObjectReferencer.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/BlockProjectiles.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMouvement/MouseLook.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovementRemade/WallRunningRigidbody.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovementRemade/PlayerMovementRigidbody.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemieProjectileBehavior.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/EnergieStored.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerStats/PlayerLife.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Level Design/CollectiblesManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/ProjectEnergie.cs" />
       <option value="$PROJECT_DIR$/Assets/DummyBehavior.cs" />
-      <option value="$PROJECT_DIR$/Assets/Deprecated_Files/ProjectilBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/ReloadScene.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Level Design/CollectiblesManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/EnergieStored.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/ProjectEnergie.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovementRemade/PlayerMovementRigidbody.cs" />
+      <option value="$PROJECT_DIR$/Assets/Deprecated_Files/ProjectilBehavior.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/BlockProjectiles.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovementRemade/WallRunningRigidbody.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1ohtdW9xSpIGpjT50LXGFp67Yso" />
@@ -111,6 +111,8 @@
       <workItem from="1614593587609" duration="3473000" />
       <workItem from="1614619002301" duration="1353000" />
       <workItem from="1614773947307" duration="4295000" />
+      <workItem from="1614795023561" duration="620000" />
+      <workItem from="1614800936368" duration="3872000" />
     </task>
     <servers />
   </component>
@@ -127,13 +129,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/ProjectEnergie.cs</url>
-          <line>41</line>
+          <line>51</line>
           <properties documentPath="C:\Users\starf\Documents\TELOT\TELOT-2\Assets\Scripts\Player\Mechanics\ProjectEnergie.cs" initialLine="40" containingFunctionPresentation="method 'ShootProcedure'">
             <startOffsets>
-              <option value="1169" />
+              <option value="1632" />
             </startOffsets>
             <endOffsets>
-              <option value="1299" />
+              <option value="1762" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />
