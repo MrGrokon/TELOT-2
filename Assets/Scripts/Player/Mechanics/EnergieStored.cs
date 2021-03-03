@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,9 +10,16 @@ public class EnergieStored : MonoBehaviour
     public UnityEngine.UI.Text EnergieFeedback_Text;
 
     private int _energieStored = 0;
+    public int startingEnergie;
 
     #region Unity Functions
-        private void Update() {
+
+        private void Start()
+        {
+            _energieStored = startingEnergie;
+        }
+
+    private void Update() {
             if(HasEnergieStored() == false){
                 EnergieFeedback_Text.text = "No Energie";
             }
@@ -54,6 +62,7 @@ public class EnergieStored : MonoBehaviour
         public void SetEnergieStored(int ammo)
         {
             _energieStored = ammo;
+            _energieStored = Mathf.Clamp(_energieStored, 0, MaxEnergieStorable);
         }
     #endregion
 }

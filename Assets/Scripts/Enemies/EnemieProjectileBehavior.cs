@@ -9,7 +9,7 @@ public class EnemieProjectileBehavior : MonoBehaviour
     private float _elapsedLifeTime = 0f;
 
     private float projectilSpeed;
-    private int DamageDoned;
+    [SerializeField] private int DamageDoned;
 
     #region Setters
     public void SetSpeed(float _speed){
@@ -38,5 +38,10 @@ public class EnemieProjectileBehavior : MonoBehaviour
     {
         //Debug.Log("collide with " + other.gameObject.name);
         Destroy(gameObject);
+    }
+
+    public int getDammage()
+    {
+        return DamageDoned;
     }
 }

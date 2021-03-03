@@ -9,6 +9,7 @@ public class ProjectEnergie : MonoBehaviour
     public float AmountOfSpread = 10f;
 
     private EnergieStored _Energie;
+    public Transform shotLocation;
 
     #region Unity Functions
         private void Awake() {
@@ -33,7 +34,7 @@ public class ProjectEnergie : MonoBehaviour
             for (int i = 0; i < _nmbOfPellet; i++)
             {
                 Quaternion Spread = Quaternion.Euler(Camera.main.transform.rotation.eulerAngles + new Vector3( (Random.Range(-AmountOfSpread, AmountOfSpread)), (Random.Range(-AmountOfSpread, AmountOfSpread)), 0f));
-                GameObject _proj = Instantiate(Projectil_Object, Camera.main.transform.position, Spread);
+                GameObject _proj = Instantiate(Projectil_Object, shotLocation.position, Spread);
                 _proj.GetComponent<ProjectilBehavior>().SetSpeed(50f);
             }
 
