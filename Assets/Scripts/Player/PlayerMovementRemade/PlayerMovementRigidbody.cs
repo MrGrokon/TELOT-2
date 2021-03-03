@@ -23,6 +23,9 @@ public class PlayerMovementRigidbody : MonoBehaviour
     [Header("Jump Improve Parameters")]
     [SerializeField] private float fallMultiplier;
     [SerializeField] private float lowJumpMultiplier;
+    private bool doubleJump = true;
+    [Tooltip("Multiplicateur de la force du double saut")]
+    [SerializeField] private float dJumpFactor = 1;
     
     
     [Header("Post Processing Parameters")]
@@ -113,6 +116,11 @@ public class PlayerMovementRigidbody : MonoBehaviour
             _rb.AddForce(((transform.up + Motion).normalized + transform.up).normalized * jumpForce, ForceMode.Impulse);
             onGround = false;
         }
+        else if (doubleJump)
+        {
+            _rb.AddForce(((transform.up + Motion).normalized + transform.up).normalized * jumpForce * dJumpFactor, ForceMode.Impulse);
+            doubleJump = false;
+        }
     }
 
     private void BetterJump()
@@ -134,6 +142,7 @@ public class PlayerMovementRigidbody : MonoBehaviour
             if (hit.transform.gameObject.layer == 8)
             {
                 onGround = true;
+                doubleJump = true;
             }
         }
         else

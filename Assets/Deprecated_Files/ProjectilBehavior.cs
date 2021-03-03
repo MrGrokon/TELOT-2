@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class ProjectilBehavior : MonoBehaviour
@@ -36,11 +37,13 @@ public class ProjectilBehavior : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision col) {
-        if(col.gameObject.tag != "Enemie"){
-            //Destroy(this.gameObject);
+        if(col.gameObject.tag != "Ennemy"){
+            Destroy(this.gameObject);
         }
-        else{
-            //do some damage
+        else if (col.gameObject.CompareTag("Ennemy"))
+        {
+            Destroy(col.gameObject);
+            Destroy(this.gameObject);
         }
     }
     #endregion
