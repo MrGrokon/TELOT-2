@@ -167,6 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MouseSensitivity: 100
   Z_Rotation: 0
+  locked: 0
 --- !u!54 &-7900705843077656738
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -195,8 +196,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 275591fde6b77004da039cf1d12f24dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
-  dashCD: 2
+  speed: 35
+  dashCD: 1.5
   dashForce: 70
   jumpForce: 25
   airControl: 1
@@ -204,6 +205,7 @@ MonoBehaviour:
   onGround: 1
   fallMultiplier: 2.5
   lowJumpMultiplier: 2
+  dJumpFactor: 1
   volume: {fileID: 0}
   chromaticLerpTime: 5
   DashParticle: {fileID: 0}
@@ -228,6 +230,7 @@ MonoBehaviour:
   JumpForce: 25
   JumpPersistance: 2
   WallOnRun: {fileID: 0}
+  wallForwardRun: {x: 0, y: 0, z: 0}
 --- !u!114 &693659680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,8 +260,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccad118127313a14a84f4161b6997cc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxEnergieStorable: 5
+  MaxEnergieStorable: 10
   EnergieFeedback_Text: {fileID: 0}
+  startingEnergie: 0
 --- !u!65 &1448301894
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -287,6 +291,7 @@ MonoBehaviour:
   Projectil_Object: {fileID: 1980909233911585130, guid: aa3cb4428f0e5a5458a0adf9c17da30a,
     type: 3}
   AmountOfSpread: 10
+  shotLocation: {fileID: 0}
 --- !u!1 &1544188813381312850
 GameObject:
   m_ObjectHideFlags: 0
