@@ -146,10 +146,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1544188813381312849}
-  - {fileID: 1544188813995310427}
   - {fileID: 3033436003648575147}
   - {fileID: 7585694794632808620}
   - {fileID: 3046105397502710754}
+  - {fileID: 1544188813995310427}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -210.59099, z: 0}
@@ -229,6 +229,7 @@ MonoBehaviour:
   onGround: 1
   fallMultiplier: 2.5
   lowJumpMultiplier: 2
+  doubleJump: 1
   dJumpFactor: 1
   volume: {fileID: 0}
   chromaticLerpTime: 5
@@ -297,6 +298,7 @@ MonoBehaviour:
   AmountOfSpread: 10
   shotLocation: {fileID: 0}
   projectileSpeed: 0
+  hitMarker: {fileID: 0}
 --- !u!1 &1544188813381312850
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,13 +419,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1544188813995310430}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1.164, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1832179517}
   m_Father: {fileID: 1544188812562984237}
-  m_RootOrder: 1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &1544188813995310428
 Camera:
@@ -5385,7 +5387,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1544188812562984237}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8205115160637432271
 GameObject:
@@ -5416,7 +5418,7 @@ Transform:
   m_Children:
   - {fileID: 8941741986434944752}
   m_Father: {fileID: 1544188812562984237}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8427309977932703072
 GameObject:
@@ -5446,5 +5448,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1544188812562984237}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

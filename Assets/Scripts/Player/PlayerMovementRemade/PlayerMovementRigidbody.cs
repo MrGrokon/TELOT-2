@@ -75,7 +75,7 @@ public class PlayerMovementRigidbody : MonoBehaviour
                 {
                     Motion = (v * GetComponent<WallRunningRigidbody>().wallForwardRun) * actualAirControl;
                 }
-                else
+                else if(onGround)
                 {
                     Motion = (h * transform.right + v * transform.forward) * actualAirControl;
                 }

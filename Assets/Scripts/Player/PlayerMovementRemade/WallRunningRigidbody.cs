@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
 public class WallRunningRigidbody : MonoBehaviour
 {
@@ -31,16 +32,24 @@ public class WallRunningRigidbody : MonoBehaviour
     private float fovNormal;
 
     private Rigidbody _rb;
+    
+    [Header("Post Processing Parameters")]
+    private ChromaticAberration CA;
+    public PostProcessVolume volume;
+    [SerializeField] private float chromaticLerpTime;
+    private float actualChromaticLerpTimeValue;
     // Start is called before the first frame update
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
         fovNormal = Camera.main.fieldOfView;
+        volume.profile.TryGetSettings(out CA);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        PostProcessValueManager();
         WallRunFeedbacks();
         if (WallOnRight || WallOnLeft)
         {
@@ -59,13 +68,12 @@ public class WallRunningRigidbody : MonoBehaviour
         }
         else
         {
-            //StartCoroutine(FeedbackManager.Instance.ResetCameraAngle());
             _rb.useGravity = true;
             OnWallRun = false;
-            transform.eulerAngles = new Vector3(0,transform.eulerAngles.y,0);
         }
         if(Input.GetButtonDown("Jump") && LastWall_normal != Vector3.zero && OnWallRun){
-            _rb.AddForce((Vector3.up * 4f + Camera.main.transform.forward * 5.3f).normalized * (JumpForce * 2), ForceMode.Impulse);
+            _rb.AddForce((Vector3.up + Camera.main.transform.forward).normalized * (JumpForce * 2), ForceMode.Impulse);
+            GetComponent<PlayerMovementRigidbody>().Motion = Vector3.zero;
             WallOnLeft = false;
             WallOnRight = false;
             StartCoroutine(ReactivateDoubleJump());
@@ -86,19 +94,16 @@ public class WallRunningRigidbody : MonoBehaviour
                 WallRunnedOn = LeftHit.collider;
                 LastWall_normal = transform.right;
                 wallForwardRun = Vector3.ProjectOnPlane(transform.forward, LeftHit.normal);
-                //StartCoroutine(FeedbackManager.Instance.AngularCameraRotation(FeedbackManager.CameraDirection.Left));
-                /*orientation.transform.rotation = Quaternion.LookRotation(LeftHit.normal, Vector3.up);
-                wallForwardRun = -orientation.transform.right;*/
             }
 
             if(WallOnRight == true){
                 WallRunnedOn = RightHit.collider;
                 LastWall_normal = -transform.right;
-                orientation.transform.rotation = Quaternion.LookRotation(RightHit.normal, Vector3.up);
-                wallForwardRun = orientation.transform.right;
-                //StartCoroutine(FeedbackManager.Instance.AngularCameraRotation(FeedbackManager.CameraDirection.Right));
+                wallForwardRun = Vector3.ProjectOnPlane(transform.forward, RightHit.normal);
             }
             #endregion
+            CA.intensity.value = 0.25f;
+            actualChromaticLerpTimeValue = 0;
             transform.rotation = Quaternion.LookRotation(wallForwardRun, Vector3.up);
             Camera.main.transform.rotation = Quaternion.identity;
             GetComponent<MouseLook>().locked = true;
@@ -112,20 +117,22 @@ public class WallRunningRigidbody : MonoBehaviour
     {
         if(other.gameObject.layer == 9)
         {
+            print("Je sors");
             WallOnLeft = false;
             WallOnRight = false;
             GetComponent<MouseLook>().ResetCameraAndBody();
+            CA.intensity.value = 0;
         }
     }
 
 
     private void WallRunFeedbacks()
     {
-        if (OnWallRun && GetComponent<PlayerMovementRigidbody>().Motion.magnitude > 0)
+        if (OnWallRun)
         {
             interpolationTime += 2 * Time.deltaTime;
         }
-        else if(GetComponent<PlayerMovementRigidbody>().Motion.magnitude == 0 || !OnWallRun)
+        else if(!OnWallRun)
         {
             interpolationTime -= 2 * Time.deltaTime;
         }
@@ -138,6 +145,15 @@ public class WallRunningRigidbody : MonoBehaviour
     {
         yield return new WaitForSeconds(0.2f);
         GetComponent<PlayerMovementRigidbody>().doubleJump = true;
+    }
+    
+    private void PostProcessValueManager()
+    {
+        if (actualChromaticLerpTimeValue < chromaticLerpTime)
+        {
+            CA.intensity.value = Mathf.Lerp(CA.intensity.value, 0, actualChromaticLerpTimeValue / chromaticLerpTime);
+            actualChromaticLerpTimeValue += 1 * Time.deltaTime;
+        }
     }
     
 }
