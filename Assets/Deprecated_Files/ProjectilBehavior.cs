@@ -28,7 +28,7 @@ public class ProjectilBehavior : MonoBehaviour
         transform.position += transform.forward * projectilSpeed * Time.deltaTime;
         Debug.DrawRay(transform.position, transform.forward, Color.red);
 
-        if (Physics.Raycast(transform.position, transform.forward , out RaycastHit hit, 2f))
+        if (Physics.Raycast(transform.position, transform.forward , out RaycastHit hit, 4f))
         {
             if (hit.transform.CompareTag("Ennemy"))
             {
