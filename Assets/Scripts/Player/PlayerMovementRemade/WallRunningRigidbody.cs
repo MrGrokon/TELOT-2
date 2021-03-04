@@ -23,30 +23,36 @@ public class WallRunningRigidbody : MonoBehaviour
     Vector3 LastWall_normal = Vector3.zero;
     public GameObject WallOnRun;
     public Vector3 wallForwardRun;
-    
+
+    [Header("Wall Run Feedbacks")] 
+    public float interpolationTime;
+
+    public float fovOnWall;
+    private float fovNormal;
 
     private Rigidbody _rb;
     // Start is called before the first frame update
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
+        fovNormal = Camera.main.fieldOfView;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        WallRunFeedbacks();
         if (WallOnRight || WallOnLeft)
         {
             _rb.useGravity = false;
             _rb.velocity = Vector3.zero;
             OnWallRun = true;
             if(WallOnLeft){
-                //StartCoroutine(FeedbackManager.Instance.AngularCameraRotation(FeedbackManager.CameraDirection.Left));
+                
                 transform.eulerAngles = new Vector3(transform.eulerAngles.x,transform.eulerAngles.y,-30);
             }
             else
             {
-                //StartCoroutine(FeedbackManager.Instance.AngularCameraRotation(FeedbackManager.CameraDirection.Right));
                 transform.eulerAngles = new Vector3(transform.eulerAngles.x,transform.eulerAngles.y,30);
             }
                 
@@ -58,18 +64,15 @@ public class WallRunningRigidbody : MonoBehaviour
             OnWallRun = false;
             transform.eulerAngles = new Vector3(0,transform.eulerAngles.y,0);
         }
-        
-        _elapsedTime += Time.deltaTime;
         if(Input.GetButtonDown("Jump") && LastWall_normal != Vector3.zero && OnWallRun){
-            Debug.Log("Jump From a wall");
+            _rb.AddForce((Vector3.up * 4f + Camera.main.transform.forward * 5.3f).normalized * (JumpForce * 2), ForceMode.Impulse);
             WallOnLeft = false;
             WallOnRight = false;
-            
-            _rb.AddForce((LastWall_normal * 5 + Vector3.up * 2.2f).normalized * (JumpForce * 2), ForceMode.Impulse);
-            //_rb.AddForce(( Vector3.up).normalized * (JumpForce * 2), ForceMode.Impulse);
-            if(_rb.velocity.magnitude > 0)
-                _rb.AddForce(-_rb.transform.forward * 45, ForceMode.Impulse);
+            StartCoroutine(ReactivateDoubleJump());
         }
+        
+        _elapsedTime += Time.deltaTime;
+        
     }
 
     private void OnCollisionEnter(Collision other)
@@ -83,6 +86,7 @@ public class WallRunningRigidbody : MonoBehaviour
                 WallRunnedOn = LeftHit.collider;
                 LastWall_normal = transform.right;
                 wallForwardRun = Vector3.ProjectOnPlane(transform.forward, LeftHit.normal);
+                //StartCoroutine(FeedbackManager.Instance.AngularCameraRotation(FeedbackManager.CameraDirection.Left));
                 /*orientation.transform.rotation = Quaternion.LookRotation(LeftHit.normal, Vector3.up);
                 wallForwardRun = -orientation.transform.right;*/
             }
@@ -92,12 +96,14 @@ public class WallRunningRigidbody : MonoBehaviour
                 LastWall_normal = -transform.right;
                 orientation.transform.rotation = Quaternion.LookRotation(RightHit.normal, Vector3.up);
                 wallForwardRun = orientation.transform.right;
+                //StartCoroutine(FeedbackManager.Instance.AngularCameraRotation(FeedbackManager.CameraDirection.Right));
             }
             #endregion
             transform.rotation = Quaternion.LookRotation(wallForwardRun, Vector3.up);
             Camera.main.transform.rotation = Quaternion.identity;
             GetComponent<MouseLook>().locked = true;
             GetComponent<MouseLook>().ResetRotation();
+            GetComponent<PlayerMovementRigidbody>().doubleJump = false;
             Debug.DrawRay(transform.position, wallForwardRun, Color.red, Mathf.Infinity);
         }
     }
@@ -110,6 +116,28 @@ public class WallRunningRigidbody : MonoBehaviour
             WallOnRight = false;
             GetComponent<MouseLook>().ResetCameraAndBody();
         }
+    }
+
+
+    private void WallRunFeedbacks()
+    {
+        if (OnWallRun && GetComponent<PlayerMovementRigidbody>().Motion.magnitude > 0)
+        {
+            interpolationTime += 2 * Time.deltaTime;
+        }
+        else if(GetComponent<PlayerMovementRigidbody>().Motion.magnitude == 0 || !OnWallRun)
+        {
+            interpolationTime -= 2 * Time.deltaTime;
+        }
+        Camera.main.fieldOfView =
+            Mathf.Lerp(fovNormal, fovOnWall, interpolationTime);
+        interpolationTime = Mathf.Clamp(interpolationTime, 0, 1);
+    }
+
+    private IEnumerator ReactivateDoubleJump()
+    {
+        yield return new WaitForSeconds(0.2f);
+        GetComponent<PlayerMovementRigidbody>().doubleJump = true;
     }
     
 }
