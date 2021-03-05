@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ProjectEnergie : MonoBehaviour
 {
@@ -11,7 +12,9 @@ public class ProjectEnergie : MonoBehaviour
     private EnergieStored _Energie;
     public Transform shotLocation;
     public float projectileSpeed;
-
+    public RawImage hitMarker;
+    private float timeToHideHit = 0.3f;
+    public float shotDistance;
     #region Unity Functions
         private void Awake() {
             _Energie = this.GetComponent<EnergieStored>();
@@ -22,7 +25,7 @@ public class ProjectEnergie : MonoBehaviour
 
         private void Update() {
             if(Input.GetButtonDown("Fire1") && _Energie.HasEnergieStored()){
-                Debug.Log("Shoot");
+                //Debug.Log("Shoot");
                 if(_Energie.GetEnergieAmountStocked() >= _Energie._energiePerShot)
                     StartCoroutine(ShootProcedure_Shootgun(_Energie._energiePerShot));
                 else
@@ -34,6 +37,7 @@ public class ProjectEnergie : MonoBehaviour
             {
                 StartCoroutine(ShootProcedure_All(_Energie.GetEnergieAmountStocked()));
             }
+            HideHit();
         }
     #endregion
 
@@ -46,6 +50,15 @@ public class ProjectEnergie : MonoBehaviour
                 Quaternion Spread = Quaternion.Euler(Camera.main.transform.rotation.eulerAngles + new Vector3( (Random.Range(-AmountOfSpread, AmountOfSpread)), (Random.Range(-AmountOfSpread, AmountOfSpread)), 0f));
                 GameObject _proj = Instantiate(Projectil_Object, shotLocation.position, Spread);
                 _proj.GetComponent<ProjectilBehavior>().SetSpeed(projectileSpeed);
+                Debug.DrawRay(shotLocation.position, _proj.transform.forward * shotDistance, Color.red, Mathf.Infinity);
+                /*if (Physics.Raycast(shotLocation.position, _proj.transform.forward, out RaycastHit hit,shotDistance))
+                {
+                    if (hit.transform.CompareTag("Ennemy"))
+                    {
+                        ObjectReferencer.Instance.Avatar_Object.GetComponent<ProjectEnergie>().hitMarker.gameObject
+                            .SetActive(true);
+                    }
+                }*/
             }
 
             _Energie.SpendEnergie(_Energie._energiePerShot);
@@ -59,10 +72,32 @@ public class ProjectEnergie : MonoBehaviour
                 Quaternion Spread = Quaternion.Euler(Camera.main.transform.rotation.eulerAngles + new Vector3( (Random.Range(-AmountOfSpread, AmountOfSpread)), (Random.Range(-AmountOfSpread, AmountOfSpread)), 0f));
                 GameObject _proj = Instantiate(Projectil_Object, shotLocation.position, Spread);
                 _proj.GetComponent<ProjectilBehavior>().SetSpeed(projectileSpeed);
+                /*if (Physics.Raycast(shotLocation.position, _proj.transform.forward, out RaycastHit hit,shotDistance))
+                {
+                    if (hit.transform.CompareTag("Ennemy"))
+                    {
+                        ObjectReferencer.Instance.Avatar_Object.GetComponent<ProjectEnergie>().hitMarker.gameObject
+                            .SetActive(true);
+                    }
+                }*/
             }
 
             _Energie.SpendEnergie(_Energie.GetEnergieAmountStocked());
             yield return null;
+        }
+        
+        private void HideHit()
+        {
+            if (ObjectReferencer.Instance.Avatar_Object.GetComponent<ProjectEnergie>().hitMarker.gameObject.activeSelf)
+            {
+                timeToHideHit -= 1 * Time.deltaTime;
+                if (timeToHideHit <= 0)
+                {
+                    ObjectReferencer.Instance.Avatar_Object.GetComponent<ProjectEnergie>().hitMarker.gameObject.SetActive(false);
+                    timeToHideHit = 0.3f;
+                }
+            }
+            
         }
     #endregion
 }
