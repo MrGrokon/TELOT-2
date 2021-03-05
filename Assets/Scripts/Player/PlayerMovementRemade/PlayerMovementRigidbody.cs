@@ -17,7 +17,6 @@ public class PlayerMovementRigidbody : MonoBehaviour
     [SerializeField] private float dashForce;
     [SerializeField] private float jumpForce; //Pas le jeu à la con hein
     [SerializeField] private float airControl;
-    private float actualAirControl;
     public Vector3 Motion;
     public bool onGround = true;
     [Header("Jump Improve Parameters")]
@@ -64,20 +63,19 @@ public class PlayerMovementRigidbody : MonoBehaviour
 
     private void Move()
     {
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
+        float h = Input.GetAxisRaw("Horizontal");
+        float v = Input.GetAxisRaw("Vertical");
         if (onGround || GetComponent<WallRunningRigidbody>().OnWallRun)
         {
-            actualAirControl = airControl;
             if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
             {
                 if (GetComponent<WallRunningRigidbody>().OnWallRun)
                 {
-                    Motion = (v * GetComponent<WallRunningRigidbody>().wallForwardRun) * actualAirControl;
+                    Motion = (v * GetComponent<WallRunningRigidbody>().wallForwardRun);
                 }
                 else if(onGround)
                 {
-                    Motion = (h * transform.right + v * transform.forward) * actualAirControl;
+                    Motion = (h * transform.right + v * transform.forward).normalized;
                 }
                 
             }
@@ -86,7 +84,7 @@ public class PlayerMovementRigidbody : MonoBehaviour
         }
         else
         {
-            actualAirControl = airControl / 4;
+            Motion = ((h * transform.right + v * transform.forward).normalized * airControl);
         }
 
         _rb.position += Motion * speed * Time.deltaTime;
@@ -114,13 +112,13 @@ public class PlayerMovementRigidbody : MonoBehaviour
         if (onGround)
         {
             print("Simple jump");
-            _rb.AddForce(((transform.up + Motion).normalized + transform.up).normalized * jumpForce, ForceMode.Impulse);
+            _rb.AddForce((transform.up * 2 + Motion * 2.5f).normalized * jumpForce, ForceMode.Impulse);
             onGround = false;
         }
         else if (doubleJump && !GetComponent<WallRunningRigidbody>().OnWallRun)
         {
             print("Double jump");
-            _rb.AddForce(((transform.up + Motion).normalized + transform.up).normalized * jumpForce * dJumpFactor, ForceMode.Impulse);
+            _rb.AddForce((transform.up + Motion).normalized * jumpForce * dJumpFactor, ForceMode.Impulse);
             doubleJump = false;
         }
     }
@@ -164,10 +162,9 @@ public class PlayerMovementRigidbody : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.layer == 8)
-        {
-            _rb.velocity = Vector3.zero;
-        }
+        print(other.gameObject);
+        _rb.velocity = Vector3.zero;
+        _rb.angularVelocity = Vector3.zero;
     }
 
 

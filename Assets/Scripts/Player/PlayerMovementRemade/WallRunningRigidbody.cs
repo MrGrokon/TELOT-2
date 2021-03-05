@@ -32,6 +32,7 @@ public class WallRunningRigidbody : MonoBehaviour
     private float fovNormal;
 
     private Rigidbody _rb;
+    public Vector3 Motion;
     
     [Header("Post Processing Parameters")]
     private ChromaticAberration CA;
@@ -49,6 +50,9 @@ public class WallRunningRigidbody : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
+        Motion = transform.forward * v + transform.right * h;
         PostProcessValueManager();
         WallRunFeedbacks();
         if (WallOnRight || WallOnLeft)
@@ -71,8 +75,10 @@ public class WallRunningRigidbody : MonoBehaviour
             _rb.useGravity = true;
             OnWallRun = false;
         }
-        if(Input.GetButtonDown("Jump") && LastWall_normal != Vector3.zero && OnWallRun){
-            _rb.AddForce((Vector3.up + Camera.main.transform.forward).normalized * (JumpForce * 2), ForceMode.Impulse);
+        if(Input.GetButtonDown("Jump") && LastWall_normal != Vector3.zero && OnWallRun)
+        {
+            
+            _rb.AddForce((Vector3.up + Motion*2).normalized * (JumpForce * 2), ForceMode.Impulse);
             GetComponent<PlayerMovementRigidbody>().Motion = Vector3.zero;
             WallOnLeft = false;
             WallOnRight = false;

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnergieStored : MonoBehaviour
 {
-    [Range(3, 30)]
+    [Range(3, 500)]
     public int MaxEnergieStorable = 5;
     public UnityEngine.UI.Text EnergieFeedback_Text;
 
