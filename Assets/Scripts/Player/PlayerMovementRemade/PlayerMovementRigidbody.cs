@@ -162,7 +162,6 @@ public class PlayerMovementRigidbody : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        print(other.gameObject);
         _rb.velocity = Vector3.zero;
         _rb.angularVelocity = Vector3.zero;
     }

@@ -14,15 +14,14 @@ public class WallRunningRigidbody : MonoBehaviour
     public float WallDistanceDetection = 1f;
     public LayerMask RunnableWallLayer;
     private float _elapsedTime = 0f;
-    public GameObject orientation;
-    
+    public bool canWallRun = true;
+
     [Header("Jump From a wall")]
     [Range(5f, 30f)]
     public float JumpForce = 20f;
     [Range(0.5f, 5f)]
     public float JumpPersistance = 2f;
     Vector3 LastWall_normal = Vector3.zero;
-    public GameObject WallOnRun;
     public Vector3 wallForwardRun;
 
     [Header("Wall Run Feedbacks")] 
@@ -55,34 +54,49 @@ public class WallRunningRigidbody : MonoBehaviour
         Motion = transform.forward * v + transform.right * h;
         PostProcessValueManager();
         WallRunFeedbacks();
-        if (WallOnRight || WallOnLeft)
+        if (canWallRun)
         {
-            _rb.useGravity = false;
-            _rb.velocity = Vector3.zero;
-            OnWallRun = true;
-            if(WallOnLeft){
-                
-                transform.eulerAngles = new Vector3(transform.eulerAngles.x,transform.eulerAngles.y,-30);
+            if (WallOnRight || WallOnLeft)
+            {
+                _rb.useGravity = false;
+                _rb.velocity = Vector3.zero;
+                OnWallRun = true;
+                if (WallOnLeft)
+                {
+
+                    transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, -30);
+                }
+                else
+                {
+                    transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 30);
+                }
+
             }
             else
             {
-                transform.eulerAngles = new Vector3(transform.eulerAngles.x,transform.eulerAngles.y,30);
+                _rb.useGravity = true;
+                OnWallRun = false;
             }
-                
         }
         else
         {
             _rb.useGravity = true;
             OnWallRun = false;
         }
+
         if(Input.GetButtonDown("Jump") && LastWall_normal != Vector3.zero && OnWallRun)
         {
-            
+            print("Wall Jump !");
             _rb.AddForce((Vector3.up + LastWall_normal*2).normalized * (JumpForce * 2), ForceMode.Impulse);
             GetComponent<PlayerMovementRigidbody>().Motion = Vector3.zero;
             WallOnLeft = false;
             WallOnRight = false;
+            canWallRun = false;
             StartCoroutine(ReactivateDoubleJump());
+        }
+        else if(OnWallRun)
+        {
+            print(Input.GetButtonDown("Jump") + "Wall normal : " + LastWall_normal + OnWallRun.ToString());
         }
         
         _elapsedTime += Time.deltaTime;
@@ -91,7 +105,7 @@ public class WallRunningRigidbody : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.layer == 9)
+        if(other.gameObject.layer == 9 && canWallRun)
         {
             #region Detect & Assign the wall i walk on
             WallOnRight = Physics.Raycast(this.transform.position, this.transform.right, out RaycastHit RightHit, WallDistanceDetection, RunnableWallLayer.value);
@@ -123,7 +137,6 @@ public class WallRunningRigidbody : MonoBehaviour
     {
         if(other.gameObject.layer == 9)
         {
-            print("Je sors");
             WallOnLeft = false;
             WallOnRight = false;
             GetComponent<MouseLook>().ResetCameraAndBody();
@@ -151,6 +164,7 @@ public class WallRunningRigidbody : MonoBehaviour
     {
         yield return new WaitForSeconds(0.2f);
         GetComponent<PlayerMovementRigidbody>().doubleJump = true;
+        canWallRun = true;
     }
     
     private void PostProcessValueManager()

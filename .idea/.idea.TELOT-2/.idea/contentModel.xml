@@ -736,6 +736,7 @@
         </e>
         <e p="Graphics" t="Include">
           <e p="Shader" t="Include">
+            <e p="BasicsDecals.shader" t="Include" />
             <e p="ShieldtestShader.shader" t="Include" />
           </e>
         </e>
@@ -909,8 +910,12 @@
             </e>
           </e>
           <e p="Level Design" t="Include">
+            <e p="BumperBehavior.cs" t="Include" />
             <e p="CollectiblesManager.cs" t="Include" />
+            <e p="DestroyableWall.cs" t="Include" />
             <e p="ReloadScene.cs" t="Include" />
+            <e p="TeleporterBehavior.cs" t="Include" />
+            <e p="TeleporterData.cs" t="Include" />
           </e>
           <e p="Managers" t="Include">
             <e p="FeedbackManager.cs" t="Include" />
