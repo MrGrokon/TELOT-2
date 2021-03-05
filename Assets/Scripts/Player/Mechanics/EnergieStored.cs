@@ -62,6 +62,7 @@ public class EnergieStored : MonoBehaviour
 
         public void AddEnergie(int ammo)
         {
+            _energieStored = Mathf.Clamp(_energieStored, 0, MaxEnergieStorable);
             _energieStored += ammo;
             _energieStored = Mathf.Clamp(_energieStored, 0, MaxEnergieStorable);
         }

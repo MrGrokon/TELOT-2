@@ -121,8 +121,8 @@ GameObject:
   - component: {fileID: 1544188812562984237}
   - component: {fileID: 8308807594980650275}
   - component: {fileID: -7900705843077656738}
-  - component: {fileID: 6945830922706310441}
   - component: {fileID: 1860506956}
+  - component: {fileID: 6945830922706310441}
   - component: {fileID: 693659680}
   - component: {fileID: 693659682}
   - component: {fileID: 1448301894}
@@ -184,6 +184,30 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &1860506956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544188812562984144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d02a6035675ca7b419129c8990cc3be8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnWallRun: 0
+  WallDistanceDetection: 3
+  RunnableWallLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  orientation: {fileID: 8427309977932703072}
+  JumpForce: 25
+  JumpPersistance: 2
+  WallOnRun: {fileID: 0}
+  wallForwardRun: {x: 0, y: 0, z: 0}
+  interpolationTime: 0
+  fovOnWall: 0
 --- !u!114 &6945830922706310441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,28 +233,6 @@ MonoBehaviour:
   volume: {fileID: 0}
   chromaticLerpTime: 5
   DashParticle: {fileID: 0}
---- !u!114 &1860506956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1544188812562984144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d02a6035675ca7b419129c8990cc3be8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnWallRun: 0
-  WallDistanceDetection: 3
-  RunnableWallLayer:
-    serializedVersion: 2
-    m_Bits: 512
-  orientation: {fileID: 8427309977932703072}
-  JumpForce: 25
-  JumpPersistance: 2
-  WallOnRun: {fileID: 0}
-  wallForwardRun: {x: 0, y: 0, z: 0}
 --- !u!114 &693659680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,6 +250,7 @@ MonoBehaviour:
   ProjectileLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  shieldRemainSlider: {fileID: 0}
 --- !u!114 &693659682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,6 +265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxEnergieStorable: 10
   EnergieFeedback_Text: {fileID: 0}
+  _energiePerShot: 0
   startingEnergie: 0
 --- !u!65 &1448301894
 BoxCollider:
@@ -292,6 +296,7 @@ MonoBehaviour:
     type: 3}
   AmountOfSpread: 10
   shotLocation: {fileID: 0}
+  projectileSpeed: 0
 --- !u!1 &1544188813381312850
 GameObject:
   m_ObjectHideFlags: 0

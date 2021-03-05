@@ -23,7 +23,7 @@ public class PlayerMovementRigidbody : MonoBehaviour
     [Header("Jump Improve Parameters")]
     [SerializeField] private float fallMultiplier;
     [SerializeField] private float lowJumpMultiplier;
-    private bool doubleJump = true;
+    public bool doubleJump = true;
     [Tooltip("Multiplicateur de la force du double saut")]
     [SerializeField] private float dJumpFactor = 1;
     
@@ -113,11 +113,13 @@ public class PlayerMovementRigidbody : MonoBehaviour
     {
         if (onGround)
         {
+            print("Simple jump");
             _rb.AddForce(((transform.up + Motion).normalized + transform.up).normalized * jumpForce, ForceMode.Impulse);
             onGround = false;
         }
         else if (doubleJump && !GetComponent<WallRunningRigidbody>().OnWallRun)
         {
+            print("Double jump");
             _rb.AddForce(((transform.up + Motion).normalized + transform.up).normalized * jumpForce * dJumpFactor, ForceMode.Impulse);
             doubleJump = false;
         }
