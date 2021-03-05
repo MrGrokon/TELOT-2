@@ -39,7 +39,7 @@ public class EnergieStored : MonoBehaviour
             return false;
         }
 
-        public void StoreEnergie(int EnergieQT = 1){
+        public void StoreEnergie(int EnergieQT){
             if(_energieStored + EnergieQT > MaxEnergieStorable){
                 Debug.Log("No more energie storable");
                 _energieStored = MaxEnergieStorable;

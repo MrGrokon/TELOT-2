@@ -2212,6 +2212,10 @@ PrefabInstance:
       propertyPath: shieldRemainSlider
       value: 
       objectReference: {fileID: 1162907516}
+    - target: {fileID: 693659680, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
+      propertyPath: energieStoredPerShot
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 693659682, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
       propertyPath: ammoText
       value: 

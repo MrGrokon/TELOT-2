@@ -16,6 +16,7 @@ public class BlockProjectiles : MonoBehaviour
     private bool Shielding = false;
     private float _elapsedTime = 0f;
     public Slider shieldRemainSlider;
+    public int energieStoredPerShot;
 
     #region Unity Functions
 
@@ -52,7 +53,7 @@ public class BlockProjectiles : MonoBehaviour
                     foreach(var Projectiles in _hits)
                     {
                         Destroy(Projectiles);
-                        _Energie.StoreEnergie();
+                        _Energie.StoreEnergie(energieStoredPerShot);
                     }
                 }
                 else if(_elapsedTime >= TimeToBeActive) 

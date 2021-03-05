@@ -78,7 +78,7 @@ public class WallRunningRigidbody : MonoBehaviour
         if(Input.GetButtonDown("Jump") && LastWall_normal != Vector3.zero && OnWallRun)
         {
             
-            _rb.AddForce((Vector3.up + Motion*2).normalized * (JumpForce * 2), ForceMode.Impulse);
+            _rb.AddForce((Vector3.up + LastWall_normal*2).normalized * (JumpForce * 2), ForceMode.Impulse);
             GetComponent<PlayerMovementRigidbody>().Motion = Vector3.zero;
             WallOnLeft = false;
             WallOnRight = false;
