@@ -56,7 +56,7 @@ public class EnergieStored : MonoBehaviour
         }
 
         public int GetEnergieAmountStocked(){
-            Debug.Log(_energieStored + " Energie Stocked");
+            //Debug.Log(_energieStored + " Energie Stocked");
             return _energieStored;
         }
 

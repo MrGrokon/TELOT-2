@@ -19,10 +19,8 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/ReloadScene.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Unity/Hub/Editor/2019.4.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/InputModules/BaseInput.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerStats/PlayerLife.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/DummyBehavior.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovementRemade/PlayerMovementRigidbody.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -41,13 +39,13 @@
       <option value="$PROJECT_DIR$/Assets/ReloadScene.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Level Design/CollectiblesManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/FeedbackManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Deprecated_Files/ProjectilBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMouvement/MouseLook.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/ProjectEnergie.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovementRemade/PlayerMovementRigidbody.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovementRemade/WallRunningRigidbody.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/EnergieStored.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/BlockProjectiles.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/EnergieStored.cs" />
+      <option value="$PROJECT_DIR$/Assets/Deprecated_Files/ProjectilBehavior.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/ProjectEnergie.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1ohtdW9xSpIGpjT50LXGFp67Yso" />
@@ -117,7 +115,7 @@
       <workItem from="1614806463549" duration="670000" />
       <workItem from="1614812180086" duration="7362000" />
       <workItem from="1614855459222" duration="6472000" />
-      <workItem from="1614954527115" duration="6871000" />
+      <workItem from="1614954527115" duration="7571000" />
     </task>
     <servers />
   </component>
@@ -134,13 +132,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/ProjectEnergie.cs</url>
-          <line>66</line>
+          <line>64</line>
           <properties documentPath="C:\Users\starf\Documents\TELOT\TELOT-2\Assets\Scripts\Player\Mechanics\ProjectEnergie.cs" initialLine="40" containingFunctionPresentation="method 'ShootProcedure'">
             <startOffsets>
-              <option value="1778" />
+              <option value="1780" />
             </startOffsets>
             <endOffsets>
-              <option value="1908" />
+              <option value="1910" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />

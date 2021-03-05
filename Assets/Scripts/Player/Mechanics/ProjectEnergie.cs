@@ -25,7 +25,7 @@ public class ProjectEnergie : MonoBehaviour
 
         private void Update() {
             if(Input.GetButtonDown("Fire1") && _Energie.HasEnergieStored()){
-                Debug.Log("Shoot");
+                //Debug.Log("Shoot");
                 if(_Energie.GetEnergieAmountStocked() >= _Energie._energiePerShot)
                     StartCoroutine(ShootProcedure_Shootgun(_Energie._energiePerShot));
                 else
@@ -51,16 +51,14 @@ public class ProjectEnergie : MonoBehaviour
                 GameObject _proj = Instantiate(Projectil_Object, shotLocation.position, Spread);
                 _proj.GetComponent<ProjectilBehavior>().SetSpeed(projectileSpeed);
                 Debug.DrawRay(shotLocation.position, _proj.transform.forward * shotDistance, Color.red, Mathf.Infinity);
-                if (Physics.Raycast(shotLocation.position, _proj.transform.forward, out RaycastHit hit,shotDistance))
+                /*if (Physics.Raycast(shotLocation.position, _proj.transform.forward, out RaycastHit hit,shotDistance))
                 {
                     if (hit.transform.CompareTag("Ennemy"))
                     {
-                        Destroy(hit.transform.gameObject);
-                        Destroy(_proj.gameObject);
                         ObjectReferencer.Instance.Avatar_Object.GetComponent<ProjectEnergie>().hitMarker.gameObject
                             .SetActive(true);
                     }
-                }
+                }*/
             }
 
             _Energie.SpendEnergie(_Energie._energiePerShot);
@@ -74,16 +72,14 @@ public class ProjectEnergie : MonoBehaviour
                 Quaternion Spread = Quaternion.Euler(Camera.main.transform.rotation.eulerAngles + new Vector3( (Random.Range(-AmountOfSpread, AmountOfSpread)), (Random.Range(-AmountOfSpread, AmountOfSpread)), 0f));
                 GameObject _proj = Instantiate(Projectil_Object, shotLocation.position, Spread);
                 _proj.GetComponent<ProjectilBehavior>().SetSpeed(projectileSpeed);
-                if (Physics.Raycast(shotLocation.position, _proj.transform.forward, out RaycastHit hit,shotDistance))
+                /*if (Physics.Raycast(shotLocation.position, _proj.transform.forward, out RaycastHit hit,shotDistance))
                 {
                     if (hit.transform.CompareTag("Ennemy"))
                     {
-                        Destroy(hit.transform.gameObject);
-                        Destroy(_proj.gameObject);
                         ObjectReferencer.Instance.Avatar_Object.GetComponent<ProjectEnergie>().hitMarker.gameObject
                             .SetActive(true);
                     }
-                }
+                }*/
             }
 
             _Energie.SpendEnergie(_Energie.GetEnergieAmountStocked());
