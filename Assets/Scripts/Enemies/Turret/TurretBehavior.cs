@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurretBehavior : MonoBehaviour
+public class TurretBehavior : MonsterBehavior
 {
     enum State
     {
@@ -25,7 +25,7 @@ public class TurretBehavior : MonoBehaviour
     public float distanceToPlayer;
 
     // Update is called once per frame
-    void Update()
+    override public void Update()
     {
         if (Vector3.Distance(ObjectReferencer.Instance.Avatar_Object.transform.position , transform.position) <= attackDistance)
         {

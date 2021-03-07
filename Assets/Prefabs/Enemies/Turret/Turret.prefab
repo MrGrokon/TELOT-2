@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 457903714}
   m_Layer: 0
   m_Name: Turret
-  m_TagString: Untagged
+  m_TagString: Ennemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -201,6 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c63c26765d6c4f7687c79420b5ccf9d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartHealth: 100
   projectilePrefab: {fileID: 6820640431255633222, guid: f6ec28c2b200c1149891856f596282f7,
     type: 3}
   projectileThrower: {fileID: 2727038761024645114}

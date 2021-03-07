@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MonsterBehavior : MonoBehaviour
 {
+    [Header("Health Parameters")]
     [Range(1, 1000)]
     public int StartHealth = 100;
 
@@ -16,6 +17,7 @@ public class MonsterBehavior : MonoBehaviour
 
         virtual public void Update() {
             // base update shits
+            Debug.Log("update from Monsterbehavior");
         }
     #endregion
     
@@ -40,6 +42,7 @@ public class MonsterBehavior : MonoBehaviour
         }
 
         void Die(){
+            Destroy(this.gameObject);
             // dying feedbacks
         }
     #endregion
