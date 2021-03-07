@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnergieStored : MonoBehaviour
 {
-    [Range(3, 30)]
+    [Range(3, 500)]
     public int MaxEnergieStorable = 5;
     public UnityEngine.UI.Text EnergieFeedback_Text;
 
@@ -39,7 +39,7 @@ public class EnergieStored : MonoBehaviour
             return false;
         }
 
-        public void StoreEnergie(int EnergieQT = 1){
+        public void StoreEnergie(int EnergieQT){
             if(_energieStored + EnergieQT > MaxEnergieStorable){
                 Debug.Log("No more energie storable");
                 _energieStored = MaxEnergieStorable;
@@ -56,7 +56,7 @@ public class EnergieStored : MonoBehaviour
         }
 
         public int GetEnergieAmountStocked(){
-            Debug.Log(_energieStored + " Energie Stocked");
+            //Debug.Log(_energieStored + " Energie Stocked");
             return _energieStored;
         }
 

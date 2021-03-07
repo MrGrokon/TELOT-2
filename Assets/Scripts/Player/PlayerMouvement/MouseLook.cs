@@ -34,13 +34,14 @@ public class MouseLook : MonoBehaviour
         X_Rotation = Mathf.Clamp(X_Rotation, -70f, 70f);
 
         Z_Rotation += _mouseX;
-
+    
 
             //Apply rotations
         if (!GetComponent<WallRunningRigidbody>().OnWallRun)
         {
             PlayerView.localRotation = Quaternion.Euler(X_Rotation, 0f, 0);
             PlayerBody.Rotate(this.transform.up * _mouseX);
+            PlayerBody.eulerAngles = new Vector3(0, PlayerBody.eulerAngles.y, 0);
         }
         else
         {
@@ -53,6 +54,7 @@ public class MouseLook : MonoBehaviour
     public void ResetCameraAndBody()
     {
         PlayerBody.eulerAngles = new Vector3(PlayerView.eulerAngles.x, PlayerView.eulerAngles.y,0);
+        PlayerView.rotation = Quaternion.identity;
         locked = false;
     }
 
