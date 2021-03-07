@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8275618997033180346}
   - component: {fileID: 1272592009734626840}
+  - component: {fileID: 2279667473138099983}
   m_Layer: 0
   m_Name: Teleporter
   m_TagString: Untagged
@@ -47,7 +48,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OtherSide: {fileID: 0}
-  TP_Point: {fileID: 0}
+--- !u!114 &2279667473138099983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8275618997033180292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 866654c0eb8e67e4daa323f58dd496da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NameOfParent: --ENV--
 --- !u!1 &8275618997954231371
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,7 +277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9115f062602874a4e9c1db054908db5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OtherSide: {fileID: 0}
+  TimeForTeleporterToReload: 5
 --- !u!1 &8275618998157971926
 GameObject:
   m_ObjectHideFlags: 0
