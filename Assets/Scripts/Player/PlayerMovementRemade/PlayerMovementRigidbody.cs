@@ -104,6 +104,7 @@ public class PlayerMovementRigidbody : MonoBehaviour
             CA.intensity.value = 1f;
             actualChromaticLerpTimeValue = 0;
             DashParticle.Play();
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Dash"); 
         }
     }
 
