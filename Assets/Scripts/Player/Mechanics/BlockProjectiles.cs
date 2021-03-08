@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BlockProjectiles : MonoBehaviour
 {
-    [Range(0.3f, 1.5f)]
+    [Range(0.3f, 5f)]
     public float TimeToBeActive = 0.75f;
     public float ShieldHitboxRange = 1f;
     public LayerMask ProjectileLayerMask;
@@ -12,6 +13,10 @@ public class BlockProjectiles : MonoBehaviour
     private GameObject _Shield_Rendr;
     private Transform _Shield_Pivot;
     private EnergieStored _Energie;
+    private bool Shielding = false;
+    private float _elapsedTime = 0f;
+    public Slider shieldRemainSlider;
+    public int energieStoredPerShot;
 
     #region Unity Functions
 
@@ -26,32 +31,41 @@ public class BlockProjectiles : MonoBehaviour
         }
 
         private void Update() {
-            if(Input.GetButtonDown("Fire2")){
-                StartCoroutine(ActivateShield());
+            ActivateShield();
+            shieldRemainSlider.value = (TimeToBeActive - _elapsedTime) / TimeToBeActive;
+            if(Input.GetButtonDown("Fire2") && !Shielding)
+            {
+                Shielding = true;
+                _elapsedTime = 0;
             }
         }
 
-    #endregion
-
-    #region Coroutines
-        IEnumerator ActivateShield(){
-            float _elapsedTime = 0f;
-            _Shield_Rendr.SetActive(true);
-
-            while(_elapsedTime < TimeToBeActive){
-                _elapsedTime += Time.deltaTime;
-                Collider[] _hits = Physics.OverlapSphere(_Shield_Pivot.position, ShieldHitboxRange, ProjectileLayerMask);
+        private void ActivateShield()
+        {
+            if (Shielding)
+            {
+                if (_elapsedTime < TimeToBeActive)
+                {
+                    _Shield_Rendr.SetActive(true);
+                    _elapsedTime += 1 * Time.deltaTime;
+                    Collider[] _hits = Physics.OverlapSphere(_Shield_Pivot.position, ShieldHitboxRange, ProjectileLayerMask);
                 
-                foreach(var Projectiles in _hits){
-                    Destroy(Projectiles);
-                    _Energie.StoreEnergie();
+                    foreach(var Projectiles in _hits)
+                    {
+                        Destroy(Projectiles);
+                        _Energie.StoreEnergie(energieStoredPerShot);
+                        FMODUnity.RuntimeManager.PlayOneShot("event:/ShieldTanking"); 
+                    }
                 }
-
-                yield return null;
+                else if(_elapsedTime >= TimeToBeActive) 
+                {
+                    Shielding = false;
+                    _Shield_Rendr.SetActive(false); 
+                }
+                
             }
-
-            _Shield_Rendr.SetActive(false);
-            yield return null;
         }
+
     #endregion
+    
 }

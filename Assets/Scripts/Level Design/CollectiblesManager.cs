@@ -29,7 +29,7 @@ public class CollectiblesManager : MonoBehaviour
             {
                 case T.Ammunition:
                     if(other.GetComponent<EnergieStored>().GetEnergieAmountStocked() < other.GetComponent<EnergieStored>().MaxEnergieStorable)
-                        other.GetComponent<EnergieStored>().SetEnergieStored(5);
+                        other.GetComponent<EnergieStored>().AddEnergie(5);
                     break;
                 case T.Health:
                     if(other.GetComponent<PlayerLife>().getLifePoint() < other.GetComponent<PlayerLife>().startingLifePoint)

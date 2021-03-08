@@ -5,11 +5,12 @@ using UnityEngine;
 
 public class EnergieStored : MonoBehaviour
 {
-    [Range(3, 10)]
+    [Range(3, 500)]
     public int MaxEnergieStorable = 5;
     public UnityEngine.UI.Text EnergieFeedback_Text;
 
     private int _energieStored = 0;
+    public int _energiePerShot;
     public int startingEnergie;
 
     #region Unity Functions
@@ -38,7 +39,7 @@ public class EnergieStored : MonoBehaviour
             return false;
         }
 
-        public void StoreEnergie(int EnergieQT = 1){
+        public void StoreEnergie(int EnergieQT){
             if(_energieStored + EnergieQT > MaxEnergieStorable){
                 Debug.Log("No more energie storable");
                 _energieStored = MaxEnergieStorable;
@@ -50,18 +51,19 @@ public class EnergieStored : MonoBehaviour
             }
         }
 
-        public void SpendAllEnergie(){
-            _energieStored = 0;
+        public void SpendEnergie(int energie){
+            _energieStored -= energie;
         }
 
         public int GetEnergieAmountStocked(){
-            Debug.Log(_energieStored + " Energie Stocked");
+            //Debug.Log(_energieStored + " Energie Stocked");
             return _energieStored;
         }
 
-        public void SetEnergieStored(int ammo)
+        public void AddEnergie(int ammo)
         {
-            _energieStored = ammo;
+            _energieStored = Mathf.Clamp(_energieStored, 0, MaxEnergieStorable);
+            _energieStored += ammo;
             _energieStored = Mathf.Clamp(_energieStored, 0, MaxEnergieStorable);
         }
     #endregion

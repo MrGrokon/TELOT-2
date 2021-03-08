@@ -734,9 +734,9 @@
           <e p="Weapon.cs" t="Include" />
           <e p="WeaponHandlingSystem.cs" t="Include" />
         </e>
-        <e p="DummyBehavior.cs" t="Include" />
         <e p="Graphics" t="Include">
           <e p="Shader" t="Include">
+            <e p="BasicsDecals.shader" t="Include" />
             <e p="ShieldtestShader.shader" t="Include" />
           </e>
         </e>
@@ -900,21 +900,30 @@
             </e>
           </e>
         </e>
-        <e p="ReloadScene.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="Enemies" t="Include">
+            <e p="DummyBehavior.cs" t="Include" />
             <e p="EnemieProjectileBehavior.cs" t="Include" />
+            <e p="EnemyInheritence" t="Include">
+              <e p="MonsterBehavior.cs" t="Include" />
+            </e>
             <e p="Turret" t="Include">
               <e p="Turret.cs" t="Include" />
               <e p="TurretBehavior.cs" t="Include" />
             </e>
           </e>
           <e p="Level Design" t="Include">
+            <e p="BumperBehavior.cs" t="Include" />
             <e p="CollectiblesManager.cs" t="Include" />
+            <e p="DestroyableWall.cs" t="Include" />
+            <e p="ReloadScene.cs" t="Include" />
+            <e p="TeleporterBehavior.cs" t="Include" />
+            <e p="TeleporterData.cs" t="Include" />
           </e>
           <e p="Managers" t="Include">
             <e p="FeedbackManager.cs" t="Include" />
             <e p="ObjectReferencer.cs" t="Include" />
+            <e p="StartAsChildOf.cs" t="Include" />
           </e>
           <e p="Player" t="Include">
             <e p="Mechanics" t="Include">
