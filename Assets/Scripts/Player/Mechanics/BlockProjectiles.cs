@@ -54,6 +54,7 @@ public class BlockProjectiles : MonoBehaviour
                     {
                         Destroy(Projectiles);
                         _Energie.StoreEnergie(energieStoredPerShot);
+                        FMODUnity.RuntimeManager.PlayOneShot("event:/ShieldTanking"); 
                     }
                 }
                 else if(_elapsedTime >= TimeToBeActive) 

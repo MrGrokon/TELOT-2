@@ -904,6 +904,9 @@
           <e p="Enemies" t="Include">
             <e p="DummyBehavior.cs" t="Include" />
             <e p="EnemieProjectileBehavior.cs" t="Include" />
+            <e p="EnemyInheritence" t="Include">
+              <e p="MonsterBehavior.cs" t="Include" />
+            </e>
             <e p="Turret" t="Include">
               <e p="Turret.cs" t="Include" />
               <e p="TurretBehavior.cs" t="Include" />
@@ -920,6 +923,7 @@
           <e p="Managers" t="Include">
             <e p="FeedbackManager.cs" t="Include" />
             <e p="ObjectReferencer.cs" t="Include" />
+            <e p="StartAsChildOf.cs" t="Include" />
           </e>
           <e p="Player" t="Include">
             <e p="Mechanics" t="Include">
