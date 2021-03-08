@@ -44,13 +44,14 @@ public class ProjectEnergie : MonoBehaviour
     #region Coroutines
         IEnumerator ShootProcedure_Shootgun(int _nmbOfPellet){
             Debug.Log("shoot " + _nmbOfPellet + " pellets");
-            
+            FMODUnity.RuntimeManager.PlayOneShot("event:/PrimaryShot");
             for (int i = 0; i < _nmbOfPellet; i++)
             {
                 Quaternion Spread = Quaternion.Euler(Camera.main.transform.rotation.eulerAngles + new Vector3( (Random.Range(-AmountOfSpread, AmountOfSpread)), (Random.Range(-AmountOfSpread, AmountOfSpread)), 0f));
                 GameObject _proj = Instantiate(Projectil_Object, shotLocation.position, Spread);
                 _proj.GetComponent<ProjectilBehavior>().SetSpeed(projectileSpeed);
                 Debug.DrawRay(shotLocation.position, _proj.transform.forward * shotDistance, Color.red, Mathf.Infinity);
+                
                 /*if (Physics.Raycast(shotLocation.position, _proj.transform.forward, out RaycastHit hit,shotDistance))
                 {
                     if (hit.transform.CompareTag("Ennemy"))
@@ -67,6 +68,7 @@ public class ProjectEnergie : MonoBehaviour
 
         IEnumerator ShootProcedure_All(int _nmbOfPellet)
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/SecondaryShot");
             for (int i = 0; i < _nmbOfPellet; i++)
             {
                 Quaternion Spread = Quaternion.Euler(Camera.main.transform.rotation.eulerAngles + new Vector3( (Random.Range(-AmountOfSpread, AmountOfSpread)), (Random.Range(-AmountOfSpread, AmountOfSpread)), 0f));
