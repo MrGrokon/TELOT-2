@@ -42,7 +42,6 @@ public class BlockProjectiles : MonoBehaviour
             if(Input.GetButtonDown("Fire2") && !Shielding)
             {
                 Shielding = true;
-                _elapsedTime = 0;
                 StartCoroutine(ShieldSoundManager());
             }
         }
@@ -56,8 +55,22 @@ public class BlockProjectiles : MonoBehaviour
                     _Shield_Rendr.SetActive(true);
                     _elapsedTime += 1 * Time.deltaTime;
                     Collider[] _hits = Physics.OverlapSphere(_Shield_Pivot.position, ShieldHitboxRange, ProjectileLayerMask);
+                    Collider[] _hitsR = Physics.OverlapSphere(transform.position + transform.right, ShieldHitboxRange, ProjectileLayerMask);
+                    Collider[] _hitsL = Physics.OverlapSphere(transform.position - transform.right, ShieldHitboxRange, ProjectileLayerMask);
                 
                     foreach(var Projectiles in _hits)
+                    {
+                        Destroy(Projectiles);
+                        _Energie.StoreEnergie(energieStoredPerShot);
+                        FMODUnity.RuntimeManager.PlayOneShot("event:/Shield/ShieldTanking"); 
+                    }
+                    foreach(var Projectiles in _hitsR)
+                    {
+                        Destroy(Projectiles);
+                        _Energie.StoreEnergie(energieStoredPerShot);
+                        FMODUnity.RuntimeManager.PlayOneShot("event:/Shield/ShieldTanking"); 
+                    }
+                    foreach(var Projectiles in _hitsL)
                     {
                         Destroy(Projectiles);
                         _Energie.StoreEnergie(energieStoredPerShot);
@@ -70,6 +83,7 @@ public class BlockProjectiles : MonoBehaviour
                     _Shield_Rendr.SetActive(false);
                     shieldIdle.stop(STOP_MODE.ALLOWFADEOUT);
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Shield/ShieldOff", transform.position);
+                    _elapsedTime = 0;
                 }
                 
             }
