@@ -33,7 +33,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Feedbacks/FeedbackManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMouvement/PlayerMovement.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/ObjectReferencer.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemieProjectileBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/DummyBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/ReloadScene.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Level Design/CollectiblesManager.cs" />
@@ -47,6 +46,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovementRemade/PlayerMovementRigidbody.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Turret/TurretBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/BlockProjectiles.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemieProjectileBehavior.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1ohtdW9xSpIGpjT50LXGFp67Yso" />
@@ -123,7 +123,8 @@
       <workItem from="1615213488473" duration="1815000" />
       <workItem from="1615219998325" duration="885000" />
       <workItem from="1615240868067" duration="597000" />
-      <workItem from="1615408025198" duration="742000" />
+      <workItem from="1615408025198" duration="930000" />
+      <workItem from="1615466108401" duration="538000" />
     </task>
     <servers />
   </component>

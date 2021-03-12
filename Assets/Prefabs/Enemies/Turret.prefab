@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2727038760378086190}
   - component: {fileID: 2727038760378086189}
   - component: {fileID: 2727038760378086188}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 2727038760736590165}
   - component: {fileID: 5500672117775073681}
   - component: {fileID: 457903714}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Turret
   m_TagString: Ennemy
   m_Icon: {fileID: 0}
@@ -216,6 +216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartHealth: 100
+  MotionSpeed: 10
   projectilePrefab: {fileID: 6820640431255633222, guid: f6ec28c2b200c1149891856f596282f7,
     type: 3}
   projectileThrower: {fileID: 2727038761024645114}
@@ -233,7 +234,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2727038761024645115}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: ShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

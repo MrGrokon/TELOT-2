@@ -8,6 +8,13 @@ public class ObjectReferencer : MonoBehaviour
 
     public GameObject Avatar_Object;
 
+    #region Enemies Prefabs
+        [Header("Enemy prefabs init by hand")]
+        public GameObject TurretEnemy_prefab;
+        public GameObject DummyEnemy_prefab;
+        public GameObject ProsecutorEnemy_prefab;
+    #endregion
+
     private void Awake() {
         #region Singleton Instance
             if(Instance == null){

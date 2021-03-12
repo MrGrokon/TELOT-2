@@ -44,6 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e820400154e4734f9d325986b072fe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Avatar_Object: {fileID: 0}
+  TurretEnemy_prefab: {fileID: 2727038760736590164, guid: df00fe06c5f36694bb3d1746a6cb6bba,
+    type: 3}
+  DummyEnemy_prefab: {fileID: 5643457821249978844, guid: a406d24ab1956c14a9f3cc0a6b28e181,
+    type: 3}
+  ProsecutorEnemy_prefab: {fileID: 5042234409277400168, guid: 855086c2de7af7c488bbc9853a479357,
+    type: 3}
 --- !u!114 &6509241777085608740
 MonoBehaviour:
   m_ObjectHideFlags: 0

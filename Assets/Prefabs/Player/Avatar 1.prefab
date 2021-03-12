@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &367756284
 Transform:
   m_ObjectHideFlags: 0
@@ -127,6 +127,8 @@ GameObject:
   - component: {fileID: 693659682}
   - component: {fileID: 1448301894}
   - component: {fileID: 5776894925316817838}
+  - component: {fileID: 3996241960248605475}
+  - component: {fileID: 1295042038257403027}
   m_Layer: 0
   m_Name: Avatar 1
   m_TagString: Player
@@ -201,13 +203,15 @@ MonoBehaviour:
   RunnableWallLayer:
     serializedVersion: 2
     m_Bits: 512
-  orientation: {fileID: 8427309977932703072}
-  JumpForce: 25
+  canWallRun: 1
+  JumpForce: 20
   JumpPersistance: 2
-  WallOnRun: {fileID: 0}
   wallForwardRun: {x: 0, y: 0, z: 0}
   interpolationTime: 0
-  fovOnWall: 0
+  fovOnWall: 65
+  Motion: {x: 0, y: 0, z: 0}
+  volume: {fileID: 7190748642292243000}
+  chromaticLerpTime: 0
 --- !u!114 &6945830922706310441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,17 +227,17 @@ MonoBehaviour:
   speed: 35
   dashCD: 1.5
   dashForce: 70
-  jumpForce: 25
-  airControl: 1
+  jumpForce: 35
+  airControl: 0.4
   Motion: {x: 0, y: 0, z: 0}
   onGround: 1
-  fallMultiplier: 2.5
-  lowJumpMultiplier: 2
+  fallMultiplier: 2
+  lowJumpMultiplier: 1.5
   doubleJump: 1
   dJumpFactor: 1
-  volume: {fileID: 0}
-  chromaticLerpTime: 5
-  DashParticle: {fileID: 0}
+  volume: {fileID: 7190748642292243000}
+  chromaticLerpTime: 2
+  DashParticle: {fileID: 2973719376332865277}
 --- !u!114 &693659680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,12 +250,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9379595946a87cc4b8e9759808ca63c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeToBeActive: 0.75
-  ShieldHitboxRange: 1
+  TimeToBeActive: 2
+  ShieldHitboxRange: 3
   ProjectileLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4096
   shieldRemainSlider: {fileID: 0}
+  energieStoredPerShot: 5
 --- !u!114 &693659682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,10 +269,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccad118127313a14a84f4161b6997cc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxEnergieStorable: 10
+  MaxEnergieStorable: 500
   EnergieFeedback_Text: {fileID: 0}
-  _energiePerShot: 0
-  startingEnergie: 0
+  _energiePerShot: 10
+  startingEnergie: 500
 --- !u!65 &1448301894
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -295,10 +300,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Projectil_Object: {fileID: 1980909233911585130, guid: aa3cb4428f0e5a5458a0adf9c17da30a,
     type: 3}
-  AmountOfSpread: 10
+  AmountOfSpread: 5.5
   shotLocation: {fileID: 0}
-  projectileSpeed: 0
+  projectileSpeed: 500
   hitMarker: {fileID: 0}
+  shotDistance: 30
+--- !u!114 &3996241960248605475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544188812562984144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 220bd8b474d53a44b9100c0514faa759, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifePoint: 0
+  startingLifePoint: 100
+  lifeText: {fileID: 0}
+--- !u!114 &1295042038257403027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544188812562984144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e6646ac237bd13489e039688114d26f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1544188813381312850
 GameObject:
   m_ObjectHideFlags: 0
