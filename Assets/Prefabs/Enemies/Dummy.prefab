@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5643457821249978847}
   - component: {fileID: 5643457821249978846}
   - component: {fileID: 600204095}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Dummy
   m_TagString: Ennemy
   m_Icon: {fileID: 0}
@@ -61,6 +61,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartHealth: 100
+  MotionSpeed: 10
 --- !u!65 &5643457821249978846
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -176,6 +177,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pantin
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b03bbed392c0bdc4b897c8ca3581ea20,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b03bbed392c0bdc4b897c8ca3581ea20, type: 3}

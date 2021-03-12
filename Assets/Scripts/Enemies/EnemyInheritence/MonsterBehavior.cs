@@ -8,6 +8,10 @@ public class MonsterBehavior : MonoBehaviour
     [Range(1, 1000)]
     public int StartHealth = 100;
 
+    [Header("Mouvement Parameter")]
+    [Range(1f,100f)]
+    public float MotionSpeed = 10f;
+
     private int _Health;
     
     #region Unity Base Functions
