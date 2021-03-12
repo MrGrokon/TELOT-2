@@ -18,6 +18,7 @@ public class BlockProjectiles : MonoBehaviour
     private float _elapsedTime = 0f;
     public Slider shieldRemainSlider;
     public int energieStoredPerShot;
+    public float shieldEnergy;
 
     private FMOD.Studio.EventInstance shieldIdle;
 
@@ -31,6 +32,7 @@ public class BlockProjectiles : MonoBehaviour
             _Shield_Pivot = GameObject.Find("Shield_Pivot").transform;
             _Shield_Rendr.SetActive(false);
             _Energie = this.GetComponent<EnergieStored>();
+            shieldRemainSlider.value = TimeToBeActive / TimeToBeActive;
             if(_Energie == null){
                 Debug.Log("EnergieStored not defined");
             }
@@ -38,8 +40,19 @@ public class BlockProjectiles : MonoBehaviour
 
         private void Update() {
             ActivateShield();
-            shieldRemainSlider.value = (TimeToBeActive - _elapsedTime) / TimeToBeActive;
-            if(Input.GetButtonDown("Fire2") && !Shielding)
+            
+            if (GetComponent<PlayerMovementRigidbody>().Motion != Vector3.zero)
+            {
+                if(!Shielding)
+                    shieldEnergy += 1 * Time.deltaTime;
+                
+            }
+            else
+            {
+                shieldEnergy -= 1 * Time.deltaTime;
+            }
+            shieldEnergy = Mathf.Clamp(shieldEnergy, 0, TimeToBeActive);
+            if(Input.GetButtonDown("Fire2") && !Shielding && shieldEnergy > 0)
             {
                 Shielding = true;
                 StartCoroutine(ShieldSoundManager());
@@ -48,12 +61,13 @@ public class BlockProjectiles : MonoBehaviour
 
         private void ActivateShield()
         {
+            shieldRemainSlider.value = shieldEnergy / TimeToBeActive;
             if (Shielding)
             {
-                if (_elapsedTime < TimeToBeActive)
+                if (shieldEnergy > 0)
                 {
                     _Shield_Rendr.SetActive(true);
-                    _elapsedTime += 1 * Time.deltaTime;
+                    shieldEnergy -= 1 * Time.deltaTime;
                     Collider[] _hits = Physics.OverlapSphere(_Shield_Pivot.position, ShieldHitboxRange, ProjectileLayerMask);
                     Collider[] _hitsR = Physics.OverlapSphere(transform.position + transform.right, ShieldHitboxRange, ProjectileLayerMask);
                     Collider[] _hitsL = Physics.OverlapSphere(transform.position - transform.right, ShieldHitboxRange, ProjectileLayerMask);
@@ -77,13 +91,13 @@ public class BlockProjectiles : MonoBehaviour
                         FMODUnity.RuntimeManager.PlayOneShot("event:/Shield/ShieldTanking"); 
                     }
                 }
-                else if(_elapsedTime >= TimeToBeActive) 
+                else if(shieldEnergy <= 0) 
                 {
                     Shielding = false;
                     _Shield_Rendr.SetActive(false);
                     shieldIdle.stop(STOP_MODE.ALLOWFADEOUT);
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Shield/ShieldOff", transform.position);
-                    _elapsedTime = 0;
+                    shieldEnergy = 0;
                 }
                 
             }

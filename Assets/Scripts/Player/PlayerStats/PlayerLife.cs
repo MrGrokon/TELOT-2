@@ -15,6 +15,7 @@ public class PlayerLife : MonoBehaviour
     private void Start()
     {
         lifePoint = startingLifePoint;
+        lifeText.text = lifePoint + " / " + startingLifePoint;
     }
 
 
