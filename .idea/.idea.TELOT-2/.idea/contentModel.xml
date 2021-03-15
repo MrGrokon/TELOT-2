@@ -907,6 +907,7 @@
             <e p="EnemyInheritence" t="Include">
               <e p="MonsterBehavior.cs" t="Include" />
             </e>
+            <e p="ProsecutorBehavior.cs" t="Include" />
             <e p="Turret" t="Include">
               <e p="Turret.cs" t="Include" />
               <e p="TurretBehavior.cs" t="Include" />
@@ -925,6 +926,10 @@
             <e p="ObjectReferencer.cs" t="Include" />
             <e p="StartAsChildOf.cs" t="Include" />
           </e>
+          <e p="Navigation" t="Include">
+            <e p="EnemySpawner.cs" t="Include" />
+            <e p="RoomTrigger.cs" t="Include" />
+          </e>
           <e p="Player" t="Include">
             <e p="Mechanics" t="Include">
               <e p="BlockProjectiles.cs" t="Include" />
@@ -941,11 +946,11 @@
             </e>
             <e p="PlayerMovementRemade" t="Include">
               <e p="PlayerMovementRigidbody.cs" t="Include" />
-              <e p="WallRunningRigidbody.cs" t="Include" />
             </e>
             <e p="PlayerStats" t="Include">
               <e p="PlayerLife.cs" t="Include" />
             </e>
+            <e p="WallRunningRigidbody.cs" t="Include" />
           </e>
         </e>
       </e>
