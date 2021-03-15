@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 5042234409277400084}
   - component: {fileID: 5042234409277400171}
   - component: {fileID: 5042234409277400170}
-  - component: {fileID: 5042234409277400169}
+  - component: {fileID: 8275013612617422086}
   m_Layer: 13
   m_Name: Prosecutor
   m_TagString: Ennemy
@@ -188,7 +188,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5042234409277400169
+--- !u!114 &8275013612617422086
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -197,17 +197,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 5042234409277400168}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3da24006c8e63be408c51f8a27379c7b, type: 3}
+  m_Script: {fileID: 11500000, guid: 44f9d06fa31e77a4ba0f019fdfd20ade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   StartHealth: 100
   MotionSpeed: 1
-  DistanceMarginToTarget: 2
-  HeightAmplitudeMul: 3
-  TimeBetweenShoots: 5
-  AttackRange: 30
+  PlayerReachDistance: 50
+  VerticaleAmplitude: 2
+  PerfectDistFromGround: 10
   projectilePrefab: {fileID: 6820640431255633222, guid: f6ec28c2b200c1149891856f596282f7,
     type: 3}
   projectileSpeed: 30
-  NumberOfBulletGenerated: 5
-  AmountOfSpread: 30
+  TimeBetweenShoots: 5
+  EngageDistance: 30

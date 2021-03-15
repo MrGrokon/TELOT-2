@@ -9,7 +9,7 @@ public class MonsterBehavior : MonoBehaviour
     public int StartHealth = 100;
 
     [Header("Mouvement Parameter")]
-    [Range(1f,100f)]
+    [Range(0.1f, 5f)]
     public float MotionSpeed = 10f;
 
     private int _Health;

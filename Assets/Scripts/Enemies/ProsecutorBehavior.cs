@@ -54,7 +54,7 @@ public class ProsecutorBehavior : MonsterBehavior
     void Attack()
     {
         Debug.Log("prosecutor attack");
-        GameObject _proj = Instantiate(projectilePrefab, this.transform.position, Quaternion.identity);
+        GameObject _proj = Instantiate(projectilePrefab, this.transform.position, this.transform.rotation);
         _proj.GetComponent<EnemieProjectileBehavior>().SetSpeed(projectileSpeed);
     }
 }
