@@ -19,6 +19,9 @@ public class BlockProjectiles : MonoBehaviour
     public Slider shieldRemainSlider;
     public int energieStoredPerShot;
     public float shieldEnergy;
+    public bool shieldDepleted = false;
+    public bool AbsorptionByMovement;
+    public float depletationFactor = 1;
 
     private FMOD.Studio.EventInstance shieldIdle;
 
@@ -44,19 +47,39 @@ public class BlockProjectiles : MonoBehaviour
             if (GetComponent<PlayerMovementRigidbody>().Motion != Vector3.zero)
             {
                 if(!Shielding)
-                    shieldEnergy += 1 * Time.deltaTime;
+                    shieldEnergy += 0.5f * Time.deltaTime;
                 
             }
             else
             {
-                shieldEnergy -= 1 * Time.deltaTime;
+                shieldEnergy += 0.1f * Time.deltaTime;
             }
             shieldEnergy = Mathf.Clamp(shieldEnergy, 0, TimeToBeActive);
-            if(Input.GetButtonDown("Fire2") && !Shielding && shieldEnergy > 0)
+            if(Input.GetButtonDown("Fire2") && shieldEnergy > 0 && !shieldDepleted)
             {
-                Shielding = true;
+                Shielding = !Shielding;
                 StartCoroutine(ShieldSoundManager());
+                if (!Shielding)
+                {
+                    Shielding = false;
+                    _Shield_Rendr.SetActive(false);
+                    shieldIdle.stop(STOP_MODE.ALLOWFADEOUT);
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/Shield/ShieldOff", transform.position);
+                }
             }
+
+            if (shieldEnergy >= TimeToBeActive)
+                shieldDepleted = false;
+            if (AbsorptionByMovement)
+            {
+                if (GetComponent<PlayerMovementRigidbody>().Motion != Vector3.zero)
+                    depletationFactor = 1;
+                else
+                {
+                    depletationFactor = 2;
+                }
+            }
+            
         }
 
         private void ActivateShield()
@@ -67,10 +90,10 @@ public class BlockProjectiles : MonoBehaviour
                 if (shieldEnergy > 0)
                 {
                     _Shield_Rendr.SetActive(true);
-                    shieldEnergy -= 1 * Time.deltaTime;
+                    shieldEnergy -= 1 * Time.deltaTime * depletationFactor;
                     Collider[] _hits = Physics.OverlapSphere(_Shield_Pivot.position, ShieldHitboxRange, ProjectileLayerMask);
-                    Collider[] _hitsR = Physics.OverlapSphere(transform.position + transform.right, ShieldHitboxRange, ProjectileLayerMask);
-                    Collider[] _hitsL = Physics.OverlapSphere(transform.position - transform.right, ShieldHitboxRange, ProjectileLayerMask);
+                    /*Collider[] _hitsR = Physics.OverlapSphere(transform.position + transform.right, ShieldHitboxRange, ProjectileLayerMask);
+                    Collider[] _hitsL = Physics.OverlapSphere(transform.position - transform.right, ShieldHitboxRange, ProjectileLayerMask);*/
                 
                     foreach(var Projectiles in _hits)
                     {
@@ -78,7 +101,7 @@ public class BlockProjectiles : MonoBehaviour
                         _Energie.StoreEnergie(energieStoredPerShot);
                         FMODUnity.RuntimeManager.PlayOneShot("event:/Shield/ShieldTanking"); 
                     }
-                    foreach(var Projectiles in _hitsR)
+                   /*foreach(var Projectiles in _hitsR)
                     {
                         Destroy(Projectiles);
                         _Energie.StoreEnergie(energieStoredPerShot);
@@ -89,7 +112,7 @@ public class BlockProjectiles : MonoBehaviour
                         Destroy(Projectiles);
                         _Energie.StoreEnergie(energieStoredPerShot);
                         FMODUnity.RuntimeManager.PlayOneShot("event:/Shield/ShieldTanking"); 
-                    }
+                    }*/
                 }
                 else if(shieldEnergy <= 0) 
                 {
@@ -98,6 +121,7 @@ public class BlockProjectiles : MonoBehaviour
                     shieldIdle.stop(STOP_MODE.ALLOWFADEOUT);
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Shield/ShieldOff", transform.position);
                     shieldEnergy = 0;
+                    shieldDepleted = true;
                 }
                 
             }
