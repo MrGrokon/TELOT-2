@@ -204,8 +204,8 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: FMOD/Fmod_Lib/Fmod_Lib.fspro
-  sourceBankPath: FMOD\Fmod_Lib\Build
+  sourceProjectPath: FMOD/TELOT/TELOT.fspro
+  sourceBankPath: FMOD\TELOT\Build
   SourceBankPathUnformatted: 
   AutomaticEventLoading: 1
   BankLoadType: 0

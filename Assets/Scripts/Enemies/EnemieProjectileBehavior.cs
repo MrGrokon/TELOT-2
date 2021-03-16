@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -32,7 +33,21 @@ public class EnemieProjectileBehavior : MonoBehaviour
         }
         #endregion
     }
+
+    private void FixedUpdate()
+    {
+        Debug.DrawRay(transform.position, transform.forward, Color.red);
+        if (Physics.Raycast(transform.position, Vector3.forward, out RaycastHit hit, 12f))
+        {
+            if (!hit.transform.CompareTag("Player"))
+            {
+                Destroy(transform.gameObject);
+            }
+        }
+    }
+
     #endregion
+    
 
     void OnCollisionEnter(Collision other)
     {

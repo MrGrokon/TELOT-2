@@ -1,8 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurretBehavior : MonoBehaviour
+public class TurretBehavior : MonsterBehavior
 {
     enum State
     {
@@ -24,10 +25,17 @@ public class TurretBehavior : MonoBehaviour
     [Header("Debug")]
     public float distanceToPlayer;
 
-    // Update is called once per frame
-    void Update()
+    private GameObject Player;
+
+    private void Start()
     {
-        if (Vector3.Distance(ObjectReferencer.Instance.Avatar_Object.transform.position , transform.position) <= attackDistance)
+        Player = ObjectReferencer.Instance.Avatar_Object;
+    }
+
+    // Update is called once per frame
+    override public void Update()
+    {
+        if (Vector3.Distance(Player.transform.position , transform.position) <= attackDistance)
         {
             SwitchState(State.Attack);
         }
@@ -37,7 +45,7 @@ public class TurretBehavior : MonoBehaviour
             attackCooldown -= 1 * Time.deltaTime;
         }
 
-        distanceToPlayer = Vector3.Distance(ObjectReferencer.Instance.Avatar_Object.transform.position, transform.position);
+        distanceToPlayer = Vector3.Distance(Player.transform.position, transform.position);
 
         UpdateState();
     }
@@ -63,7 +71,7 @@ public class TurretBehavior : MonoBehaviour
         switch (_state)
         {
             case State.Attack:
-                transform.LookAt(ObjectReferencer.Instance.Avatar_Object.transform);
+                transform.LookAt(predictedPosition(Player.transform.position, projectileThrower.transform.position, Player.transform.GetComponent<PlayerMovementRigidbody>().Motion * Player.transform.GetComponent<PlayerMovementRigidbody>().GetSpeed(), ProjectileSpeed));
                 if (attackCooldown <= 0)
                 {
                     Shoot();
@@ -74,9 +82,27 @@ public class TurretBehavior : MonoBehaviour
 
     private void Shoot()
     {
-        var direction = (ObjectReferencer.Instance.Avatar_Object.transform.position - transform.position).normalized;
-        var proj = Instantiate(projectilePrefab, direction * 2 + projectileThrower.transform.position, projectileThrower.transform.rotation);
+        var proj = Instantiate(projectilePrefab, transform.forward + projectileThrower.transform.position, projectileThrower.transform.rotation);
         proj.GetComponent<EnemieProjectileBehavior>().SetSpeed(ProjectileSpeed);
         attackCooldown = attackInterval;
+    }
+
+    private Vector3 predictedPosition(Vector3 targetPosition, Vector3 shooterPosition, Vector3 targetVelocity,
+        float projectileSpeed)
+    {
+        Vector3 displacement = targetPosition - shooterPosition;
+        float targetMoveAngle = Vector3.Angle(-displacement, targetVelocity) * Mathf.Deg2Rad;
+        //if the target is stopping or if it is impossible for the projectile to catch up with the target (Sine Formula)
+        if (targetVelocity.magnitude == 0 || targetVelocity.magnitude > projectileSpeed &&
+            Mathf.Sin(targetMoveAngle) / projectileSpeed > Mathf.Cos(targetMoveAngle) / targetVelocity.magnitude)
+        {
+            Debug.Log("Position prediction is not feasible.");
+            return targetPosition;
+        }
+
+        //also Sine Formula
+        float shootAngle = Mathf.Asin(Mathf.Sin(targetMoveAngle) * targetVelocity.magnitude / projectileSpeed);
+        return targetPosition + targetVelocity * displacement.magnitude /
+            Mathf.Sin(Mathf.PI - targetMoveAngle - shootAngle) * Mathf.Sin(shootAngle) / targetVelocity.magnitude;
     }
 }

@@ -47,6 +47,7 @@ public class PlayerLife : MonoBehaviour
         {
             Destroy(other.gameObject);
             lifePoint -= other.transform.GetComponent<EnemieProjectileBehavior>().getDammage();
+            FMODUnity.RuntimeManager.PlayOneShot("event:/PlayerHit"); 
         }
     }
 }

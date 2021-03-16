@@ -104,6 +104,7 @@ public class PlayerMovementRigidbody : MonoBehaviour
             CA.intensity.value = 1f;
             actualChromaticLerpTimeValue = 0;
             DashParticle.Play();
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Movement/Dash"); 
         }
     }
 
@@ -114,6 +115,7 @@ public class PlayerMovementRigidbody : MonoBehaviour
             print("Simple jump");
             _rb.AddForce((transform.up * 2 + Motion * 2.5f).normalized * jumpForce, ForceMode.Impulse);
             onGround = false;
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Movement/Jump", transform.position);
         }
         else if (doubleJump && !GetComponent<WallRunningRigidbody>().OnWallRun)
         {
@@ -141,6 +143,10 @@ public class PlayerMovementRigidbody : MonoBehaviour
         {
             if (hit.transform.gameObject.layer == 8)
             {
+                if (onGround == false)
+                {
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/Movement/LandOnGround", transform.position);
+                }
                 onGround = true;
                 doubleJump = true;
             }
@@ -164,6 +170,11 @@ public class PlayerMovementRigidbody : MonoBehaviour
     {
         _rb.velocity = Vector3.zero;
         _rb.angularVelocity = Vector3.zero;
+    }
+
+    public float GetSpeed()
+    {
+        return speed;
     }
 
 

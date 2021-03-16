@@ -35,9 +35,9 @@ public class ProjectilBehavior : MonoBehaviour
         {
             if (hit.transform.CompareTag("Ennemy"))
             {
-                Destroy(hit.transform.gameObject);
-                ObjectReferencer.Instance.Avatar_Object.GetComponent<ProjectEnergie>().hitMarker.gameObject
-                    .SetActive(true);
+                //Destroy(hit.transform.gameObject);
+                hit.collider.gameObject.GetComponent<MonsterBehavior>().TakeDamage(10);
+                ObjectReferencer.Instance.Avatar_Object.GetComponent<ProjectEnergie>().hitMarker.gameObject.SetActive(true);
             }
         }
 
