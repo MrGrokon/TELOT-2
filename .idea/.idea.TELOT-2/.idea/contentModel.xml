@@ -953,6 +953,7 @@
             <e p="WallRunningRigidbody.cs" t="Include" />
           </e>
         </e>
+        <e p="SniperBehavior.cs" t="Include" />
       </e>
       <e p="FMODUnity.csproj" t="IncludeRecursive" />
       <e p="FMODUnityEditor.csproj" t="IncludeRecursive" />
