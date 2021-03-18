@@ -18,9 +18,17 @@ public class TurretBehavior : MonsterBehavior
     [Header("AI Properties")]
     [SerializeField] private State _state;
     public float attackInterval;
-    private float attackCooldown;
+    [SerializeField] private float attackCooldown;
     public float attackDistance;
     public float ProjectileSpeed = 50;
+    [Range(2,15)]
+    [Tooltip("Taille de la rafale")]
+    public int burst;
+
+    [Tooltip("Interval de temps entre chaque projectile de la rafale")]
+    [SerializeField] private float burstInterval;
+    private float actualBurstInterval;
+    private bool bursted = true;
 
     [Header("Debug")]
     public float distanceToPlayer;
@@ -35,10 +43,7 @@ public class TurretBehavior : MonsterBehavior
     // Update is called once per frame
     override public void Update()
     {
-        if (Vector3.Distance(Player.transform.position , transform.position) <= attackDistance)
-        {
-            SwitchState(State.Attack);
-        }
+        
 
         if (attackCooldown > 0)
         {
@@ -72,9 +77,15 @@ public class TurretBehavior : MonsterBehavior
         {
             case State.Attack:
                 transform.LookAt(predictedPosition(Player.transform.position, projectileThrower.transform.position, Player.transform.GetComponent<PlayerMovementRigidbody>().Motion * Player.transform.GetComponent<PlayerMovementRigidbody>().GetSpeed(), ProjectileSpeed));
-                if (attackCooldown <= 0)
+                if (attackCooldown <= 0 && bursted)
                 {
                     Shoot();
+                }
+                break;
+            case State.Idle:
+                if (Vector3.Distance(Player.transform.position , transform.position) <= attackDistance)
+                {
+                    SwitchState(State.Attack);
                 }
                 break;
         }
@@ -82,9 +93,7 @@ public class TurretBehavior : MonsterBehavior
 
     private void Shoot()
     {
-        var proj = Instantiate(projectilePrefab, transform.forward + projectileThrower.transform.position, projectileThrower.transform.rotation);
-        proj.GetComponent<EnemieProjectileBehavior>().SetSpeed(ProjectileSpeed);
-        attackCooldown = attackInterval;
+        StartCoroutine(Burst());
     }
 
     private Vector3 predictedPosition(Vector3 targetPosition, Vector3 shooterPosition, Vector3 targetVelocity,
@@ -104,5 +113,18 @@ public class TurretBehavior : MonsterBehavior
         float shootAngle = Mathf.Asin(Mathf.Sin(targetMoveAngle) * targetVelocity.magnitude / projectileSpeed);
         return targetPosition + targetVelocity * displacement.magnitude /
             Mathf.Sin(Mathf.PI - targetMoveAngle - shootAngle) * Mathf.Sin(shootAngle) / targetVelocity.magnitude;
+    }
+
+    IEnumerator Burst()
+    {
+        bursted = false;
+        for (int i = 0; i < burst; i++)
+        {
+            var proj = Instantiate(projectilePrefab, transform.forward + projectileThrower.transform.position, projectileThrower.transform.rotation);
+            proj.GetComponent<EnemieProjectileBehavior>().SetSpeed(ProjectileSpeed);
+            yield return new WaitForSeconds(burstInterval);
+        }
+        attackCooldown = attackInterval;
+        bursted = true;
     }
 }

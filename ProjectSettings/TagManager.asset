@@ -8,6 +8,8 @@ TagManager:
   - PlayerProjectile
   - Ennemy
   - Spawner
+  - Ground
+  - Pillars
   layers:
   - Default
   - TransparentFX
