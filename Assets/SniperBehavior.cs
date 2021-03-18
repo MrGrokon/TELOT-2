@@ -63,6 +63,8 @@ public class SniperBehavior : MonsterBehavior
                 break;
         }
     }
+
+    
     
     private void SwitchState(State newState)
     {
