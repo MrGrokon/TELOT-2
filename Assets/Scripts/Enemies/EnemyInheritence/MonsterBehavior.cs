@@ -47,6 +47,14 @@ public class MonsterBehavior : MonoBehaviour
 
         void Die(){
             Destroy(this.gameObject);
+            GameObject[] triggerlist = GameObject.FindGameObjectsWithTag("RoomTrigger");
+            foreach (var _trigger in triggerlist)
+            {
+                RoomTrigger roomTrigger = _trigger.GetComponent<RoomTrigger>();
+                if(roomTrigger.monsters.Contains(this)){
+                    roomTrigger.monsters.Remove(this);
+                }
+            }
             // dying feedbacks
         }
     #endregion
