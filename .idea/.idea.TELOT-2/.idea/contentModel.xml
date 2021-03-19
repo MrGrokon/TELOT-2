@@ -900,6 +900,7 @@
             </e>
           </e>
         </e>
+        <e p="ResetLineRenderer.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="Enemies" t="Include">
             <e p="DummyBehavior.cs" t="Include" />
@@ -908,6 +909,7 @@
               <e p="MonsterBehavior.cs" t="Include" />
             </e>
             <e p="ProsecutorBehavior.cs" t="Include" />
+            <e p="ProssecutorBehavior_v2.cs" t="Include" />
             <e p="Turret" t="Include">
               <e p="Turret.cs" t="Include" />
               <e p="TurretBehavior.cs" t="Include" />
