@@ -110,20 +110,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartHealth: 100
-  MotionSpeed: 10
-  _NavMeshAgent: {fileID: 0}
-  dammage: 0
-  _state: 0
-  attackInterval: 2
-  attackCooldown: 0
-  attackDistance: 100
-  minimumDistance: 20
-  distance: 0
-  shootFeedback: {fileID: 0}
-  knockbackForce: 40
-  distanceToPlayer: 25
-  nonShootReadyColor: {r: 1, g: 0.24056602, b: 0.24056602, a: 0}
-  shootReadyColor: {r: 0.19339621, g: 1, b: 0.58698666, a: 0}
+  MotionSpeed: 5
+  EnemieProjectile: {fileID: 0}
+  KillZoneDuration: 2
+  TimeToAim: 3
 --- !u!195 &6106855031906571514
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -8,7 +8,8 @@ public class EnemySpawner : MonoBehaviour
     {
         Turret,
         Dummy,
-        Prossecutor
+        Prossecutor,
+        Sniper
     }
 
     public EnemyType MyType;
@@ -28,6 +29,10 @@ public class EnemySpawner : MonoBehaviour
 
             case EnemyType.Prossecutor:
             _enemy = ObjectReferencer.Instance.TurretEnemy_prefab;
+            break;
+
+            case EnemyType.Sniper:
+            _enemy = ObjectReferencer.Instance.SniperEnemy_prefab;
             break;
 
             default:
