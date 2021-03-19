@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MonsterBehavior : MonoBehaviour
 {
@@ -12,16 +13,25 @@ public class MonsterBehavior : MonoBehaviour
     [Range(0.1f, 5f)]
     public float MotionSpeed = 10f;
 
+    public NavMeshAgent _NavMeshAgent;
+
     private int _Health;
+    public float dammage;
     
     #region Unity Base Functions
         public virtual void Awake() {
             _Health = StartHealth;
+            if (GetComponent<NavMeshAgent>())
+            {
+                _NavMeshAgent = GetComponent<NavMeshAgent>();
+                _NavMeshAgent.speed = MotionSpeed;
+            }
+                
+           
         }
 
         virtual public void Update() {
             // base update shits
-            Debug.Log("update from Monsterbehavior");
         }
     #endregion
     
