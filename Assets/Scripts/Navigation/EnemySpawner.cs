@@ -13,7 +13,7 @@ public class EnemySpawner : MonoBehaviour
 
     public EnemyType MyType;
 
-    public void SpawnAnEnemy(){
+    public MonsterBehavior SpawnAnEnemy(){
         GameObject _enemy = null;
 
         switch (MyType)
@@ -36,6 +36,6 @@ public class EnemySpawner : MonoBehaviour
         }
 
         //feedback
-        Instantiate(_enemy, this.transform.position, this.transform.rotation);
+        return Instantiate(_enemy, this.transform.position, this.transform.rotation).GetComponent<MonsterBehavior>();
     }
 }
