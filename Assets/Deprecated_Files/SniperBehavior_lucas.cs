@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SniperBehavior : MonsterBehavior
+public class SniperBehavior_lucas : MonsterBehavior
 {
     [Header("Général Parameters")]
     public EnemieProjectileBehavior EnemieProjectile;
