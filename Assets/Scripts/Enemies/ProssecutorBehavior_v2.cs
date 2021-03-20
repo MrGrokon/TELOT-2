@@ -12,14 +12,17 @@ public class ProssecutorBehavior_v2 : MonsterBehavior
     public float PerfectDistFromGround = 5f;
 
     private float _RandomSeed, _MotionSeed;
+    private bool CanMove = true;
+    private Animator _anim;
 
-    [Header("Shoot Mecaniques Parameters")]
-    public GameObject projectilePrefab;
-    public float projectileSpeed = 30f;
-    public float TimeBetweenShoots = 5f;
-    public float EngageDistance = 30f;
-    private float _elapsedShootTime = 0f;
-    private bool _canShoot = false;
+    [Header("Shockwave Parameters")]
+    public AnimationCurve ShockwaveGrowth;
+    public ShockwaveBehavior ShockwaveObject;
+    public float Shockwave_Duration = 1.5f;
+    public float Shockwave_Distance = 3f;
+    public float ChargingTimeBeforeShockwave = 0.5f;
+
+    private bool ShockwaveIsLaunched = false;
 
     public override void Awake()
     {
@@ -28,6 +31,8 @@ public class ProssecutorBehavior_v2 : MonsterBehavior
         _MotionSeed = Random.Range(0.5f, 1f);
 
         MotionSpeed *= _MotionSeed;
+
+        _anim = this.GetComponent<Animator>();
     }
 
     public override void Update()
@@ -39,43 +44,40 @@ public class ProssecutorBehavior_v2 : MonsterBehavior
         #region Procecutor Movement toward Player
         Vector3 MovementVector = Vector3.zero;
 
-        //if(Vector3.Distance(this.transform.position, ObjectReferencer.Instance.Avatar_Object.transform.position) > PlayerReachDistance){
-            MovementVector = (ObjectReferencer.Instance.Avatar_Object.transform.position - this.transform.position) * MotionSpeed;
-            Debug.DrawRay(this.transform.position, MovementVector, Color.red);
-            if(Physics.Raycast(this.transform.position, MovementVector, out RaycastHit _hit, 3f)){
-                Debug.Log("can't perfom base movement");
-                if(_hit.collider.tag == "Ground"){
-                    MovementVector = Vector3.up * MotionSpeed *4f;
-                }
-                else if(_hit.collider.tag == "Pillars"){
-                    if(_RandomSeed >= 0){
-                        MovementVector = this.transform.right * MotionSpeed;
-                    }
-                    else{
-                        MovementVector = -this.transform.right * MotionSpeed;
-                    }
-                }
-                else if(_hit.collider.tag == "Ennemy"){
-                    Debug.Log("Ennemy in the way");
-                    if(_RandomSeed >= 0){
-                        MovementVector += this.transform.right * MotionSpeed;
-                    }
-                    else{
-                        MovementVector += -this.transform.right * MotionSpeed;
-                    }
+        MovementVector = (ObjectReferencer.Instance.Avatar_Object.transform.position - this.transform.position) * MotionSpeed;
+        Debug.DrawRay(this.transform.position, MovementVector, Color.red);
+        if(Physics.Raycast(this.transform.position, MovementVector, out RaycastHit _hit, 3f)){
+            Debug.Log("can't perfom base movement");
+            if(_hit.collider.tag == "Ground"){
+                MovementVector = Vector3.up * MotionSpeed *4f;
+            }
+            else if(_hit.collider.tag == "Pillars"){
+                if(_RandomSeed >= 0){
+                    MovementVector = this.transform.right * MotionSpeed;
                 }
                 else{
-                    MovementVector = Vector3.zero;
+                    MovementVector = -this.transform.right * MotionSpeed;
                 }
-                
             }
-        //}
+            else if(_hit.collider.tag == "Ennemy"){
+                Debug.Log("Ennemy in the way");
+                if(_RandomSeed >= 0){
+                    MovementVector += this.transform.right * MotionSpeed;
+                }
+                else{
+                    MovementVector += -this.transform.right * MotionSpeed;
+                }
+            }
+            else{
+                MovementVector = Vector3.zero;
+            }                
+        }
 
         float VerticalOssilation = Mathf.Sin(Time.timeSinceLevelLoad * _RandomSeed) * VerticaleAmplitude;
 
         MovementVector.y += VerticalOssilation;
         #endregion
-        
+            
         #region Obstacle Detection
         Physics.Raycast(this.transform.position,Vector3.down, out RaycastHit _hit2 , Mathf.Infinity, LayerMask.GetMask("Ground"));
         if(Vector3.Distance(this.transform.position , _hit2.point) > PerfectDistFromGround){
@@ -83,38 +85,51 @@ public class ProssecutorBehavior_v2 : MonsterBehavior
         }
         else{
             MovementVector += (Vector3.up * MotionSpeed);
-
         }
         #endregion
         
         //Apply motion to Prossecutor
-        this.transform.Translate( MovementVector * Time.deltaTime, Space.World);
-    
-        #region Shoot if clear line of sight
-        if(_canShoot == false){
-            _elapsedShootTime += Time.deltaTime;
-            if(_elapsedShootTime >= (TimeBetweenShoots * _MotionSeed)){
-                _canShoot = true;
-            }
+        if(CanMove){
+            this.transform.Translate( MovementVector * Time.deltaTime, Space.World);
         }
-        else if(_canShoot == true){
-            /*
-            Physics.Raycast(this.transform.position, this.transform.forward, out RaycastHit _shootHit ,EngageDistance);
-            if(_shootHit.collider.tag == "Player"){
-                Shoot();
+
+        #region Shockwave Initialisation
+        if(Vector3.Distance(this.transform.position, ObjectReferencer.Instance.Avatar_Object.transform.position) <= Shockwave_Distance){
+            if(ShockwaveIsLaunched == false){
+                StartCoroutine(ShockwaveAttack());
             }
-            */
-            Shoot();
+            
         }
         #endregion
     }
 
-    void Shoot()
-    {
-        //Debug.Log("prosecutor attack");
-        _canShoot = false;
-        _elapsedShootTime = 0f;
-        GameObject _proj = Instantiate(projectilePrefab, this.transform.position, this.transform.rotation);
-        _proj.GetComponent<EnemieProjectileBehavior>().SetSpeed(projectileSpeed);
+    IEnumerator  ShockwaveAttack(){
+        ShockwaveIsLaunched = true;
+        Debug.Log("Shockwave attack launched");
+        _anim.SetTrigger("PlayerDetected");
+        CanMove = false;
+        float _elapsedTime = 0f;
+
+        while(_elapsedTime < ChargingTimeBeforeShockwave){
+            _elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        _elapsedTime = 0f;
+        _anim.SetTrigger("Shockwave");
+        ShockwaveBehavior _shockwave_obj =  Instantiate(ShockwaveObject, this.transform.position, Quaternion.identity);
+        _shockwave_obj.SetLifeTime(Shockwave_Duration);
+        _shockwave_obj.SetGrowthCurve(ShockwaveGrowth);
+
+        while(_elapsedTime < Shockwave_Duration){
+            _elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        //init the shockwave
+
+        CanMove = true;
+        ShockwaveIsLaunched = false;
+        yield return null;
     }
 }

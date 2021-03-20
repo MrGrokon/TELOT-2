@@ -28,7 +28,7 @@ public class EnemySpawner : MonoBehaviour
             break;
 
             case EnemyType.Prossecutor:
-            _enemy = ObjectReferencer.Instance.TurretEnemy_prefab;
+            _enemy = ObjectReferencer.Instance.ProsecutorEnemy_prefab;
             break;
 
             case EnemyType.Sniper:
