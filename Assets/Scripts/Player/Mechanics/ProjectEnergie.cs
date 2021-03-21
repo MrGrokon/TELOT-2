@@ -13,7 +13,8 @@ public class ProjectEnergie : MonoBehaviour
     private bool _canShoot = true;
     public Transform shotLocation;
     public float projectileSpeed;
-    private RawImage hitMarker;
+    [HideInInspector]
+    public RawImage hitMarker;
     private float timeToHideHit = 0.3f;
     public float shotDistance;
 
