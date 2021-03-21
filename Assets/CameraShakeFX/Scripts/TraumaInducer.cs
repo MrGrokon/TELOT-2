@@ -11,12 +11,12 @@ public class TraumaInducer : MonoBehaviour
     [Tooltip("Maximum distance in which objects are affected by this TraumaInducer")]
     public float Range = 45;
 
-    private IEnumerator Start()
+    public IEnumerator StartScreenShake()
     {
         /* Wait for the specified delay */
         yield return new WaitForSeconds(Delay);
         /* Play all the particle system this object has */
-        PlayParticles();
+        //PlayParticles();
 
         /* Find all gameobjects in the scene and loop through them until we find all the nearvy stress receivers */
         var targets = UnityEngine.Object.FindObjectsOfType<GameObject>();

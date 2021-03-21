@@ -160,6 +160,7 @@ GameObject:
   - component: {fileID: 5776894925316817838}
   - component: {fileID: 3996241960248605475}
   - component: {fileID: 1295042038257403027}
+  - component: {fileID: 1601006270032870396}
   m_Layer: 0
   m_Name: Avatar 1
   m_TagString: Player
@@ -240,7 +241,13 @@ MonoBehaviour:
   wallForwardRun: {x: 0, y: 0, z: 0}
   interpolationTime: 0
   fovOnWall: 65
-  Motion: {x: 0, y: 0, z: 0}
+  GravityOverWallrunTime_curve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  TimeToDetachFromWall: 3
   volume: {fileID: 7190748642292243000}
   chromaticLerpTime: 0
 --- !u!114 &6945830922706310441
@@ -367,6 +374,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e6646ac237bd13489e039688114d26f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1601006270032870396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544188812562984144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47b6b88d425f7234aae309cb9a973743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Delay: 0
+  MaximumStress: 0.4
+  Range: 45
 --- !u!1 &1544188813381312850
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,6 +496,7 @@ GameObject:
   - component: {fileID: 1417848643}
   - component: {fileID: 7190748642292243000}
   - component: {fileID: 1373556021}
+  - component: {fileID: 5109666486642690939}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -631,6 +654,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attenuationObject: {fileID: 0}
   ListenerNumber: -1
+--- !u!114 &5109666486642690939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544188813995310430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1ee1c62c905bb24ea7c9cf3d9d40b56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TraumaExponent: 1
+  MaximumAngularShake: {x: 5, y: 5, z: 5}
+  MaximumTranslationShake: {x: 1.25, y: 1.25, z: 1.25}
 --- !u!1 &1883823195903777957
 GameObject:
   m_ObjectHideFlags: 0
