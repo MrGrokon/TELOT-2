@@ -6,15 +6,19 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class WallRunningRigidbody : MonoBehaviour
 {
-
-    private bool WallOnRight;
-    private bool WallOnLeft;
-    private Collider WallRunnedOn;
-    public bool OnWallRun = false;
+    [Header("Basic Wallrun Parameters")]
+    [Range(1f, 5f)]
     public float WallDistanceDetection = 1f;
     public LayerMask RunnableWallLayer;
     private float _elapsedTime = 0f;
+
+    [HideInInspector]
+    public bool OnWallRun = false;
+    [HideInInspector]
     public bool canWallRun = true;
+    private bool WallOnRight;
+    private bool WallOnLeft;
+    private Collider WallRunnedOn;
 
     [Header("Jump From a wall")]
     [Range(5f, 30f)]
@@ -22,6 +26,7 @@ public class WallRunningRigidbody : MonoBehaviour
     [Range(0.5f, 5f)]
     public float JumpPersistance = 2f;
     Vector3 LastWall_normal = Vector3.zero;
+    [HideInInspector]
     public Vector3 wallForwardRun;
 
     [Header("Wall Run Feedbacks")] 
@@ -31,13 +36,18 @@ public class WallRunningRigidbody : MonoBehaviour
     private float fovNormal;
 
     private Rigidbody _rb;
-    public Vector3 Motion;
+    private Vector3 Motion;
+
+    [Header("Wallrun Gravity")]
+    public AnimationCurve GravityOverWallrunTime_curve;
+    public float TimeToDetachFromWall = 3f;
     
     [Header("Post Processing Parameters")]
     private ChromaticAberration CA;
     public PostProcessVolume volume;
     [SerializeField] private float chromaticLerpTime;
     private float actualChromaticLerpTimeValue;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -59,11 +69,11 @@ public class WallRunningRigidbody : MonoBehaviour
             if (WallOnRight || WallOnLeft)
             {
                 _rb.useGravity = false;
+                //StartCoroutine(LowGravityDrag());
                 _rb.velocity = Vector3.zero;
                 OnWallRun = true;
                 if (WallOnLeft)
                 {
-
                     transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, -30);
                 }
                 else
@@ -75,12 +85,14 @@ public class WallRunningRigidbody : MonoBehaviour
             else
             {
                 _rb.useGravity = true;
+                //StartCoroutine(ResetGravity());
                 OnWallRun = false;
             }
         }
         else
         {
             _rb.useGravity = true;
+            //StartCoroutine(ResetGravity());
             OnWallRun = false;
         }
 
@@ -175,5 +187,24 @@ public class WallRunningRigidbody : MonoBehaviour
             actualChromaticLerpTimeValue += 1 * Time.deltaTime;
         }
     }
+
+    #region Custom Gravity during wallrun
+        IEnumerator LowGravityDrag(){
+            float _elapsedTime = 0f;
+            while(_elapsedTime < TimeToDetachFromWall){
+                _elapsedTime += Time.deltaTime;
+                Physics.gravity = new Vector3(0f, GravityOverWallrunTime_curve.Evaluate(_elapsedTime /TimeToDetachFromWall) * -9.81f , 0f);
+                yield return null;
+            }
+            yield return null;
+            //Physics.gravity 
+        }
+
+        IEnumerator ResetGravity(){
+            StopCoroutine(LowGravityDrag());
+            Physics.gravity = new Vector3(0f, -9.81f, 0f);
+            yield return null;
+        }
+    #endregion
     
 }

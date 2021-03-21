@@ -22,7 +22,6 @@
       <Path>.vscode</Path>
       <Path>FMOD</Path>
       <Path>Library</Path>
-      <Path>Temp</Path>
       <Path>obj</Path>
     </explicitExcludes>
   </component>
