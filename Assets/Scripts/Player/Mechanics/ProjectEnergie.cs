@@ -10,11 +10,13 @@ public class ProjectEnergie : MonoBehaviour
     public float AmountOfSpread = 10f;
 
     private EnergieStored _Energie;
+    private bool _canShoot = true;
     public Transform shotLocation;
     public float projectileSpeed;
     public RawImage hitMarker;
     private float timeToHideHit = 0.3f;
     public float shotDistance;
+
     #region Unity Functions
         private void Awake() {
             _Energie = this.GetComponent<EnergieStored>();
@@ -24,7 +26,7 @@ public class ProjectEnergie : MonoBehaviour
         }
 
         private void Update() {
-            if(Input.GetButtonDown("Fire1") && _Energie.HasEnergieStored()){
+            if(Input.GetButtonDown("Fire1") && _Energie.HasEnergieStored() && _canShoot){
                 //Debug.Log("Shoot");
                 if(_Energie.GetEnergieAmountStocked() >= _Energie._energiePerShot)
                     StartCoroutine(ShootProcedure_Shootgun(_Energie._energiePerShot));
@@ -43,6 +45,8 @@ public class ProjectEnergie : MonoBehaviour
 
     #region Coroutines
         IEnumerator ShootProcedure_Shootgun(int _nmbOfPellet){
+            _canShoot = false;
+            ObjectReferencer.Instance.Crossair_Object.GetComponent<Animator>().SetTrigger("Shoot");
             Debug.Log("shoot " + _nmbOfPellet + " pellets");
             FMODUnity.RuntimeManager.PlayOneShot("event:/Shoot/PrimaryShot");
             for (int i = 0; i < _nmbOfPellet; i++)
@@ -100,6 +104,12 @@ public class ProjectEnergie : MonoBehaviour
                 }
             }
             
+        }
+    #endregion
+
+    #region Reset shooter boolean
+        public void ResetShootBoolean(){
+            _canShoot = true;
         }
     #endregion
 }
