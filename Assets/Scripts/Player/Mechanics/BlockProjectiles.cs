@@ -16,7 +16,7 @@ public class BlockProjectiles : MonoBehaviour
     private EnergieStored _Energie;
     private bool Shielding = false;
     private float _elapsedTime = 0f;
-    public Slider shieldRemainSlider;
+    private Slider shieldRemainSlider;
     public int energieStoredPerShot;
     public float shieldEnergy;
     public bool shieldDepleted = false;
@@ -28,6 +28,8 @@ public class BlockProjectiles : MonoBehaviour
     #region Unity Functions
 
         private void Awake() {
+            shieldRemainSlider = GameObject.Find("Slider").GetComponent<Slider>();
+
             shieldIdle = FMODUnity.RuntimeManager.CreateInstance("event:/Shield/ShieldIdle");
             FMODUnity.RuntimeManager.AttachInstanceToGameObject(shieldIdle, transform,
                 GetComponent<Rigidbody>());

@@ -5131,6 +5131,7 @@ GameObject:
   - component: {fileID: 6675085410029854767}
   - component: {fileID: 903268058956280855}
   - component: {fileID: 903268058956280854}
+  - component: {fileID: 3206320020733258378}
   m_Layer: 0
   m_Name: Avatar 1 1
   m_TagString: Player
@@ -5200,18 +5201,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d02a6035675ca7b419129c8990cc3be8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnWallRun: 0
   WallDistanceDetection: 3
   RunnableWallLayer:
     serializedVersion: 2
     m_Bits: 512
+  OnWallRun: 0
   canWallRun: 1
   JumpForce: 20
   JumpPersistance: 2
   wallForwardRun: {x: 0, y: 0, z: 0}
   interpolationTime: 0
   fovOnWall: 65
-  Motion: {x: 0, y: 0, z: 0}
+  GravityOverWallrunTime_curve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  TimeToDetachFromWall: 3
   volume: {fileID: 8017434594155395513}
   chromaticLerpTime: 0
 --- !u!114 &7849072592557815464
@@ -5259,6 +5266,10 @@ MonoBehaviour:
     m_Bits: 4096
   shieldRemainSlider: {fileID: 0}
   energieStoredPerShot: 5
+  shieldEnergy: 0
+  shieldDepleted: 0
+  AbsorptionByMovement: 0
+  depletationFactor: 1
 --- !u!114 &903268059092126627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5334,6 +5345,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e6646ac237bd13489e039688114d26f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3206320020733258378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866462806510800721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47b6b88d425f7234aae309cb9a973743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Delay: 1
+  MaximumStress: 0.6
+  Range: 45
 --- !u!1 &1866462807209189087
 GameObject:
   m_ObjectHideFlags: 0
