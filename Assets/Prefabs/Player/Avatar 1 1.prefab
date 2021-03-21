@@ -5131,7 +5131,7 @@ GameObject:
   - component: {fileID: 6675085410029854767}
   - component: {fileID: 903268058956280855}
   - component: {fileID: 903268058956280854}
-  - component: {fileID: 3206320020733258378}
+  - component: {fileID: 5986790394738995547}
   m_Layer: 0
   m_Name: Avatar 1 1
   m_TagString: Player
@@ -5264,7 +5264,6 @@ MonoBehaviour:
   ProjectileLayerMask:
     serializedVersion: 2
     m_Bits: 4096
-  shieldRemainSlider: {fileID: 0}
   energieStoredPerShot: 5
   shieldEnergy: 0
   shieldDepleted: 0
@@ -5283,7 +5282,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxEnergieStorable: 500
-  EnergieFeedback_Text: {fileID: 0}
   _energiePerShot: 10
   startingEnergie: 500
 --- !u!65 &903268060451813063
@@ -5332,7 +5330,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifePoint: 0
   startingLifePoint: 100
-  lifeText: {fileID: 0}
 --- !u!114 &903268058956280854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5345,7 +5342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e6646ac237bd13489e039688114d26f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3206320020733258378
+--- !u!114 &5986790394738995547
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5357,8 +5354,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47b6b88d425f7234aae309cb9a973743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Delay: 1
-  MaximumStress: 0.6
+  Delay: 0
+  MaximumStress: 0.4
   Range: 45
 --- !u!1 &1866462807209189087
 GameObject:
@@ -5373,6 +5370,7 @@ GameObject:
   - component: {fileID: 903268060498904258}
   - component: {fileID: 8017434594155395513}
   - component: {fileID: 903268059894662826}
+  - component: {fileID: 587391286362712044}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5530,6 +5528,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attenuationObject: {fileID: 0}
   ListenerNumber: -1
+--- !u!114 &587391286362712044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866462807209189087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1ee1c62c905bb24ea7c9cf3d9d40b56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TraumaExponent: 1
+  MaximumAngularShake: {x: 5, y: 5, z: 5}
+  MaximumTranslationShake: {x: 1.25, y: 1.25, z: 1.25}
 --- !u!1 &1866462807873372883
 GameObject:
   m_ObjectHideFlags: 0
