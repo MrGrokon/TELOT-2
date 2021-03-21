@@ -47,6 +47,8 @@ public class ProjectEnergie : MonoBehaviour
         IEnumerator ShootProcedure_Shootgun(int _nmbOfPellet){
             _canShoot = false;
             ObjectReferencer.Instance.Crossair_Object.GetComponent<Animator>().SetTrigger("Shoot");
+            StartCoroutine(this.GetComponent<TraumaInducer>().StartScreenShake());
+
             Debug.Log("shoot " + _nmbOfPellet + " pellets");
             FMODUnity.RuntimeManager.PlayOneShot("event:/Shoot/PrimaryShot");
             for (int i = 0; i < _nmbOfPellet; i++)
