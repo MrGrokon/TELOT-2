@@ -293,7 +293,6 @@ MonoBehaviour:
   ProjectileLayerMask:
     serializedVersion: 2
     m_Bits: 4096
-  shieldRemainSlider: {fileID: 0}
   energieStoredPerShot: 5
   shieldEnergy: 0
   shieldDepleted: 0
@@ -312,7 +311,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxEnergieStorable: 500
-  EnergieFeedback_Text: {fileID: 0}
   _energiePerShot: 10
   startingEnergie: 500
 --- !u!65 &1448301894
@@ -361,7 +359,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifePoint: 0
   startingLifePoint: 100
-  lifeText: {fileID: 0}
 --- !u!114 &1295042038257403027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,7 +384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Delay: 0
-  MaximumStress: 0.4
+  MaximumStress: 0.15
   Range: 45
 --- !u!1 &1544188813381312850
 GameObject:
