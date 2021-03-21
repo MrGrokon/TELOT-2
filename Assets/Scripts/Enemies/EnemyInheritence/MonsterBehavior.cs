@@ -9,6 +9,9 @@ public class MonsterBehavior : MonoBehaviour
     [Range(1, 1000)]
     public int StartHealth = 100;
 
+    [Header("Weaponery Parameters")]
+    public float dammage;
+
     [Header("Mouvement Parameter")]
     [Range(0.1f, 5f)]
     public float MotionSpeed = 10f;
@@ -16,7 +19,7 @@ public class MonsterBehavior : MonoBehaviour
     public NavMeshAgent _NavMeshAgent;
 
     private int _Health;
-    public float dammage;
+
     
     #region Unity Base Functions
         public virtual void Awake() {
