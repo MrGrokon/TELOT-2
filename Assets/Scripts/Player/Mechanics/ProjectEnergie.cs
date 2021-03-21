@@ -13,7 +13,7 @@ public class ProjectEnergie : MonoBehaviour
     private bool _canShoot = true;
     public Transform shotLocation;
     public float projectileSpeed;
-    public RawImage hitMarker;
+    private RawImage hitMarker;
     private float timeToHideHit = 0.3f;
     public float shotDistance;
 
@@ -23,6 +23,10 @@ public class ProjectEnergie : MonoBehaviour
             if(_Energie == null){
                 Debug.Log("EnergieStored not defined");
             }
+        }
+
+        private void Start() {
+            hitMarker = GameObject.Find("Hitmarker").GetComponent<RawImage>();
         }
 
         private void Update() {
