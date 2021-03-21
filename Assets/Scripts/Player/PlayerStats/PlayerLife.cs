@@ -10,10 +10,11 @@ public class PlayerLife : MonoBehaviour
 
     [SerializeField] private float lifePoint;
     public float startingLifePoint;
-    public Text lifeText;
+    private Text lifeText;
 
     private void Start()
     {
+        lifeText = GameObject.Find("LifeText").GetComponent<UnityEngine.UI.Text>();
         lifePoint = startingLifePoint;
         lifeText.text = lifePoint + " / " + startingLifePoint;
     }

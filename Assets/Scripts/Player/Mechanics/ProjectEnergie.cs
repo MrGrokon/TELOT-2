@@ -13,6 +13,7 @@ public class ProjectEnergie : MonoBehaviour
     private bool _canShoot = true;
     public Transform shotLocation;
     public float projectileSpeed;
+    [HideInInspector]
     public RawImage hitMarker;
     private float timeToHideHit = 0.3f;
     public float shotDistance;
@@ -23,6 +24,10 @@ public class ProjectEnergie : MonoBehaviour
             if(_Energie == null){
                 Debug.Log("EnergieStored not defined");
             }
+        }
+
+        private void Start() {
+            hitMarker = GameObject.Find("Hitmarker").GetComponent<RawImage>();
         }
 
         private void Update() {
@@ -47,6 +52,8 @@ public class ProjectEnergie : MonoBehaviour
         IEnumerator ShootProcedure_Shootgun(int _nmbOfPellet){
             _canShoot = false;
             ObjectReferencer.Instance.Crossair_Object.GetComponent<Animator>().SetTrigger("Shoot");
+            StartCoroutine(this.GetComponent<TraumaInducer>().StartScreenShake());
+
             Debug.Log("shoot " + _nmbOfPellet + " pellets");
             FMODUnity.RuntimeManager.PlayOneShot("event:/Shoot/PrimaryShot");
             for (int i = 0; i < _nmbOfPellet; i++)

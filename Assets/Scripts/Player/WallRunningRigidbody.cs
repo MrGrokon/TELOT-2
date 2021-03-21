@@ -68,8 +68,8 @@ public class WallRunningRigidbody : MonoBehaviour
         {
             if (WallOnRight || WallOnLeft)
             {
-                //_rb.useGravity = false;
-                StartCoroutine(LowGravityDrag());
+                _rb.useGravity = false;
+                //StartCoroutine(LowGravityDrag());
                 _rb.velocity = Vector3.zero;
                 OnWallRun = true;
                 if (WallOnLeft)
@@ -84,15 +84,15 @@ public class WallRunningRigidbody : MonoBehaviour
             }
             else
             {
-                //_rb.useGravity = true;
-                StartCoroutine(ResetGravity());
+                _rb.useGravity = true;
+                //StartCoroutine(ResetGravity());
                 OnWallRun = false;
             }
         }
         else
         {
-            //_rb.useGravity = true;
-            StartCoroutine(ResetGravity());
+            _rb.useGravity = true;
+            //StartCoroutine(ResetGravity());
             OnWallRun = false;
         }
 
