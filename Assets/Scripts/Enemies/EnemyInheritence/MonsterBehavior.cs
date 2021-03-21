@@ -8,6 +8,7 @@ public class MonsterBehavior : MonoBehaviour
     [Header("Health Parameters")]
     [Range(1, 1000)]
     public int StartHealth = 100;
+    private int _Health;
 
     [Header("Weaponery Parameters")]
     public float dammage;
@@ -18,7 +19,7 @@ public class MonsterBehavior : MonoBehaviour
 
     public NavMeshAgent _NavMeshAgent;
 
-    private int _Health;
+    
 
     
     #region Unity Base Functions
@@ -29,8 +30,6 @@ public class MonsterBehavior : MonoBehaviour
                 _NavMeshAgent = GetComponent<NavMeshAgent>();
                 _NavMeshAgent.speed = MotionSpeed;
             }
-                
-           
         }
 
         virtual public void Update() {
