@@ -216,14 +216,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartHealth: 100
-  MotionSpeed: 10
+  MotionSpeed: 5
+  _NavMeshAgent: {fileID: 0}
+  dammage: 0
   projectilePrefab: {fileID: 6820640431255633222, guid: f6ec28c2b200c1149891856f596282f7,
     type: 3}
   projectileThrower: {fileID: 2727038761024645114}
   _state: 0
   attackInterval: 0.4
+  attackCooldown: 0
   attackDistance: 200
   ProjectileSpeed: 160
+  burst: 2
+  burstInterval: 0
   distanceToPlayer: 0
 --- !u!1 &2727038761024645114
 GameObject:

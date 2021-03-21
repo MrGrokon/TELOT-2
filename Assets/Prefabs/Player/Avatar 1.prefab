@@ -229,11 +229,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d02a6035675ca7b419129c8990cc3be8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnWallRun: 0
   WallDistanceDetection: 3
   RunnableWallLayer:
     serializedVersion: 2
     m_Bits: 512
+  OnWallRun: 0
   canWallRun: 1
   JumpForce: 20
   JumpPersistance: 2
@@ -291,6 +291,7 @@ MonoBehaviour:
   shieldEnergy: 0
   shieldDepleted: 0
   AbsorptionByMovement: 0
+  depletationFactor: 1
 --- !u!114 &693659682
 MonoBehaviour:
   m_ObjectHideFlags: 0

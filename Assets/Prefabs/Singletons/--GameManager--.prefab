@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7178928777408411376}
   - component: {fileID: 6069094130225411869}
   - component: {fileID: 6509241777085608740}
+  - component: {fileID: 1752241918816837347}
   m_Layer: 0
   m_Name: --GameManager--
   m_TagString: Untagged
@@ -51,6 +52,8 @@ MonoBehaviour:
     type: 3}
   ProsecutorEnemy_prefab: {fileID: 5042234409277400168, guid: 855086c2de7af7c488bbc9853a479357,
     type: 3}
+  SniperEnemy_prefab: {fileID: 6106855031906571488, guid: f70426cbd8455cc4cb9d20e8843fd701,
+    type: 3}
 --- !u!114 &6509241777085608740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,3 +69,16 @@ MonoBehaviour:
   RotationDegree: 15
   TimeToRotate: 0.5
   ParticuleSystemeDistanceFromPlayer: 5
+--- !u!114 &1752241918816837347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700065792340058860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bbc23a7b5bf93b43a9bd40ac2a6c5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PauseButton: 116
