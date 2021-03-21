@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class CustomPhysic : MonoBehaviour
 {
+    public bool UseBetterJump = true;
     public float GravityForce = 9.81f;
     public float Drag = 0f;
-
+    public float PressedJumpedGravityMultiplier = 0.8f;
     private float BaseGravity;
 
     [HideInInspector]
@@ -14,6 +15,8 @@ public class CustomPhysic : MonoBehaviour
 
     private TriggerManager _States;
     private CharacterController _Controller;
+
+    
 
     private void Awake() {
         BaseGravity = GravityForce;
@@ -34,6 +37,15 @@ public class CustomPhysic : MonoBehaviour
         //Apply drag modifier to velocity value;
         _velocity /= 1 + Drag * Time.deltaTime;
 
+        if(UseBetterJump){
+            if(Input.GetButton("Jump")){
+                _velocity = _velocity * PressedJumpedGravityMultiplier;
+            }
+            if(Input.GetButtonUp("Jump")){
+                _velocity = _velocity / PressedJumpedGravityMultiplier;
+            }
+        }
+
         if(_States.OnGround == true &&  _velocity.y < 0){
             _velocity.y = 0f;
             //Debug.Log("Fall stopped");
@@ -50,4 +62,5 @@ public class CustomPhysic : MonoBehaviour
     public float GetBaseGravity(){
         return BaseGravity;
     }
+    
 }
