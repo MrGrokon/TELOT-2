@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6106855031906571489}
   - component: {fileID: 6106855031906571514}
   - component: {fileID: 6106855031906571515}
+  - component: {fileID: 2125469139541121009}
   m_Layer: 0
   m_Name: Sniper
   m_TagString: Ennemy
@@ -110,10 +111,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartHealth: 100
+  dammage: 0
   MotionSpeed: 5
-  EnemieProjectile: {fileID: 0}
-  KillZoneDuration: 2
-  TimeToAim: 3
+  _NavMeshAgent: {fileID: 0}
+  _state: 0
+  attackInterval: 0
+  attackCooldown: 0
+  attackDistance: 0
+  minimumDistance: 0
+  distance: 0
+  shootFeedback: {fileID: 0}
+  knockbackForce: 15
+  distanceToPlayer: 0
+  nonShootReadyColor: {r: 0, g: 0, b: 0, a: 0}
+  shootReadyColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!195 &6106855031906571514
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -152,3 +163,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &2125469139541121009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6106855031906571488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 866654c0eb8e67e4daa323f58dd496da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NameOfParent: --EnemiesParent--

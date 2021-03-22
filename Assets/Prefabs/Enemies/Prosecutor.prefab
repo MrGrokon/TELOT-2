@@ -251,6 +251,7 @@ GameObject:
   - component: {fileID: 5042234409277400170}
   - component: {fileID: 8275013612617422086}
   - component: {fileID: 7114385191929755580}
+  - component: {fileID: 6404609953106336809}
   m_Layer: 13
   m_Name: Prosecutor
   m_TagString: Ennemy
@@ -402,6 +403,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6404609953106336809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5042234409277400168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 866654c0eb8e67e4daa323f58dd496da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NameOfParent: --EnemiesParent--
 --- !u!1 &5687542056745661227
 GameObject:
   m_ObjectHideFlags: 0
