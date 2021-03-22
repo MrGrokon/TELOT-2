@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ShockwaveBehavior : MonoBehaviour
 {
+    [HideInInspector]
     public AnimationCurve _growthCurve;
 
     private float TimeToGoFullSize = 0f;
