@@ -5,21 +5,41 @@ using UnityEngine.UI;
 
 public class ProjectEnergie : MonoBehaviour
 {
+    [Header("Init by hand")]
     public GameObject Projectil_Object;
+    public Transform shotLocation;
+
+    [Header("General Parameters")]
+    public bool isDebuging = false;
+    private bool _canShoot = true;
+    private EnergieStored _Energie;
+    
     [Range(1f, 30f)]
     public float AmountOfSpread = 10f;
-
-    private EnergieStored _Energie;
-    private bool _canShoot = true;
-    public Transform shotLocation;
+    [Range(30,300)]
+    public int RateOfFire = 60;
+    private float TimeBetweenShootConverted;
     public float projectileSpeed;
+    
     [HideInInspector]
     public RawImage hitMarker;
     private float timeToHideHit = 0.3f;
     public float shotDistance;
 
+    [Header("Feedbacks Parameters")]
+    public CrossairFeedbackType FeedbackType = CrossairFeedbackType.Expend;
+    [Tooltip("will define the strick value of the size of my crossair")]
+    public AnimationCurve CrossairScale_Curve;
+
+    public enum CrossairFeedbackType{
+        Expend,
+        ExpendAndRotate
+    }
+
+
     #region Unity Functions
         private void Awake() {
+            TimeBetweenShootConverted = 1/(RateOfFire/60f);
             _Energie = this.GetComponent<EnergieStored>();
             if(_Energie == null){
                 Debug.Log("EnergieStored not defined");
@@ -50,8 +70,9 @@ public class ProjectEnergie : MonoBehaviour
 
     #region Coroutines
         IEnumerator ShootProcedure_Shootgun(int _nmbOfPellet){
-            _canShoot = false;
-            ObjectReferencer.Instance.Crossair_Object.GetComponent<Animator>().SetTrigger("Shoot");
+            //_canShoot = false;
+            //ObjectReferencer.Instance.Crossair_Object.GetComponent<Animator>().SetTrigger("Shoot");
+            StartCoroutine(CrossairFeedbacks(TimeBetweenShootConverted, FeedbackType));
             StartCoroutine(this.GetComponent<TraumaInducer>().StartScreenShake());
 
             Debug.Log("shoot " + _nmbOfPellet + " pellets");
@@ -61,7 +82,9 @@ public class ProjectEnergie : MonoBehaviour
                 Quaternion Spread = Quaternion.Euler(Camera.main.transform.rotation.eulerAngles + new Vector3( (Random.Range(-AmountOfSpread, AmountOfSpread)), (Random.Range(-AmountOfSpread, AmountOfSpread)), 0f));
                 GameObject _proj = Instantiate(Projectil_Object, shotLocation.position, Spread);
                 _proj.GetComponent<ProjectilBehavior>().SetSpeed(projectileSpeed);
-                Debug.DrawRay(shotLocation.position, _proj.transform.forward * shotDistance, Color.red, Mathf.Infinity);
+                if(isDebuging){
+                    Debug.DrawRay(shotLocation.position, _proj.transform.forward * shotDistance, Color.red, Mathf.Infinity);
+                }
                 
                 /*if (Physics.Raycast(shotLocation.position, _proj.transform.forward, out RaycastHit hit,shotDistance))
                 {
@@ -99,6 +122,43 @@ public class ProjectEnergie : MonoBehaviour
             yield return null;
         }
         
+        IEnumerator CrossairFeedbacks(float TimeOfFeedbacks, CrossairFeedbackType _type){
+            float _elapsedTime = 0f;
+            _canShoot = false;
+
+            switch (_type)
+            {
+                case CrossairFeedbackType.Expend:
+                    while(_elapsedTime < TimeOfFeedbacks){
+                        _elapsedTime += Time.deltaTime;
+                        float EstimatedValue = CrossairScale_Curve.Evaluate(_elapsedTime / TimeOfFeedbacks);
+                        ObjectReferencer.Instance.Crossair_Object.transform.localScale = new Vector3(EstimatedValue, EstimatedValue, 0f);
+                        yield return null;
+                    }
+                break;
+
+                case CrossairFeedbackType.ExpendAndRotate:
+                    while(_elapsedTime < TimeOfFeedbacks){
+                        _elapsedTime += Time.deltaTime;
+
+                        float EstimatedValue = CrossairScale_Curve.Evaluate(_elapsedTime / TimeOfFeedbacks);
+                        ObjectReferencer.Instance.Crossair_Object.transform.localScale = new Vector3(EstimatedValue, EstimatedValue, 0f);
+
+                        float RotationValue = Mathf.Lerp(0, 360, _elapsedTime / TimeOfFeedbacks);
+                        ObjectReferencer.Instance.Crossair_Object.transform.rotation = Quaternion.Euler(0f, 0f, RotationValue);
+                        yield return null;
+                    }
+                break;
+
+                default:
+                Debug.Log("Something fucked up in CrossairFeedback");
+                break;
+            }
+            
+            _canShoot = true;
+            yield return null;
+        }
+
         private void HideHit()
         {
             if (ObjectReferencer.Instance.Avatar_Object.GetComponent<ProjectEnergie>().hitMarker.gameObject.activeSelf)
