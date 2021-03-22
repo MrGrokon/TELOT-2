@@ -345,13 +345,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44f9d06fa31e77a4ba0f019fdfd20ade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartHealth: 100
+  StartHealth: 35
+  dammage: 5
   MotionSpeed: 1
   _NavMeshAgent: {fileID: 0}
-  dammage: 0
   PlayerReachDistance: 50
-  VerticaleAmplitude: 2.5
-  PerfectDistFromGround: 10
+  VerticaleAmplitude: 4
+  HorizontalAmplitude: 5
+  DistanceToSurface: 1
+  ImpulseForce: 25
   ShockwaveGrowth:
     serializedVersion: 2
     m_Curve:

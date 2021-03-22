@@ -104,7 +104,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1460570176}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 2.02}
+  m_LocalPosition: {x: 0, y: 0, z: 0.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1544188813995310427}
@@ -340,11 +340,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Projectil_Object: {fileID: 1980909233911585130, guid: aa3cb4428f0e5a5458a0adf9c17da30a,
     type: 3}
-  AmountOfSpread: 5.5
   shotLocation: {fileID: 1460570177}
+  isDebuging: 0
+  AmountOfSpread: 5.5
+  RateOfFire: 60
   projectileSpeed: 500
   hitMarker: {fileID: 0}
   shotDistance: 30
+  FeedbackType: 0
+  CrossairScale_Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.43840414
+    - serializedVersion: 3
+      time: 0.25049913
+      value: 2.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.097415335
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0.0105504785
+      outSlope: 0.0105504785
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.15929425
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &3996241960248605475
 MonoBehaviour:
   m_ObjectHideFlags: 0
