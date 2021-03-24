@@ -42,10 +42,6 @@ public class FeedbackManager : MonoBehaviour
         if(Camera_Transform == null){
             Debug.Log("Main camera not found");
         }
-        Avatar_Object = ObjectReferencer.Instance.Avatar_Object;
-        if(Avatar_Object == null){
-            Debug.Log("Avatar object not found");
-        }
 
        /* PS_Pivot = GameObject.Find("DashParticule_Pivot").transform;
         PS_Dash = GameObject.Find("PS_Dash").GetComponent<ParticleSystem>();*/
@@ -107,7 +103,7 @@ public class FeedbackManager : MonoBehaviour
         float _elapsedTime = 0f;
         //PS_Dash.time = _DashTime;
         //
-        PS_Dash.transform.position = (Avatar_Object.transform.position + _DashDir) * ParticuleSystemeDistanceFromPlayer;
+        PS_Dash.transform.position = (ObjectReferencer.Instance.Avatar_Object.transform.position + _DashDir) * ParticuleSystemeDistanceFromPlayer;
         PS_Dash.transform.LookAt(Avatar_Object.transform);
 
         PS_Dash.Play();

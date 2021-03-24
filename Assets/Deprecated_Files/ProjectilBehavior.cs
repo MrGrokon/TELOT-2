@@ -53,7 +53,7 @@ public class ProjectilBehavior : MonoBehaviour
     {
         if (other.transform.CompareTag("Ennemy"))
         {
-            Destroy(other.gameObject);
+            //Destroy(other.gameObject);
         }
         Destroy(gameObject);
         print("Touché qq chose");

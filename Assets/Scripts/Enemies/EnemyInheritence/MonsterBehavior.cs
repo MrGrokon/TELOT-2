@@ -1,23 +1,39 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MonsterBehavior : MonoBehaviour
 {
     [Header("Health Parameters")]
     [Range(1, 1000)]
     public int StartHealth = 100;
-
     private int _Health;
+
+    [Header("Weaponery Parameters")]
+    public int dammage;
+
+    [Header("Mouvement Parameter")]
+    [Range(0.1f, 5f)]
+    public float MotionSpeed = 10f;
+
+    public NavMeshAgent _NavMeshAgent;
+
+    
+
     
     #region Unity Base Functions
         public virtual void Awake() {
             _Health = StartHealth;
+            if (GetComponent<NavMeshAgent>())
+            {
+                _NavMeshAgent = GetComponent<NavMeshAgent>();
+                _NavMeshAgent.speed = MotionSpeed;
+            }
         }
 
         virtual public void Update() {
             // base update shits
-            Debug.Log("update from Monsterbehavior");
         }
     #endregion
     
@@ -43,6 +59,14 @@ public class MonsterBehavior : MonoBehaviour
 
         void Die(){
             Destroy(this.gameObject);
+            GameObject[] triggerlist = GameObject.FindGameObjectsWithTag("RoomTrigger");
+            foreach (var _trigger in triggerlist)
+            {
+                RoomTrigger roomTrigger = _trigger.GetComponent<RoomTrigger>();
+                if(roomTrigger.monsters.Contains(this)){
+                    roomTrigger.monsters.Remove(this);
+                }
+            }
             // dying feedbacks
         }
     #endregion
