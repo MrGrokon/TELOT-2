@@ -125,7 +125,7 @@ public class SniperBehavior : MonsterBehavior
         {
             if (hit.transform.CompareTag("Player"))
             {
-                Player.GetComponent<PlayerLife>().setDammage(dammage);
+                Player.GetComponent<PlayerLife>().TakeDammage(dammage);
                 Player.GetComponent<Rigidbody>().AddForce((Player.transform.position - transform.position).normalized * knockbackForce, ForceMode.Impulse);
             }
             else
