@@ -49,7 +49,7 @@ public class EnemieProjectileBehavior : MonoBehaviour
     #endregion
     
 
-    void OnCollisionEnter(Collision other)
+    void OnTriggerEnter(Collider other)
     {
         //Debug.Log("collide with " + other.gameObject.name);
         Destroy(gameObject);

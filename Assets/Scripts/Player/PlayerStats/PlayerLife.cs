@@ -44,7 +44,7 @@ public class PlayerLife : MonoBehaviour
         lifePoint = Mathf.Clamp(lifePoint, 0, 100);
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.transform.CompareTag("EnemyProjectile"))
         {
