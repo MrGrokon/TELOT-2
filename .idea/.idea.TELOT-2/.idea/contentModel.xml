@@ -746,6 +746,9 @@
         <e p="Graphics" t="Include">
           <e p="Shader" t="Include">
             <e p="BasicsDecals.shader" t="Include" />
+            <e p="Prosecutor_FireSFX" t="Include">
+              <e p="FireEffect_v1.shader" t="Include" />
+            </e>
             <e p="ShieldtestShader.shader" t="Include" />
           </e>
         </e>
@@ -967,6 +970,7 @@
             <e p="WallRunningRigidbody.cs" t="Include" />
           </e>
           <e p="UI" t="Include">
+            <e p="HealthFeedbacks.cs" t="Include" />
             <e p="ResetShootBoolean_AnimEvent.cs" t="Include" />
           </e>
         </e>

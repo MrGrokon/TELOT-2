@@ -104,7 +104,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1460570176}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 2.02}
+  m_LocalPosition: {x: 0.28, y: -0.22, z: 0.51}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1544188813995310427}
@@ -263,6 +263,7 @@ MonoBehaviour:
   TimeToDetachFromWall: 3
   volume: {fileID: 7190748642292243000}
   chromaticLerpTime: 0
+  wallRunDebug: {fileID: 0}
 --- !u!114 &6945830922706310441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,7 +277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 45
-  dashCD: 1.5
+  dashCD: 1.1
   dashForce: 70
   jumpForce: 35
   airControl: 0.4
@@ -301,13 +302,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9379595946a87cc4b8e9759808ca63c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeToBeActive: 2
+  TimeToBeActive: 2.5
   ShieldHitboxRange: 3
   ProjectileLayerMask:
     serializedVersion: 2
     m_Bits: 4096
-  energieStoredPerShot: 5
-  shieldEnergy: 0
+  energieStoredPerShot: 10
+  shieldEnergy: 2.5
   shieldDepleted: 0
   AbsorptionByMovement: 0
   depletationFactor: 1
@@ -325,7 +326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxEnergieStorable: 500
   _energiePerShot: 10
-  startingEnergie: 500
+  startingEnergie: 50
 --- !u!114 &5776894925316817838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,7 +344,7 @@ MonoBehaviour:
   shotLocation: {fileID: 1460570177}
   isDebuging: 0
   AmountOfSpread: 5.5
-  RateOfFire: 300
+  RateOfFire: 200
   projectileSpeed: 500
   hitMarker: {fileID: 0}
   shotDistance: 30
