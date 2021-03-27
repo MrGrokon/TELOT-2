@@ -6,6 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+<<<<<<< HEAD
     path: Assets/Scenes/Test_LD.unity
     guid: b0dec6ecf6ba61c42904e26eb48501d0
+=======
+    path: Assets/Scenes/SceneManaging_test2.unity
+    guid: 860ecc73698fda54e9bed31226e4a804
+>>>>>>> Lucas-Work
   m_configObjects: {}
