@@ -1806,9 +1806,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Avatar_Object: {fileID: 0}
+  Crossair_Object: {fileID: 0}
   TurretEnemy_prefab: {fileID: 0}
   DummyEnemy_prefab: {fileID: 0}
   ProsecutorEnemy_prefab: {fileID: 0}
+  SniperEnemy_prefab: {fileID: 0}
 --- !u!4 &750799816
 Transform:
   m_ObjectHideFlags: 0
@@ -4736,7 +4738,7 @@ PrefabInstance:
     - target: {fileID: 2727038760736590164, guid: df00fe06c5f36694bb3d1746a6cb6bba,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df00fe06c5f36694bb3d1746a6cb6bba, type: 3}
@@ -5042,6 +5044,61 @@ PrefabInstance:
         type: 3}
       propertyPath: MotionSpeed
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6106855031906571489, guid: f70426cbd8455cc4cb9d20e8843fd701,
+        type: 3}
+      propertyPath: minimumDistance
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6106855031906571489, guid: f70426cbd8455cc4cb9d20e8843fd701,
+        type: 3}
+      propertyPath: attackDistance
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6106855031906571489, guid: f70426cbd8455cc4cb9d20e8843fd701,
+        type: 3}
+      propertyPath: attackCooldown
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6106855031906571489, guid: f70426cbd8455cc4cb9d20e8843fd701,
+        type: 3}
+      propertyPath: attackInterval
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6106855031906571489, guid: f70426cbd8455cc4cb9d20e8843fd701,
+        type: 3}
+      propertyPath: knockbackForce
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6106855031906571489, guid: f70426cbd8455cc4cb9d20e8843fd701,
+        type: 3}
+      propertyPath: nonShootReadyColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6106855031906571489, guid: f70426cbd8455cc4cb9d20e8843fd701,
+        type: 3}
+      propertyPath: nonShootReadyColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6106855031906571489, guid: f70426cbd8455cc4cb9d20e8843fd701,
+        type: 3}
+      propertyPath: nonShootReadyColor.b
+      value: 0.022618055
+      objectReference: {fileID: 0}
+    - target: {fileID: 6106855031906571489, guid: f70426cbd8455cc4cb9d20e8843fd701,
+        type: 3}
+      propertyPath: shootReadyColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6106855031906571489, guid: f70426cbd8455cc4cb9d20e8843fd701,
+        type: 3}
+      propertyPath: shootReadyColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6106855031906571489, guid: f70426cbd8455cc4cb9d20e8843fd701,
+        type: 3}
+      propertyPath: shootReadyColor.b
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6106855031906571493, guid: f70426cbd8455cc4cb9d20e8843fd701,
         type: 3}

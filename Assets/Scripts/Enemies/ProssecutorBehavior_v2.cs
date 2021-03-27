@@ -17,12 +17,16 @@ public class ProssecutorBehavior_v2 : MonsterBehavior
     private Animator _anim;
 
     [Header("Shockwave Parameters")]
+    public float TimeBetweenTwoAttacks = 5f;
     public float ImpulseForce = 25f;
     public AnimationCurve ShockwaveGrowth;
     public ShockwaveBehavior ShockwaveObject;
     public float Shockwave_Duration = 1.5f;
     public float Shockwave_Distance = 3f;
     public float ChargingTimeBeforeShockwave = 0.5f;
+
+    private float TimeSinceLastAttack = 0f;
+    private bool _CanAttack = true;
 
     private bool ShockwaveIsLaunched = false;
 
@@ -107,17 +111,25 @@ public class ProssecutorBehavior_v2 : MonsterBehavior
         }
 
         #region Shockwave Initialisation
-        if(Vector3.Distance(this.transform.position, ObjectReferencer.Instance.Avatar_Object.transform.position) <= Shockwave_Distance){
+        if(Vector3.Distance(this.transform.position, ObjectReferencer.Instance.Avatar_Object.transform.position) <= Shockwave_Distance && _CanAttack){
             if(ShockwaveIsLaunched == false){
                 StartCoroutine(ShockwaveAttack());
             }
-            
+        }
+
+        if(_CanAttack == false){
+            TimeSinceLastAttack += Time.deltaTime;
+            if(TimeSinceLastAttack >= TimeBetweenTwoAttacks){
+                TimeSinceLastAttack = 0f;
+                _CanAttack = true;
+            }
         }
         #endregion
     }
 
     IEnumerator  ShockwaveAttack(){
         ShockwaveIsLaunched = true;
+        _CanAttack = false;
         Debug.Log("Shockwave attack launched");
         _anim.SetTrigger("PlayerDetected");
         CanMove = false;
