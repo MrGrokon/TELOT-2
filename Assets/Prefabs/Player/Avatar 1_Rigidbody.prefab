@@ -343,7 +343,7 @@ MonoBehaviour:
   shotLocation: {fileID: 1460570177}
   isDebuging: 0
   AmountOfSpread: 5.5
-  RateOfFire: 30
+  RateOfFire: 300
   projectileSpeed: 500
   hitMarker: {fileID: 0}
   shotDistance: 30
@@ -353,7 +353,7 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -361,22 +361,22 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.23466721
-      value: 1.0011382
-      inSlope: 0.18429232
-      outSlope: 0.18429232
+      time: 0.25049913
+      value: 2.0186646
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.07740133
+      outWeight: 0.07757538
     - serializedVersion: 3
       time: 1
-      value: 0.0047187805
-      inSlope: -0.035434004
-      outSlope: -0.035434004
+      value: 1
+      inSlope: 0.0105504785
+      outSlope: 0.0105504785
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.07741239
+      inWeight: 0.15929425
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
