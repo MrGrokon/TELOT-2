@@ -728,9 +728,18 @@
           </e>
           <e p="README.txt" t="Include" />
         </e>
+        <e p="CameraShakeFX" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="StressReceiver.cs" t="Include" />
+            <e p="TraumaInducer.cs" t="Include" />
+          </e>
+        </e>
         <e p="Deprecated_Files" t="Include">
           <e p="Blaster.cs" t="Include" />
           <e p="ProjectilBehavior.cs" t="Include" />
+          <e p="ProsecutorBehavior.cs" t="Include" />
+          <e p="SniperBehavior_lucas.cs" t="Include" />
+          <e p="Turret.cs" t="Include" />
           <e p="Weapon.cs" t="Include" />
           <e p="WeaponHandlingSystem.cs" t="Include" />
         </e>
@@ -904,16 +913,16 @@
         <e p="Scripts" t="Include">
           <e p="Enemies" t="Include">
             <e p="DummyBehavior.cs" t="Include" />
-            <e p="EnemieProjectileBehavior.cs" t="Include" />
+            <e p="EnemiesProps" t="Include">
+              <e p="EnemieProjectileBehavior.cs" t="Include" />
+              <e p="ShockwaveBehavior.cs" t="Include" />
+            </e>
             <e p="EnemyInheritence" t="Include">
               <e p="MonsterBehavior.cs" t="Include" />
             </e>
-            <e p="ProsecutorBehavior.cs" t="Include" />
             <e p="ProssecutorBehavior_v2.cs" t="Include" />
-            <e p="Turret" t="Include">
-              <e p="Turret.cs" t="Include" />
-              <e p="TurretBehavior.cs" t="Include" />
-            </e>
+            <e p="SniperBehavior.cs" t="Include" />
+            <e p="TurretBehavior.cs" t="Include" />
           </e>
           <e p="Level Design" t="Include">
             <e p="BumperBehavior.cs" t="Include" />
@@ -933,6 +942,9 @@
             <e p="RoomTrigger.cs" t="Include" />
           </e>
           <e p="Player" t="Include">
+            <e p="Debug" t="Include">
+              <e p="PauseGameWhenButtonPressed.cs" t="Include" />
+            </e>
             <e p="Mechanics" t="Include">
               <e p="BlockProjectiles.cs" t="Include" />
               <e p="EnergieStored.cs" t="Include" />
@@ -954,8 +966,10 @@
             </e>
             <e p="WallRunningRigidbody.cs" t="Include" />
           </e>
+          <e p="UI" t="Include">
+            <e p="ResetShootBoolean_AnimEvent.cs" t="Include" />
+          </e>
         </e>
-        <e p="SniperBehavior.cs" t="Include" />
       </e>
       <e p="FMODUnity.csproj" t="IncludeRecursive" />
       <e p="FMODUnityEditor.csproj" t="IncludeRecursive" />

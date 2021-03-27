@@ -22,7 +22,6 @@
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Unity/Hub/Editor/2019.4.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/InputModules/BaseInput.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerStats/PlayerLife.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovementRemade/PlayerMovementRigidbody.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SniperBehavior.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -134,6 +133,7 @@
       <workItem from="1616020526627" duration="8828000" />
       <workItem from="1616069662258" duration="2089000" />
       <workItem from="1616086979242" duration="720000" />
+      <workItem from="1616699272582" duration="689000" />
     </task>
     <servers />
   </component>
@@ -150,7 +150,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/ProjectEnergie.cs</url>
-          <line>65</line>
+          <line>88</line>
           <properties documentPath="C:\Users\starf\Documents\TELOT\TELOT-2\Assets\Scripts\Player\Mechanics\ProjectEnergie.cs" initialLine="40" containingFunctionPresentation="method 'ShootProcedure'">
             <startOffsets>
               <option value="1845" />
