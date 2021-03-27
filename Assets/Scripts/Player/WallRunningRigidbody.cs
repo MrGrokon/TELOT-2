@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.UI;
 
 public class WallRunningRigidbody : MonoBehaviour
 {
@@ -47,6 +48,7 @@ public class WallRunningRigidbody : MonoBehaviour
     public PostProcessVolume volume;
     [SerializeField] private float chromaticLerpTime;
     private float actualChromaticLerpTimeValue;
+    public Text wallRunDebug;
     
     // Start is called before the first frame update
     void Start()
@@ -59,6 +61,7 @@ public class WallRunningRigidbody : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        wallRunDebug.text = "En wall run :" + OnWallRun;
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
         Motion = transform.forward * v + transform.right * h;
@@ -96,10 +99,10 @@ public class WallRunningRigidbody : MonoBehaviour
             OnWallRun = false;
         }
 
-        if(Input.GetButtonDown("Jump") && LastWall_normal != Vector3.zero && OnWallRun)
+        if(Input.GetButtonDown("Jump")  && OnWallRun)
         {
             print("Wall Jump !");
-            _rb.AddForce((Vector3.up + LastWall_normal*2).normalized * (JumpForce * 2), ForceMode.Impulse);
+            _rb.AddForce((Vector3.up + LastWall_normal * 2 + transform.forward).normalized * (JumpForce * 2.5f), ForceMode.Impulse);
             GetComponent<PlayerMovementRigidbody>().Motion = Vector3.zero;
             WallOnLeft = false;
             WallOnRight = false;
