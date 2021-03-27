@@ -332,7 +332,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.17
+  m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8275013612617422086
 MonoBehaviour:
@@ -354,7 +354,7 @@ MonoBehaviour:
   VerticaleAmplitude: 4
   HorizontalAmplitude: 5
   DistanceToSurface: 1
-  ImpulseForce: 25
+  ImpulseForce: 40
   ShockwaveGrowth:
     serializedVersion: 2
     m_Curve:
@@ -382,8 +382,8 @@ MonoBehaviour:
   ShockwaveObject: {fileID: 4970300591634440693, guid: cfdeaa4d7bdb313468cf57e06511c112,
     type: 3}
   Shockwave_Duration: 1
-  Shockwave_Distance: 15
-  ChargingTimeBeforeShockwave: 0.5
+  Shockwave_Distance: 12
+  ChargingTimeBeforeShockwave: 1
 --- !u!95 &7114385191929755580
 Animator:
   serializedVersion: 3
