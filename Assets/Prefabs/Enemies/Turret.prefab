@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c63c26765d6c4f7687c79420b5ccf9d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartHealth: 100
+  StartHealth: 75
   dammage: 0
   MotionSpeed: 5
   _NavMeshAgent: {fileID: 0}
