@@ -188,7 +188,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.7
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5500672117775073681
 MonoBehaviour:
@@ -215,15 +215,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c63c26765d6c4f7687c79420b5ccf9d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartHealth: 100
-  MotionSpeed: 10
+  StartHealth: 75
+  dammage: 0
+  MotionSpeed: 5
+  _NavMeshAgent: {fileID: 0}
   projectilePrefab: {fileID: 6820640431255633222, guid: f6ec28c2b200c1149891856f596282f7,
     type: 3}
   projectileThrower: {fileID: 2727038761024645114}
   _state: 0
   attackInterval: 0.4
+  attackCooldown: 0
   attackDistance: 200
   ProjectileSpeed: 160
+  burst: 2
+  burstInterval: 0
   distanceToPlayer: 0
 --- !u!1 &2727038761024645114
 GameObject:

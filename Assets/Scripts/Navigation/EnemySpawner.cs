@@ -8,12 +8,13 @@ public class EnemySpawner : MonoBehaviour
     {
         Turret,
         Dummy,
-        Prossecutor
+        Prossecutor,
+        Sniper
     }
 
     public EnemyType MyType;
 
-    public void SpawnAnEnemy(){
+    public MonsterBehavior SpawnAnEnemy(){
         GameObject _enemy = null;
 
         switch (MyType)
@@ -27,7 +28,11 @@ public class EnemySpawner : MonoBehaviour
             break;
 
             case EnemyType.Prossecutor:
-            _enemy = ObjectReferencer.Instance.TurretEnemy_prefab;
+            _enemy = ObjectReferencer.Instance.ProsecutorEnemy_prefab;
+            break;
+
+            case EnemyType.Sniper:
+            _enemy = ObjectReferencer.Instance.SniperEnemy_prefab;
             break;
 
             default:
@@ -36,6 +41,6 @@ public class EnemySpawner : MonoBehaviour
         }
 
         //feedback
-        Instantiate(_enemy, this.transform.position, this.transform.rotation);
+        return Instantiate(_enemy, this.transform.position, this.transform.rotation).GetComponent<MonsterBehavior>();
     }
 }
