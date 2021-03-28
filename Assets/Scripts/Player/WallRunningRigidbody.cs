@@ -61,7 +61,7 @@ public class WallRunningRigidbody : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        wallRunDebug.text = "En wall run :" + OnWallRun;
+        //wallRunDebug.text = "En wall run :" + OnWallRun;
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
         Motion = transform.forward * v + transform.right * h;
