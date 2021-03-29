@@ -61,10 +61,10 @@ public class ProjectEnergie : MonoBehaviour
                     StartCoroutine(ShootProcedure_Shootgun(_Energie.GetEnergieAmountStocked()));
                 }
             }
-            else if (Input.GetButtonDown("Fire3") && _Energie.HasEnergieStored())
+            /*else if (Input.GetButtonDown("Fire3") && _Energie.HasEnergieStored())
             {
                 StartCoroutine(ShootProcedure_All(_Energie.GetEnergieAmountStocked()));
-            }
+            }*/
             HideHit();
         }
     #endregion

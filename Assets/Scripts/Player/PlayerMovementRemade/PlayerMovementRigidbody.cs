@@ -7,6 +7,7 @@ using UnityEngine.Rendering.PostProcessing;
 public class PlayerMovementRigidbody : MonoBehaviour
 {
     private Rigidbody _rb;
+    private PhantomMode _phamtomMode;
 
     [SerializeField] private float speed;
 
@@ -41,6 +42,7 @@ public class PlayerMovementRigidbody : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
+        _phamtomMode = this.GetComponent<PhantomMode>();
         volume.profile.TryGetSettings(out CA);
     }
 
@@ -86,8 +88,14 @@ public class PlayerMovementRigidbody : MonoBehaviour
         {
             Motion = ((h * transform.right + v * transform.forward).normalized * airControl);
         }
-
-        _rb.position += Motion * speed * Time.deltaTime;
+        
+        if(_phamtomMode.UsingPhantom){
+            _rb.position += Motion * (speed * _phamtomMode.PhantomSpeedMultiplier) * (Time.deltaTime / _phamtomMode.PhantomTimeFlowModifier);
+        }
+        else{
+            _rb.position += Motion * speed * Time.deltaTime;
+        }
+        
 
         if (Input.GetButton("Dash"))
         {
