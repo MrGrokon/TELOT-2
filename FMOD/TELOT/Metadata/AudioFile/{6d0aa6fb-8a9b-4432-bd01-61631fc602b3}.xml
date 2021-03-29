@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{6d0aa6fb-8a9b-4432-bd01-61631fc602b3}">
+		<property name="assetPath">
+			<value>Concrete_Shoes_Running.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>17.884541666666667</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{ae4a75a6-db03-4d52-b6f4-96e88b906660}</destination>
+		</relationship>
+	</object>
+</objects>
