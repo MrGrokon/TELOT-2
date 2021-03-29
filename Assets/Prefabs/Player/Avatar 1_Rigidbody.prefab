@@ -162,6 +162,7 @@ GameObject:
   - component: {fileID: 1295042038257403027}
   - component: {fileID: 1601006270032870396}
   - component: {fileID: 484727337}
+  - component: {fileID: 2834482313606362526}
   m_Layer: 0
   m_Name: Avatar 1_Rigidbody
   m_TagString: Player
@@ -263,11 +264,12 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   TimeToDetachFromWall: 3
+  gravityOnWall: 0
+  lastSpacePress: 0
   volume: {fileID: 7190748642292243000}
   chromaticLerpTime: 0
   wallRunDebug: {fileID: 0}
   delayOffWall: 0
-  lastSpacePress: 0
 --- !u!114 &6945830922706310441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -444,6 +446,23 @@ MonoBehaviour:
   maxRecoil_x: -20
   recoilSpeed: 10
   recoil: 0
+--- !u!114 &2834482313606362526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544188812562984144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a4bc1e5ea32c734288701ccefdbe49e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PhantomTimeFlowModifier: 0.5
+  UsingPhantom: 0
+  PhantomSpeedMultiplier: 1.8
+  PhantomTime: 5
+  TimeToLerpToNormal: 1
 --- !u!1 &1544188813381312850
 GameObject:
   m_ObjectHideFlags: 0
