@@ -54,6 +54,8 @@ public class ProjectEnergie : MonoBehaviour
         private void Update() {
             if(Input.GetButtonDown("Fire1") && _Energie.HasEnergieStored() && _canShoot){
                 //Debug.Log("Shoot");
+                GetComponent<WeaponRecoil>().enabled = true;
+                GetComponent<WeaponRecoil>().recoil += 0.1f;
                 if(_Energie.GetEnergieAmountStocked() >= _Energie._energiePerShot)
                     StartCoroutine(ShootProcedure_Shootgun(_Energie._energiePerShot));
                 else
@@ -61,10 +63,10 @@ public class ProjectEnergie : MonoBehaviour
                     StartCoroutine(ShootProcedure_Shootgun(_Energie.GetEnergieAmountStocked()));
                 }
             }
-            else if (Input.GetButtonDown("Fire3") && _Energie.HasEnergieStored())
+            /*else if (Input.GetButtonDown("Fire3") && _Energie.HasEnergieStored())
             {
                 StartCoroutine(ShootProcedure_All(_Energie.GetEnergieAmountStocked()));
-            }
+            }*/
             HideHit();
         }
     #endregion

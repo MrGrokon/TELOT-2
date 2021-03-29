@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using FMOD.Studio;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
 public class PlayerMovementRigidbody : MonoBehaviour
 {
     private Rigidbody _rb;
+    private PhantomMode _phamtomMode;
 
     [SerializeField] private float speed;
 
@@ -36,12 +38,14 @@ public class PlayerMovementRigidbody : MonoBehaviour
     [Header("Particle System")] 
     public ParticleSystem DashParticle;
 
-    
+
     // Start is called before the first frame update
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
+        _phamtomMode = this.GetComponent<PhantomMode>();
         volume.profile.TryGetSettings(out CA);
+
     }
 
     // Update is called once per frame
@@ -77,17 +81,24 @@ public class PlayerMovementRigidbody : MonoBehaviour
                 {
                     Motion = (h * transform.right + v * transform.forward).normalized;
                 }
-                
+
             }
             else
                 Motion = Vector3.zero;
         }
         else
         {
+
             Motion = ((h * transform.right + v * transform.forward).normalized * airControl);
         }
-
-        _rb.position += Motion * speed * Time.deltaTime;
+        
+        if(_phamtomMode.UsingPhantom){
+            _rb.position += Motion * (speed * _phamtomMode.PhantomSpeedMultiplier) * (Time.deltaTime / _phamtomMode.PhantomTimeFlowModifier);
+        }
+        else{
+            _rb.position += Motion * speed * Time.deltaTime;
+        }
+        
 
         if (Input.GetButton("Dash"))
         {
@@ -120,6 +131,7 @@ public class PlayerMovementRigidbody : MonoBehaviour
         else if (doubleJump && !GetComponent<WallRunningRigidbody>().OnWallRun)
         {
             print("Double jump");
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Movement/Jump", transform.position);
             _rb.AddForce((transform.up + Motion).normalized * jumpForce * dJumpFactor, ForceMode.Impulse);
             doubleJump = false;
         }
@@ -139,11 +151,11 @@ public class PlayerMovementRigidbody : MonoBehaviour
 
     private void DetectGround()
     {
-        if (Physics.Raycast(transform.position, -transform.up, out RaycastHit hit, 3f))
+        if (Physics.Raycast(transform.position, -transform.up, out RaycastHit hit, 2f))
         {
             if (hit.transform.gameObject.layer == 8)
             {
-                if (onGround == false)
+                if (onGround == false && GetComponent<Rigidbody>().velocity.y < 0)
                 {
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Movement/LandOnGround", transform.position);
                 }

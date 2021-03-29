@@ -71,9 +71,9 @@ public class FeedbackManager : MonoBehaviour
         while(_elapsedTime < TimeToRotate){
             _elapsedTime += Time.deltaTime;
             
-            /*RotateZ_offset = Mathf.Lerp(ObjectReferencer.Instance.Avatar_Object.GetComponent<MouseLook>().Z_Rotation, RotationDegree * DirMultiplier, _elapsedTime/TimeToRotate);
-            ObjectReferencer.Instance.Avatar_Object.GetComponent<MouseLook>().Z_Rotation = RotateZ_offset;*/
-            //Camera_Transform.Rotate(Camera_Transform.rotation.x, Camera_Transform.rotation.y, Camera_Transform.rotation.z + (RotateZ_offset * DirMultiplier ));
+            RotateZ_offset = Mathf.Lerp(ObjectReferencer.Instance.Avatar_Object.GetComponent<MouseLook>().Z_Rotation, RotationDegree * DirMultiplier, _elapsedTime/TimeToRotate);
+            ObjectReferencer.Instance.Avatar_Object.GetComponent<MouseLook>().Z_Rotation = RotateZ_offset;
+            Camera_Transform.Rotate(Camera_Transform.rotation.x, Camera_Transform.rotation.y, Camera_Transform.rotation.z + (RotateZ_offset * DirMultiplier ));
             var avatar = ObjectReferencer.Instance.Avatar_Object;
             float Z = Mathf.Lerp(0, RotationDegree* DirMultiplier,
                 _elapsedTime / TimeToRotate);
