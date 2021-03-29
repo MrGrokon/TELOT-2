@@ -66,8 +66,8 @@ public class WallRunningRigidbody : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerMoveWallRun = FMODUnity.RuntimeManager.CreateInstance("event:/Movement/WallRunMovement");
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(playerMoveWallRun, transform, GetComponent<Rigidbody>());
+        /*playerMoveWallRun = FMODUnity.RuntimeManager.CreateInstance("event:/Movement/WallRunMovement");
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(playerMoveWallRun, transform, GetComponent<Rigidbody>());*/
         _rb = GetComponent<Rigidbody>();
         fovNormal = Camera.main.fieldOfView;
         volume.profile.TryGetSettings(out CA);
