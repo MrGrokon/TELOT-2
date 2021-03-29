@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMOD.Studio;
 using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.UI;
 
@@ -32,6 +33,7 @@ public class WallRunningRigidbody : MonoBehaviour
 
     [Header("Wall Run Feedbacks")] 
     public float interpolationTime;
+    FMOD.Studio.EventInstance playerMoveWallRun;
 
     public float fovOnWall;
     private float fovNormal;
@@ -42,6 +44,11 @@ public class WallRunningRigidbody : MonoBehaviour
     [Header("Wallrun Gravity")]
     public AnimationCurve GravityOverWallrunTime_curve;
     public float TimeToDetachFromWall = 3f;
+    [Range(-40, -5)]
+    public float gravityOnWall;
+    public float lastSpacePress;
+    private bool wallRunAtState;
+    private Vector3 baseGravity = Physics.gravity;
     
     [Header("Post Processing Parameters")]
     private ChromaticAberration CA;
@@ -52,12 +59,15 @@ public class WallRunningRigidbody : MonoBehaviour
     [Tooltip("Temps avant que le joueur ne soit considérer comme hors du mur quand il l'a quitté")]
     public float delayOffWall;
 
-    public float lastSpacePress;
-    private bool wallRunAtState;
+    
+    
+   
 
     // Start is called before the first frame update
     void Start()
     {
+        playerMoveWallRun = FMODUnity.RuntimeManager.CreateInstance("event:/Movement/WallRunMovement");
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(playerMoveWallRun, transform, GetComponent<Rigidbody>());
         _rb = GetComponent<Rigidbody>();
         fovNormal = Camera.main.fieldOfView;
         volume.profile.TryGetSettings(out CA);
@@ -102,9 +112,9 @@ public class WallRunningRigidbody : MonoBehaviour
         {
             if (WallOnRight || WallOnLeft)
             {
-                _rb.useGravity = false;
-                //StartCoroutine(LowGravityDrag());
-                _rb.velocity = Vector3.zero;
+                Physics.gravity = new Vector3(0,gravityOnWall,0);
+                StartCoroutine(LowGravityDrag());
+                //_rb.velocity = Vector3.zero;
                 OnWallRun = true;
                 if (WallOnLeft)
                 {
@@ -118,15 +128,13 @@ public class WallRunningRigidbody : MonoBehaviour
             }
             else
             {
-                _rb.useGravity = true;
-                //StartCoroutine(ResetGravity());
+                StartCoroutine(ResetGravity());
                 OnWallRun = false;
             }
         }
         else
         {
-            _rb.useGravity = true;
-            //StartCoroutine(ResetGravity());
+            StartCoroutine(ResetGravity());
             OnWallRun = false;
         }
 
@@ -165,6 +173,7 @@ public class WallRunningRigidbody : MonoBehaviour
                 GetComponent<MouseLook>().ResetRotation();
                 GetComponent<PlayerMovementRigidbody>().doubleJump = true;
                 Debug.DrawRay(transform.position, wallForwardRun, Color.red, Mathf.Infinity);
+                playerMoveWallRun.start();
         }
     }
 
@@ -214,8 +223,9 @@ public class WallRunningRigidbody : MonoBehaviour
         yield return new WaitForSeconds(delayOffWall);
         WallOnLeft = false;
         WallOnRight = false;
-        GetComponent<MouseLook>().ResetCameraAndBody();
+        //GetComponent<MouseLook>().ResetCameraAndBody();
         CA.intensity.value = 0;
+        playerMoveWallRun.stop(STOP_MODE.ALLOWFADEOUT);
     }
 
     #region Custom Gravity during wallrun
@@ -223,7 +233,7 @@ public class WallRunningRigidbody : MonoBehaviour
             float _elapsedTime = 0f;
             while(_elapsedTime < TimeToDetachFromWall){
                 _elapsedTime += Time.deltaTime;
-                Physics.gravity = new Vector3(0f, GravityOverWallrunTime_curve.Evaluate(_elapsedTime /TimeToDetachFromWall) * -9.81f , 0f);
+                Physics.gravity = new Vector3(0f, GravityOverWallrunTime_curve.Evaluate(_elapsedTime /TimeToDetachFromWall) * baseGravity.y , 0f);
                 yield return null;
             }
             yield return null;
@@ -232,9 +242,9 @@ public class WallRunningRigidbody : MonoBehaviour
 
         IEnumerator ResetGravity(){
             StopCoroutine(LowGravityDrag());
-            Physics.gravity = new Vector3(0f, -9.81f, 0f);
+            Physics.gravity = baseGravity;
             yield return null;
         }
     #endregion
-    
+
 }
