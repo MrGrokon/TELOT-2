@@ -1,5 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+<<<<<<< Updated upstream
 --- !u!114 &-9060789512435491815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,6 +316,8 @@ MonoBehaviour:
   threadAffinities:
     Value: []
     HasValue: 0
+=======
+>>>>>>> Stashed changes
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,8 +333,13 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
+<<<<<<< Updated upstream
   sourceProjectPath: FMOD/TELOT/TELOT.fspro
   sourceBankPath: FMOD\TELOT\Build
+=======
+  sourceProjectPath: 
+  sourceBankPath: 
+>>>>>>> Stashed changes
   SourceBankPathUnformatted: 
   AutomaticEventLoading: 1
   BankLoadType: 0
@@ -350,8 +358,12 @@ MonoBehaviour:
   VirtualChannelSettings: []
   RealChannelSettings: []
   Plugins: []
+<<<<<<< Updated upstream
   MasterBanks:
   - Master
+=======
+  MasterBanks: []
+>>>>>>> Stashed changes
   Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264
@@ -360,6 +372,7 @@ MonoBehaviour:
   MeterChannelOrdering: 0
   StopEventsOutsideMaxDistance: 0
   BoltUnitOptionsBuildPending: 0
+<<<<<<< Updated upstream
   MigratedPlatforms: 05000000060000000b000000120000000900000015000000080000000c0000000a0000000200000001000000
 --- !u!114 &220342133652408185
 MonoBehaviour:
@@ -739,3 +752,6 @@ MonoBehaviour:
   threadAffinities:
     Value: []
     HasValue: 0
+=======
+  MigratedPlatforms: 0c000000150000000b0000000a00000009000000120000000800000005000000060000000200000001000000
+>>>>>>> Stashed changes
