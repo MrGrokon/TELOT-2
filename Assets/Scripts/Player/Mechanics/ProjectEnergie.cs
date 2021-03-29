@@ -48,11 +48,14 @@ public class ProjectEnergie : MonoBehaviour
 
         private void Start() {
             hitMarker = GameObject.Find("Hitmarker").GetComponent<RawImage>();
+            GetComponent<WeaponRecoil>().enabled = true;
         }
 
         private void Update() {
             if(Input.GetButtonDown("Fire1") && _Energie.HasEnergieStored() && _canShoot){
                 //Debug.Log("Shoot");
+                GetComponent<WeaponRecoil>().enabled = true;
+                GetComponent<WeaponRecoil>().recoil += 0.1f;
                 if(_Energie.GetEnergieAmountStocked() >= _Energie._energiePerShot)
                     StartCoroutine(ShootProcedure_Shootgun(_Energie._energiePerShot));
                 else

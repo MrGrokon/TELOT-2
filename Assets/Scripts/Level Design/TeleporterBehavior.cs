@@ -14,6 +14,7 @@ public class TeleporterBehavior : MonoBehaviour
 
     private void Awake() {
         MyDatas = this.transform.parent.GetComponent<TeleporterData>();
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Envrionnement/TeleporterIdle", transform.position);
     }
 
     private void Update() {
@@ -31,7 +32,6 @@ public class TeleporterBehavior : MonoBehaviour
         if(_col.gameObject.tag == "Player" && IsValide == true && IsActive == true){
             _col.transform.position = MyDatas.OtherSide.GetTeleporterPoint().position;
             _col.transform.rotation = MyDatas.OtherSide.GetTeleporterPoint().rotation;
-
             StartCooldown();
             MyDatas.OtherSide.GetComponentInChildren<TeleporterBehavior>().StartCooldown();
         }
