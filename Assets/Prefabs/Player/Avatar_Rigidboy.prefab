@@ -261,8 +261,12 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   TimeToDetachFromWall: 3
+  gravityOnWall: -5
+  lastSpacePress: 0
   volume: {fileID: 7190748642292243000}
   chromaticLerpTime: 0
+  wallRunDebug: {fileID: 0}
+  delayOffWall: 0
 --- !u!114 &6945830922706310441
 MonoBehaviour:
   m_ObjectHideFlags: 0

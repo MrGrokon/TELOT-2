@@ -397,7 +397,11 @@ Transform:
   - {fileID: 148025300}
   - {fileID: 675955114}
   m_Father: {fileID: 0}
+<<<<<<< HEAD
   m_RootOrder: 25
+=======
+  m_RootOrder: 3
+>>>>>>> Thibault
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &114181285
 PrefabInstance:
@@ -563,8 +567,13 @@ Transform:
   m_LocalPosition: {x: 2.9900916, y: 0.90647787, z: -0.019998003}
   m_LocalScale: {x: 6, y: 1.8, z: 0.02}
   m_Children: []
+<<<<<<< HEAD
   m_Father: {fileID: 92784684}
   m_RootOrder: 4
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+>>>>>>> Thibault
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &229175934
 GameObject:
@@ -1593,63 +1602,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 484727337, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1448301894, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: 914d114e6475ca04cb2200c84853916b,
         type: 2}
     - target: {fileID: 1860506956, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
-      propertyPath: GravityOverWallrunTime_curve.m_Curve.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1860506956, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
       propertyPath: wallRunDebug
       value: 
       objectReference: {fileID: 1482504974}
-    - target: {fileID: 1860506956, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
-      propertyPath: fovOnWall
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 1860506956, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
-      propertyPath: gravityOnWall
-      value: -5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1860506956, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
-      propertyPath: GravityOverWallrunTime_curve.m_Curve.Array.data[0].inSlope
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1860506956, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
-      propertyPath: GravityOverWallrunTime_curve.m_Curve.Array.data[0].outSlope
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1860506956, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
-      propertyPath: GravityOverWallrunTime_curve.m_Curve.Array.data[1].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1860506956, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
-      propertyPath: GravityOverWallrunTime_curve.m_Curve.Array.data[1].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1860506956, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
-      propertyPath: GravityOverWallrunTime_curve.m_Curve.Array.data[0].time
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1860506956, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
-      propertyPath: GravityOverWallrunTime_curve.m_Curve.Array.data[0].value
-      value: 0.16275024
-      objectReference: {fileID: 0}
-    - target: {fileID: 1860506956, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
-      propertyPath: GravityOverWallrunTime_curve.m_Curve.Array.data[0].tangentMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1860506956, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
-      propertyPath: GravityOverWallrunTime_curve.m_Curve.Array.data[1].tangentMode
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1544188812562984144, guid: f6540eafabbd2364c9b59fba55b80675,
         type: 3}
       propertyPath: m_Name
@@ -3928,7 +3889,11 @@ PrefabInstance:
     - target: {fileID: 2734687783574113709, guid: eeb80b1cd7110cf40bc3e91fc63c200f,
         type: 3}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
       value: 12
+=======
+      value: 2
+>>>>>>> Thibault
       objectReference: {fileID: 0}
     - target: {fileID: 2734687783574113709, guid: eeb80b1cd7110cf40bc3e91fc63c200f,
         type: 3}
@@ -5426,7 +5391,7 @@ PrefabInstance:
     - target: {fileID: 8212843248609371592, guid: 39e91839ee952d34ca3083c435a0e580,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8212843248609371592, guid: 39e91839ee952d34ca3083c435a0e580,
         type: 3}

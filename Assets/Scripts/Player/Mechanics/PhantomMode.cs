@@ -25,9 +25,11 @@ public class PhantomMode : MonoBehaviour
     #endregion
 
     IEnumerator PhantomModeLaunch(){
+        Vector3 baseGravity = Physics.gravity;
         UsingPhantom = true;
         float _elapsedTime = 0f;
         Time.timeScale = PhantomTimeFlowModifier;
+        Physics.gravity /= PhantomTimeFlowModifier;
         Time.fixedDeltaTime = 0.02f * Time.timeScale;
 
         //Tempo during full time of slow mo
@@ -40,7 +42,9 @@ public class PhantomMode : MonoBehaviour
         _elapsedTime = 0f;
         while(_elapsedTime < TimeToLerpToNormal){
             _elapsedTime += Time.deltaTime / PhantomTimeFlowModifier;
-            Time.timeScale = Mathf.Lerp(PhantomTimeFlowModifier, 1f, _elapsedTime / TimeToLerpToNormal);
+            float _value = Mathf.Lerp(PhantomTimeFlowModifier, 1f, _elapsedTime / TimeToLerpToNormal);
+            Time.timeScale = _value;
+            Physics.gravity = new Vector3(0f, baseGravity.y / _value, 0f);
             Time.fixedDeltaTime = 0.02f * Time.timeScale;
             yield return null;
         }
@@ -48,6 +52,7 @@ public class PhantomMode : MonoBehaviour
         //values back to normals
         Time.timeScale = 1f;
         Time.fixedDeltaTime = 0.02f;
+        Physics.gravity = baseGravity;
         UsingPhantom = false;
         yield return null;
     }

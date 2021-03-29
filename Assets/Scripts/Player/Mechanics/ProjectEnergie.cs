@@ -48,7 +48,6 @@ public class ProjectEnergie : MonoBehaviour
 
         private void Start() {
             hitMarker = GameObject.Find("Hitmarker").GetComponent<RawImage>();
-            GetComponent<WeaponRecoil>().enabled = true;
         }
 
         private void Update() {

@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 1295042038257403027}
   - component: {fileID: 1601006270032870396}
   - component: {fileID: 484727337}
-  - component: {fileID: 2834482313606362526}
+  - component: {fileID: 885954545}
   m_Layer: 0
   m_Name: Avatar 1_Rigidbody
   m_TagString: Player
@@ -256,15 +256,33 @@ MonoBehaviour:
   JumpPersistance: 2
   wallForwardRun: {x: 0, y: 0, z: 0}
   interpolationTime: 0
-  fovOnWall: 65
+  fovOnWall: 80
   GravityOverWallrunTime_curve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.16275024
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   TimeToDetachFromWall: 3
-  gravityOnWall: 0
+  gravityOnWall: -5
   lastSpacePress: 0
   volume: {fileID: 7190748642292243000}
   chromaticLerpTime: 0
@@ -314,7 +332,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4096
   energieStoredPerShot: 10
-  shieldEnergy: 2.5
+  shieldEnergy: 2
   shieldDepleted: 0
   AbsorptionByMovement: 0
   depletationFactor: 1
@@ -436,7 +454,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1544188812562984144}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ece7b1b8ac59c148b6c7a31e86bce61, type: 3}
   m_Name: 
@@ -446,7 +464,7 @@ MonoBehaviour:
   maxRecoil_x: -20
   recoilSpeed: 10
   recoil: 0
---- !u!114 &2834482313606362526
+--- !u!114 &885954545
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

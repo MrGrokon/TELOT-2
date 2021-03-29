@@ -30,9 +30,9 @@ public class BlockProjectiles : MonoBehaviour
         private void Awake() {
             shieldRemainSlider = GameObject.Find("Slider").GetComponent<Slider>();
 
-            shieldIdle = FMODUnity.RuntimeManager.CreateInstance("event:/Shield/ShieldIdle");
+            /*shieldIdle = FMODUnity.RuntimeManager.CreateInstance("event:/Shield/ShieldIdle");
             FMODUnity.RuntimeManager.AttachInstanceToGameObject(shieldIdle, transform,
-                GetComponent<Rigidbody>());
+                GetComponent<Rigidbody>());*/
             _Shield_Rendr = GameObject.Find("ShieldDebug");
             _Shield_Pivot = GameObject.Find("Shield_Pivot").transform;
             _Shield_Rendr.SetActive(false);
