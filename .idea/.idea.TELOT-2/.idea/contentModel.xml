@@ -974,6 +974,7 @@
             <e p="ResetShootBoolean_AnimEvent.cs" t="Include" />
           </e>
         </e>
+        <e p="WeaponRecoil.cs" t="Include" />
       </e>
       <e p="FMODUnity.csproj" t="IncludeRecursive" />
       <e p="FMODUnityEditor.csproj" t="IncludeRecursive" />
