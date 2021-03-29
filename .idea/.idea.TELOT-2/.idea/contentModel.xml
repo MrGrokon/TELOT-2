@@ -932,8 +932,14 @@
             <e p="CollectiblesManager.cs" t="Include" />
             <e p="DestroyableWall.cs" t="Include" />
             <e p="ReloadScene.cs" t="Include" />
-            <e p="TeleporterBehavior.cs" t="Include" />
-            <e p="TeleporterData.cs" t="Include" />
+            <e p="TP" t="Include">
+              <e p="TeleporterBehavior.cs" t="Include" />
+              <e p="TeleporterData.cs" t="Include" />
+            </e>
+            <e p="Traps" t="Include">
+              <e p="TrapBehavior.cs" t="Include" />
+              <e p="TrapLauncher.cs" t="Include" />
+            </e>
           </e>
           <e p="Managers" t="Include">
             <e p="FeedbackManager.cs" t="Include" />
@@ -948,9 +954,13 @@
             <e p="Debug" t="Include">
               <e p="PauseGameWhenButtonPressed.cs" t="Include" />
             </e>
+            <e p="Feedbacks" t="Include">
+              <e p="WeaponRecoil.cs" t="Include" />
+            </e>
             <e p="Mechanics" t="Include">
               <e p="BlockProjectiles.cs" t="Include" />
               <e p="EnergieStored.cs" t="Include" />
+              <e p="PhantomMode.cs" t="Include" />
               <e p="ProjectEnergie.cs" t="Include" />
             </e>
             <e p="PlayerMouvement" t="Include">
@@ -963,18 +973,17 @@
             </e>
             <e p="PlayerMovementRemade" t="Include">
               <e p="PlayerMovementRigidbody.cs" t="Include" />
+              <e p="WallRunningRigidbody.cs" t="Include" />
             </e>
             <e p="PlayerStats" t="Include">
               <e p="PlayerLife.cs" t="Include" />
             </e>
-            <e p="WallRunningRigidbody.cs" t="Include" />
           </e>
           <e p="UI" t="Include">
             <e p="HealthFeedbacks.cs" t="Include" />
             <e p="ResetShootBoolean_AnimEvent.cs" t="Include" />
           </e>
         </e>
-        <e p="WeaponRecoil.cs" t="Include" />
       </e>
       <e p="FMODUnity.csproj" t="IncludeRecursive" />
       <e p="FMODUnityEditor.csproj" t="IncludeRecursive" />

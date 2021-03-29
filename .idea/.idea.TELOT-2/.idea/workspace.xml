@@ -38,7 +38,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMouvement/MouseLook.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/EnergieStored.cs" />
       <option value="$PROJECT_DIR$/Assets/Deprecated_Files/ProjectilBehavior.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovementRemade/WallRunningRigidbody.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemieProjectileBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerStats/PlayerLife.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/BlockProjectiles.cs" />
@@ -53,6 +52,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/WallRunningRigidbody.cs" />
       <option value="$PROJECT_DIR$/Assets/WeaponRecoil.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/ProjectEnergie.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovementRemade/WallRunningRigidbody.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1ohtdW9xSpIGpjT50LXGFp67Yso" />
@@ -139,7 +139,8 @@
       <workItem from="1616086979242" duration="720000" />
       <workItem from="1616699272582" duration="689000" />
       <workItem from="1616852454140" duration="11595000" />
-      <workItem from="1617023703691" duration="4266000" />
+      <workItem from="1617023703691" duration="4512000" />
+      <workItem from="1617035435124" duration="364000" />
     </task>
     <servers />
   </component>
