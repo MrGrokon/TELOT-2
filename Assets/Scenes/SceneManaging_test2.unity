@@ -2766,10 +2766,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a4bc1e5ea32c734288701ccefdbe49e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PhantomTimeFlowModifier: 0.5
+  PhantomTimeFlowModifier: 0.1
   UsingPhantom: 0
   PhantomSpeedMultiplier: 1.8
   PhantomTime: 5
+  TimeToLerpToNormal: 1
 --- !u!1001 &1003672439
 PrefabInstance:
   m_ObjectHideFlags: 0
