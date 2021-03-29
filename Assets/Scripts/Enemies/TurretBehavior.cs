@@ -105,7 +105,7 @@ public class TurretBehavior : MonsterBehavior
         if (targetVelocity.magnitude == 0 || targetVelocity.magnitude > projectileSpeed &&
             Mathf.Sin(targetMoveAngle) / projectileSpeed > Mathf.Cos(targetMoveAngle) / targetVelocity.magnitude)
         {
-            Debug.Log("Position prediction is not feasible.");
+            //Debug.Log("Position prediction is not feasible.");
             return targetPosition;
         }
 

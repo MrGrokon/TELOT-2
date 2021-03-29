@@ -2,7 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMOD.Studio;
 using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.UI;
 
 public class WallRunningRigidbody : MonoBehaviour
 {
@@ -31,6 +33,7 @@ public class WallRunningRigidbody : MonoBehaviour
 
     [Header("Wall Run Feedbacks")] 
     public float interpolationTime;
+    FMOD.Studio.EventInstance playerMoveWallRun;
 
     public float fovOnWall;
     private float fovNormal;
@@ -41,24 +44,65 @@ public class WallRunningRigidbody : MonoBehaviour
     [Header("Wallrun Gravity")]
     public AnimationCurve GravityOverWallrunTime_curve;
     public float TimeToDetachFromWall = 3f;
+    [Range(-40, -5)]
+    public float gravityOnWall;
+    public float lastSpacePress;
+    private bool wallRunAtState;
+    private Vector3 baseGravity = Physics.gravity;
     
     [Header("Post Processing Parameters")]
     private ChromaticAberration CA;
     public PostProcessVolume volume;
     [SerializeField] private float chromaticLerpTime;
     private float actualChromaticLerpTimeValue;
+    public Text wallRunDebug;
+    [Tooltip("Temps avant que le joueur ne soit considérer comme hors du mur quand il l'a quitté")]
+    public float delayOffWall;
+
     
+    
+   
+
     // Start is called before the first frame update
     void Start()
     {
+        playerMoveWallRun = FMODUnity.RuntimeManager.CreateInstance("event:/Movement/WallRunMovement");
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(playerMoveWallRun, transform, GetComponent<Rigidbody>());
         _rb = GetComponent<Rigidbody>();
         fovNormal = Camera.main.fieldOfView;
         volume.profile.TryGetSettings(out CA);
     }
 
+    void Update()
+    {
+        wallRunDebug.text = "Last space input :" + lastSpacePress + "\n" + "  wall run state at this time : " + wallRunAtState + "\n" + "Global wall run state :" + OnWallRun;
+        lastSpacePress += 1 * Time.deltaTime;
+        if (Input.GetButtonDown("Jump"))
+        {
+            wallRunAtState = OnWallRun;
+            lastSpacePress = 0;
+        }
+
+        if(Input.GetButtonDown("Jump") && OnWallRun)
+        {
+            print("Wall Jump !");
+            _rb.AddForce((Vector3.up + LastWall_normal * 2 + transform.forward).normalized * (JumpForce * 2.5f), ForceMode.Impulse);
+            GetComponent<PlayerMovementRigidbody>().Motion = Vector3.zero;
+            WallOnLeft = false;
+            WallOnRight = false;
+            canWallRun = false;
+            StartCoroutine(ReactivateDoubleJump());
+        }
+        else if(OnWallRun)
+        {
+            print(Input.GetButtonDown("Jump") + "Wall normal : " + LastWall_normal + OnWallRun.ToString());
+        }
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
+        
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
         Motion = transform.forward * v + transform.right * h;
@@ -68,9 +112,9 @@ public class WallRunningRigidbody : MonoBehaviour
         {
             if (WallOnRight || WallOnLeft)
             {
-                _rb.useGravity = false;
-                //StartCoroutine(LowGravityDrag());
-                _rb.velocity = Vector3.zero;
+                Physics.gravity = new Vector3(0,gravityOnWall,0);
+                StartCoroutine(LowGravityDrag());
+                //_rb.velocity = Vector3.zero;
                 OnWallRun = true;
                 if (WallOnLeft)
                 {
@@ -84,32 +128,18 @@ public class WallRunningRigidbody : MonoBehaviour
             }
             else
             {
-                _rb.useGravity = true;
-                //StartCoroutine(ResetGravity());
+                StartCoroutine(ResetGravity());
                 OnWallRun = false;
             }
         }
         else
         {
-            _rb.useGravity = true;
-            //StartCoroutine(ResetGravity());
+            StartCoroutine(ResetGravity());
             OnWallRun = false;
         }
 
-        if(Input.GetButtonDown("Jump") && LastWall_normal != Vector3.zero && OnWallRun)
-        {
-            print("Wall Jump !");
-            _rb.AddForce((Vector3.up + LastWall_normal*2).normalized * (JumpForce * 2), ForceMode.Impulse);
-            GetComponent<PlayerMovementRigidbody>().Motion = Vector3.zero;
-            WallOnLeft = false;
-            WallOnRight = false;
-            canWallRun = false;
-            StartCoroutine(ReactivateDoubleJump());
-        }
-        else if(OnWallRun)
-        {
-            print(Input.GetButtonDown("Jump") + "Wall normal : " + LastWall_normal + OnWallRun.ToString());
-        }
+        
+       
         
         _elapsedTime += Time.deltaTime;
         
@@ -134,14 +164,16 @@ public class WallRunningRigidbody : MonoBehaviour
                 wallForwardRun = Vector3.ProjectOnPlane(transform.forward, RightHit.normal);
             }
             #endregion
-            CA.intensity.value = 0.25f;
-            actualChromaticLerpTimeValue = 0;
-            transform.rotation = Quaternion.LookRotation(wallForwardRun, Vector3.up);
-            Camera.main.transform.rotation = Quaternion.identity;
-            GetComponent<MouseLook>().locked = true;
-            GetComponent<MouseLook>().ResetRotation();
-            GetComponent<PlayerMovementRigidbody>().doubleJump = false;
-            Debug.DrawRay(transform.position, wallForwardRun, Color.red, Mathf.Infinity);
+            
+                CA.intensity.value = 0.25f;
+                actualChromaticLerpTimeValue = 0;
+                transform.rotation = Quaternion.LookRotation(wallForwardRun, Vector3.up);
+                Camera.main.transform.rotation = Quaternion.identity;
+                GetComponent<MouseLook>().locked = true;
+                GetComponent<MouseLook>().ResetRotation();
+                GetComponent<PlayerMovementRigidbody>().doubleJump = true;
+                Debug.DrawRay(transform.position, wallForwardRun, Color.red, Mathf.Infinity);
+                playerMoveWallRun.start();
         }
     }
 
@@ -149,12 +181,10 @@ public class WallRunningRigidbody : MonoBehaviour
     {
         if(other.gameObject.layer == 9)
         {
-            WallOnLeft = false;
-            WallOnRight = false;
-            GetComponent<MouseLook>().ResetCameraAndBody();
-            CA.intensity.value = 0;
+           StartCoroutine(wallRunDelayOff());
         }
     }
+    
 
 
     private void WallRunFeedbacks()
@@ -188,12 +218,22 @@ public class WallRunningRigidbody : MonoBehaviour
         }
     }
 
+    private IEnumerator wallRunDelayOff()
+    {
+        yield return new WaitForSeconds(delayOffWall);
+        WallOnLeft = false;
+        WallOnRight = false;
+        //GetComponent<MouseLook>().ResetCameraAndBody();
+        CA.intensity.value = 0;
+        playerMoveWallRun.stop(STOP_MODE.ALLOWFADEOUT);
+    }
+
     #region Custom Gravity during wallrun
         IEnumerator LowGravityDrag(){
             float _elapsedTime = 0f;
             while(_elapsedTime < TimeToDetachFromWall){
                 _elapsedTime += Time.deltaTime;
-                Physics.gravity = new Vector3(0f, GravityOverWallrunTime_curve.Evaluate(_elapsedTime /TimeToDetachFromWall) * -9.81f , 0f);
+                Physics.gravity = new Vector3(0f, GravityOverWallrunTime_curve.Evaluate(_elapsedTime /TimeToDetachFromWall) * baseGravity.y , 0f);
                 yield return null;
             }
             yield return null;
@@ -202,9 +242,9 @@ public class WallRunningRigidbody : MonoBehaviour
 
         IEnumerator ResetGravity(){
             StopCoroutine(LowGravityDrag());
-            Physics.gravity = new Vector3(0f, -9.81f, 0f);
+            Physics.gravity = baseGravity;
             yield return null;
         }
     #endregion
-    
+
 }

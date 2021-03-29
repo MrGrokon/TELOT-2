@@ -27,8 +27,9 @@ public class PlayerLife : MonoBehaviour
         lifeText.text = lifePoint + " / " + startingLifePoint;
     }
 
-    public void setDammage(float dmg)
+    public void TakeDammage(float dmg)
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/PlayerHit"); 
         lifePoint -= dmg;
     }
 
@@ -43,13 +44,12 @@ public class PlayerLife : MonoBehaviour
         lifePoint = Mathf.Clamp(lifePoint, 0, 100);
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.transform.CompareTag("EnemyProjectile"))
         {
             Destroy(other.gameObject);
-            lifePoint -= other.transform.GetComponent<EnemieProjectileBehavior>().getDammage();
-            FMODUnity.RuntimeManager.PlayOneShot("event:/PlayerHit"); 
+            TakeDammage(other.transform.GetComponent<EnemieProjectileBehavior>().getDammage());  
         }
     }
 }

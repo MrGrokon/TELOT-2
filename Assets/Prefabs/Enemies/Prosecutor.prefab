@@ -251,6 +251,7 @@ GameObject:
   - component: {fileID: 5042234409277400170}
   - component: {fileID: 8275013612617422086}
   - component: {fileID: 7114385191929755580}
+  - component: {fileID: 6404609953106336809}
   m_Layer: 13
   m_Name: Prosecutor
   m_TagString: Ennemy
@@ -331,7 +332,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.17
+  m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8275013612617422086
 MonoBehaviour:
@@ -345,13 +346,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44f9d06fa31e77a4ba0f019fdfd20ade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartHealth: 100
+  StartHealth: 35
+  dammage: 5
   MotionSpeed: 1
   _NavMeshAgent: {fileID: 0}
-  dammage: 0
   PlayerReachDistance: 50
-  VerticaleAmplitude: 2.5
-  PerfectDistFromGround: 10
+  VerticaleAmplitude: 4
+  HorizontalAmplitude: 5
+  DistanceToSurface: 1
+  ImpulseForce: 40
   ShockwaveGrowth:
     serializedVersion: 2
     m_Curve:
@@ -379,8 +382,8 @@ MonoBehaviour:
   ShockwaveObject: {fileID: 4970300591634440693, guid: cfdeaa4d7bdb313468cf57e06511c112,
     type: 3}
   Shockwave_Duration: 1
-  Shockwave_Distance: 15
-  ChargingTimeBeforeShockwave: 0.5
+  Shockwave_Distance: 12
+  ChargingTimeBeforeShockwave: 1
 --- !u!95 &7114385191929755580
 Animator:
   serializedVersion: 3
@@ -400,6 +403,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6404609953106336809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5042234409277400168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 866654c0eb8e67e4daa323f58dd496da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NameOfParent: --EnemiesParent--
 --- !u!1 &5687542056745661227
 GameObject:
   m_ObjectHideFlags: 0
