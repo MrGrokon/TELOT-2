@@ -40,7 +40,6 @@
       <option value="$PROJECT_DIR$/Assets/Deprecated_Files/ProjectilBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemieProjectileBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerStats/PlayerLife.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/BlockProjectiles.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyInheritence/MonsterBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Turret/TurretBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/SniperBehavior.cs" />
@@ -53,6 +52,7 @@
       <option value="$PROJECT_DIR$/Assets/WeaponRecoil.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/ProjectEnergie.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovementRemade/WallRunningRigidbody.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/BlockProjectiles.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1ohtdW9xSpIGpjT50LXGFp67Yso" />
