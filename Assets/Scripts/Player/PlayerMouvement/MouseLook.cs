@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class MouseLook : MonoBehaviour
 {
+    private PhantomMode _phantomMode;
     [Range(10f, 400f)]
     public float MouseSensitivity = 100f;
     
-    //[HideInInspector]
+    [HideInInspector]
     public float Z_Rotation = 0f;
 
     private Transform PlayerBody;
     private Transform PlayerView;
     private float X_Rotation;
+    public bool locked = false;
 
     private void Awake() {
         Cursor.lockState = CursorLockMode.Locked;
@@ -20,20 +22,55 @@ public class MouseLook : MonoBehaviour
         PlayerBody = this.transform;
         PlayerView = this.GetComponentInChildren<Camera>().transform;
         X_Rotation = 0f;
+        _phantomMode = this.GetComponent<PhantomMode>();
     }
 
     private void Update()
     {
         //get Mouse Motion from Inputs
-        float _mouseX = Input.GetAxis("Mouse X") * MouseSensitivity * Time.deltaTime;
-        float _mouseY = Input.GetAxis("Mouse Y") * MouseSensitivity * Time.deltaTime;
+        float _mouseX, _mouseY; 
 
+        if(_phantomMode.UsingPhantom){
+             _mouseX = Input.GetAxis("Mouse X") * MouseSensitivity * (Time.deltaTime / _phantomMode.PhantomTimeFlowModifier);
+            _mouseY = Input.GetAxis("Mouse Y") * MouseSensitivity * (Time.deltaTime / _phantomMode.PhantomTimeFlowModifier);
+        }
+        else{
+            _mouseX = Input.GetAxis("Mouse X") * MouseSensitivity * Time.deltaTime;
+            _mouseY = Input.GetAxis("Mouse Y") * MouseSensitivity * Time.deltaTime;
+        }
+        
         X_Rotation -= _mouseY;
         //Vertical Rotation Clamping
         X_Rotation = Mathf.Clamp(X_Rotation, -70f, 70f);
-        
-        //Apply rotations
-        PlayerView.localRotation = Quaternion.Euler(X_Rotation, 0f, Z_Rotation);
-        PlayerBody.Rotate(this.transform.up * _mouseX);
+
+        Z_Rotation += _mouseX;
+    
+
+            //Apply rotations
+        if (!GetComponent<WallRunningRigidbody>().OnWallRun)
+        {
+            PlayerView.localRotation = Quaternion.Euler(X_Rotation, 0f, 0);
+            PlayerBody.Rotate(this.transform.up * _mouseX);
+            PlayerBody.eulerAngles = new Vector3(0, PlayerBody.eulerAngles.y, 0);
+        }
+        else
+        {
+            PlayerView.localRotation = Quaternion.Euler(X_Rotation, Z_Rotation, 0);
+        }
+
+
+    }
+
+    public void ResetCameraAndBody()
+    {
+        PlayerBody.eulerAngles = new Vector3(PlayerView.eulerAngles.x, PlayerView.eulerAngles.y,0);
+        PlayerView.rotation = Quaternion.identity;
+        locked = false;
+    }
+
+    public void ResetRotation()
+    {
+        X_Rotation = 0;
+        Z_Rotation = 0;
     }
 }

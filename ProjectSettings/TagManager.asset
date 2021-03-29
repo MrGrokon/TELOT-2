@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - EnemyProjectile
+  - PlayerProjectile
+  - Ennemy
+  - Spawner
+  - Ground
+  - Pillars
+  - RoomTrigger
   layers:
   - Default
   - TransparentFX
@@ -17,8 +24,8 @@ TagManager:
   - Walkable_Wall
   - PlayerProjectil
   - Avatar
-  - 
-  - 
+  - EnemieProjectile
+  - Enemy
   - 
   - 
   - 

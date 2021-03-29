@@ -58,6 +58,10 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+#fmod studio settings (ajouté a la main, peu poser prob)
+/Assets/Plugins/FMOD/Resources/FMODStudioSettings.asset
+/Assets/Plugins/FMOD/Resources/FMODStudioSettings.asset.meta
+
 # Fmod
 /Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
 /Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset.meta
@@ -73,4 +77,10 @@ fmod_editor.log
 /FMOD/.unsaved
 /FMOD/.cache
 /FMOD/*.restore
+<<<<<<< HEAD
 Assets/Scripts/Player/PlayerMovementRemade.meta
+=======
+.idea/.idea.TELOT-2/.idea/indexLayout.xml
+>>>>>>> THéo
+
+.idea/.idea.TELOT-2/.idea/workspace.xml

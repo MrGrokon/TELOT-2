@@ -724,25 +724,33 @@
                 <e p="ASESShaderSelectorUnlit.shader" t="Include" />
                 <e p="Unlit-ColoredAlpha.shader" t="Include" />
               </e>
-              <e p="Templates" t="Include">
-                <e p="Legacy" t="Include">
-                  <e p="DefaultUnlit.shader" t="Include" />
-                  <e p="Lit.shader" t="Include" />
-                  <e p="MultiPassUnlit.shader" t="Include" />
-                  <e p="Particle Alpha Blend.shader" t="Include" />
-                  <e p="PostProcess.shader" t="Include" />
-                  <e p="Sprites-Default.shader" t="Include" />
-                  <e p="UIDefault.shader" t="Include" />
-                  <e p="Unlit.shader" t="Include" />
-                  <e p="UnlitLightmap.shader" t="Include" />
-                </e>
-                <e p="SRP (Legacy)" t="Include">
-                  <e p="README.txt" t="Include" />
-                </e>
-              </e>
             </e>
           </e>
           <e p="README.txt" t="Include" />
+        </e>
+        <e p="CameraShakeFX" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="StressReceiver.cs" t="Include" />
+            <e p="TraumaInducer.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Deprecated_Files" t="Include">
+          <e p="Blaster.cs" t="Include" />
+          <e p="ProjectilBehavior.cs" t="Include" />
+          <e p="ProsecutorBehavior.cs" t="Include" />
+          <e p="SniperBehavior_lucas.cs" t="Include" />
+          <e p="Turret.cs" t="Include" />
+          <e p="Weapon.cs" t="Include" />
+          <e p="WeaponHandlingSystem.cs" t="Include" />
+        </e>
+        <e p="Graphics" t="Include">
+          <e p="Shader" t="Include">
+            <e p="BasicsDecals.shader" t="Include" />
+            <e p="Prosecutor_FireSFX" t="Include">
+              <e p="FireEffect_v1.shader" t="Include" />
+            </e>
+            <e p="ShieldtestShader.shader" t="Include" />
+          </e>
         </e>
         <e p="nTools" t="Include">
           <e p="PrefabPainter" t="Include">
@@ -904,35 +912,78 @@
             </e>
           </e>
         </e>
+        <e p="ResetLineRenderer.cs" t="Include" />
         <e p="Scripts" t="Include">
+          <e p="Enemies" t="Include">
+            <e p="DummyBehavior.cs" t="Include" />
+            <e p="EnemiesProps" t="Include">
+              <e p="EnemieProjectileBehavior.cs" t="Include" />
+              <e p="ShockwaveBehavior.cs" t="Include" />
+            </e>
+            <e p="EnemyInheritence" t="Include">
+              <e p="MonsterBehavior.cs" t="Include" />
+            </e>
+            <e p="ProssecutorBehavior_v2.cs" t="Include" />
+            <e p="SniperBehavior.cs" t="Include" />
+            <e p="TurretBehavior.cs" t="Include" />
+          </e>
+          <e p="Level Design" t="Include">
+            <e p="BumperBehavior.cs" t="Include" />
+            <e p="CollectiblesManager.cs" t="Include" />
+            <e p="DestroyableWall.cs" t="Include" />
+            <e p="ReloadScene.cs" t="Include" />
+            <e p="TP" t="Include">
+              <e p="TeleporterBehavior.cs" t="Include" />
+              <e p="TeleporterData.cs" t="Include" />
+            </e>
+            <e p="Traps" t="Include">
+              <e p="TrapBehavior.cs" t="Include" />
+              <e p="TrapLauncher.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Managers" t="Include">
+            <e p="FeedbackManager.cs" t="Include" />
+            <e p="ObjectReferencer.cs" t="Include" />
+            <e p="StartAsChildOf.cs" t="Include" />
+          </e>
+          <e p="Navigation" t="Include">
+            <e p="EnemySpawner.cs" t="Include" />
+            <e p="RoomTrigger.cs" t="Include" />
+          </e>
           <e p="Player" t="Include">
+            <e p="Debug" t="Include">
+              <e p="PauseGameWhenButtonPressed.cs" t="Include" />
+            </e>
             <e p="Feedbacks" t="Include">
-              <e p="FeedbackManager.cs" t="Include" />
+              <e p="WeaponRecoil.cs" t="Include" />
             </e>
             <e p="Mechanics" t="Include">
-              <e p="WeaponHandlingSystem.cs" t="Include" />
+              <e p="BlockProjectiles.cs" t="Include" />
+              <e p="EnergieStored.cs" t="Include" />
+              <e p="PhantomMode.cs" t="Include" />
+              <e p="ProjectEnergie.cs" t="Include" />
             </e>
             <e p="PlayerMouvement" t="Include">
               <e p="CustomPhysic.cs" t="Include" />
               <e p="MouseLook.cs" t="Include" />
-              <e p="MoveCamera.cs" t="Include" />
+              <e p="PlayerJumper.cs" t="Include" />
               <e p="PlayerMovement.cs" t="Include" />
-              <e p="PlayerMovement1.cs" t="Include" />
               <e p="TriggerManager.cs" t="Include" />
               <e p="WallRunning.cs" t="Include" />
             </e>
-            <e p="PlayerMouvementRigidbody" t="Include">
+            <e p="PlayerMovementRemade" t="Include">
               <e p="PlayerMovementRigidbody.cs" t="Include" />
               <e p="WallRunningRigidbody.cs" t="Include" />
             </e>
+            <e p="PlayerStats" t="Include">
+              <e p="PlayerLife.cs" t="Include" />
+            </e>
           </e>
-          <e p="Weapons" t="Include">
-            <e p="Blaster.cs" t="Include" />
-            <e p="ProjectilBehavior.cs" t="Include" />
-            <e p="Weapon.cs" t="Include" />
+          <e p="UI" t="Include">
+            <e p="HealthFeedbacks.cs" t="Include" />
+            <e p="ResetShootBoolean_AnimEvent.cs" t="Include" />
           </e>
         </e>
-        <e p="Turret.cs" t="Include" />
       </e>
       <e p="FMODUnity.csproj" t="IncludeRecursive" />
       <e p="FMODUnityEditor.csproj" t="IncludeRecursive" />
