@@ -47,13 +47,13 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Turret/TurretBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/SniperBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Level Design/CollectiblesManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/ProjectEnergie.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovementRemade/PlayerMovementRigidbody.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Level Design/BumperBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Level Design/TeleporterBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/FeedbackManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/WallRunningRigidbody.cs" />
       <option value="$PROJECT_DIR$/Assets/WeaponRecoil.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/ProjectEnergie.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1ohtdW9xSpIGpjT50LXGFp67Yso" />
@@ -140,7 +140,7 @@
       <workItem from="1616086979242" duration="720000" />
       <workItem from="1616699272582" duration="689000" />
       <workItem from="1616852454140" duration="11595000" />
-      <workItem from="1617023703691" duration="4266000" />
+      <workItem from="1617023703691" duration="4512000" />
     </task>
     <servers />
   </component>
