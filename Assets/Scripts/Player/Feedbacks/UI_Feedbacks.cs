@@ -13,7 +13,7 @@ public class UI_Feedbacks : MonoBehaviour
 
     private ParticleSystem Heal_PS;
     private ParticleSystem Halo_PS;
-    
+
     public Color HealColor;
 
     private void Awake() {
@@ -35,6 +35,7 @@ public class UI_Feedbacks : MonoBehaviour
         {
             case FeedbackType.Healing:
             //Halo_PS.main.startColor.gradientMin = new Color(HealColor.r, HealColor.g, HealColor.b);
+ 
             Halo_PS.Play();
             Heal_PS.Play();
             break;
