@@ -40,6 +40,9 @@ public class PlayerLife : MonoBehaviour
 
     public void AddLifePoint(int lp)
     {
+        //feedbacks
+        UI_Feedbacks.Instance.CallFeedback(UI_Feedbacks.FeedbackType.Healing);
+        //Mecha
         lifePoint += lp;
         lifePoint = Mathf.Clamp(lifePoint, 0, 100);
     }
