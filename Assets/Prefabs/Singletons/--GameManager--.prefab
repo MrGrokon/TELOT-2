@@ -98,3 +98,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HealColor: {r: 0.9433962, g: 0.89146006, b: 0.30704877, a: 0}
+  LevelBeforeHaloAppearance: 75
+  LevelBeforeDrops: 35
