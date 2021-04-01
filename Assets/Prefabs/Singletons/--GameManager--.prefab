@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6069094130225411869}
   - component: {fileID: 6509241777085608740}
   - component: {fileID: 1752241918816837347}
+  - component: {fileID: 4453278936563825603}
   m_Layer: 0
   m_Name: --GameManager--
   m_TagString: Untagged
@@ -55,6 +56,7 @@ MonoBehaviour:
     type: 3}
   SniperEnemy_prefab: {fileID: 6106855031906571488, guid: f70426cbd8455cc4cb9d20e8843fd701,
     type: 3}
+  InComingHit_Pivot: {fileID: 0}
 --- !u!114 &6509241777085608740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,3 +85,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseButton: 116
+--- !u!114 &4453278936563825603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700065792340058860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b303563e2210d7342b2f10714e1dc2d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealColor: {r: 0.9433962, g: 0.89146006, b: 0.30704877, a: 0}
+  LevelBeforeHaloAppearance: 75
+  LevelBeforeDrops: 35
