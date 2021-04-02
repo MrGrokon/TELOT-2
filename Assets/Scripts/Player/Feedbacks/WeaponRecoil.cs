@@ -11,12 +11,7 @@ public class WeaponRecoil : MonoBehaviour
     public float recoil = 0.0f;
      
     void Update() {
-        if(Input.GetMouseButtonDown(0) && GetComponent<EnergieStored>().HasEnergieStored())
-        {
-            //every time you fire a bullet, add to the recoil.. of course you can probably set a max recoil etc..
-            recoil += 0.1f;
-        }
-     
+
         recoiling();
     }
      
@@ -38,6 +33,7 @@ public class WeaponRecoil : MonoBehaviour
             recoilMod.rotation = Quaternion.Slerp(recoilMod.rotation, minRecoil,Time.deltaTime * recoilSpeed / 2);
             float X = recoilMod.localEulerAngles.x;
             weapon.transform.localEulerAngles = weapon.transform.localEulerAngles + new Vector3(X, 0, 0);
+            this.enabled = false;
         }
     }
 
