@@ -36,15 +36,11 @@
       <option value="$PROJECT_DIR$/Assets/DummyBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/ReloadScene.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMouvement/MouseLook.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/EnergieStored.cs" />
       <option value="$PROJECT_DIR$/Assets/Deprecated_Files/ProjectilBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemieProjectileBehavior.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerStats/PlayerLife.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/BlockProjectiles.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyInheritence/MonsterBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Turret/TurretBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/SniperBehavior.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Level Design/CollectiblesManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovementRemade/PlayerMovementRigidbody.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Level Design/BumperBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Level Design/TeleporterBehavior.cs" />
@@ -52,6 +48,10 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/WallRunningRigidbody.cs" />
       <option value="$PROJECT_DIR$/Assets/WeaponRecoil.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/ProjectEnergie.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Level Design/CollectiblesManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerStats/PlayerLife.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/BlockProjectiles.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/EnergieStored.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovementRemade/WallRunningRigidbody.cs" />
     </changedPaths>
   </component>
@@ -141,6 +141,10 @@
       <workItem from="1616852454140" duration="11595000" />
       <workItem from="1617023703691" duration="4512000" />
       <workItem from="1617035435124" duration="364000" />
+      <workItem from="1617745555726" duration="1283000" />
+      <workItem from="1617783214374" duration="2325000" />
+      <workItem from="1617786492517" duration="269000" />
+      <workItem from="1617792217339" duration="434000" />
     </task>
     <servers />
   </component>
