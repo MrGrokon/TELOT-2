@@ -199,6 +199,7 @@ public class WallRunningRigidbody : MonoBehaviour
         }
         Camera.main.fieldOfView =
             Mathf.Lerp(fovNormal, fovOnWall, interpolationTime);
+        GameObject.Find("DrawAlwaysCamera").GetComponent<Camera>().fieldOfView = Mathf.Lerp(fovNormal, fovOnWall, interpolationTime);
         interpolationTime = Mathf.Clamp(interpolationTime, 0, 1);
     }
 
