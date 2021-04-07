@@ -7,7 +7,7 @@ public class EnergieStored : MonoBehaviour
 {
     [Range(3, 500)]
     public int MaxEnergieStorable = 5;
-    private UnityEngine.UI.Text EnergieFeedback_Text;
+    private TextMesh EnergieFeedback_Text;
 
     private int _energieStored = 0;
     public int _energiePerShot;
@@ -17,16 +17,16 @@ public class EnergieStored : MonoBehaviour
 
         private void Start()
         {
-            EnergieFeedback_Text = GameObject.Find("Energie_Text").GetComponent<UnityEngine.UI.Text>();
+            EnergieFeedback_Text = GameObject.Find("Ammo3DText").GetComponent<TextMesh>();
             _energieStored = startingEnergie;
         }
 
     private void Update() {
             if(HasEnergieStored() == false){
-                EnergieFeedback_Text.text = "No Energie";
+                EnergieFeedback_Text.text = "0";
             }
             else{
-                EnergieFeedback_Text.text = _energieStored.ToString();
+                EnergieFeedback_Text.text = (_energieStored / 10).ToString();
             }
             
         }
