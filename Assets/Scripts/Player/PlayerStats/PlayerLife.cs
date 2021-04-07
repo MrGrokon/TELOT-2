@@ -47,12 +47,12 @@ public class PlayerLife : MonoBehaviour
         lifePoint = Mathf.Clamp(lifePoint, 0, 100);
     }
 
-    private void OnTriggerEnter(Collider other)
+    /*private void OnTriggerEnter(Collider other)
     {
         if (other.transform.CompareTag("EnemyProjectile"))
         {
             Destroy(other.gameObject);
             TakeDammage(other.transform.GetComponent<EnemieProjectileBehavior>().getDammage());  
         }
-    }
+    }*/
 }
