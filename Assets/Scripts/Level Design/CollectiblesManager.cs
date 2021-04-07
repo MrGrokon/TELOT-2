@@ -8,7 +8,8 @@ public class CollectiblesManager : MonoBehaviour
     enum T
     {
         Ammunition,
-        Health
+        Health,
+        Phantom
     }
 
     [SerializeField] private T collectibleType;
@@ -38,6 +39,9 @@ public class CollectiblesManager : MonoBehaviour
                 case T.Health:
                     if(other.GetComponent<PlayerLife>().getLifePoint() < other.GetComponent<PlayerLife>().startingLifePoint)
                         other.GetComponent<PlayerLife>().AddLifePoint(lifeAmountByLevel[collectibleLevel-1]);
+                    break;
+                case T.Phantom:
+                    //Set la récupération d'énergie du phantom
                     break;
             }
             Destroy(gameObject);

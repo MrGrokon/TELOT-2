@@ -10,13 +10,13 @@ public class PlayerLife : MonoBehaviour
 
     [SerializeField] private float lifePoint;
     public float startingLifePoint;
-    private Text lifeText;
+    private Slider lifeText;
 
     private void Start()
     {
-        lifeText = GameObject.Find("LifeText").GetComponent<UnityEngine.UI.Text>();
+        lifeText = GameObject.Find("LifeSlider").GetComponent<Slider>();
         lifePoint = startingLifePoint;
-        lifeText.text = lifePoint + " / " + startingLifePoint;
+        lifeText.value = lifePoint / startingLifePoint;
     }
 
 
@@ -24,7 +24,7 @@ public class PlayerLife : MonoBehaviour
     {
         if(lifePoint <= 0)
             SceneManager.LoadScene(0);
-        lifeText.text = lifePoint + " / " + startingLifePoint;
+        lifeText.value = lifePoint / startingLifePoint;
     }
 
     public void TakeDammage(float dmg)
@@ -40,6 +40,9 @@ public class PlayerLife : MonoBehaviour
 
     public void AddLifePoint(int lp)
     {
+        //feedbacks
+        UI_Feedbacks.Instance.CallFeedback(UI_Feedbacks.FeedbackType.Healing);
+        //Mecha
         lifePoint += lp;
         lifePoint = Mathf.Clamp(lifePoint, 0, 100);
     }

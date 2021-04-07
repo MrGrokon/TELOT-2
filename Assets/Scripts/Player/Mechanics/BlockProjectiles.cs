@@ -17,6 +17,7 @@ public class BlockProjectiles : MonoBehaviour
     private bool Shielding = false;
     private float _elapsedTime = 0f;
     private Slider shieldRemainSlider;
+    public Image SliderFillImage;
     public int energieStoredPerShot;
     public float shieldEnergy;
     public bool shieldDepleted = false;
@@ -71,7 +72,11 @@ public class BlockProjectiles : MonoBehaviour
             }
 
             if (shieldEnergy >= TimeToBeActive)
+            {
+                SliderFillImage.color = new Color(134, 255, 107);
                 shieldDepleted = false;
+            }
+                
             if (AbsorptionByMovement)
             {
                 if (GetComponent<PlayerMovementRigidbody>().Motion != Vector3.zero)
@@ -124,6 +129,7 @@ public class BlockProjectiles : MonoBehaviour
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Shield/ShieldOff", transform.position);
                     shieldEnergy = 0;
                     shieldDepleted = true;
+                    SliderFillImage.color = Color.gray;
                 }
                 
             }
