@@ -1,5 +1,88 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &54334423
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 54334424}
+  - component: {fileID: 54334426}
+  - component: {fileID: 54334425}
+  m_Layer: 0
+  m_Name: Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &54334424
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54334423}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1544188813995310427}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &54334426
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54334423}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 3
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 16384
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!81 &54334425
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54334423}
+  m_Enabled: 1
 --- !u!1 &216803807
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,7 +205,7 @@ GameObject:
   - component: {fileID: 343215682}
   - component: {fileID: 343215681}
   - component: {fileID: 343215680}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -293,7 +376,7 @@ GameObject:
   m_Component:
   - component: {fileID: 371972761}
   - component: {fileID: 371972762}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: ShieldTextire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309,7 +392,7 @@ Transform:
   m_GameObject: {fileID: 371972760}
   m_LocalRotation: {x: 0.34328574, y: -0.22343549, z: 0.2234354, w: 0.8844819}
   m_LocalPosition: {x: -0.3276369, y: -0.7748955, z: 1.5212705}
-  m_LocalScale: {x: 0.050000012, y: 0.050000012, z: 0.050000004}
+  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
   m_Children: []
   m_Father: {fileID: 1665798970}
   m_RootOrder: 2
@@ -401,7 +484,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -338.6109, y: -208.23615}
-  m_SizeDelta: {x: 20, y: 10}
+  m_SizeDelta: {x: 25.3, y: 9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &403212515
 MonoBehaviour:
@@ -539,7 +622,7 @@ GameObject:
   - component: {fileID: 463421344}
   - component: {fileID: 463421343}
   - component: {fileID: 463421342}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: ForArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -832,7 +915,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1665798970}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -867,7 +950,7 @@ GameObject:
   - component: {fileID: 1752646599}
   - component: {fileID: 1752646601}
   - component: {fileID: 1752646600}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Ammo3DText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -959,7 +1042,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1766577122}
   - component: {fileID: 1766577123}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Lightning_sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6099,7 +6182,8 @@ MonoBehaviour:
   ProjectileLayerMask:
     serializedVersion: 2
     m_Bits: 4096
-  energieStoredPerShot: 10
+  SliderFillImage: {fileID: 1596102776}
+  energieStoredPerShot: 1
   shieldEnergy: 2
   shieldDepleted: 0
   AbsorptionByMovement: 0
@@ -6383,6 +6467,7 @@ Transform:
   - {fileID: 3136847435837825155}
   - {fileID: 1665798970}
   - {fileID: 1631958381}
+  - {fileID: 54334424}
   m_Father: {fileID: 1544188812562984237}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -21223,10 +21308,100 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.29999998
       objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: 3a79e17260dcf3e408769c32bf389b98,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: -8380157826906577798, guid: 3a79e17260dcf3e408769c32bf389b98,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: -7640558969779515294, guid: 3a79e17260dcf3e408769c32bf389b98,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: -7146521406498821007, guid: 3a79e17260dcf3e408769c32bf389b98,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: -7029948723529949830, guid: 3a79e17260dcf3e408769c32bf389b98,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: -6733177361254619370, guid: 3a79e17260dcf3e408769c32bf389b98,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: -5568371526223589888, guid: 3a79e17260dcf3e408769c32bf389b98,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: -1599826595754709761, guid: 3a79e17260dcf3e408769c32bf389b98,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: -516098083770646512, guid: 3a79e17260dcf3e408769c32bf389b98,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: -208595431880416365, guid: 3a79e17260dcf3e408769c32bf389b98,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3a79e17260dcf3e408769c32bf389b98,
         type: 3}
       propertyPath: m_Name
       value: Futuristic_Shotgun
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3a79e17260dcf3e408769c32bf389b98,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 2800250516343163423, guid: 3a79e17260dcf3e408769c32bf389b98,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3849762623622064168, guid: 3a79e17260dcf3e408769c32bf389b98,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148817236446094103, guid: 3a79e17260dcf3e408769c32bf389b98,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 6507901977716847365, guid: 3a79e17260dcf3e408769c32bf389b98,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416272007918961125, guid: 3a79e17260dcf3e408769c32bf389b98,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8513859187771203891, guid: 3a79e17260dcf3e408769c32bf389b98,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8700725330082129686, guid: 3a79e17260dcf3e408769c32bf389b98,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a79e17260dcf3e408769c32bf389b98, type: 3}

@@ -26,7 +26,7 @@ public class EnergieStored : MonoBehaviour
                 EnergieFeedback_Text.text = "0";
             }
             else{
-                EnergieFeedback_Text.text = _energieStored.ToString();
+                EnergieFeedback_Text.text = (_energieStored / 10).ToString();
             }
             
         }
