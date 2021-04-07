@@ -6201,8 +6201,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxEnergieStorable: 500
-  _energiePerShot: 1
-  startingEnergie: 8
+  _energiePerShot: 10
+  startingEnergie: 80
 --- !u!114 &5776894925316817838
 MonoBehaviour:
   m_ObjectHideFlags: 0
