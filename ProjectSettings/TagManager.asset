@@ -11,6 +11,7 @@ TagManager:
   - Ground
   - Pillars
   - RoomTrigger
+  - Shield
   layers:
   - Default
   - TransparentFX
