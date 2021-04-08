@@ -188,7 +188,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.7
+  m_Radius: 0.8
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5500672117775073681
 MonoBehaviour:
@@ -223,12 +223,12 @@ MonoBehaviour:
     type: 3}
   projectileThrower: {fileID: 2727038761024645114}
   _state: 0
-  attackInterval: 0.4
+  attackInterval: 2
   attackCooldown: 0
   attackDistance: 200
   ProjectileSpeed: 160
-  burst: 2
-  burstInterval: 0
+  burst: 5
+  burstInterval: 0.3
   distanceToPlayer: 0
 --- !u!1 &2727038761024645114
 GameObject:
