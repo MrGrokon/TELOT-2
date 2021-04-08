@@ -5133,7 +5133,7 @@ GameObject:
   - component: {fileID: 903268058956280854}
   - component: {fileID: 5986790394738995547}
   m_Layer: 0
-  m_Name: Avatar 1 1
+  m_Name: Avatar 1 1 (cheloux)
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5219,8 +5219,12 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   TimeToDetachFromWall: 3
+  gravityOnWall: -5
+  lastSpacePress: 0
   volume: {fileID: 8017434594155395513}
   chromaticLerpTime: 0
+  wallRunDebug: {fileID: 0}
+  delayOffWall: 0
 --- !u!114 &7849072592557815464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5264,6 +5268,7 @@ MonoBehaviour:
   ProjectileLayerMask:
     serializedVersion: 2
     m_Bits: 4096
+  SliderFillImage: {fileID: 0}
   energieStoredPerShot: 5
   shieldEnergy: 0
   shieldDepleted: 0
