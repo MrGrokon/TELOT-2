@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using FMOD.Studio;
 using UnityEngine;
@@ -142,6 +143,12 @@ public class BlockProjectiles : MonoBehaviour
             shieldIdle.start();
         }
 
-    #endregion
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(_Shield_Pivot.position, ShieldHitboxRange);
+        }
+
+        #endregion
     
 }
