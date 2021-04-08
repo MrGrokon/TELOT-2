@@ -37,15 +37,16 @@ public class EnemieProjectileBehavior : MonoBehaviour
     private void FixedUpdate()
     {
         Debug.DrawRay(transform.position, transform.forward, Color.red);
-        if (Physics.Raycast(transform.position, Vector3.forward, out RaycastHit hit, 2f))
+        if (Physics.Raycast(transform.position, Vector3.forward, out RaycastHit hit, 1f))
         {
-            if (hit.transform.CompareTag("Player"))
-            {
-                hit.transform.GetComponent<PlayerLife>().TakeDammage(DamageDoned);
-            }
-            else if (hit.transform.CompareTag("Shield"))
+            
+            if (hit.transform.CompareTag("Shield"))
             {
                 hit.transform.GetComponentInParent<EnergieStored>().StoreEnergie( hit.transform.GetComponentInParent<BlockProjectiles>().energieStoredPerShot);
+            }
+            else if (hit.transform.CompareTag("Player"))
+            {
+                hit.transform.GetComponent<PlayerLife>().TakeDammage(DamageDoned);
             }
             else
             {

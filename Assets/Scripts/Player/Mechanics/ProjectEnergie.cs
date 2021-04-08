@@ -168,13 +168,15 @@ public class ProjectEnergie : MonoBehaviour
                 timeToHideHit -= 1 * Time.deltaTime;
                 if (timeToHideHit <= 0)
                 {
-                    ObjectReferencer.Instance.Avatar_Object.GetComponent<ProjectEnergie>().hitMarker.gameObject.SetActive(false);
+                    ObjectReferencer.Instance.Avatar_Object.GetComponent<ProjectEnergie>().hitMarker.gameObject
+                        .SetActive(false);
                     timeToHideHit = 0.3f;
                 }
             }
-            
+
         }
-    #endregion
+
+        #endregion
 
     #region Reset shooter boolean
         public void ResetShootBoolean(){

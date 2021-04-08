@@ -47,13 +47,14 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/FeedbackManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/WallRunningRigidbody.cs" />
       <option value="$PROJECT_DIR$/Assets/WeaponRecoil.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/ProjectEnergie.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Level Design/CollectiblesManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/EnergieStored.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovementRemade/WallRunningRigidbody.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/BlockProjectiles.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerStats/PlayerLife.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemiesProps/EnemieProjectileBehavior.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerStats/PlayerLife.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/ProjectEnergie.cs" />
+      <option value="$PROJECT_DIR$/Assets/PresManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/EnergieStored.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1ohtdW9xSpIGpjT50LXGFp67Yso" />
@@ -147,7 +148,8 @@
       <workItem from="1617786492517" duration="269000" />
       <workItem from="1617792217339" duration="680000" />
       <workItem from="1617816151729" duration="547000" />
-      <workItem from="1617826636951" duration="1687000" />
+      <workItem from="1617826636951" duration="2263000" />
+      <workItem from="1617921475511" duration="2817000" />
     </task>
     <servers />
   </component>
