@@ -44,7 +44,19 @@ public class PlayerLife : MonoBehaviour
         UI_Feedbacks.Instance.CallFeedback(UI_Feedbacks.FeedbackType.Healing);
         //Mecha
         lifePoint += lp;
-        lifePoint = Mathf.Clamp(lifePoint, 0, 100);
+        lifePoint = Mathf.Clamp(lifePoint, 0, startingLifePoint);
+    }
+
+    public void SetGodmode()
+    {
+        lifePoint = 999999.0f;
+        startingLifePoint = 999999.0f;
+    }
+    
+    public void UnsetGodmode()
+    {
+        lifePoint = startingLifePoint;
+        startingLifePoint = 100;
     }
 
     /*private void OnTriggerEnter(Collider other)

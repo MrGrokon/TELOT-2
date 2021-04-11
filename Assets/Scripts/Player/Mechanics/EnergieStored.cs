@@ -67,5 +67,15 @@ public class EnergieStored : MonoBehaviour
             _energieStored += ammo;
             _energieStored = Mathf.Clamp(_energieStored, 0, MaxEnergieStorable);
         }
+
+        public void SetGodmode()
+        {
+            _energieStored = 99999;
+        }
+
+        public void UnsetGodmode()
+        {
+            _energieStored = startingEnergie;
+        }
     #endregion
 }
