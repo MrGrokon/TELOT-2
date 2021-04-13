@@ -139,7 +139,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &13731865
 Transform:
@@ -1634,6 +1634,18 @@ PrefabInstance:
       propertyPath: wallRunDebug
       value: 
       objectReference: {fileID: 1482504974}
+    - target: {fileID: 1860506956, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
+      propertyPath: WallDistanceDetection
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860506956, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
+      propertyPath: interpolationTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860506956, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
+      propertyPath: interpolationSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1544188812562984144, guid: f6540eafabbd2364c9b59fba55b80675,
         type: 3}
       propertyPath: m_Name
@@ -1703,6 +1715,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Shield
+      objectReference: {fileID: 0}
+    - target: {fileID: 6945830922706310441, guid: f6540eafabbd2364c9b59fba55b80675,
+        type: 3}
+      propertyPath: stepInterval
+      value: 0.35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
@@ -2237,7 +2254,7 @@ PrefabInstance:
     - target: {fileID: 7074193039533441571, guid: 8e22c3c0d155d7548bd656f5e87ecb90,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7074193039533441596, guid: 8e22c3c0d155d7548bd656f5e87ecb90,
         type: 3}
@@ -3646,7 +3663,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!65 &1794630383
 BoxCollider:
@@ -4857,7 +4874,7 @@ PrefabInstance:
     - target: {fileID: 2727038760736590164, guid: df00fe06c5f36694bb3d1746a6cb6bba,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df00fe06c5f36694bb3d1746a6cb6bba, type: 3}
@@ -5264,6 +5281,10 @@ PrefabInstance:
     - target: {fileID: 495572724, guid: 5afe7bbb28326d84fadf01bf631dc404, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1482504972, guid: 5afe7bbb28326d84fadf01bf631dc404, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1529043928, guid: 5afe7bbb28326d84fadf01bf631dc404, type: 3}
       propertyPath: m_SizeDelta.x

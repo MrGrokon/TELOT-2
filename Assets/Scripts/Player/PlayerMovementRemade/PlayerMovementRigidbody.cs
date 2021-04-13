@@ -38,6 +38,12 @@ public class PlayerMovementRigidbody : MonoBehaviour
     [Header("Particle System")] 
     public ParticleSystem DashParticle;
 
+    [Header("Sound Effect")]
+    [SerializeField] private float stepInterval;
+
+    private float actualStepInterval;
+    
+
 
     // Start is called before the first frame update
     void Start()
@@ -45,7 +51,7 @@ public class PlayerMovementRigidbody : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
         _phamtomMode = this.GetComponent<PhantomMode>();
         volume.profile.TryGetSettings(out CA);
-
+        doubleJump = true;
     }
 
     // Update is called once per frame
@@ -63,6 +69,8 @@ public class PlayerMovementRigidbody : MonoBehaviour
         actualDashCD -= 1 * Time.deltaTime;
         DetectGround();
         PostProcessValueManager();
+        actualStepInterval -= 1 * Time.deltaTime;
+        
     }
 
     private void Move()
@@ -73,6 +81,7 @@ public class PlayerMovementRigidbody : MonoBehaviour
         {
             if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
             {
+                PlayFootstepSound();
                 if (GetComponent<WallRunningRigidbody>().OnWallRun)
                 {
                     Motion = (v * GetComponent<WallRunningRigidbody>().wallForwardRun);
@@ -123,14 +132,12 @@ public class PlayerMovementRigidbody : MonoBehaviour
     {
         if (onGround)
         {
-            print("Simple jump");
             _rb.AddForce((transform.up * 2 + Motion * 2.5f).normalized * jumpForce, ForceMode.Impulse);
             onGround = false;
             FMODUnity.RuntimeManager.PlayOneShot("event:/Movement/Jump", transform.position);
         }
         else if (doubleJump && !GetComponent<WallRunningRigidbody>().OnWallRun)
         {
-            print("Double jump");
             FMODUnity.RuntimeManager.PlayOneShot("event:/Movement/Jump", transform.position);
             _rb.AddForce((transform.up + Motion).normalized * jumpForce * dJumpFactor, ForceMode.Impulse);
             doubleJump = false;
@@ -158,14 +165,25 @@ public class PlayerMovementRigidbody : MonoBehaviour
                 if (onGround == false && GetComponent<Rigidbody>().velocity.y < 0)
                 {
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Movement/LandOnGround", transform.position);
+                    print("Atté");
                 }
                 onGround = true;
                 doubleJump = true;
             }
         }
-        else
+    }
+
+    private void PlayFootstepSound()
+    {
+        if (actualStepInterval <= 0)
         {
-            onGround = false;
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Movement/Footstep", transform.position);
+            if(GetComponent<WallRunningRigidbody>().OnWallRun)
+                actualStepInterval = stepInterval / 2;
+            else
+            {
+                actualStepInterval = stepInterval;
+            }
         }
     }
 
@@ -184,9 +202,23 @@ public class PlayerMovementRigidbody : MonoBehaviour
         _rb.angularVelocity = Vector3.zero;
     }
 
+    private void OnCollisionExit(Collision other)
+    {
+        if (other.gameObject.layer == 8)
+        {
+            StartCoroutine(DelayOffGround());
+        }
+    }
+
     public float GetSpeed()
     {
         return speed;
+    }
+
+    private IEnumerator DelayOffGround()
+    {
+        yield return new WaitForSeconds(0.5f);
+        onGround = false;
     }
 
     
