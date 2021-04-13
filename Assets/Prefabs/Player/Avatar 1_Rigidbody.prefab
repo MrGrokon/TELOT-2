@@ -6082,7 +6082,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 834473b13fdc58f4fbc2eaf14a4d98f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MouseSensitivity: 110
+  MouseSensitivity: 270
   Z_Rotation: 0
   locked: 0
 --- !u!114 &1860506956
@@ -6177,13 +6177,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9379595946a87cc4b8e9759808ca63c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeToBeActive: 2.5
+  TimeToBeActive: 3
   ShieldHitboxRange: 3
   ProjectileLayerMask:
     serializedVersion: 2
     m_Bits: 4096
   SliderFillImage: {fileID: 1596102776}
-  energieStoredPerShot: 1
+  energieStoredPerShot: 10
   shieldEnergy: 2
   shieldDepleted: 0
   AbsorptionByMovement: 0
@@ -6200,7 +6200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccad118127313a14a84f4161b6997cc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxEnergieStorable: 500
+  MaxEnergieStorable: 250
   _energiePerShot: 10
   startingEnergie: 80
 --- !u!114 &5776894925316817838
