@@ -51,12 +51,12 @@ public class MouseLook : MonoBehaviour
         {
             PlayerView.localRotation = Quaternion.Euler(X_Rotation, 0f, 0);
             PlayerBody.Rotate(this.transform.up * _mouseX);
-            PlayerBody.eulerAngles = new Vector3(0, PlayerBody.eulerAngles.y, 0);
+            //PlayerBody.eulerAngles = new Vector3(0, PlayerBody.eulerAngles.y, 0);
         }
-        else
+        /*else
         {
             PlayerView.localRotation = Quaternion.Euler(X_Rotation, Z_Rotation, 0);
-        }
+        }*/
 
 
     }
@@ -64,7 +64,7 @@ public class MouseLook : MonoBehaviour
     public void ResetCameraAndBody()
     {
         PlayerBody.eulerAngles = new Vector3(PlayerView.eulerAngles.x, PlayerView.eulerAngles.y,0);
-        PlayerView.rotation = Quaternion.identity;
+        //PlayerView.rotation = Quaternion.identity;
         locked = false;
     }
 

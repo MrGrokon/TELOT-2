@@ -32,7 +32,10 @@ public class WallRunningRigidbody : MonoBehaviour
     public Vector3 wallForwardRun;
 
     [Header("Wall Run Feedbacks")] 
-    public float interpolationTime;
+    private float interpolationTime;
+
+    private float lastZrotationByWallrun;
+    [SerializeField] private float interpolationSpeed;
     FMOD.Studio.EventInstance playerMoveWallRun;
 
     public float fovOnWall;
@@ -59,6 +62,7 @@ public class WallRunningRigidbody : MonoBehaviour
     [Tooltip("Temps avant que le joueur ne soit considérer comme hors du mur quand il l'a quitté")]
     public float delayOffWall;
 
+    private bool canOffWall;
     
     
    
@@ -75,7 +79,7 @@ public class WallRunningRigidbody : MonoBehaviour
 
     void Update()
     {
-        //wallRunDebug.text = "Last space input :" + lastSpacePress + "\n" + "  wall run state at this time : " + wallRunAtState + "\n" + "Global wall run state :" + OnWallRun;
+        wallRunDebug.text = "Last space input :" + lastSpacePress + "\n" + "  wall run state at this time : " + wallRunAtState + "\n" + "Global wall run state :" + OnWallRun;
         lastSpacePress += 1 * Time.deltaTime;
         if (Input.GetButtonDown("Jump"))
         {
@@ -85,17 +89,12 @@ public class WallRunningRigidbody : MonoBehaviour
 
         if(Input.GetButtonDown("Jump") && OnWallRun)
         {
-            print("Wall Jump !");
             _rb.AddForce((Vector3.up + LastWall_normal * 2 + transform.forward).normalized * (JumpForce * 2.5f), ForceMode.Impulse);
             GetComponent<PlayerMovementRigidbody>().Motion = Vector3.zero;
             WallOnLeft = false;
             WallOnRight = false;
             canWallRun = false;
             StartCoroutine(ReactivateDoubleJump());
-        }
-        else if(OnWallRun)
-        {
-            print(Input.GetButtonDown("Jump") + "Wall normal : " + LastWall_normal + OnWallRun.ToString());
         }
     }
 
@@ -114,15 +113,18 @@ public class WallRunningRigidbody : MonoBehaviour
             {
                 Physics.gravity = new Vector3(0,gravityOnWall,0);
                 StartCoroutine(LowGravityDrag());
-                //_rb.velocity = Vector3.zero;
                 OnWallRun = true;
                 if (WallOnLeft)
                 {
-                    transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, -30);
+                    float CameraZ = Mathf.Lerp(0, -30, interpolationTime);
+                    transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, CameraZ);
+                    lastZrotationByWallrun = -30;
                 }
                 else
                 {
-                    transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 30);
+                    float CameraZ = Mathf.Lerp(0, 30, interpolationTime);
+                    transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, CameraZ);
+                    lastZrotationByWallrun = 30;
                 }
 
             }
@@ -137,9 +139,6 @@ public class WallRunningRigidbody : MonoBehaviour
             StartCoroutine(ResetGravity());
             OnWallRun = false;
         }
-
-        
-       
         
         _elapsedTime += Time.deltaTime;
         
@@ -149,6 +148,7 @@ public class WallRunningRigidbody : MonoBehaviour
     {
         if(other.gameObject.layer == 9 && canWallRun)
         {
+            canOffWall = false;
             #region Detect & Assign the wall i walk on
             WallOnRight = Physics.Raycast(this.transform.position, this.transform.right, out RaycastHit RightHit, WallDistanceDetection, RunnableWallLayer.value);
             WallOnLeft = Physics.Raycast(this.transform.position, -this.transform.right, out RaycastHit LeftHit, WallDistanceDetection, RunnableWallLayer.value);
@@ -168,18 +168,17 @@ public class WallRunningRigidbody : MonoBehaviour
                 CA.intensity.value = 0.25f;
                 actualChromaticLerpTimeValue = 0;
                 transform.rotation = Quaternion.LookRotation(wallForwardRun, Vector3.up);
-                Camera.main.transform.rotation = Quaternion.identity;
                 GetComponent<MouseLook>().locked = true;
-                GetComponent<MouseLook>().ResetRotation();
                 GetComponent<PlayerMovementRigidbody>().doubleJump = true;
                 Debug.DrawRay(transform.position, wallForwardRun, Color.red, Mathf.Infinity);
                 playerMoveWallRun.start();
+                StartCoroutine(OffWallDelay());
         }
     }
 
     private void OnCollisionExit(Collision other)
     {
-        if(other.gameObject.layer == 9)
+        if(other.gameObject.layer == 9 && canOffWall)
         {
            StartCoroutine(wallRunDelayOff());
         }
@@ -191,16 +190,20 @@ public class WallRunningRigidbody : MonoBehaviour
     {
         if (OnWallRun)
         {
-            interpolationTime += 2 * Time.deltaTime;
+            interpolationTime += interpolationSpeed * Time.deltaTime;
         }
         else if(!OnWallRun)
         {
-            interpolationTime -= 2 * Time.deltaTime;
+            interpolationTime -= interpolationSpeed * Time.deltaTime;
+            float Z = Mathf.Lerp(0,lastZrotationByWallrun,  interpolationTime);
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, Z);
         }
         Camera.main.fieldOfView =
             Mathf.Lerp(fovNormal, fovOnWall, interpolationTime);
         GameObject.Find("DrawAlwaysCamera").GetComponent<Camera>().fieldOfView = Mathf.Lerp(fovNormal, fovOnWall, interpolationTime);
-        interpolationTime = Mathf.Clamp(interpolationTime, 0, 1);
+        interpolationTime = Mathf.Clamp(interpolationTime, 0, 1f);
+        
+        
     }
 
     private IEnumerator ReactivateDoubleJump()
@@ -208,6 +211,12 @@ public class WallRunningRigidbody : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         GetComponent<PlayerMovementRigidbody>().doubleJump = true;
         canWallRun = true;
+    }
+
+    private IEnumerator OffWallDelay()
+    {
+        yield return new WaitForSeconds(0.5f);
+        canOffWall = true;
     }
     
     private void PostProcessValueManager()
@@ -224,7 +233,6 @@ public class WallRunningRigidbody : MonoBehaviour
         yield return new WaitForSeconds(delayOffWall);
         WallOnLeft = false;
         WallOnRight = false;
-        //GetComponent<MouseLook>().ResetCameraAndBody();
         CA.intensity.value = 0;
         playerMoveWallRun.stop(STOP_MODE.ALLOWFADEOUT);
     }
@@ -247,5 +255,7 @@ public class WallRunningRigidbody : MonoBehaviour
             yield return null;
         }
     #endregion
+    
+    
 
 }

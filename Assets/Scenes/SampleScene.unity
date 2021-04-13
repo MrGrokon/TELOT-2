@@ -1634,6 +1634,18 @@ PrefabInstance:
       propertyPath: wallRunDebug
       value: 
       objectReference: {fileID: 1482504974}
+    - target: {fileID: 1860506956, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
+      propertyPath: WallDistanceDetection
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860506956, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
+      propertyPath: interpolationTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860506956, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
+      propertyPath: interpolationSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1544188812562984144, guid: f6540eafabbd2364c9b59fba55b80675,
         type: 3}
       propertyPath: m_Name
@@ -5264,6 +5276,10 @@ PrefabInstance:
     - target: {fileID: 495572724, guid: 5afe7bbb28326d84fadf01bf631dc404, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1482504972, guid: 5afe7bbb28326d84fadf01bf631dc404, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1529043928, guid: 5afe7bbb28326d84fadf01bf631dc404, type: 3}
       propertyPath: m_SizeDelta.x

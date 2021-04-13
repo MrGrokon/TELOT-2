@@ -123,14 +123,12 @@ public class PlayerMovementRigidbody : MonoBehaviour
     {
         if (onGround)
         {
-            print("Simple jump");
             _rb.AddForce((transform.up * 2 + Motion * 2.5f).normalized * jumpForce, ForceMode.Impulse);
             onGround = false;
             FMODUnity.RuntimeManager.PlayOneShot("event:/Movement/Jump", transform.position);
         }
         else if (doubleJump && !GetComponent<WallRunningRigidbody>().OnWallRun)
         {
-            print("Double jump");
             FMODUnity.RuntimeManager.PlayOneShot("event:/Movement/Jump", transform.position);
             _rb.AddForce((transform.up + Motion).normalized * jumpForce * dJumpFactor, ForceMode.Impulse);
             doubleJump = false;
