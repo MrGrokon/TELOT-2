@@ -95,6 +95,7 @@ public class WallRunningRigidbody : MonoBehaviour
             WallOnRight = false;
             canWallRun = false;
             StartCoroutine(ReactivateDoubleJump());
+            GetComponentInChildren<MouseLook>().ResetBody();
         }
     }
 
@@ -167,9 +168,13 @@ public class WallRunningRigidbody : MonoBehaviour
             
                 CA.intensity.value = 0.25f;
                 actualChromaticLerpTimeValue = 0;
+                
                 transform.rotation = Quaternion.LookRotation(wallForwardRun, Vector3.up);
                 GetComponent<MouseLook>().locked = true;
                 GetComponent<PlayerMovementRigidbody>().doubleJump = true;
+                GetComponentInChildren<MouseLook>().ResetBody();
+                GetComponentInChildren<MouseLook>().Z_Rotation = 0;
+
                 Debug.DrawRay(transform.position, wallForwardRun, Color.red, Mathf.Infinity);
                 playerMoveWallRun.start();
                 StartCoroutine(OffWallDelay());
