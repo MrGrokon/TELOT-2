@@ -79,7 +79,7 @@ public class WallRunningRigidbody : MonoBehaviour
 
     void Update()
     {
-        wallRunDebug.text = "Last space input :" + lastSpacePress + "\n" + "  wall run state at this time : " + wallRunAtState + "\n" + "Global wall run state :" + OnWallRun;
+        //wallRunDebug.text = "Last space input :" + lastSpacePress + "\n" + "  wall run state at this time : " + wallRunAtState + "\n" + "Global wall run state :" + OnWallRun;
         lastSpacePress += 1 * Time.deltaTime;
         if (Input.GetButtonDown("Jump"))
         {
