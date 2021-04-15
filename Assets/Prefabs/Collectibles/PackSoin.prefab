@@ -122,3 +122,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectibleType: 1
   collectibleLevel: 1
+  ammoAmountByLevel: 
+  lifeAmountByLevel: 1e0000001900000032000000

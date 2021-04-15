@@ -11,7 +11,7 @@ public class MonsterBehavior : MonoBehaviour
     private int _Health;
 
     [Header("Weaponery Parameters")]
-    public float dammage;
+    public int dammage;
 
     [Header("Mouvement Parameter")]
     [Range(0.1f, 5f)]

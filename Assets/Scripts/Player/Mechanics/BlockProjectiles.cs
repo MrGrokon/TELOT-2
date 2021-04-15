@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using FMOD.Studio;
 using UnityEngine;
@@ -16,7 +17,8 @@ public class BlockProjectiles : MonoBehaviour
     private EnergieStored _Energie;
     private bool Shielding = false;
     private float _elapsedTime = 0f;
-    public Slider shieldRemainSlider;
+    private Slider shieldRemainSlider;
+    public Image SliderFillImage;
     public int energieStoredPerShot;
     public float shieldEnergy;
     public bool shieldDepleted = false;
@@ -28,9 +30,11 @@ public class BlockProjectiles : MonoBehaviour
     #region Unity Functions
 
         private void Awake() {
-            shieldIdle = FMODUnity.RuntimeManager.CreateInstance("event:/Shield/ShieldIdle");
+            shieldRemainSlider = GameObject.Find("Slider").GetComponent<Slider>();
+
+            /*shieldIdle = FMODUnity.RuntimeManager.CreateInstance("event:/Shield/ShieldIdle");
             FMODUnity.RuntimeManager.AttachInstanceToGameObject(shieldIdle, transform,
-                GetComponent<Rigidbody>());
+                GetComponent<Rigidbody>());*/
             _Shield_Rendr = GameObject.Find("ShieldDebug");
             _Shield_Pivot = GameObject.Find("Shield_Pivot").transform;
             _Shield_Rendr.SetActive(false);
@@ -69,7 +73,11 @@ public class BlockProjectiles : MonoBehaviour
             }
 
             if (shieldEnergy >= TimeToBeActive)
+            {
+                SliderFillImage.color = new Color(134, 255, 107);
                 shieldDepleted = false;
+            }
+                
             if (AbsorptionByMovement)
             {
                 if (GetComponent<PlayerMovementRigidbody>().Motion != Vector3.zero)
@@ -122,6 +130,7 @@ public class BlockProjectiles : MonoBehaviour
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Shield/ShieldOff", transform.position);
                     shieldEnergy = 0;
                     shieldDepleted = true;
+                    SliderFillImage.color = Color.gray;
                 }
                 
             }
@@ -134,6 +143,12 @@ public class BlockProjectiles : MonoBehaviour
             shieldIdle.start();
         }
 
-    #endregion
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(_Shield_Pivot.position, ShieldHitboxRange);
+        }
+
+        #endregion
     
 }

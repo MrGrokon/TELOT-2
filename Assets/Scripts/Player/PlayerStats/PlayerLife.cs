@@ -10,12 +10,13 @@ public class PlayerLife : MonoBehaviour
 
     [SerializeField] private float lifePoint;
     public float startingLifePoint;
-    public Text lifeText;
+    private Slider lifeText;
 
     private void Start()
     {
+        lifeText = GameObject.Find("LifeSlider").GetComponent<Slider>();
         lifePoint = startingLifePoint;
-        lifeText.text = lifePoint + " / " + startingLifePoint;
+        lifeText.value = lifePoint / startingLifePoint;
     }
 
 
@@ -23,11 +24,12 @@ public class PlayerLife : MonoBehaviour
     {
         if(lifePoint <= 0)
             SceneManager.LoadScene(0);
-        lifeText.text = lifePoint + " / " + startingLifePoint;
+        lifeText.value = lifePoint / startingLifePoint;
     }
 
-    public void setDammage(float dmg)
+    public void TakeDammage(float dmg)
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/PlayerHit"); 
         lifePoint -= dmg;
     }
 
@@ -38,17 +40,31 @@ public class PlayerLife : MonoBehaviour
 
     public void AddLifePoint(int lp)
     {
+        //feedbacks
+        UI_Feedbacks.Instance.CallFeedback(UI_Feedbacks.FeedbackType.Healing);
+        //Mecha
         lifePoint += lp;
-        lifePoint = Mathf.Clamp(lifePoint, 0, 100);
+        lifePoint = Mathf.Clamp(lifePoint, 0, startingLifePoint);
     }
 
-    private void OnCollisionEnter(Collision other)
+    public void SetGodmode()
+    {
+        lifePoint = 999999.0f;
+        startingLifePoint = 999999.0f;
+    }
+    
+    public void UnsetGodmode()
+    {
+        lifePoint = startingLifePoint;
+        startingLifePoint = 100;
+    }
+
+    /*private void OnTriggerEnter(Collider other)
     {
         if (other.transform.CompareTag("EnemyProjectile"))
         {
             Destroy(other.gameObject);
-            lifePoint -= other.transform.GetComponent<EnemieProjectileBehavior>().getDammage();
-            FMODUnity.RuntimeManager.PlayOneShot("event:/PlayerHit"); 
+            TakeDammage(other.transform.GetComponent<EnemieProjectileBehavior>().getDammage());  
         }
-    }
+    }*/
 }

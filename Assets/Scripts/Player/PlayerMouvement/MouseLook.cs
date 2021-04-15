@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MouseLook : MonoBehaviour
 {
+    private PhantomMode _phantomMode;
     [Range(10f, 400f)]
     public float MouseSensitivity = 100f;
     
@@ -21,13 +22,22 @@ public class MouseLook : MonoBehaviour
         PlayerBody = this.transform;
         PlayerView = this.GetComponentInChildren<Camera>().transform;
         X_Rotation = 0f;
+        _phantomMode = this.GetComponent<PhantomMode>();
     }
 
     private void Update()
     {
         //get Mouse Motion from Inputs
-        float _mouseX = Input.GetAxis("Mouse X") * MouseSensitivity * Time.deltaTime;
-        float _mouseY = Input.GetAxis("Mouse Y") * MouseSensitivity * Time.deltaTime;
+        float _mouseX, _mouseY; 
+
+        if(_phantomMode.UsingPhantom){
+             _mouseX = Input.GetAxis("Mouse X") * MouseSensitivity * (Time.deltaTime / _phantomMode.PhantomTimeFlowModifier);
+            _mouseY = Input.GetAxis("Mouse Y") * MouseSensitivity * (Time.deltaTime / _phantomMode.PhantomTimeFlowModifier);
+        }
+        else{
+            _mouseX = Input.GetAxis("Mouse X") * MouseSensitivity * Time.deltaTime;
+            _mouseY = Input.GetAxis("Mouse Y") * MouseSensitivity * Time.deltaTime;
+        }
         
         X_Rotation -= _mouseY;
         //Vertical Rotation Clamping
@@ -41,7 +51,7 @@ public class MouseLook : MonoBehaviour
         {
             PlayerView.localRotation = Quaternion.Euler(X_Rotation, 0f, 0);
             PlayerBody.Rotate(this.transform.up * _mouseX);
-            PlayerBody.eulerAngles = new Vector3(0, PlayerBody.eulerAngles.y, 0);
+            //PlayerBody.eulerAngles = new Vector3(0, PlayerBody.eulerAngles.y, 0);
         }
         else
         {
@@ -51,10 +61,10 @@ public class MouseLook : MonoBehaviour
 
     }
 
-    public void ResetCameraAndBody()
+    public void ResetBody()
     {
-        PlayerBody.eulerAngles = new Vector3(PlayerView.eulerAngles.x, PlayerView.eulerAngles.y,0);
-        PlayerView.rotation = Quaternion.identity;
+        PlayerBody.eulerAngles = new Vector3(0, PlayerView.eulerAngles.y,PlayerBody.eulerAngles.z);
+        //PlayerView.rotation = Quaternion.identity;
         locked = false;
     }
 

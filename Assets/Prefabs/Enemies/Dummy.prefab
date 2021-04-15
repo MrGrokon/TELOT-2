@@ -61,7 +61,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartHealth: 1
-  MotionSpeed: 10
+  dammage: 0
+  MotionSpeed: 5
+  _NavMeshAgent: {fileID: 0}
 --- !u!65 &5643457821249978846
 BoxCollider:
   m_ObjectHideFlags: 0
