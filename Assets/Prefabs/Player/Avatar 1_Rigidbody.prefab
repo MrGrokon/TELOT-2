@@ -6351,8 +6351,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Delay: 0
-  MaximumStress: 0.15
-  Range: 45
+  MaximumStress: 0.4
+  Range: 25
 --- !u!114 &885954545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6654,7 +6654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1ee1c62c905bb24ea7c9cf3d9d40b56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TraumaExponent: 1
+  TraumaExponent: 0.95
   MaximumAngularShake: {x: 5, y: 5, z: 5}
   MaximumTranslationShake: {x: 1.25, y: 1.25, z: 1.25}
 --- !u!1 &1883823195903777957

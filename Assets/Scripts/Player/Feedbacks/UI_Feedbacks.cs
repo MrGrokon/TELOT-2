@@ -19,11 +19,15 @@ public class UI_Feedbacks : MonoBehaviour
 
     [Header("Parameters linked to Health")]
     [Range(0f,100f)]
-    public float LevelBeforeHaloAppearance = 75f, LevelBeforeDrops = 35f;
+    public float LevelBeforeHaloAppearance = 75f;
+    [Range(0f,100f)]
+    public float LevelBeforeDrops = 35f;
+    [Range(0f,1f)]
+    public float BaseIntensity = 0.8f;
     private PostProcessVolume PP_volume;
     private PlayerLife _LifeManager;
     private Vignette _vignette;
-    private float _baseIntensity;
+    
     private bool BloodSplater_IsPlaying = false;
 
 
@@ -47,7 +51,6 @@ public class UI_Feedbacks : MonoBehaviour
     private void Start() {
         PP_volume = Camera.main.GetComponent<PostProcessVolume>();
         PP_volume.profile.TryGetSettings<Vignette>(out _vignette);
-        _baseIntensity = _vignette.intensity;
         _vignette.intensity.value = 0f;
         _LifeManager = ObjectReferencer.Instance.Avatar_Object.GetComponent<PlayerLife>();
     }
@@ -57,7 +60,7 @@ public class UI_Feedbacks : MonoBehaviour
         float _HealthPercent = _LifeManager.getLifePoint() / _LifeManager.startingLifePoint * 100f;
         Debug.Log("HP% -> " + _HealthPercent);
         if(_HealthPercent <= LevelBeforeHaloAppearance){
-            float _intensity = Mathf.Lerp(0f, _baseIntensity, 1 - (_HealthPercent / 100f) );
+            float _intensity = Mathf.Lerp(0f, BaseIntensity, 1 - (_HealthPercent / 100f) );
             _vignette.intensity.value = _intensity;
         }
 
