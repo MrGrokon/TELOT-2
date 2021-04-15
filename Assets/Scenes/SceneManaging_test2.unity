@@ -5806,6 +5806,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 354085506}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &398282448 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2360874335469910585, guid: f6540eafabbd2364c9b59fba55b80675,
+    type: 3}
+  m_PrefabInstance: {fileID: 588157381}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &406663905
 GameObject:
   m_ObjectHideFlags: 0
@@ -6361,9 +6367,45 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 54334424, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 429121892, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 429121892, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 429121892, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 484727337, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1596102775, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1596102775, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1596102775, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1631958381, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1665798970, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1544188812562984144, guid: f6540eafabbd2364c9b59fba55b80675,
         type: 3}
@@ -6424,6 +6466,186 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3136847435837825155, guid: f6540eafabbd2364c9b59fba55b80675,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3821823567266217149, guid: f6540eafabbd2364c9b59fba55b80675,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776894925316817838, guid: f6540eafabbd2364c9b59fba55b80675,
+        type: 3}
+      propertyPath: WeaponVerticalRecoil_Curve.m_Curve.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776894925316817838, guid: f6540eafabbd2364c9b59fba55b80675,
+        type: 3}
+      propertyPath: Weapon
+      value: 
+      objectReference: {fileID: 398282448}
+    - target: {fileID: 5776894925316817838, guid: f6540eafabbd2364c9b59fba55b80675,
+        type: 3}
+      propertyPath: recoilMod
+      value: 
+      objectReference: {fileID: 1091532915}
+    - target: {fileID: 5776894925316817838, guid: f6540eafabbd2364c9b59fba55b80675,
+        type: 3}
+      propertyPath: maxRecoil_z
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776894925316817838, guid: f6540eafabbd2364c9b59fba55b80675,
+        type: 3}
+      propertyPath: WeaponVerticalRecoil_Curve.m_Curve.Array.data[0].inSlope
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776894925316817838, guid: f6540eafabbd2364c9b59fba55b80675,
+        type: 3}
+      propertyPath: WeaponVerticalRecoil_Curve.m_Curve.Array.data[0].outSlope
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776894925316817838, guid: f6540eafabbd2364c9b59fba55b80675,
+        type: 3}
+      propertyPath: WeaponVerticalRecoil_Curve.m_Curve.Array.data[0].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776894925316817838, guid: f6540eafabbd2364c9b59fba55b80675,
+        type: 3}
+      propertyPath: WeaponVerticalRecoil_Curve.m_Curve.Array.data[1].time
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776894925316817838, guid: f6540eafabbd2364c9b59fba55b80675,
+        type: 3}
+      propertyPath: WeaponVerticalRecoil_Curve.m_Curve.Array.data[1].value
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776894925316817838, guid: f6540eafabbd2364c9b59fba55b80675,
+        type: 3}
+      propertyPath: WeaponVerticalRecoil_Curve.m_Curve.Array.data[1].inSlope
+      value: 0.71921617
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776894925316817838, guid: f6540eafabbd2364c9b59fba55b80675,
+        type: 3}
+      propertyPath: WeaponVerticalRecoil_Curve.m_Curve.Array.data[1].outSlope
+      value: 0.71921617
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776894925316817838, guid: f6540eafabbd2364c9b59fba55b80675,
+        type: 3}
+      propertyPath: WeaponVerticalRecoil_Curve.m_Curve.Array.data[1].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776894925316817838, guid: f6540eafabbd2364c9b59fba55b80675,
+        type: 3}
+      propertyPath: WeaponVerticalRecoil_Curve.m_Curve.Array.data[0].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776894925316817838, guid: f6540eafabbd2364c9b59fba55b80675,
+        type: 3}
+      propertyPath: WeaponVerticalRecoil_Curve.m_Curve.Array.data[1].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776894925316817838, guid: f6540eafabbd2364c9b59fba55b80675,
+        type: 3}
+      propertyPath: WeaponVerticalRecoil_Curve.m_Curve.Array.data[1].outWeight
+      value: 0.22962952
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776894925316817838, guid: f6540eafabbd2364c9b59fba55b80675,
+        type: 3}
+      propertyPath: WeaponVerticalRecoil_Curve.m_Curve.Array.data[2].time
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776894925316817838, guid: f6540eafabbd2364c9b59fba55b80675,
+        type: 3}
+      propertyPath: WeaponVerticalRecoil_Curve.m_Curve.Array.data[2].value
+      value: 1.0801888
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776894925316817838, guid: f6540eafabbd2364c9b59fba55b80675,
+        type: 3}
+      propertyPath: WeaponVerticalRecoil_Curve.m_Curve.Array.data[2].inSlope
+      value: 1.5170623
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776894925316817838, guid: f6540eafabbd2364c9b59fba55b80675,
+        type: 3}
+      propertyPath: WeaponVerticalRecoil_Curve.m_Curve.Array.data[2].outSlope
+      value: -1.7770957
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776894925316817838, guid: f6540eafabbd2364c9b59fba55b80675,
+        type: 3}
+      propertyPath: WeaponVerticalRecoil_Curve.m_Curve.Array.data[2].tangentMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776894925316817838, guid: f6540eafabbd2364c9b59fba55b80675,
+        type: 3}
+      propertyPath: WeaponVerticalRecoil_Curve.m_Curve.Array.data[2].inWeight
+      value: 0.0839507
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776894925316817838, guid: f6540eafabbd2364c9b59fba55b80675,
+        type: 3}
+      propertyPath: WeaponVerticalRecoil_Curve.m_Curve.Array.data[2].outWeight
+      value: 0.1061728
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776894925316817838, guid: f6540eafabbd2364c9b59fba55b80675,
+        type: 3}
+      propertyPath: WeaponVerticalRecoil_Curve.m_Curve.Array.data[3].time
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776894925316817838, guid: f6540eafabbd2364c9b59fba55b80675,
+        type: 3}
+      propertyPath: WeaponVerticalRecoil_Curve.m_Curve.Array.data[3].inSlope
+      value: -1.0714718
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776894925316817838, guid: f6540eafabbd2364c9b59fba55b80675,
+        type: 3}
+      propertyPath: WeaponVerticalRecoil_Curve.m_Curve.Array.data[3].outSlope
+      value: -1.0714718
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776894925316817838, guid: f6540eafabbd2364c9b59fba55b80675,
+        type: 3}
+      propertyPath: WeaponVerticalRecoil_Curve.m_Curve.Array.data[3].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776894925316817838, guid: f6540eafabbd2364c9b59fba55b80675,
+        type: 3}
+      propertyPath: WeaponVerticalRecoil_Curve.m_Curve.Array.data[3].inWeight
+      value: 0.18930057
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776894925316817838, guid: f6540eafabbd2364c9b59fba55b80675,
+        type: 3}
+      propertyPath: WeaponVerticalRecoil_Curve.m_Curve.Array.data[3].value
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776894925316817838, guid: f6540eafabbd2364c9b59fba55b80675,
+        type: 3}
+      propertyPath: WeaponVerticalRecoil_Curve.m_Curve.Array.data[3].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776894925316817838, guid: f6540eafabbd2364c9b59fba55b80675,
+        type: 3}
+      propertyPath: WeaponVerticalRecoil_Curve.m_Curve.Array.data[4].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776894925316817838, guid: f6540eafabbd2364c9b59fba55b80675,
+        type: 3}
+      propertyPath: WeaponVerticalRecoil_Curve.m_Curve.Array.data[4].inSlope
+      value: -4.0000005
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776894925316817838, guid: f6540eafabbd2364c9b59fba55b80675,
+        type: 3}
+      propertyPath: WeaponVerticalRecoil_Curve.m_Curve.Array.data[4].outSlope
+      value: -4.0000005
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776894925316817838, guid: f6540eafabbd2364c9b59fba55b80675,
+        type: 3}
+      propertyPath: WeaponVerticalRecoil_Curve.m_Curve.Array.data[4].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776894925316817838, guid: f6540eafabbd2364c9b59fba55b80675,
+        type: 3}
+      propertyPath: WeaponVerticalRecoil_Curve.m_Curve.Array.data[4].inWeight
+      value: 0.33333334
       objectReference: {fileID: 0}
     - target: {fileID: 7073030591731327766, guid: f6540eafabbd2364c9b59fba55b80675,
         type: 3}
@@ -7922,6 +8144,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 29658187223667097, guid: 4870a223fb1fb6d40a371c706e89cad5,
     type: 3}
   m_PrefabInstance: {fileID: 638456423}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1091532915 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7287397972979702447, guid: f6540eafabbd2364c9b59fba55b80675,
+    type: 3}
+  m_PrefabInstance: {fileID: 588157381}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1093912717
 GameObject:
@@ -10889,6 +11117,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 182933750, guid: 5afe7bbb28326d84fadf01bf631dc404, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1482504973, guid: 5afe7bbb28326d84fadf01bf631dc404, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -11016,7 +11248,7 @@ PrefabInstance:
     - target: {fileID: 8358024895109935771, guid: 5afe7bbb28326d84fadf01bf631dc404,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5afe7bbb28326d84fadf01bf631dc404, type: 3}

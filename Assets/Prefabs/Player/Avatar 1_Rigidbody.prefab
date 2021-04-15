@@ -6258,12 +6258,57 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  Weapon: {fileID: 0}
-  recoilMod: {fileID: 0}
-  maxRecoil_z: -20
+  Weapon: {fileID: 2360874335469910585}
+  recoilMod: {fileID: 7287397972979702447}
+  maxRecoil_z: 15
   WeaponVerticalRecoil_Curve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 4
+      outSlope: 4
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.2
+      value: 0.8
+      inSlope: 0.71921617
+      outSlope: 0.71921617
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.22962952
+    - serializedVersion: 3
+      time: 0.5
+      value: 1.0801888
+      inSlope: 1.5170623
+      outSlope: -1.7770957
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.0839507
+      outWeight: 0.1061728
+    - serializedVersion: 3
+      time: 0.8
+      value: 0.8
+      inSlope: -1.0714718
+      outSlope: -1.0714718
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.18930057
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -4.0000005
+      outSlope: -4.0000005
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -21414,6 +21459,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a79e17260dcf3e408769c32bf389b98, type: 3}
+--- !u!1 &2360874335469910585 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3a79e17260dcf3e408769c32bf389b98,
+    type: 3}
+  m_PrefabInstance: {fileID: 3171355897939625832}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3136847435837825155 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3a79e17260dcf3e408769c32bf389b98,
