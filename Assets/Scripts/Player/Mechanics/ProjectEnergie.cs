@@ -31,6 +31,12 @@ public class ProjectEnergie : MonoBehaviour
     [Tooltip("will define the strick value of the size of my crossair")]
     public AnimationCurve CrossairScale_Curve;
 
+    [Header("Recoil parameters")]
+    public GameObject Weapon;
+    public Transform recoilMod;
+    public float maxRecoil_z = -20;
+    public AnimationCurve WeaponVerticalRecoil_Curve;
+
     public enum CrossairFeedbackType{
         Expend,
         ExpendAndRotate
@@ -53,8 +59,9 @@ public class ProjectEnergie : MonoBehaviour
         private void Update() {
             if(Input.GetButtonDown("Fire1") && _Energie.HasEnergieStored() && _canShoot){
                 //Debug.Log("Shoot");
-                GetComponent<WeaponRecoil>().enabled = true;
-                GetComponent<WeaponRecoil>().recoil += 0.1f;
+                /*GetComponent<WeaponRecoil>().enabled = true;
+                GetComponent<WeaponRecoil>().recoil += 0.1f;*/
+                StartCoroutine(RecoilMethod(TimeBetweenShootConverted));
                 if(_Energie.GetEnergieAmountStocked() >= _Energie._energiePerShot)
                     StartCoroutine(ShootProcedure_Shootgun(_Energie._energiePerShot));
                 else
@@ -181,6 +188,25 @@ public class ProjectEnergie : MonoBehaviour
     #region Reset shooter boolean
         public void ResetShootBoolean(){
             _canShoot = true;
+        }
+    #endregion
+
+    #region recoil methods
+        public IEnumerator RecoilMethod(float _RecoilTime){
+            float _elapsedRecoilTime = 0f;
+            float VerticalOffset = 0f;
+            Debug.Log("Recoil method start");
+            Vector3 BaseEulerAngle = Weapon.transform.localEulerAngles;
+
+            while (_elapsedRecoilTime <= _RecoilTime)
+            {
+                _elapsedRecoilTime += Time.deltaTime;
+                VerticalOffset = WeaponVerticalRecoil_Curve.Evaluate(_elapsedRecoilTime / _RecoilTime) * maxRecoil_z;
+                Weapon.transform.localEulerAngles = BaseEulerAngle + new Vector3(0, 0, VerticalOffset);
+                yield return null;
+            }
+            Debug.Log("Recoil method ended");
+            yield return null;
         }
     #endregion
 }

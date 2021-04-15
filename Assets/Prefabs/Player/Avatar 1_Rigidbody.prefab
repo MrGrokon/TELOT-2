@@ -6012,7 +6012,6 @@ GameObject:
   - component: {fileID: 3996241960248605475}
   - component: {fileID: 1295042038257403027}
   - component: {fileID: 1601006270032870396}
-  - component: {fileID: 484727337}
   - component: {fileID: 885954545}
   m_Layer: 0
   m_Name: Avatar 1_Rigidbody
@@ -6259,6 +6258,15 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  Weapon: {fileID: 0}
+  recoilMod: {fileID: 0}
+  maxRecoil_z: -20
+  WeaponVerticalRecoil_Curve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &3996241960248605475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6300,23 +6308,6 @@ MonoBehaviour:
   Delay: 0
   MaximumStress: 0.15
   Range: 45
---- !u!114 &484727337
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1544188812562984144}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ece7b1b8ac59c148b6c7a31e86bce61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  recoilMod: {fileID: 7287397972979702447}
-  weapon: {fileID: 1544188813995310430}
-  maxRecoil_x: -20
-  recoilSpeed: 10
-  recoil: 0
 --- !u!114 &885954545
 MonoBehaviour:
   m_ObjectHideFlags: 0
