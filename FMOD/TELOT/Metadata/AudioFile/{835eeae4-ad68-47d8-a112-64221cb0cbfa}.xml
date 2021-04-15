@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{835eeae4-ad68-47d8-a112-64221cb0cbfa}">
+		<property name="assetPath">
+			<value>footstep_ice_crunchy_run_01.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.33170833333333333</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{ae4a75a6-db03-4d52-b6f4-96e88b906660}</destination>
+		</relationship>
+	</object>
+</objects>
