@@ -112,18 +112,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4955333082d0bba4d8f80586629436e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartHealth: 100
-  dammage: 0
+  StartHealth: 50
+  dammage: 50
   MotionSpeed: 5
   _NavMeshAgent: {fileID: 0}
   _state: 0
-  attackInterval: 3
-  attackCooldown: 5
+  attackInterval: 5
+  attackCooldown: 7
   attackDistance: 100
   minimumDistance: 10
   distance: 0
   shootFeedback: {fileID: 1711871467}
-  knockbackForce: 20
+  knockbackForce: 40
   distanceToPlayer: 0
   nonShootReadyColor: {r: 0, g: 1, b: 0.022618055, a: 0}
   shootReadyColor: {r: 1, g: 0, b: 0, a: 0}
@@ -218,8 +218,8 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: -64.7, y: 21.2, z: -15.3}
-  - {x: -64.7, y: 21.2, z: -15.3}
+  - {x: 0, y: 1.41, z: 11.6}
+  - {x: 0, y: 1.41, z: 11.6}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1

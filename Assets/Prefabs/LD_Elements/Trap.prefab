@@ -201,8 +201,8 @@ MonoBehaviour:
   ShootPoint: {fileID: 1488069887641370340}
   MyMode: 0
   LoadingTime: 0.25
-  ProjectileSpeed: 126.95
-  TimeBetweenShoots: 1
+  ProjectileSpeed: 160
+  TimeBetweenShoots: 0.8
   NumberOfRoundShout: 3
   BurstTime: 1
 --- !u!1 &1488069887641370339
