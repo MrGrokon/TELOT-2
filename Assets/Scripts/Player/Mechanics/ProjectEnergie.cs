@@ -32,11 +32,12 @@ public class ProjectEnergie : MonoBehaviour
     public AnimationCurve CrossairScale_Curve;
 
     [Header("Recoil parameters")]
-    private Animator Weapon_Anim;
     public GameObject Weapon;
-    public Transform recoilMod;
-    public float maxRecoil_z = -20;
+    public float maxRecoil_Z = -20;
+    public float maxRecoil_X = -0.3f;
     public AnimationCurve WeaponVerticalRecoil_Curve;
+    public AnimationCurve WeaponDepthRecoil_Curve;
+    private Animator Weapon_Anim;
 
     public enum CrossairFeedbackType{
         Expend,
@@ -200,14 +201,21 @@ public class ProjectEnergie : MonoBehaviour
         public IEnumerator RecoilMethod(float _RecoilTime){
             float _elapsedRecoilTime = 0f;
             float VerticalOffset = 0f;
+            float DepthOffset = 0f;
+
             Debug.Log("Recoil method start");
             Vector3 BaseEulerAngle = Weapon.transform.localEulerAngles;
+            //Vector3 BasePosition = Weapon.transform.position;
 
             while (_elapsedRecoilTime <= _RecoilTime)
             {
                 _elapsedRecoilTime += Time.deltaTime;
-                VerticalOffset = WeaponVerticalRecoil_Curve.Evaluate(_elapsedRecoilTime / _RecoilTime) * maxRecoil_z;
+                VerticalOffset = WeaponVerticalRecoil_Curve.Evaluate(_elapsedRecoilTime / _RecoilTime) * maxRecoil_Z;
+                DepthOffset = WeaponDepthRecoil_Curve.Evaluate(_elapsedRecoilTime / _RecoilTime) * maxRecoil_X;
+
                 Weapon.transform.localEulerAngles = BaseEulerAngle + new Vector3(0, 0, VerticalOffset);
+                Weapon.transform.localPosition = new Vector3(DepthOffset, 0f, 0f);
+
                 yield return null;
             }
             Debug.Log("Recoil method ended");
