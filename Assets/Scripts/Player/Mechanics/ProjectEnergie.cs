@@ -32,6 +32,7 @@ public class ProjectEnergie : MonoBehaviour
     public AnimationCurve CrossairScale_Curve;
 
     [Header("Recoil parameters")]
+    private Animator Weapon_Anim;
     public GameObject Weapon;
     public Transform recoilMod;
     public float maxRecoil_z = -20;
@@ -45,6 +46,7 @@ public class ProjectEnergie : MonoBehaviour
 
     #region Unity Functions
         private void Awake() {
+            Weapon_Anim = Weapon.GetComponentInParent<Animator>();
             TimeBetweenShootConverted = 1/(RateOfFire/60f);
             _Energie = this.GetComponent<EnergieStored>();
             if(_Energie == null){
@@ -63,7 +65,9 @@ public class ProjectEnergie : MonoBehaviour
                 GetComponent<WeaponRecoil>().recoil += 0.1f;*/
                 StartCoroutine(RecoilMethod(TimeBetweenShootConverted));
                 if(_Energie.GetEnergieAmountStocked() >= _Energie._energiePerShot)
+                {
                     StartCoroutine(ShootProcedure_Shootgun(_Energie._energiePerShot));
+                }
                 else
                 {
                     StartCoroutine(ShootProcedure_Shootgun(_Energie.GetEnergieAmountStocked()));
@@ -81,6 +85,7 @@ public class ProjectEnergie : MonoBehaviour
         IEnumerator ShootProcedure_Shootgun(int _nmbOfPellet){
             //_canShoot = false;
             //ObjectReferencer.Instance.Crossair_Object.GetComponent<Animator>().SetTrigger("Shoot");
+            Weapon_Anim.SetTrigger("TriggerPressed");
             StartCoroutine(CrossairFeedbacks(TimeBetweenShootConverted, FeedbackType));
             StartCoroutine(this.GetComponent<TraumaInducer>().StartScreenShake());
 
