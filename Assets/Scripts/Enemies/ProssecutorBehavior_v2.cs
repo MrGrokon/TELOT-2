@@ -146,6 +146,7 @@ public class ProssecutorBehavior_v2 : MonsterBehavior
         _shockwave_obj.SetLifeTime(Shockwave_Duration);
         _shockwave_obj.SetGrowthCurve(ShockwaveGrowth);
         _shockwave_obj.SetDammage(dammage);
+        _shockwave_obj.SetImpulseForce(ImpulseForce);
 
         while(_elapsedTime < Shockwave_Duration){
             _elapsedTime += Time.deltaTime;
