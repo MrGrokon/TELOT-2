@@ -43,7 +43,7 @@ public class ShockwaveBehavior : MonoBehaviour
             _damageAlreadyDone = true;
             _trig.GetComponent<PlayerLife>().TakeDammage(DammageAmount);
             Vector3 ExplosionDir = (_trig.transform.position - this.transform.position).normalized + Vector3.up;
-            _trig.GetComponent<Rigidbody>().AddForce(ExplosionDir.normalized * 20f, ForceMode.Impulse);
+            _trig.GetComponent<Rigidbody>().AddForce(ExplosionDir.normalized * ImpulseAmount, ForceMode.Impulse);
         }
     }
 

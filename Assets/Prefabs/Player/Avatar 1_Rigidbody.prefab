@@ -6036,7 +6036,6 @@ Transform:
   - {fileID: 7585694794632808620}
   - {fileID: 3046105397502710754}
   - {fileID: 1544188813995310427}
-  - {fileID: 7287397972979702447}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -210.59099, z: 0}
@@ -6259,8 +6258,8 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   Weapon: {fileID: 2360874335469910585}
-  recoilMod: {fileID: 7287397972979702447}
-  maxRecoil_z: 15
+  maxRecoil_Z: 25
+  maxRecoil_X: -0.5
   WeaponVerticalRecoil_Curve:
     serializedVersion: 2
     m_Curve:
@@ -6276,15 +6275,15 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0.2
       value: 0.8
-      inSlope: 0.71921617
-      outSlope: 0.71921617
+      inSlope: 9.352215
+      outSlope: 9.352215
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.22962952
+      outWeight: 0.37036988
     - serializedVersion: 3
-      time: 0.5
-      value: 1.0801888
+      time: 0.25
+      value: 1
       inSlope: 1.5170623
       outSlope: -1.7770957
       tangentMode: 1
@@ -6292,8 +6291,8 @@ MonoBehaviour:
       inWeight: 0.0839507
       outWeight: 0.1061728
     - serializedVersion: 3
-      time: 0.8
-      value: 0.8
+      time: 0.55432105
+      value: 0.3261436
       inSlope: -1.0714718
       outSlope: -1.0714718
       tangentMode: 0
@@ -6303,11 +6302,44 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: -4.0000005
-      outSlope: -4.0000005
+      inSlope: -0.7317904
+      outSlope: -0.7317904
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  WeaponDepthRecoil_Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 18.489582
+      outSlope: 18.489582
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.056078557
+    - serializedVersion: 3
+      time: 0.13208982
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -1.8257715
+      outSlope: -1.8257715
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.062588334
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -6501,7 +6533,7 @@ Transform:
   - {fileID: 4549504698290894636}
   - {fileID: 2617887299840086875}
   - {fileID: 3821823567266217149}
-  - {fileID: 3136847435837825155}
+  - {fileID: 2889352710569835206}
   - {fileID: 1665798970}
   - {fileID: 1631958381}
   - {fileID: 54334424}
@@ -21194,6 +21226,57 @@ Transform:
   m_Father: {fileID: 1544188812562984237}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7741182926430124587
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2889352710569835206}
+  - component: {fileID: 2341529387787075649}
+  m_Layer: 14
+  m_Name: Shotgun_Pivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2889352710569835206
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7741182926430124587}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0.5800004, y: -0.614, z: 1.5500002}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 3136847435837825155}
+  m_Father: {fileID: 1544188813995310427}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &2341529387787075649
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7741182926430124587}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 69db6a48ca51b2e4680431ea1fd6dd4f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8205115160637432271
 GameObject:
   m_ObjectHideFlags: 0
@@ -21255,57 +21338,27 @@ Transform:
   m_Father: {fileID: 1544188812562984237}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &8744898342198135016
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7287397972979702447}
-  m_Layer: 0
-  m_Name: RecoilMod
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7287397972979702447
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8744898342198135016}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.164, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1544188812562984237}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3171355897939625832
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1544188813995310427}
+    m_TransformParent: {fileID: 2889352710569835206}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 3a79e17260dcf3e408769c32bf389b98,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5800003
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3a79e17260dcf3e408769c32bf389b98,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.614
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3a79e17260dcf3e408769c32bf389b98,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.5500002
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3a79e17260dcf3e408769c32bf389b98,
         type: 3}
@@ -21315,7 +21368,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3a79e17260dcf3e408769c32bf389b98,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.7071068
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3a79e17260dcf3e408769c32bf389b98,
         type: 3}
@@ -21325,12 +21378,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3a79e17260dcf3e408769c32bf389b98,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3a79e17260dcf3e408769c32bf389b98,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3a79e17260dcf3e408769c32bf389b98,
         type: 3}
@@ -21350,7 +21403,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3a79e17260dcf3e408769c32bf389b98,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.29999998
+      value: 0.29999995
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3a79e17260dcf3e408769c32bf389b98,
         type: 3}
@@ -21360,7 +21413,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3a79e17260dcf3e408769c32bf389b98,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.29999998
+      value: 0.29999995
       objectReference: {fileID: 0}
     - target: {fileID: -8391222552659086748, guid: 3a79e17260dcf3e408769c32bf389b98,
         type: 3}
