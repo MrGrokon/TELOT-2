@@ -6036,7 +6036,6 @@ Transform:
   - {fileID: 7585694794632808620}
   - {fileID: 3046105397502710754}
   - {fileID: 1544188813995310427}
-  - {fileID: 7287397972979702447}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -210.59099, z: 0}
@@ -6259,8 +6258,8 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   Weapon: {fileID: 2360874335469910585}
-  recoilMod: {fileID: 7287397972979702447}
-  maxRecoil_z: 15
+  maxRecoil_Z: 25
+  maxRecoil_X: -0.5
   WeaponVerticalRecoil_Curve:
     serializedVersion: 2
     m_Curve:
@@ -6276,15 +6275,15 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0.2
       value: 0.8
-      inSlope: 0.71921617
-      outSlope: 0.71921617
+      inSlope: 9.352215
+      outSlope: 9.352215
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.22962952
+      outWeight: 0.37036988
     - serializedVersion: 3
-      time: 0.5
-      value: 1.0801888
+      time: 0.25
+      value: 1
       inSlope: 1.5170623
       outSlope: -1.7770957
       tangentMode: 1
@@ -6292,8 +6291,8 @@ MonoBehaviour:
       inWeight: 0.0839507
       outWeight: 0.1061728
     - serializedVersion: 3
-      time: 0.8
-      value: 0.8
+      time: 0.55432105
+      value: 0.3261436
       inSlope: -1.0714718
       outSlope: -1.0714718
       tangentMode: 0
@@ -6303,11 +6302,44 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: -4.0000005
-      outSlope: -4.0000005
+      inSlope: -0.7317904
+      outSlope: -0.7317904
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  WeaponDepthRecoil_Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 18.489582
+      outSlope: 18.489582
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.056078557
+    - serializedVersion: 3
+      time: 0.13208982
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -1.8257715
+      outSlope: -1.8257715
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.062588334
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -21306,36 +21338,6 @@ Transform:
   m_Father: {fileID: 1544188812562984237}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &8744898342198135016
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7287397972979702447}
-  m_Layer: 0
-  m_Name: RecoilMod
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7287397972979702447
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8744898342198135016}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.164, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1544188812562984237}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3171355897939625832
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21510,15 +21512,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a79e17260dcf3e408769c32bf389b98, type: 3}
---- !u!4 &3136847435837825155 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3a79e17260dcf3e408769c32bf389b98,
-    type: 3}
-  m_PrefabInstance: {fileID: 3171355897939625832}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2360874335469910585 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3a79e17260dcf3e408769c32bf389b98,
+    type: 3}
+  m_PrefabInstance: {fileID: 3171355897939625832}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3136847435837825155 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3a79e17260dcf3e408769c32bf389b98,
     type: 3}
   m_PrefabInstance: {fileID: 3171355897939625832}
   m_PrefabAsset: {fileID: 0}
