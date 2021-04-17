@@ -1733,6 +1733,16 @@ PrefabInstance:
       propertyPath: maxRecoil_z
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 6945830922706310441, guid: f6540eafabbd2364c9b59fba55b80675,
+        type: 3}
+      propertyPath: HeadBobbingSpeed_Multiplier
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6945830922706310441, guid: f6540eafabbd2364c9b59fba55b80675,
+        type: 3}
+      propertyPath: MaxVerticalOffset
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 7073030591731327766, guid: f6540eafabbd2364c9b59fba55b80675,
         type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.minMaxState
