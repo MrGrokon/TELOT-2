@@ -122,6 +122,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LifeTime: 5
+  Projectil_OnHitSurface_VFX: {fileID: 8926484042661614526, guid: caae60e40e6dcc541a9df407da84e9bc,
+    type: 3}
 --- !u!54 &4806776635806598454
 Rigidbody:
   m_ObjectHideFlags: 0
