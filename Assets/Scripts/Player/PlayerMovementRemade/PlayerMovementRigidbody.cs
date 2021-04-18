@@ -101,8 +101,7 @@ public class PlayerMovementRigidbody : MonoBehaviour
                     //Head bobbing procedure
                     BobbingTime += Time.deltaTime;
                     Vector3 Headbob_Offset = new Vector3(Mathf.Sin(BobbingTime * HeadBobbingTime_Multiplier /2) * HeadBobbing_MaxOffset, Mathf.Sin(BobbingTime * HeadBobbingTime_Multiplier) * HeadBobbing_MaxOffset, 0f);
-                    Vector3 _v = BaseCameraPosition + Headbob_Offset;
-                    BobbingObject.transform.localPosition = _v;
+                    BobbingObject.transform.localPosition = BaseCameraPosition + Headbob_Offset;
                 }
             }
             else

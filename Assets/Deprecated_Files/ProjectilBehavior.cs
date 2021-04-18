@@ -3,13 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class ProjectilBehavior : MonoBehaviour
 {  
     [Range(1f, 10f)]
     public float LifeTime = 5f;
     private float _elapsedLifeTime = 0f;
-
+    private VisualEffect Projectil_OnHitSurface_VFX;
     private float projectilSpeed;
     private int DamageDoned;
 
@@ -27,6 +28,11 @@ public class ProjectilBehavior : MonoBehaviour
     #endregion
     
     #region Unity Functions
+    void Start()
+    {
+        Projectil_OnHitSurface_VFX = GameObject.Find("VFX_Hit").GetComponent<VisualEffect>();
+    }
+
     private void FixedUpdate()
     {
         transform.position += transform.forward * projectilSpeed * Time.deltaTime;
@@ -38,6 +44,15 @@ public class ProjectilBehavior : MonoBehaviour
                 //Destroy(hit.transform.gameObject);
                 hit.collider.gameObject.GetComponent<MonsterBehavior>().TakeDamage(10);
                 ObjectReferencer.Instance.Avatar_Object.GetComponent<ProjectEnergie>().hitMarker.gameObject.SetActive(true);
+                Destroy(this.gameObject);
+            }
+            else{
+                //Projectil_OnHitSurface_VFX.SendEvent("SpawnImpact");
+                //Projectil_OnHitSurface_VFX.SetVector3("WorldSpace_Position", hit.point);
+                Projectil_OnHitSurface_VFX.Play();
+                Projectil_OnHitSurface_VFX.GetVector3("WorldSpace_Position");
+                Projectil_OnHitSurface_VFX.SetVector3("WorldSpace_Position", new Vector3());
+                Debug.Log("deadaedagaee");
             }
         }
 
@@ -47,16 +62,6 @@ public class ProjectilBehavior : MonoBehaviour
             Destroy(this.gameObject);
         }
         #endregion
-    }
-
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.transform.CompareTag("Ennemy"))
-        {
-            //Destroy(other.gameObject);
-        }
-        Destroy(gameObject);
-        print("Touché qq chose");
     }
 
     #endregion
