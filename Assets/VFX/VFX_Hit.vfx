@@ -143,10 +143,10 @@ MonoBehaviour:
   categories: []
   uiBounds:
     serializedVersion: 2
-    x: 0
+    x: -0
     y: -571
     width: 4006
-    height: 2584
+    height: 2581
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -192,6 +192,31 @@ MonoBehaviour:
   m_UISuperCollapsed: 0
   m_UIInfos: {fileID: 114340500867371532}
   m_ParameterInfo:
+  - name: WorldSpace_Position
+    path: 
+    tooltip: 
+    sheetType: 
+    realType: Vector
+    defaultValue:
+      m_Type:
+        m_SerializableType: 
+      m_SerializableObject: 
+    min: -Infinity
+    max: Infinity
+    descendantCount: 1
+  - name: vector
+    path: WorldSpace_Position_vector
+    tooltip: The vector.
+    sheetType: m_Vector3f
+    realType: Vector3
+    defaultValue:
+      m_Type:
+        m_SerializableType: UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      m_SerializableObject: '{"x":0.0,"y":0.0,"z":0.0}'
+    min: -Infinity
+    max: Infinity
+    descendantCount: 0
   - name: Global_HitMaxLifetime
     path: Global_HitMaxLifetime
     tooltip: 
@@ -253,32 +278,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"colorKeys":[{"color":{"r":3.094339609146118,"g":1.6194673776626588,"b":0.7735849022865295,"a":1.0},"time":0.0},{"color":{"r":0.43396228551864626,"g":0.43396228551864626,"b":0.43396228551864626,"a":1.0},"time":0.6764782071113586}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":0.8980392217636108,"time":0.7588311433792114},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
-    min: -Infinity
-    max: Infinity
-    descendantCount: 0
-  - name: WorldSpace_Position
-    path: 
-    tooltip: 
-    sheetType: 
-    realType: Vector
-    defaultValue:
-      m_Type:
-        m_SerializableType: 
-      m_SerializableObject: 
-    min: -Infinity
-    max: Infinity
-    descendantCount: 1
-  - name: vector
-    path: WorldSpace_Position_vector
-    tooltip: The vector.
-    sheetType: m_Vector3f
-    realType: Vector3
-    defaultValue:
-      m_Type:
-        m_SerializableType: UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"x":0.0,"y":0.0,"z":0.0}'
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":3.094339609146118,"g":1.6194673776626588,"b":0.7735849022865295,"a":1.0},"time":0.0},{"color":{"r":0.43396228551864626,"g":0.43396228551864626,"b":0.43396228551864626,"a":1.0},"time":0.5970550179481506}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":0.6470588445663452,"time":0.5205920338630676},{"alpha":0.7254902124404907,"time":0.8470588326454163},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
     min: -Infinity
     max: Infinity
     descendantCount: 0
@@ -2433,15 +2433,15 @@ VisualEffectResource:
           m_Value:
             serializedVersion: 2
             key0: {r: 3.0943396, g: 1.6194674, b: 0.7735849, a: 1}
-            key1: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 0.8980392}
-            key2: {r: 0, g: 0, b: 0, a: 0}
+            key1: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 0.64705884}
+            key2: {r: 0, g: 0, b: 0, a: 0.7254902}
             key3: {r: 0, g: 0, b: 0, a: 0}
             key4: {r: 0, g: 0, b: 0, a: 0}
             key5: {r: 0, g: 0, b: 0, a: 0}
             key6: {r: 0, g: 0, b: 0, a: 0}
             key7: {r: 0, g: 0, b: 0, a: 0}
             ctime0: 0
-            ctime1: 44333
+            ctime1: 39128
             ctime2: 0
             ctime3: 0
             ctime4: 0
@@ -2449,16 +2449,16 @@ VisualEffectResource:
             ctime6: 0
             ctime7: 0
             atime0: 0
-            atime1: 49730
-            atime2: 65535
-            atime3: 0
+            atime1: 34117
+            atime2: 55512
+            atime3: 65535
             atime4: 0
             atime5: 0
             atime6: 0
             atime7: 0
             m_Mode: 0
             m_NumColorKeys: 2
-            m_NumAlphaKeys: 3
+            m_NumAlphaKeys: 4
         - m_ExpressionIndex: 10
           m_Value:
             serializedVersion: 2
@@ -4099,14 +4099,14 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 0
+  m_UICollapsed: 1
   m_UISuperCollapsed: 0
   m_InputSlots: []
   m_OutputSlots:
   - {fileID: 8926484042661614604}
   m_ExposedName: Flash_GradientOverLifetime
   m_Exposed: 1
-  m_Order: 1
+  m_Order: 2
   m_Category: 
   m_Min:
     m_Type:
@@ -4231,7 +4231,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614607}
   m_ExposedName: Global_HitMaxLifetime
   m_Exposed: 1
-  m_Order: 0
+  m_Order: 1
   m_Category: 
   m_Min:
     m_Type:
@@ -4309,14 +4309,14 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 0
+  m_UICollapsed: 1
   m_UISuperCollapsed: 0
   m_InputSlots: []
   m_OutputSlots:
   - {fileID: 8926484042661614643}
   m_ExposedName: Cross_NmbOfParts
   m_Exposed: 1
-  m_Order: 2
+  m_Order: 3
   m_Category: 
   m_Min:
     m_Type:
@@ -4404,7 +4404,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614787}
   m_ExposedName: Fragment_GradientOverLifetime
   m_Exposed: 1
-  m_Order: 3
+  m_Order: 4
   m_Category: 
   m_Min:
     m_Type:
@@ -4474,14 +4474,14 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 0
+  m_UICollapsed: 1
   m_UISuperCollapsed: 0
   m_InputSlots: []
   m_OutputSlots:
   - {fileID: 8926484042661614844}
   m_ExposedName: Decal_GradientOverLifetime
   m_Exposed: 1
-  m_Order: 4
+  m_Order: 5
   m_Category: 
   m_Min:
     m_Type:
@@ -4525,7 +4525,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"colorKeys":[{"color":{"r":3.094339609146118,"g":1.6194673776626588,"b":0.7735849022865295,"a":1.0},"time":0.0},{"color":{"r":0.43396228551864626,"g":0.43396228551864626,"b":0.43396228551864626,"a":1.0},"time":0.6764782071113586}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":0.8980392217636108,"time":0.7588311433792114},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":3.094339609146118,"g":1.6194673776626588,"b":0.7735849022865295,"a":1.0},"time":0.0},{"color":{"r":0.43396228551864626,"g":0.43396228551864626,"b":0.43396228551864626,"a":1.0},"time":0.5970550179481506}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":0.6470588445663452,"time":0.5205920338630676},{"alpha":0.7254902124404907,"time":0.8470588326454163},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
     m_Space: 2147483647
   m_Property:
     name: o
@@ -9801,14 +9801,14 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 0
+  m_UICollapsed: 1
   m_UISuperCollapsed: 0
   m_InputSlots: []
   m_OutputSlots:
   - {fileID: 8926484042661615257}
   m_ExposedName: WorldSpace_Position
   m_Exposed: 1
-  m_Order: 5
+  m_Order: 0
   m_Category: 
   m_Min:
     m_Type:

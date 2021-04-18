@@ -49,10 +49,9 @@ public class ProjectilBehavior : MonoBehaviour
             else{
                 //Projectil_OnHitSurface_VFX.SendEvent("SpawnImpact");
                 //Projectil_OnHitSurface_VFX.SetVector3("WorldSpace_Position", hit.point);
-                Projectil_OnHitSurface_VFX.Play();
-                Projectil_OnHitSurface_VFX.GetVector3("WorldSpace_Position");
-                Projectil_OnHitSurface_VFX.SetVector3("WorldSpace_Position", new Vector3());
-                Debug.Log("deadaedagaee");
+
+                /*Projectil_OnHitSurface_VFX.SetVector3(1, new Vector3());
+                Projectil_OnHitSurface_VFX.Play();*/
             }
         }
 
