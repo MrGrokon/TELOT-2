@@ -6149,7 +6149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 275591fde6b77004da039cf1d12f24dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _phamtomMode: {fileID: 0}
   speed: 45
   dashCD: 1.1
   dashForce: 70
