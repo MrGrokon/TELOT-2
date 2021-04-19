@@ -6149,6 +6149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 275591fde6b77004da039cf1d12f24dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _phamtomMode: {fileID: 0}
   speed: 45
   dashCD: 1.1
   dashForce: 70
@@ -6164,9 +6165,9 @@ MonoBehaviour:
   chromaticLerpTime: 2
   DashParticle: {fileID: 2973719376332865277}
   stepInterval: 0.35
-  BobbingObject: {fileID: 0}
-  HeadBobbingTime_Multiplier: 1
-  HeadBobbing_MaxOffset: 0.1
+  BobbingObject: {fileID: 7741182926430124587}
+  HeadBobbingTime_Multiplier: 15
+  HeadBobbing_MaxOffset: 0.03
 --- !u!114 &693659680
 MonoBehaviour:
   m_ObjectHideFlags: 0
