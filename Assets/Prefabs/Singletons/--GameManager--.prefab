@@ -103,7 +103,7 @@ MonoBehaviour:
   LevelBeforeDrops: 35
   BaseIntensity: 0.8
   FOV_ModificationTime: 0.1
-  FOV_Delta: 5
+  FOV_Delta: 3.5
   FOV_DeltaValueOverTime:
     serializedVersion: 2
     m_Curve:
