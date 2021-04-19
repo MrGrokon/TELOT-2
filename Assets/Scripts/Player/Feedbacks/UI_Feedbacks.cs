@@ -9,7 +9,8 @@ public class UI_Feedbacks : MonoBehaviour
 
     public enum FeedbackType{
         Healing,
-        Reload
+        Reload,
+        FOV_zoom
     }
 
     private ParticleSystem Heal_PS;
@@ -32,6 +33,11 @@ public class UI_Feedbacks : MonoBehaviour
     
     private bool BloodSplater_IsPlaying = false;
 
+    [Header("FOV zoom in while shoot")]
+    public float FOV_ModificationTime = 0.1f;
+    public float FOV_Delta = 5f;
+    public AnimationCurve FOV_DeltaValueOverTime;
+    private float Base_FOV = 60f;
 
     #region Unity functions
     #region Init
@@ -98,9 +104,27 @@ public class UI_Feedbacks : MonoBehaviour
             AmmoFlickering_PS.Play();
             break;
 
+            case FeedbackType.FOV_zoom:
+            StartCoroutine(FOV_ZoomIn_Procedure());
+            break;
+
+
             default:
             Debug.Log("CallFeedback(): Something fucked up");
             break;
         }
+    }
+
+    private  IEnumerator FOV_ZoomIn_Procedure(){
+        float _elapsedTime = 0f;
+        float _base_FOV = Camera.main.fieldOfView;
+
+        while(_elapsedTime <= FOV_ModificationTime){
+            _elapsedTime += Time.deltaTime;
+            
+            Camera.main.fieldOfView = Base_FOV + (FOV_DeltaValueOverTime.Evaluate(_elapsedTime/FOV_ModificationTime) * FOV_Delta);
+            yield return null;
+        }
+        yield return null;
     }
 }

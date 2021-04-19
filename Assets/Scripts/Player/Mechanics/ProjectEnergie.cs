@@ -93,6 +93,7 @@ public class ProjectEnergie : MonoBehaviour
             WeaponFlare_VFX.SendEvent("Shoot");
             StartCoroutine(CrossairFeedbacks(TimeBetweenShootConverted, FeedbackType));
             StartCoroutine(this.GetComponent<TraumaInducer>().StartScreenShake());
+            UI_Feedbacks.Instance.CallFeedback(UI_Feedbacks.FeedbackType.FOV_zoom);
 
             Debug.Log("shoot " + _nmbOfPellet + " pellets");
             FMODUnity.RuntimeManager.PlayOneShot("event:/Shoot/PrimaryShot");
