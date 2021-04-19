@@ -8,22 +8,28 @@ public class UI_Feedbacks : MonoBehaviour
     public static UI_Feedbacks Instance;
 
     public enum FeedbackType{
-        Healing
+        Healing,
+        Reload
     }
 
     private ParticleSystem Heal_PS;
     private ParticleSystem Halo_PS;
+    public ParticleSystem AmmoFlickering_PS;
     private ParticleSystem BloodSplater_PS; 
 
     public Color HealColor;
 
     [Header("Parameters linked to Health")]
     [Range(0f,100f)]
-    public float LevelBeforeHaloAppearance = 75f, LevelBeforeDrops = 35f;
+    public float LevelBeforeHaloAppearance = 75f;
+    [Range(0f,100f)]
+    public float LevelBeforeDrops = 35f;
+    [Range(0f,1f)]
+    public float BaseIntensity = 0.8f;
     private PostProcessVolume PP_volume;
     private PlayerLife _LifeManager;
     private Vignette _vignette;
-    private float _baseIntensity;
+    
     private bool BloodSplater_IsPlaying = false;
 
 
@@ -42,12 +48,12 @@ public class UI_Feedbacks : MonoBehaviour
         Heal_PS = Camera.main.transform.GetChild(2).GetComponent<ParticleSystem>();
         Halo_PS = Camera.main.transform.GetChild(3).GetComponent<ParticleSystem>();
         BloodSplater_PS = Camera.main.transform.GetChild(4).GetComponent<ParticleSystem>();
+        AmmoFlickering_PS = Camera.main.transform.GetChild(5).GetComponent<ParticleSystem>();
     }
 
     private void Start() {
         PP_volume = Camera.main.GetComponent<PostProcessVolume>();
         PP_volume.profile.TryGetSettings<Vignette>(out _vignette);
-        _baseIntensity = _vignette.intensity;
         _vignette.intensity.value = 0f;
         _LifeManager = ObjectReferencer.Instance.Avatar_Object.GetComponent<PlayerLife>();
     }
@@ -57,7 +63,7 @@ public class UI_Feedbacks : MonoBehaviour
         float _HealthPercent = _LifeManager.getLifePoint() / _LifeManager.startingLifePoint * 100f;
         Debug.Log("HP% -> " + _HealthPercent);
         if(_HealthPercent <= LevelBeforeHaloAppearance){
-            float _intensity = Mathf.Lerp(0f, _baseIntensity, 1 - (_HealthPercent / 100f) );
+            float _intensity = Mathf.Lerp(0f, BaseIntensity, 1 - (_HealthPercent / 100f) );
             _vignette.intensity.value = _intensity;
         }
 
@@ -86,6 +92,10 @@ public class UI_Feedbacks : MonoBehaviour
  
             Halo_PS.Play();
             Heal_PS.Play();
+            break;
+
+            case FeedbackType.Reload:
+            AmmoFlickering_PS.Play();
             break;
 
             default:

@@ -252,7 +252,7 @@ MonoBehaviour:
   JumpForce: 20
   JumpPersistance: 2
   wallForwardRun: {x: 0, y: 0, z: 0}
-  interpolationTime: 0
+  interpolationSpeed: 0
   fovOnWall: 65
   GravityOverWallrunTime_curve:
     serializedVersion: 2
@@ -293,6 +293,10 @@ MonoBehaviour:
   volume: {fileID: 7190748642292243000}
   chromaticLerpTime: 2
   DashParticle: {fileID: 2973719376332865277}
+  stepInterval: 0
+  BobbingObject: {fileID: 0}
+  HeadBobbingTime_Multiplier: 1
+  HeadBobbing_MaxOffset: 0.1
 --- !u!114 &693659680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,6 +314,7 @@ MonoBehaviour:
   ProjectileLayerMask:
     serializedVersion: 2
     m_Bits: 4096
+  SliderFillImage: {fileID: 0}
   energieStoredPerShot: 10
   shieldEnergy: 0
   shieldDepleted: 0
@@ -385,6 +390,22 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  Weapon: {fileID: 0}
+  maxRecoil_Z: -20
+  maxRecoil_X: -0.3
+  WeaponVerticalRecoil_Curve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  WeaponDepthRecoil_Curve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  WeaponFlare_VFX: {fileID: 0}
 --- !u!114 &3996241960248605475
 MonoBehaviour:
   m_ObjectHideFlags: 0

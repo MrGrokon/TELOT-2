@@ -42,12 +42,20 @@ public class PlayerMovementRigidbody : MonoBehaviour
     [SerializeField] private float stepInterval;
 
     private float actualStepInterval;
-    
 
+    [Header("Head Bobbing Parameters")]
+    public GameObject BobbingObject;
+    //[Range(0.5f, 5f)]
+    public float HeadBobbingTime_Multiplier = 1f;
+    [Range(0.001f, 0.1f)]
+    public float HeadBobbing_MaxOffset = 0.3f;
+    private float BobbingTime = 0f;
+    private Vector3 BaseCameraPosition;
 
     // Start is called before the first frame update
     void Start()
     {
+        BaseCameraPosition = BobbingObject.transform.localPosition;
         _rb = GetComponent<Rigidbody>();
         _phamtomMode = this.GetComponent<PhantomMode>();
         volume.profile.TryGetSettings(out CA);
@@ -89,8 +97,12 @@ public class PlayerMovementRigidbody : MonoBehaviour
                 else if(onGround)
                 {
                     Motion = (h * transform.right + v * transform.forward).normalized;
-                }
 
+                    //Head bobbing procedure
+                    BobbingTime += Time.deltaTime;
+                    Vector3 Headbob_Offset = new Vector3(Mathf.Sin(BobbingTime * HeadBobbingTime_Multiplier /2) * HeadBobbing_MaxOffset, Mathf.Sin(BobbingTime * HeadBobbingTime_Multiplier) * HeadBobbing_MaxOffset, 0f);
+                    BobbingObject.transform.localPosition = BaseCameraPosition + Headbob_Offset;
+                }
             }
             else
                 Motion = Vector3.zero;
