@@ -97,6 +97,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b303563e2210d7342b2f10714e1dc2d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AmmoFlickering_PS: {fileID: 0}
   HealColor: {r: 0.9433962, g: 0.89146006, b: 0.30704877, a: 0}
   LevelBeforeHaloAppearance: 75
   LevelBeforeDrops: 35
+  BaseIntensity: 0.8
+  FOV_ModificationTime: 0.1
+  FOV_Delta: 5
+  FOV_DeltaValueOverTime:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 4.187279
+      outSlope: 4.187279
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.28025475
+    - serializedVersion: 3
+      time: 0.13840193
+      value: 1
+      inSlope: 9.597898
+      outSlope: -3.8003268
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.1537125
+      outWeight: 0.040971227
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -0.18502592
+      outSlope: -0.18502592
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.09712258
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
