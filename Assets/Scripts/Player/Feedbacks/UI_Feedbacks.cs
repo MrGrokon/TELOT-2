@@ -8,11 +8,13 @@ public class UI_Feedbacks : MonoBehaviour
     public static UI_Feedbacks Instance;
 
     public enum FeedbackType{
-        Healing
+        Healing,
+        Reload
     }
 
     private ParticleSystem Heal_PS;
     private ParticleSystem Halo_PS;
+    public ParticleSystem AmmoFlickering_PS;
     private ParticleSystem BloodSplater_PS; 
 
     public Color HealColor;
@@ -46,6 +48,7 @@ public class UI_Feedbacks : MonoBehaviour
         Heal_PS = Camera.main.transform.GetChild(2).GetComponent<ParticleSystem>();
         Halo_PS = Camera.main.transform.GetChild(3).GetComponent<ParticleSystem>();
         BloodSplater_PS = Camera.main.transform.GetChild(4).GetComponent<ParticleSystem>();
+        AmmoFlickering_PS = Camera.main.transform.GetChild(5).GetComponent<ParticleSystem>();
     }
 
     private void Start() {
@@ -89,6 +92,10 @@ public class UI_Feedbacks : MonoBehaviour
  
             Halo_PS.Play();
             Heal_PS.Play();
+            break;
+
+            case FeedbackType.Reload:
+            AmmoFlickering_PS.Play();
             break;
 
             default:

@@ -56,6 +56,7 @@ public class EnergieStored : MonoBehaviour
             }
             else
             {
+                UI_Feedbacks.Instance.CallFeedback(UI_Feedbacks.FeedbackType.Reload);
                 _energieStored += EnergieQT;
                 Debug.Log("stock energie");
             }
@@ -72,6 +73,7 @@ public class EnergieStored : MonoBehaviour
 
         public void AddEnergie(int ammo)
         {
+            UI_Feedbacks.Instance.CallFeedback(UI_Feedbacks.FeedbackType.Reload);
             _energieStored = Mathf.Clamp(_energieStored, 0, MaxEnergieStorable);
             _energieStored += ammo;
             _energieStored = Mathf.Clamp(_energieStored, 0, MaxEnergieStorable);
