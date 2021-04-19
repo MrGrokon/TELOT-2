@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.VFX;
 
 public class ProjectEnergie : MonoBehaviour
 {
@@ -39,11 +40,13 @@ public class ProjectEnergie : MonoBehaviour
     public AnimationCurve WeaponDepthRecoil_Curve;
     private Animator Weapon_Anim;
 
+    [Header("Shoot VFX")]
+    public VisualEffect WeaponFlare_VFX;
+
     public enum CrossairFeedbackType{
         Expend,
         ExpendAndRotate
     }
-
 
     #region Unity Functions
         private void Awake() {
@@ -87,8 +90,10 @@ public class ProjectEnergie : MonoBehaviour
             //_canShoot = false;
             //ObjectReferencer.Instance.Crossair_Object.GetComponent<Animator>().SetTrigger("Shoot");
             Weapon_Anim.SetTrigger("TriggerPressed");
+            WeaponFlare_VFX.SendEvent("Shoot");
             StartCoroutine(CrossairFeedbacks(TimeBetweenShootConverted, FeedbackType));
             StartCoroutine(this.GetComponent<TraumaInducer>().StartScreenShake());
+            UI_Feedbacks.Instance.CallFeedback(UI_Feedbacks.FeedbackType.FOV_zoom);
 
             Debug.Log("shoot " + _nmbOfPellet + " pellets");
             FMODUnity.RuntimeManager.PlayOneShot("event:/Shoot/PrimaryShot");

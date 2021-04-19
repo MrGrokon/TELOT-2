@@ -20,7 +20,7 @@ public class MouseLook : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         PlayerBody = this.transform;
-        PlayerView = this.GetComponentInChildren<Camera>().transform;
+        PlayerView = Camera.main.transform;
         X_Rotation = 0f;
         _phantomMode = this.GetComponent<PhantomMode>();
     }
