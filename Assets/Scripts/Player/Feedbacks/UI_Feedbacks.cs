@@ -8,11 +8,15 @@ public class UI_Feedbacks : MonoBehaviour
     public static UI_Feedbacks Instance;
 
     public enum FeedbackType{
-        Healing
+        Healing,
+        Reload,
+        FOV_zoom,
+        Jump
     }
 
     private ParticleSystem Heal_PS;
     private ParticleSystem Halo_PS;
+    private ParticleSystem AmmoFlickering_PS;
     private ParticleSystem BloodSplater_PS; 
 
     public Color HealColor;
@@ -30,6 +34,16 @@ public class UI_Feedbacks : MonoBehaviour
     
     private bool BloodSplater_IsPlaying = false;
 
+    [Header("FOV zoom in while shoot")]
+    public float FOV_ModificationTime = 0.1f;
+    public float FOV_Delta = 5f;
+    public AnimationCurve FOV_DeltaValueOverTime;
+    private float Base_FOV = 60f;
+
+    [Header("Camera Vertical Offset while jump")]
+    public float OffsetTime = 0.2f;
+    public Vector3 TargetPosition = new Vector3(0, -1, 0);
+    public AnimationCurve CameraPositionOverTime;
 
     #region Unity functions
     #region Init
@@ -46,6 +60,7 @@ public class UI_Feedbacks : MonoBehaviour
         Heal_PS = Camera.main.transform.GetChild(2).GetComponent<ParticleSystem>();
         Halo_PS = Camera.main.transform.GetChild(3).GetComponent<ParticleSystem>();
         BloodSplater_PS = Camera.main.transform.GetChild(4).GetComponent<ParticleSystem>();
+        AmmoFlickering_PS = Camera.main.transform.GetChild(5).GetComponent<ParticleSystem>();
     }
 
     private void Start() {
@@ -91,9 +106,47 @@ public class UI_Feedbacks : MonoBehaviour
             Heal_PS.Play();
             break;
 
+            case FeedbackType.Reload:
+            AmmoFlickering_PS.Play();
+            break;
+
+            case FeedbackType.FOV_zoom:
+            StartCoroutine(FOV_ZoomIn_Procedure());
+            break;
+
+            case FeedbackType.Jump:
+            StartCoroutine(CameraVerticalOffset());
+            break;
+
             default:
             Debug.Log("CallFeedback(): Something fucked up");
             break;
         }
+    }
+
+    private IEnumerator FOV_ZoomIn_Procedure(){
+        float _elapsedTime = 0f;
+        float _base_FOV = Camera.main.fieldOfView;
+
+        while(_elapsedTime <= FOV_ModificationTime){
+            _elapsedTime += Time.deltaTime;
+            
+            Camera.main.fieldOfView = Base_FOV + (FOV_DeltaValueOverTime.Evaluate(_elapsedTime/FOV_ModificationTime) * FOV_Delta);
+            yield return null;
+        }
+        yield return null;
+    }
+
+    private IEnumerator CameraVerticalOffset(){
+        float _elapsedTime = 0f;
+        Vector3 _offset_position;
+        while(_elapsedTime <= OffsetTime){
+            _elapsedTime += Time.deltaTime;
+            _offset_position = CameraPositionOverTime.Evaluate(_elapsedTime / OffsetTime) * TargetPosition;
+
+            Camera.main.transform.localPosition = _offset_position;
+            yield return null;
+        }
+        yield return null;
     }
 }

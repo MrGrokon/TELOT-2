@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.VFX;
 
 public class ProjectEnergie : MonoBehaviour
 {
@@ -33,18 +34,23 @@ public class ProjectEnergie : MonoBehaviour
 
     [Header("Recoil parameters")]
     public GameObject Weapon;
-    public Transform recoilMod;
-    public float maxRecoil_z = -20;
+    public float maxRecoil_Z = -20;
+    public float maxRecoil_X = -0.3f;
     public AnimationCurve WeaponVerticalRecoil_Curve;
+    public AnimationCurve WeaponDepthRecoil_Curve;
+    private Animator Weapon_Anim;
+
+    [Header("Shoot VFX")]
+    public VisualEffect WeaponFlare_VFX;
 
     public enum CrossairFeedbackType{
         Expend,
         ExpendAndRotate
     }
 
-
     #region Unity Functions
         private void Awake() {
+            Weapon_Anim = Weapon.GetComponentInParent<Animator>();
             TimeBetweenShootConverted = 1/(RateOfFire/60f);
             _Energie = this.GetComponent<EnergieStored>();
             if(_Energie == null){
@@ -63,7 +69,9 @@ public class ProjectEnergie : MonoBehaviour
                 GetComponent<WeaponRecoil>().recoil += 0.1f;*/
                 StartCoroutine(RecoilMethod(TimeBetweenShootConverted));
                 if(_Energie.GetEnergieAmountStocked() >= _Energie._energiePerShot)
+                {
                     StartCoroutine(ShootProcedure_Shootgun(_Energie._energiePerShot));
+                }
                 else
                 {
                     StartCoroutine(ShootProcedure_Shootgun(_Energie.GetEnergieAmountStocked()));
@@ -81,8 +89,11 @@ public class ProjectEnergie : MonoBehaviour
         IEnumerator ShootProcedure_Shootgun(int _nmbOfPellet){
             //_canShoot = false;
             //ObjectReferencer.Instance.Crossair_Object.GetComponent<Animator>().SetTrigger("Shoot");
+            Weapon_Anim.SetTrigger("TriggerPressed");
+            WeaponFlare_VFX.SendEvent("Shoot");
             StartCoroutine(CrossairFeedbacks(TimeBetweenShootConverted, FeedbackType));
             StartCoroutine(this.GetComponent<TraumaInducer>().StartScreenShake());
+            UI_Feedbacks.Instance.CallFeedback(UI_Feedbacks.FeedbackType.FOV_zoom);
 
             Debug.Log("shoot " + _nmbOfPellet + " pellets");
             FMODUnity.RuntimeManager.PlayOneShot("event:/Shoot/PrimaryShot");
@@ -195,14 +206,21 @@ public class ProjectEnergie : MonoBehaviour
         public IEnumerator RecoilMethod(float _RecoilTime){
             float _elapsedRecoilTime = 0f;
             float VerticalOffset = 0f;
+            float DepthOffset = 0f;
+
             Debug.Log("Recoil method start");
             Vector3 BaseEulerAngle = Weapon.transform.localEulerAngles;
+            //Vector3 BasePosition = Weapon.transform.position;
 
             while (_elapsedRecoilTime <= _RecoilTime)
             {
                 _elapsedRecoilTime += Time.deltaTime;
-                VerticalOffset = WeaponVerticalRecoil_Curve.Evaluate(_elapsedRecoilTime / _RecoilTime) * maxRecoil_z;
+                VerticalOffset = WeaponVerticalRecoil_Curve.Evaluate(_elapsedRecoilTime / _RecoilTime) * maxRecoil_Z;
+                DepthOffset = WeaponDepthRecoil_Curve.Evaluate(_elapsedRecoilTime / _RecoilTime) * maxRecoil_X;
+
                 Weapon.transform.localEulerAngles = BaseEulerAngle + new Vector3(0, 0, VerticalOffset);
+                Weapon.transform.localPosition = new Vector3(DepthOffset, 0f, 0f);
+
                 yield return null;
             }
             Debug.Log("Recoil method ended");
