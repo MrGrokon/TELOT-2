@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class BlockProjectiles : MonoBehaviour
 {
+    private Animator WeaponAnimator;
+
     [Range(0.3f, 5f)]
     public float TimeToBeActive = 0.75f;
     public float ShieldHitboxRange = 1f;
@@ -30,6 +32,7 @@ public class BlockProjectiles : MonoBehaviour
     #region Unity Functions
 
         private void Awake() {
+            WeaponAnimator = GameObject.Find("Shotgun_Pivot").GetComponent<Animator>();
             shieldRemainSlider = GameObject.Find("Slider").GetComponent<Slider>();
 
             /*shieldIdle = FMODUnity.RuntimeManager.CreateInstance("event:/Shield/ShieldIdle");
@@ -98,6 +101,7 @@ public class BlockProjectiles : MonoBehaviour
                 if (shieldEnergy > 0)
                 {
                     _Shield_Rendr.SetActive(true);
+                    WeaponAnimator.SetTrigger("ShieldActivation");
                     shieldEnergy -= 1 * Time.deltaTime * depletationFactor;
                     Collider[] _hits = Physics.OverlapSphere(_Shield_Pivot.position, ShieldHitboxRange, ProjectileLayerMask);
                     /*Collider[] _hitsR = Physics.OverlapSphere(transform.position + transform.right, ShieldHitboxRange, ProjectileLayerMask);
