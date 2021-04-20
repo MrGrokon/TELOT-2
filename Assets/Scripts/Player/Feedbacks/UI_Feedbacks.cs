@@ -10,12 +10,13 @@ public class UI_Feedbacks : MonoBehaviour
     public enum FeedbackType{
         Healing,
         Reload,
-        FOV_zoom
+        FOV_zoom,
+        Jump
     }
 
     private ParticleSystem Heal_PS;
     private ParticleSystem Halo_PS;
-    public ParticleSystem AmmoFlickering_PS;
+    private ParticleSystem AmmoFlickering_PS;
     private ParticleSystem BloodSplater_PS; 
 
     public Color HealColor;
@@ -38,6 +39,11 @@ public class UI_Feedbacks : MonoBehaviour
     public float FOV_Delta = 5f;
     public AnimationCurve FOV_DeltaValueOverTime;
     private float Base_FOV = 60f;
+
+    [Header("Camera Vertical Offset while jump")]
+    public float OffsetTime = 0.2f;
+    public Vector3 TargetPosition = new Vector3(0, -1, 0);
+    public AnimationCurve CameraPositionOverTime;
 
     #region Unity functions
     #region Init
@@ -108,6 +114,9 @@ public class UI_Feedbacks : MonoBehaviour
             StartCoroutine(FOV_ZoomIn_Procedure());
             break;
 
+            case FeedbackType.Jump:
+            StartCoroutine(CameraVerticalOffset());
+            break;
 
             default:
             Debug.Log("CallFeedback(): Something fucked up");
@@ -115,7 +124,7 @@ public class UI_Feedbacks : MonoBehaviour
         }
     }
 
-    private  IEnumerator FOV_ZoomIn_Procedure(){
+    private IEnumerator FOV_ZoomIn_Procedure(){
         float _elapsedTime = 0f;
         float _base_FOV = Camera.main.fieldOfView;
 
@@ -123,6 +132,19 @@ public class UI_Feedbacks : MonoBehaviour
             _elapsedTime += Time.deltaTime;
             
             Camera.main.fieldOfView = Base_FOV + (FOV_DeltaValueOverTime.Evaluate(_elapsedTime/FOV_ModificationTime) * FOV_Delta);
+            yield return null;
+        }
+        yield return null;
+    }
+
+    private IEnumerator CameraVerticalOffset(){
+        float _elapsedTime = 0f;
+        Vector3 _offset_position;
+        while(_elapsedTime <= OffsetTime){
+            _elapsedTime += Time.deltaTime;
+            _offset_position = CameraPositionOverTime.Evaluate(_elapsedTime / OffsetTime) * TargetPosition;
+
+            Camera.main.transform.localPosition = _offset_position;
             yield return null;
         }
         yield return null;

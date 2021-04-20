@@ -144,8 +144,10 @@ public class PlayerMovementRigidbody : MonoBehaviour
     {
         if (onGround)
         {
-            _rb.AddForce((transform.up * 2 + Motion * 2.5f).normalized * jumpForce, ForceMode.Impulse);
-            onGround = false;
+            //_rb.AddForce((transform.up * 2 + Motion * 2.5f).normalized * jumpForce, ForceMode.Impulse);
+            StartCoroutine(DelayedJump(UI_Feedbacks.Instance.OffsetTime));
+            UI_Feedbacks.Instance.CallFeedback(UI_Feedbacks.FeedbackType.Jump);
+            //onGround = false;
             FMODUnity.RuntimeManager.PlayOneShot("event:/Movement/Jump", transform.position);
         }
         else if (doubleJump && !GetComponent<WallRunningRigidbody>().OnWallRun)
@@ -176,6 +178,7 @@ public class PlayerMovementRigidbody : MonoBehaviour
             {
                 if (onGround == false && GetComponent<Rigidbody>().velocity.y < 0)
                 {
+                    UI_Feedbacks.Instance.CallFeedback(UI_Feedbacks.FeedbackType.Jump);
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Movement/LandOnGround", transform.position);
                     print("Atté");
                 }
@@ -231,6 +234,19 @@ public class PlayerMovementRigidbody : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         onGround = false;
+    }
+
+    private IEnumerator DelayedJump(float _time){
+        float _elapsedTime = 0.1f;
+        while(_elapsedTime <= _time){
+            _elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        _rb.AddForce((transform.up * 2 + Motion * 2.5f).normalized * jumpForce, ForceMode.Impulse);
+        onGround = false;
+        yield return null;
+        
     }
 
     
