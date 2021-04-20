@@ -712,6 +712,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: --GameManager--
       objectReference: {fileID: 0}
+    - target: {fileID: 4453278936563825603, guid: fd3caee291692d241b7f77f3bf0f790f,
+        type: 3}
+      propertyPath: TargetPosition.y
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4453278936563825603, guid: fd3caee291692d241b7f77f3bf0f790f,
+        type: 3}
+      propertyPath: OffsetTime
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7178928777408411376, guid: fd3caee291692d241b7f77f3bf0f790f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6392,7 +6402,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 182933750, guid: 5afe7bbb28326d84fadf01bf631dc404, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 495572724, guid: 5afe7bbb28326d84fadf01bf631dc404, type: 3}
       propertyPath: m_AnchorMax.x
@@ -6405,6 +6415,10 @@ PrefabInstance:
     - target: {fileID: 1482504973, guid: 5afe7bbb28326d84fadf01bf631dc404, type: 3}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529043928, guid: 5afe7bbb28326d84fadf01bf631dc404, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2434299148609023959, guid: 5afe7bbb28326d84fadf01bf631dc404,
         type: 3}
