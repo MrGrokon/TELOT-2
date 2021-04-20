@@ -101,7 +101,7 @@ public class BlockProjectiles : MonoBehaviour
                 if (shieldEnergy > 0)
                 {
                     _Shield_Rendr.SetActive(true);
-                    WeaponAnimator.SetTrigger("ShieldActivation");
+                    WeaponAnimator.SetTrigger("ShieldActivate");
                     shieldEnergy -= 1 * Time.deltaTime * depletationFactor;
                     Collider[] _hits = Physics.OverlapSphere(_Shield_Pivot.position, ShieldHitboxRange, ProjectileLayerMask);
                     /*Collider[] _hitsR = Physics.OverlapSphere(transform.position + transform.right, ShieldHitboxRange, ProjectileLayerMask);
