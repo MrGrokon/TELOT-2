@@ -57,15 +57,16 @@ public class UI_Feedbacks : MonoBehaviour
         }
         #endregion
     
-        Heal_PS = Camera.main.transform.GetChild(2).GetComponent<ParticleSystem>();
-        Halo_PS = Camera.main.transform.GetChild(3).GetComponent<ParticleSystem>();
-        BloodSplater_PS = Camera.main.transform.GetChild(4).GetComponent<ParticleSystem>();
-        AmmoFlickering_PS = Camera.main.transform.GetChild(5).GetComponent<ParticleSystem>();
+        Heal_PS = ObjectReferencer.Instance.UI_particle_container.GetChild(3).GetComponent<ParticleSystem>();
+        Halo_PS = ObjectReferencer.Instance.UI_particle_container.GetChild(1).GetComponent<ParticleSystem>();
+        BloodSplater_PS = ObjectReferencer.Instance.UI_particle_container.GetChild(2).GetComponent<ParticleSystem>();
+        AmmoFlickering_PS = ObjectReferencer.Instance.UI_particle_container.GetChild(0).GetComponent<ParticleSystem>();
     }
 
     private void Start() {
         PP_volume = Camera.main.GetComponent<PostProcessVolume>();
         PP_volume.profile.TryGetSettings<Vignette>(out _vignette);
+        _vignette.active = true;
         _vignette.intensity.value = 0f;
         _LifeManager = ObjectReferencer.Instance.Avatar_Object.GetComponent<PlayerLife>();
     }
