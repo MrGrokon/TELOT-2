@@ -53,8 +53,8 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/EnergieStored.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemiesProps/EnemieProjectileBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovementRemade/PlayerMovementRigidbody.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovementRemade/WallRunningRigidbody.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMouvement/MouseLook.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovementRemade/WallRunningRigidbody.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1ohtdW9xSpIGpjT50LXGFp67Yso" />
@@ -150,7 +150,9 @@
       <workItem from="1617816151729" duration="547000" />
       <workItem from="1617826636951" duration="2263000" />
       <workItem from="1617921475511" duration="3594000" />
-      <workItem from="1618316678039" duration="16904000" />
+      <workItem from="1618316678039" duration="17325000" />
+      <workItem from="1618347745606" duration="198000" />
+      <workItem from="1618500962518" duration="596000" />
     </task>
     <servers />
   </component>
