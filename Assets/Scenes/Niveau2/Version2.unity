@@ -33107,11 +33107,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: --GameManager--
       objectReference: {fileID: 0}
-    - target: {fileID: 4453278936563825603, guid: fd3caee291692d241b7f77f3bf0f790f,
-        type: 3}
-      propertyPath: FOV_Delta
-      value: 3.5
-      objectReference: {fileID: 0}
     - target: {fileID: 6069094130225411869, guid: fd3caee291692d241b7f77f3bf0f790f,
         type: 3}
       propertyPath: Avatar_Object
@@ -35299,16 +35294,6 @@ PrefabInstance:
         type: 3}
       propertyPath: field of view
       value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 1601006270032870396, guid: f6540eafabbd2364c9b59fba55b80675,
-        type: 3}
-      propertyPath: Range
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1601006270032870396, guid: f6540eafabbd2364c9b59fba55b80675,
-        type: 3}
-      propertyPath: MaximumStress
-      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 4654035621977098900, guid: f6540eafabbd2364c9b59fba55b80675,
         type: 3}
