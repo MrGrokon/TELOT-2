@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using FMOD.Studio;
 
 public class PlayerLife : MonoBehaviour
 {
@@ -11,17 +12,28 @@ public class PlayerLife : MonoBehaviour
     [SerializeField] private float lifePoint;
     public float startingLifePoint;
     private Slider lifeText;
+    private FMOD.Studio.EventInstance HeartBeatEvent;
+    private FMOD.Studio.EventDescription heartbeatDescription;
+    private FMOD.Studio.PARAMETER_DESCRIPTION pd;
+    FMOD.Studio.PARAMETER_ID parameterID;
 
     private void Start()
     {
         lifeText = GameObject.Find("LifeSlider").GetComponent<Slider>();
         lifePoint = startingLifePoint;
         lifeText.value = lifePoint / startingLifePoint;
+        HeartBeatEvent = FMODUnity.RuntimeManager.CreateInstance("event:/Player/LowHpHeart");
+        HeartBeatEvent.start();
+
+        heartbeatDescription = FMODUnity.RuntimeManager.GetEventDescription("event:/Player/LowHpHeart");
+        heartbeatDescription.getParameterDescriptionByName("Health", out pd);
+        parameterID = pd.id;
     }
 
 
     private void Update()
     {
+        HeartBeatEvent.setParameterByID(parameterID , (lifePoint / startingLifePoint) * 100);
         if(lifePoint <= 0)
             SceneManager.LoadScene(0);
         lifeText.value = lifePoint / startingLifePoint;

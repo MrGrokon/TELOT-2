@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="MixerGroup" id="{12c74df5-30d6-4854-9ae8-f537462eb6bb}">
+		<property name="volume">
+			<value>-4</value>
+		</property>
+		<property name="name">
+			<value>Capacity</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{abf93e72-dd0c-4d85-ba84-966648d481a4}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{e984b315-c7ff-4adf-9fc1-5c11fbcc7d0a}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{4a3dcf07-b4ff-4d15-9831-a64cd6b1df60}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{abf93e72-dd0c-4d85-ba84-966648d481a4}">
+		<relationship name="effects">
+			<destination>{f9992507-9d6b-4198-a07d-b91ca0492e8c}</destination>
+			<destination>{257eef46-93c7-4abe-b2e5-5e8d438fdfb3}</destination>
+			<destination>{3704ada0-2e8b-496c-85a0-2b150eae5018}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{e984b315-c7ff-4adf-9fc1-5c11fbcc7d0a}" />
+	<object class="MixerBusFader" id="{f9992507-9d6b-4198-a07d-b91ca0492e8c}" />
+	<object class="ThreeEQEffect" id="{257eef46-93c7-4abe-b2e5-5e8d438fdfb3}" />
+	<object class="SFXReverbEffect" id="{3704ada0-2e8b-496c-85a0-2b150eae5018}" />
+</objects>
