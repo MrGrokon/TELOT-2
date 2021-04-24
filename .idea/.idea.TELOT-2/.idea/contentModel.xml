@@ -767,6 +767,9 @@
             <e p="ShieldtestShader.shader" t="Include" />
           </e>
         </e>
+        <e p="Main.cs" t="Include" />
+        <e p="MaineMenu.cs" t="Include" />
+        <e p="MainMenu.cs" t="Include" />
         <e p="nTools" t="Include">
           <e p="PrefabPainter" t="Include">
             <e p="Presets" t="Include">
