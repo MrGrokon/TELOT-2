@@ -7,27 +7,36 @@ public class EnergieStored : MonoBehaviour
 {
     [Range(3, 500)]
     public int MaxEnergieStorable = 5;
-    private UnityEngine.UI.Text EnergieFeedback_Text;
+    private TextMesh EnergieFeedback_Text;
 
     private int _energieStored = 0;
     public int _energiePerShot;
     public int startingEnergie;
 
+    private Animator Weapon_Anim;
+
     #region Unity Functions
 
         private void Start()
         {
-            EnergieFeedback_Text = GameObject.Find("Energie_Text").GetComponent<UnityEngine.UI.Text>();
+            Weapon_Anim = GameObject.Find("Shotgun_Pivot").GetComponent<Animator>();
+            EnergieFeedback_Text = GameObject.Find("Ammo3DText").GetComponent<TextMesh>();
             _energieStored = startingEnergie;
         }
 
     private void Update() {
             if(HasEnergieStored() == false){
-                EnergieFeedback_Text.text = "No Energie";
+                EnergieFeedback_Text.text = "0";
             }
             else{
-                EnergieFeedback_Text.text = _energieStored.ToString();
+                EnergieFeedback_Text.text = (_energieStored / 10).ToString();
             }
+
+            #region Charge % calculation
+                float ChargePercent = Convert.ToSingle(_energieStored) / Convert.ToSingle(MaxEnergieStorable);
+                //Debug.Log( ChargePercent+"%");
+                Weapon_Anim.SetFloat("ChargeLevel", ChargePercent);
+            #endregion
             
         }
     #endregion
@@ -47,6 +56,7 @@ public class EnergieStored : MonoBehaviour
             }
             else
             {
+                UI_Feedbacks.Instance.CallFeedback(UI_Feedbacks.FeedbackType.Reload);
                 _energieStored += EnergieQT;
                 Debug.Log("stock energie");
             }
@@ -63,9 +73,20 @@ public class EnergieStored : MonoBehaviour
 
         public void AddEnergie(int ammo)
         {
+            UI_Feedbacks.Instance.CallFeedback(UI_Feedbacks.FeedbackType.Reload);
             _energieStored = Mathf.Clamp(_energieStored, 0, MaxEnergieStorable);
             _energieStored += ammo;
             _energieStored = Mathf.Clamp(_energieStored, 0, MaxEnergieStorable);
+        }
+
+        public void SetGodmode()
+        {
+            _energieStored = 99999;
+        }
+
+        public void UnsetGodmode()
+        {
+            _energieStored = startingEnergie;
         }
     #endregion
 }

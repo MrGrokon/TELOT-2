@@ -912,6 +912,7 @@
             </e>
           </e>
         </e>
+        <e p="PresManager.cs" t="Include" />
         <e p="ResetLineRenderer.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="Enemies" t="Include">
@@ -955,6 +956,7 @@
               <e p="PauseGameWhenButtonPressed.cs" t="Include" />
             </e>
             <e p="Feedbacks" t="Include">
+              <e p="UI_Feedbacks.cs" t="Include" />
               <e p="WeaponRecoil.cs" t="Include" />
             </e>
             <e p="Mechanics" t="Include">

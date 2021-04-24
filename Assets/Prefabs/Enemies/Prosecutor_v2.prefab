@@ -9696,7 +9696,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.73
+  m_Radius: 2.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &7074193039533441598
 Animator:
@@ -9730,7 +9730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartHealth: 35
-  dammage: 5
+  dammage: 7
   MotionSpeed: 1
   _NavMeshAgent: {fileID: 0}
   PlayerReachDistance: 50
@@ -9738,7 +9738,7 @@ MonoBehaviour:
   HorizontalAmplitude: 5
   DistanceToSurface: 1
   TimeBetweenTwoAttacks: 5
-  ImpulseForce: 25
+  ImpulseForce: 75
   ShockwaveGrowth:
     serializedVersion: 2
     m_Curve:
@@ -9766,7 +9766,7 @@ MonoBehaviour:
   ShockwaveObject: {fileID: 4970300591634440693, guid: cfdeaa4d7bdb313468cf57e06511c112,
     type: 3}
   Shockwave_Duration: 1
-  Shockwave_Distance: 15
+  Shockwave_Distance: 20
   ChargingTimeBeforeShockwave: 0.3
 --- !u!114 &7074193039533441569
 MonoBehaviour:

@@ -18,6 +18,10 @@ public class ObjectReferencer : MonoBehaviour
         public GameObject SniperEnemy_prefab;
     #endregion
 
+    [Header("UI Elements")]
+        public Transform InComingHit_Pivot;
+        public Transform UI_particle_container;
+
     private void Awake() {
         #region Singleton Instance
             if(Instance == null){
@@ -31,5 +35,9 @@ public class ObjectReferencer : MonoBehaviour
         Avatar_Object = GameObject.FindWithTag("Player");
 
         Crossair_Object = GameObject.Find("Crossair_container");
+
+        InComingHit_Pivot = GameObject.Find("InComingHit_Pivot").transform;
+
+        UI_particle_container = GameObject.Find("UI_Particules").transform;
     }
 }

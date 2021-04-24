@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6069094130225411869}
   - component: {fileID: 6509241777085608740}
   - component: {fileID: 1752241918816837347}
+  - component: {fileID: 4453278936563825603}
   m_Layer: 0
   m_Name: --GameManager--
   m_TagString: Untagged
@@ -55,6 +56,7 @@ MonoBehaviour:
     type: 3}
   SniperEnemy_prefab: {fileID: 6106855031906571488, guid: f70426cbd8455cc4cb9d20e8843fd701,
     type: 3}
+  InComingHit_Pivot: {fileID: 0}
 --- !u!114 &6509241777085608740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,3 +85,90 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseButton: 116
+--- !u!114 &4453278936563825603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700065792340058860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b303563e2210d7342b2f10714e1dc2d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AmmoFlickering_PS: {fileID: 0}
+  HealColor: {r: 0.9433962, g: 0.89146006, b: 0.30704877, a: 0}
+  LevelBeforeHaloAppearance: 75
+  LevelBeforeDrops: 35
+  BaseIntensity: 0.8
+  FOV_ModificationTime: 0.1
+  FOV_Delta: 3.5
+  FOV_DeltaValueOverTime:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 4.187279
+      outSlope: 4.187279
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.28025475
+    - serializedVersion: 3
+      time: 0.13840193
+      value: 1
+      inSlope: 9.597898
+      outSlope: -3.8003268
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.1537125
+      outWeight: 0.040971227
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -0.18502592
+      outSlope: -0.18502592
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.09712258
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  OffsetTime: 0.2
+  TargetPosition: {x: 0, y: -1, z: 0}
+  CameraPositionOverTime:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 4.331551
+      outSlope: 4.331551
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.23086418
+      value: 1
+      inSlope: 5.9858494
+      outSlope: -5.4582214
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.08021393
+      outWeight: 0.022471903
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -1.3001604
+      outSlope: -1.3001604
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
