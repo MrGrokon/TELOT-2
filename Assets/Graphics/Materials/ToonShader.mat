@@ -41,13 +41,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _ASEOutlineWidth: 0.01
-    - _RimOffset: 1
+    - _RimOffset: 0.95
     - _RimPower: 0
     - _ShadowOffset: 0.5
     - _Shadowscale: 0.5
-    - _SpecIntensity: 0.233
+    - _SpecIntensity: 0
     - __dirty: 0
-    - _gloss: 0.117
+    - _gloss: 0
     m_Colors:
     - _ASEOutlineColor: {r: 0, g: 0, b: 0, a: 0}
     - _RimTint: {r: 0, g: 0.991797, b: 1, a: 1}
