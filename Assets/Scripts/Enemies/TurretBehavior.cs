@@ -120,6 +120,7 @@ public class TurretBehavior : MonsterBehavior
         bursted = false;
         for (int i = 0; i < burst; i++)
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Ennemy/Shoot/TurretShot", transform.position);
             var proj = Instantiate(projectilePrefab, transform.forward + projectileThrower.transform.position, projectileThrower.transform.rotation);
             proj.GetComponent<EnemieProjectileBehavior>().SetSpeed(ProjectileSpeed);
             yield return new WaitForSeconds(burstInterval);

@@ -41,7 +41,7 @@ public class PlayerLife : MonoBehaviour
 
     public void TakeDammage(float dmg)
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/PlayerHit"); 
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Hit"); 
         lifePoint -= dmg;
     }
 

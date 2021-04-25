@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="Event" id="{2fa05c15-7bf2-4217-9c97-c73da0d4e201}">
 		<property name="name">
-			<value>Hittest</value>
+			<value>Hit</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -32,6 +32,9 @@
 		</relationship>
 		<relationship name="timeline">
 			<destination>{9ed5085e-0674-4a94-af63-1560d259e332}</destination>
+		</relationship>
+		<relationship name="banks">
+			<destination>{9167763b-5f95-40c7-8bda-b0466066c429}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{d39158ad-2111-44b6-9863-b1642f003382}">
@@ -117,9 +120,6 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{87c38a59-e913-4271-a6af-872b5c0732a6}">
-		<property name="volume">
-			<value>-10.5</value>
-		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -142,9 +142,6 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{c9940b93-b697-457e-9df8-4ba16c8ec549}">
-		<property name="volume">
-			<value>-13.5</value>
-		</property>
 		<property name="name">
 			<value>Audio 2</value>
 		</property>

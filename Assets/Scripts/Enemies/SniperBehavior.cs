@@ -123,6 +123,7 @@ public class SniperBehavior : MonsterBehavior
     {
         if (Physics.Raycast(transform.position, Player.transform.position - transform.position,out RaycastHit hit, Mathf.Infinity))
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Ennemy/Shoot/SniperShot", transform.position);
             if (hit.transform.CompareTag("Player"))
             {
                 Player.GetComponent<PlayerLife>().TakeDammage(dammage);
