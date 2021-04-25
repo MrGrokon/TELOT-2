@@ -35,9 +35,9 @@ public class BlockProjectiles : MonoBehaviour
             WeaponAnimator = GameObject.Find("Shotgun_Pivot").GetComponent<Animator>();
             shieldRemainSlider = GameObject.Find("Slider").GetComponent<Slider>();
 
-            /*shieldIdle = FMODUnity.RuntimeManager.CreateInstance("event:/Shield/ShieldIdle");
+            shieldIdle = FMODUnity.RuntimeManager.CreateInstance("event:/Shield/AbsorptionIdle");
             FMODUnity.RuntimeManager.AttachInstanceToGameObject(shieldIdle, transform,
-                GetComponent<Rigidbody>());*/
+                GetComponent<Rigidbody>());
             _Shield_Rendr = GameObject.Find("ShieldDebug");
             _Shield_Pivot = GameObject.Find("Shield_Pivot").transform;
             _Shield_Rendr.SetActive(false);
@@ -104,27 +104,13 @@ public class BlockProjectiles : MonoBehaviour
                     WeaponAnimator.SetTrigger("ShieldActivate");
                     shieldEnergy -= 1 * Time.deltaTime * depletationFactor;
                     Collider[] _hits = Physics.OverlapSphere(_Shield_Pivot.position, ShieldHitboxRange, ProjectileLayerMask);
-                    /*Collider[] _hitsR = Physics.OverlapSphere(transform.position + transform.right, ShieldHitboxRange, ProjectileLayerMask);
-                    Collider[] _hitsL = Physics.OverlapSphere(transform.position - transform.right, ShieldHitboxRange, ProjectileLayerMask);*/
-                
+
                     foreach(var Projectiles in _hits)
                     {
                         Destroy(Projectiles);
                         _Energie.StoreEnergie(energieStoredPerShot);
                         FMODUnity.RuntimeManager.PlayOneShot("event:/Shield/ShieldTanking"); 
                     }
-                   /*foreach(var Projectiles in _hitsR)
-                    {
-                        Destroy(Projectiles);
-                        _Energie.StoreEnergie(energieStoredPerShot);
-                        FMODUnity.RuntimeManager.PlayOneShot("event:/Shield/ShieldTanking"); 
-                    }
-                    foreach(var Projectiles in _hitsL)
-                    {
-                        Destroy(Projectiles);
-                        _Energie.StoreEnergie(energieStoredPerShot);
-                        FMODUnity.RuntimeManager.PlayOneShot("event:/Shield/ShieldTanking"); 
-                    }*/
                 }
                 else if(shieldEnergy <= 0) 
                 {
@@ -142,8 +128,8 @@ public class BlockProjectiles : MonoBehaviour
 
         IEnumerator ShieldSoundManager()
         {
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Shield/ShieldOn", transform.position);
-            yield return new WaitForSeconds(1);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Shield/AbsorptionOn", transform.position);
+            yield return new WaitForSeconds(0.15f);
             shieldIdle.start();
         }
 

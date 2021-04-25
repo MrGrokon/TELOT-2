@@ -30,6 +30,9 @@ public class ProssecutorBehavior_v2 : MonsterBehavior
 
     private bool ShockwaveIsLaunched = false;
 
+
+    private FMOD.Studio.EventInstance Movement;
+
     public override void Awake()
     {
         base.Awake();
@@ -39,6 +42,8 @@ public class ProssecutorBehavior_v2 : MonsterBehavior
         MotionSpeed *= _MotionSeed;
 
         _anim = this.GetComponent<Animator>();
+        Movement = FMODUnity.RuntimeManager.CreateInstance("event:/Ennemy/Movement/DroneMovement");
+        Movement.start();
     }
 
     public override void Update()
