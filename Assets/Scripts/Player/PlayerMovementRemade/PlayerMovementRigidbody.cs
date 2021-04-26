@@ -28,7 +28,6 @@ public class PlayerMovementRigidbody : MonoBehaviour
     [Tooltip("Multiplicateur de la force du double saut")]
     [SerializeField] private float dJumpFactor = 1;
     
-    
     [Header("Post Processing Parameters")]
     private ChromaticAberration CA;
     public PostProcessVolume volume;
@@ -65,7 +64,6 @@ public class PlayerMovementRigidbody : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        
         Move();
     }
 
@@ -74,7 +72,10 @@ public class PlayerMovementRigidbody : MonoBehaviour
         if(Input.GetButtonDown("Jump"))
             Jump();
         BetterJump();
+        
         actualDashCD -= 1 * Time.deltaTime;
+        //actualDashCD /dashCD * 100f;
+
         DetectGround();
         PostProcessValueManager();
         actualStepInterval -= 1 * Time.deltaTime;

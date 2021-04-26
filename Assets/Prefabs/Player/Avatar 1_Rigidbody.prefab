@@ -6431,6 +6431,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PhantomTimeFlowModifier: 0.5
   UsingPhantom: 0
+  HasPhantomAmmoStored: 0
   PhantomSpeedMultiplier: 1.5
   PhantomTime: 5
   TimeToLerpToNormal: 1
@@ -11625,10 +11626,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4549504698290894636}
+  - {fileID: 2545225031945712452}
   - {fileID: 2617887299840086875}
   - {fileID: 3821823567266217149}
-  - {fileID: 2545225031945712452}
+  - {fileID: 4549504698290894636}
   m_Father: {fileID: 1544188813995310427}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11925,7 +11926,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7666572999524573824}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!198 &7073030591731327766
 ParticleSystem:
@@ -21932,7 +21933,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7666572999524573824}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!198 &3074690988344470710
 ParticleSystem:

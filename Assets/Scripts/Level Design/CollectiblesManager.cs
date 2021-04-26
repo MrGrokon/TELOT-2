@@ -41,7 +41,9 @@ public class CollectiblesManager : MonoBehaviour
                         other.GetComponent<PlayerLife>().AddLifePoint(lifeAmountByLevel[collectibleLevel-1]);
                     break;
                 case T.Phantom:
-                    //Set la récupération d'énergie du phantom
+                    if(other.GetComponent<PhantomMode>().HasPhantomAmmoStored == false){
+                        other.GetComponent<PhantomMode>().ReloadPhantomMode();
+                    }
                     break;
             }
             Destroy(gameObject);
