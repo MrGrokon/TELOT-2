@@ -58,6 +58,7 @@ public class MonsterBehavior : MonoBehaviour
         }
 
         void Die(){
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Ennemy/Death/TurretDrone Death", transform.position);
             Destroy(this.gameObject);
             GameObject[] triggerlist = GameObject.FindGameObjectsWithTag("RoomTrigger");
             foreach (var _trigger in triggerlist)

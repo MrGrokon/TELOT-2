@@ -20,6 +20,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Unity/Hub/Editor/2019.4.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/InputModules/BaseInput.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MusicManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerStats/PlayerLife.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovementRemade/PlayerMovementRigidbody.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -35,9 +36,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/ObjectReferencer.cs" />
       <option value="$PROJECT_DIR$/Assets/DummyBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/ReloadScene.cs" />
-      <option value="$PROJECT_DIR$/Assets/Deprecated_Files/ProjectilBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemieProjectileBehavior.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyInheritence/MonsterBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Turret/TurretBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/SniperBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Level Design/BumperBehavior.cs" />
@@ -46,8 +45,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/WallRunningRigidbody.cs" />
       <option value="$PROJECT_DIR$/Assets/WeaponRecoil.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Level Design/CollectiblesManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/BlockProjectiles.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerStats/PlayerLife.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/ProjectEnergie.cs" />
       <option value="$PROJECT_DIR$/Assets/PresManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/EnergieStored.cs" />
@@ -55,6 +52,14 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovementRemade/PlayerMovementRigidbody.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMouvement/MouseLook.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovementRemade/WallRunningRigidbody.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Navigation/EnemySpawner.cs" />
+      <option value="$PROJECT_DIR$/Assets/MusicManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Navigation/RoomTrigger.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/ProssecutorBehavior_v2.cs" />
+      <option value="$PROJECT_DIR$/Assets/Deprecated_Files/ProjectilBehavior.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerStats/PlayerLife.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyInheritence/MonsterBehavior.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/BlockProjectiles.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1ohtdW9xSpIGpjT50LXGFp67Yso" />
@@ -153,6 +158,8 @@
       <workItem from="1618316678039" duration="17325000" />
       <workItem from="1618347745606" duration="198000" />
       <workItem from="1618500962518" duration="596000" />
+      <workItem from="1618914294115" duration="1655000" />
+      <workItem from="1619347586561" duration="3504000" />
     </task>
     <servers />
   </component>
