@@ -22059,7 +22059,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TraumaExponent: 0.8
   MaximumAngularShake: {x: 3, y: 3, z: 3}
-  MaximumTranslationShake: {x: 0.01, y: 0.1, z: 0.1}
+  MaximumTranslationShake: {x: 0, y: 0, z: 0}
 --- !u!1 &7228916698069312700
 GameObject:
   m_ObjectHideFlags: 0
