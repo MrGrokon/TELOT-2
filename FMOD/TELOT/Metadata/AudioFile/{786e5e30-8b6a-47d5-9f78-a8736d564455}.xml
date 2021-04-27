@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{786e5e30-8b6a-47d5-9f78-a8736d564455}">
+		<property name="assetPath">
+			<value>Door - SpaceShip_hatchway_06.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>4.5295416666666668</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{ae4a75a6-db03-4d52-b6f4-96e88b906660}</destination>
+		</relationship>
+	</object>
+</objects>
