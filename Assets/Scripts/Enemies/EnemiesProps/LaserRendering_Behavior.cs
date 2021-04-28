@@ -13,9 +13,16 @@ public class LaserRendering_Behavior : MonoBehaviour
 
     private void Update(){
         RaycastHit _hit;
-        Physics.Raycast(this.transform.position, this.transform.forward, out _hit, Mathf.Infinity);
+        int _layer =~ LayerMask.GetMask("EnemieProjectile");
+        Physics.Raycast(this.transform.position, this.transform.forward, out _hit, Mathf.Infinity, _layer);
 
+        /* Position in local space
         _LR.SetPosition(0, new Vector3());
         _LR.SetPosition(1, new Vector3(0f,0f, Vector3.Distance(this.transform.position, _hit.point)));
+        */
+
+        /* position in world space */
+        _LR.SetPosition(0, this.transform.position);
+        _LR.SetPosition(1, _hit.point);
     }
 }
