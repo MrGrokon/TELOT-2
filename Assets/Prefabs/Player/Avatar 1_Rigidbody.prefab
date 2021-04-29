@@ -11317,7 +11317,6 @@ MonoBehaviour:
   dJumpFactor: 1
   volume: {fileID: 7190748642292243000}
   chromaticLerpTime: 2
-  DashParticle: {fileID: 2973719376332865277}
   stepInterval: 0.35
   BobbingObject: {fileID: 7741182926430124587}
   HeadBobbingTime_Multiplier: 15
