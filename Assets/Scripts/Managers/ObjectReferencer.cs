@@ -10,6 +10,8 @@ public class ObjectReferencer : MonoBehaviour
 
     public GameObject Crossair_Object;
 
+    public Transform DashParticule_Container;
+
     #region Enemies Prefabs
         [Header("Enemy prefabs init by hand")]
         public GameObject TurretEnemy_prefab;
@@ -39,5 +41,7 @@ public class ObjectReferencer : MonoBehaviour
         InComingHit_Pivot = GameObject.Find("InComingHit_Pivot").transform;
 
         UI_particle_container = GameObject.Find("UI_Particules").transform;
+
+        DashParticule_Container = GameObject.Find("DashParticles").transform;
     }
 }
