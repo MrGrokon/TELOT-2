@@ -10,6 +10,8 @@ public class ObjectReferencer : MonoBehaviour
 
     public GameObject Crossair_Object;
 
+    public Transform DashParticule_Container;
+
     #region Enemies Prefabs
         [Header("Enemy prefabs init by hand")]
         public GameObject TurretEnemy_prefab;
@@ -20,6 +22,7 @@ public class ObjectReferencer : MonoBehaviour
 
     [Header("UI Elements")]
         public Transform InComingHit_Pivot;
+        public Transform UI_particle_container;
 
     private void Awake() {
         #region Singleton Instance
@@ -36,5 +39,9 @@ public class ObjectReferencer : MonoBehaviour
         Crossair_Object = GameObject.Find("Crossair_container");
 
         InComingHit_Pivot = GameObject.Find("InComingHit_Pivot").transform;
+
+        UI_particle_container = GameObject.Find("UI_Particules").transform;
+
+        DashParticule_Container = GameObject.Find("DashParticles").transform;
     }
 }

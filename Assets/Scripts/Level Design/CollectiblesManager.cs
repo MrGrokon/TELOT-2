@@ -35,16 +35,20 @@ public class CollectiblesManager : MonoBehaviour
                 case T.Ammunition:
                     if(other.GetComponent<EnergieStored>().GetEnergieAmountStocked() < other.GetComponent<EnergieStored>().MaxEnergieStorable)
                         other.GetComponent<EnergieStored>().AddEnergie(ammoAmountByLevel[collectibleLevel-1]);
+                        Destroy(this.gameObject);
                     break;
                 case T.Health:
                     if(other.GetComponent<PlayerLife>().getLifePoint() < other.GetComponent<PlayerLife>().startingLifePoint)
                         other.GetComponent<PlayerLife>().AddLifePoint(lifeAmountByLevel[collectibleLevel-1]);
+                        Destroy(this.gameObject);
                     break;
                 case T.Phantom:
-                    //Set la récupération d'énergie du phantom
+                    if(other.GetComponent<PhantomMode>().HasPhantomAmmoStored == false){
+                        other.GetComponent<PhantomMode>().ReloadPhantomMode();
+                        Destroy(this.gameObject);
+                    }
                     break;
             }
-            Destroy(gameObject);
         }
     }
 }

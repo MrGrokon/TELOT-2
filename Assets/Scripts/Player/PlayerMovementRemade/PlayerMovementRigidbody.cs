@@ -28,7 +28,6 @@ public class PlayerMovementRigidbody : MonoBehaviour
     [Tooltip("Multiplicateur de la force du double saut")]
     [SerializeField] private float dJumpFactor = 1;
     
-    
     [Header("Post Processing Parameters")]
     private ChromaticAberration CA;
     public PostProcessVolume volume;
@@ -36,7 +35,7 @@ public class PlayerMovementRigidbody : MonoBehaviour
     private float actualChromaticLerpTimeValue;
 
     [Header("Particle System")] 
-    public ParticleSystem DashParticle;
+    private List<ParticleSystem> DashParticles;
 
     [Header("Sound Effect")]
     [SerializeField] private float stepInterval;
@@ -52,9 +51,19 @@ public class PlayerMovementRigidbody : MonoBehaviour
     private float BobbingTime = 0f;
     private Vector3 BaseCameraPosition;
 
-    // Start is called before the first frame update
+    public enum DashDirection{Forward, Left, Right, Backward};
+
+    #region Unity Functions
     void Start()
     {
+        #region dash particles
+            DashParticles = new List<ParticleSystem>();
+            DashParticles.Add(ObjectReferencer.Instance.DashParticule_Container.GetChild(0).GetComponent<ParticleSystem>());
+            DashParticles.Add(ObjectReferencer.Instance.DashParticule_Container.GetChild(1).GetComponent<ParticleSystem>());
+            DashParticles.Add(ObjectReferencer.Instance.DashParticule_Container.GetChild(2).GetComponent<ParticleSystem>());
+            DashParticles.Add(ObjectReferencer.Instance.DashParticule_Container.GetChild(3).GetComponent<ParticleSystem>());
+        #endregion
+
         BaseCameraPosition = BobbingObject.transform.localPosition;
         _rb = GetComponent<Rigidbody>();
         _phamtomMode = this.GetComponent<PhantomMode>();
@@ -65,7 +74,6 @@ public class PlayerMovementRigidbody : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        
         Move();
     }
 
@@ -74,12 +82,30 @@ public class PlayerMovementRigidbody : MonoBehaviour
         if(Input.GetButtonDown("Jump"))
             Jump();
         BetterJump();
+        
         actualDashCD -= 1 * Time.deltaTime;
+        //actualDashCD /dashCD * 100f;
+
         DetectGround();
         PostProcessValueManager();
         actualStepInterval -= 1 * Time.deltaTime;
         
     }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        _rb.velocity = Vector3.zero;
+        _rb.angularVelocity = Vector3.zero;
+    }
+
+    private void OnCollisionExit(Collision other)
+    {
+        if (other.gameObject.layer == 8)
+        {
+            StartCoroutine(DelayOffGround());
+        }
+    }
+    #endregion
 
     private void Move()
     {
@@ -131,11 +157,25 @@ public class PlayerMovementRigidbody : MonoBehaviour
     {
         if (actualDashCD <= 0)
         {
+            if(motion == this.transform.forward){
+                //Debug.Log("dash: " + motion);
+                CallDirectionalDashParticle(DashDirection.Forward);
+            }
+            else if(motion == this.transform.right){
+                CallDirectionalDashParticle(DashDirection.Right);
+            }
+            else if(motion == -this.transform.right){
+                CallDirectionalDashParticle(DashDirection.Left);
+            }
+            else if(motion == -this.transform.forward){
+                CallDirectionalDashParticle(DashDirection.Backward);
+            }
+
             _rb.AddForce(motion.normalized * dashForce, ForceMode.Impulse);
             actualDashCD = dashCD;
             CA.intensity.value = 1f;
             actualChromaticLerpTimeValue = 0;
-            DashParticle.Play();
+            //DashParticles.Play();
             FMODUnity.RuntimeManager.PlayOneShot("event:/Movement/Dash"); 
         }
     }
@@ -211,25 +251,36 @@ public class PlayerMovementRigidbody : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision other)
-    {
-        _rb.velocity = Vector3.zero;
-        _rb.angularVelocity = Vector3.zero;
-    }
-
-    private void OnCollisionExit(Collision other)
-    {
-        if (other.gameObject.layer == 8)
-        {
-            StartCoroutine(DelayOffGround());
-        }
-    }
-
     public float GetSpeed()
     {
         return speed;
     }
 
+    private void CallDirectionalDashParticle(DashDirection _dir){
+        switch (_dir)
+        {
+            case DashDirection.Forward:
+            DashParticles[0].Play();
+            break;
+
+            case DashDirection.Left:
+            DashParticles[1].Play();
+            break;
+
+            case DashDirection.Right:
+            DashParticles[2].Play();
+            break;
+
+            case DashDirection.Backward:
+            DashParticles[3].Play();
+            break;
+
+            default:
+            break;
+        }
+    }
+
+    #region Coroutines
     private IEnumerator DelayOffGround()
     {
         yield return new WaitForSeconds(0.5f);
@@ -248,9 +299,5 @@ public class PlayerMovementRigidbody : MonoBehaviour
         yield return null;
         
     }
-
-    
-
-
-
+    #endregion
 }
