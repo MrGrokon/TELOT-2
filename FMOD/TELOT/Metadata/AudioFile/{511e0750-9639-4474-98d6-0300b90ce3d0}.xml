@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{511e0750-9639-4474-98d6-0300b90ce3d0}">
+		<property name="assetPath">
+			<value>FOOTSTEP - Metal Plate Walk Barefoot Male - 2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.56533333333333335</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{ae4a75a6-db03-4d52-b6f4-96e88b906660}</destination>
+		</relationship>
+	</object>
+</objects>

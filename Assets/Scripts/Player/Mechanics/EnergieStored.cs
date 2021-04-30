@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class EnergieStored : MonoBehaviour
 {
     [Range(3, 500)]
     public int MaxEnergieStorable = 5;
-    private TextMesh EnergieFeedback_Text;
+    public TextMeshProUGUI EnergieFeedback_Text;
 
     private int _energieStored = 0;
     public int _energiePerShot;
@@ -20,7 +21,7 @@ public class EnergieStored : MonoBehaviour
         private void Start()
         {
             Weapon_Anim = GameObject.Find("Shotgun_Pivot").GetComponent<Animator>();
-            EnergieFeedback_Text = GameObject.Find("Ammo3DText").GetComponent<TextMesh>();
+            //EnergieFeedback_Text = GameObject.Find("Ammo3DText").GetComponent<TextMesh>();
             _energieStored = startingEnergie;
         }
 

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6509241777085608740}
   - component: {fileID: 1752241918816837347}
   - component: {fileID: 4453278936563825603}
+  - component: {fileID: 7531037934239712152}
   m_Layer: 0
   m_Name: --GameManager--
   m_TagString: Untagged
@@ -48,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Avatar_Object: {fileID: 0}
   Crossair_Object: {fileID: 0}
+  DashParticule_Container: {fileID: 0}
   TurretEnemy_prefab: {fileID: 2727038760736590164, guid: df00fe06c5f36694bb3d1746a6cb6bba,
     type: 3}
   DummyEnemy_prefab: {fileID: 5643457821249978844, guid: a406d24ab1956c14a9f3cc0a6b28e181,
@@ -57,6 +59,7 @@ MonoBehaviour:
   SniperEnemy_prefab: {fileID: 6106855031906571488, guid: f70426cbd8455cc4cb9d20e8843fd701,
     type: 3}
   InComingHit_Pivot: {fileID: 0}
+  UI_particle_container: {fileID: 0}
 --- !u!114 &6509241777085608740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,7 +74,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RotationDegree: 15
   TimeToRotate: 0.5
-  ParticuleSystemeDistanceFromPlayer: 5
 --- !u!114 &1752241918816837347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,7 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b303563e2210d7342b2f10714e1dc2d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Heal_PS: {fileID: 0}
+  Halo_PS: {fileID: 0}
   AmmoFlickering_PS: {fileID: 0}
+  BloodSplater_PS: {fileID: 0}
   HealColor: {r: 0.9433962, g: 0.89146006, b: 0.30704877, a: 0}
   LevelBeforeHaloAppearance: 75
   LevelBeforeDrops: 35
@@ -172,3 +177,15 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7531037934239712152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700065792340058860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bcff36a2d2da4f4cbd34c69f91f5600, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

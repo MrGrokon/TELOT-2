@@ -35,7 +35,7 @@ public class BlockProjectiles : MonoBehaviour
             Weapon_Animator = GameObject.Find("Shotgun_Pivot").GetComponent<Animator>();
             shieldRemainSlider = GameObject.Find("Slider").GetComponent<Slider>();
 
-            shieldIdle = FMODUnity.RuntimeManager.CreateInstance("event:/Shield/AbsorptionIdle");
+            shieldIdle = FMODUnity.RuntimeManager.CreateInstance("event:/Absorption/AbsorptionIdle");
             FMODUnity.RuntimeManager.AttachInstanceToGameObject(shieldIdle, transform,
                 GetComponent<Rigidbody>());
             _Shield_Rendr = GameObject.Find("ShieldDebug");
