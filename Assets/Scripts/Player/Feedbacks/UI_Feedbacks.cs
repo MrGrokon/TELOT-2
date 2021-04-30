@@ -14,10 +14,10 @@ public class UI_Feedbacks : MonoBehaviour
         Jump
     }
 
-    private ParticleSystem Heal_PS;
-    private ParticleSystem Halo_PS;
-    private ParticleSystem AmmoFlickering_PS;
-    private ParticleSystem BloodSplater_PS; 
+    public ParticleSystem Heal_PS;
+    public ParticleSystem Halo_PS;
+    public ParticleSystem AmmoFlickering_PS;
+    public ParticleSystem BloodSplater_PS; 
 
     public Color HealColor;
 
@@ -56,11 +56,6 @@ public class UI_Feedbacks : MonoBehaviour
             Destroy(this.gameObject);
         }
         #endregion
-    
-        Heal_PS = ObjectReferencer.Instance.UI_particle_container.GetChild(3).GetComponent<ParticleSystem>();
-        Halo_PS = ObjectReferencer.Instance.UI_particle_container.GetChild(1).GetComponent<ParticleSystem>();
-        BloodSplater_PS = ObjectReferencer.Instance.UI_particle_container.GetChild(2).GetComponent<ParticleSystem>();
-        AmmoFlickering_PS = ObjectReferencer.Instance.UI_particle_container.GetChild(0).GetComponent<ParticleSystem>();
     }
 
     private void Start() {
@@ -69,6 +64,14 @@ public class UI_Feedbacks : MonoBehaviour
         _vignette.active = true;
         _vignette.intensity.value = 0f;
         _LifeManager = ObjectReferencer.Instance.Avatar_Object.GetComponent<PlayerLife>();
+
+
+        #region UI_particulesSysteme
+        Heal_PS = ObjectReferencer.Instance.UI_particle_container.GetChild(3).GetComponent<ParticleSystem>();
+        Halo_PS = ObjectReferencer.Instance.UI_particle_container.GetChild(1).GetComponent<ParticleSystem>();
+        BloodSplater_PS = ObjectReferencer.Instance.UI_particle_container.GetChild(2).GetComponent<ParticleSystem>();
+        AmmoFlickering_PS = ObjectReferencer.Instance.UI_particle_container.GetChild(0).GetComponent<ParticleSystem>();
+        #endregion
     }
     #endregion
 

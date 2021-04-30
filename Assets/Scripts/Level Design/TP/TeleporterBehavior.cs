@@ -14,7 +14,7 @@ public class TeleporterBehavior : MonoBehaviour
 
     private void Awake() {
         MyDatas = this.transform.parent.GetComponent<TeleporterData>();
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Envrionnement/TeleporterIdle", transform.position);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/OST/TeleporterIdle", transform.position);
     }
 
     private void Update() {
