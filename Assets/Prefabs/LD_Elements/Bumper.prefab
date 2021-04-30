@@ -1776,14 +1776,14 @@ Transform:
   m_GameObject: {fileID: 8212843248609371595}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children:
   - {fileID: 4360246637766164035}
   - {fileID: 3803192913259753005}
   - {fileID: 7236732667340648580}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 16.362001, z: 0}
 --- !u!114 &3380230277653728564
 MonoBehaviour:
   m_ObjectHideFlags: 0

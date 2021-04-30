@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 54334424}
   - component: {fileID: 54334426}
-  - component: {fileID: 54334425}
   m_Layer: 0
   m_Name: DrawAlwaysCamera
   m_TagString: Untagged
@@ -75,14 +74,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &54334425
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 54334423}
-  m_Enabled: 1
 --- !u!1 &216803807
 GameObject:
   m_ObjectHideFlags: 0
@@ -1061,7 +1052,6 @@ GameObject:
   - component: {fileID: 1514129940}
   - component: {fileID: 1514129943}
   - component: {fileID: 1514129942}
-  - component: {fileID: 1514129941}
   m_Layer: 14
   m_Name: Plane
   m_TagString: Untagged
@@ -1130,20 +1120,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &1514129941
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1514129939}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1596102774
 GameObject:
   m_ObjectHideFlags: 0
@@ -12333,7 +12309,7 @@ GameObject:
   - component: {fileID: 2973719376332865277}
   - component: {fileID: 3982152705651031007}
   m_Layer: 0
-  m_Name: DashParticles
+  m_Name: DashParticles_Forward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37043,7 +37019,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7585694794632808620}
   m_Layer: 0
-  m_Name: Particles
+  m_Name: DashParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
