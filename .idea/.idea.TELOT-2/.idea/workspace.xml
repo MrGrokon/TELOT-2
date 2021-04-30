@@ -20,7 +20,6 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Unity/Hub/Editor/2019.4.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/InputModules/BaseInput.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/MusicManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerStats/PlayerLife.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovementRemade/PlayerMovementRigidbody.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -161,6 +160,7 @@
       <workItem from="1618914294115" duration="1655000" />
       <workItem from="1619347586561" duration="3504000" />
       <workItem from="1619723835524" duration="1893000" />
+      <workItem from="1619789384796" duration="443000" />
     </task>
     <servers />
   </component>
