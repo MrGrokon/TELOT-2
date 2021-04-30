@@ -1,3 +1,4 @@
+<<<<<<< HEAD:Assets/Graphics/Animations/Weapon/EnergyLayer/33%_Charged.anim~Updated upstream.meta
 fileFormatVersion: 2
 guid: e0dcca125c3d8d74f8972f19891575a5
 DefaultImporter:
@@ -5,3 +6,13 @@ DefaultImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+=======
+fileFormatVersion: 2
+guid: f1c6fc062e27b904cbf03898c01b0eef
+folderAsset: yes
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+>>>>>>> main:Assets/CameraShakeFX/TELOT_Reverse_ObjectifLune/MonoBleedingEdge/etc/mono.meta
