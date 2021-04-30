@@ -28,6 +28,8 @@ public class SniperBehavior : MonsterBehavior
     [Tooltip("Force de recul infligée au joueur")]
     [SerializeField] private float knockbackForce;
 
+    public Transform shotLocation;
+
     [Header("Debug")]
     public float distanceToPlayer;
 
@@ -88,6 +90,7 @@ public class SniperBehavior : MonsterBehavior
                 break;
             case State.Aiming:
                 transform.LookAt(Player.transform.position);
+                shotLocation.transform.LookAt(Player.transform.position);
                 if (Physics.Raycast(transform.position, Player.transform.position - transform.position,
                     out RaycastHit hit, Mathf.Infinity))
                 {
@@ -128,8 +131,9 @@ public class SniperBehavior : MonsterBehavior
             FMODUnity.RuntimeManager.PlayOneShot("event:/Ennemy/Shoot/SniperShot", transform.position);
             if (hit.transform.CompareTag("Player"))
             {
-                var proj = Instantiate(projectilePrefab, transform.forward + this.transform.position, this.transform.rotation);
+                var proj = Instantiate(projectilePrefab, shotLocation.position, shotLocation.rotation);
                 proj.GetComponent<EnemieProjectileBehavior>().SetSpeed(ProjectileSpeed);
+                print("J'ai touché le joueur");
             }
             else
             {

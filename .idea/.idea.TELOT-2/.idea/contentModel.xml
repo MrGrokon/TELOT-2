@@ -772,7 +772,6 @@
         <e p="Main.cs" t="Include" />
         <e p="MaineMenu.cs" t="Include" />
         <e p="MainMenu.cs" t="Include" />
-        <e p="MusicManager.cs" t="Include" />
         <e p="nTools" t="Include">
           <e p="PrefabPainter" t="Include">
             <e p="Presets" t="Include">
@@ -933,6 +932,16 @@
             </e>
           </e>
         </e>
+        <e p="Prefabs" t="Include">
+          <e p="LD_Elements" t="Include">
+            <e p="Bumper" t="Include">
+              <e p="ActivationBumper.cs" t="Include" />
+              <e p="Texture" t="Include">
+                <e p="_oon 1.shader" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
         <e p="PresManager.cs" t="Include" />
         <e p="ResetLineRenderer.cs" t="Include" />
         <e p="Scripts" t="Include">
@@ -966,6 +975,7 @@
           </e>
           <e p="Managers" t="Include">
             <e p="FeedbackManager.cs" t="Include" />
+            <e p="MusicManager.cs" t="Include" />
             <e p="ObjectReferencer.cs" t="Include" />
             <e p="StartAsChildOf.cs" t="Include" />
           </e>
