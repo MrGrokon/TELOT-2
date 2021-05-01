@@ -170,8 +170,9 @@ GameObject:
   - component: {fileID: 5421070162170465050}
   - component: {fileID: 3243990396528156307}
   - component: {fileID: 9098027039874308323}
+  - component: {fileID: 9136895242090646506}
   m_Layer: 0
-  m_Name: Cylinder.064
+  m_Name: _col
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -251,6 +252,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BumpForce: 100
+--- !u!65 &9136895242090646506
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066365942053945223}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02, y: 0.02, z: 0.004}
+  m_Center: {x: 0, y: 0, z: 0.001}
 --- !u!1 &1108197800457552899
 GameObject:
   m_ObjectHideFlags: 0
@@ -1855,8 +1869,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 3, y: 0.7, z: 3.37}
+  m_Center: {x: 0, y: 0.35, z: 0}
 --- !u!1 &8255688785615567034
 GameObject:
   m_ObjectHideFlags: 0
