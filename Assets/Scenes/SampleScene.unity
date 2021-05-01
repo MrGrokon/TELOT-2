@@ -5139,24 +5139,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1711871467, guid: f70426cbd8455cc4cb9d20e8843fd701, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6106855031906571488, guid: f70426cbd8455cc4cb9d20e8843fd701,
         type: 3}
       propertyPath: m_Name
       value: Sniper
-      objectReference: {fileID: 0}
-    - target: {fileID: 6106855031906571489, guid: f70426cbd8455cc4cb9d20e8843fd701,
-        type: 3}
-      propertyPath: ProjectileSpeed
-      value: 1500
-      objectReference: {fileID: 0}
-    - target: {fileID: 6106855031906571489, guid: f70426cbd8455cc4cb9d20e8843fd701,
-        type: 3}
-      propertyPath: attackCooldown
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6106855031906571493, guid: f70426cbd8455cc4cb9d20e8843fd701,
         type: 3}
@@ -5212,11 +5198,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6106855031906571494, guid: f70426cbd8455cc4cb9d20e8843fd701,
-        type: 3}
-      propertyPath: m_Radius
-      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f70426cbd8455cc4cb9d20e8843fd701, type: 3}
