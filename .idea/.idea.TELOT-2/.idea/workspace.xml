@@ -56,10 +56,10 @@
       <option value="$PROJECT_DIR$/Assets/Deprecated_Files/ProjectilBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerStats/PlayerLife.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyInheritence/MonsterBehavior.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/BlockProjectiles.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/EnergieStored.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/SniperBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemiesProps/EnemieProjectileBehavior.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/BlockProjectiles.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/SniperBehavior.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1ohtdW9xSpIGpjT50LXGFp67Yso" />
@@ -162,7 +162,8 @@
       <workItem from="1619347586561" duration="3504000" />
       <workItem from="1619723835524" duration="1893000" />
       <workItem from="1619789384796" duration="443000" />
-      <workItem from="1619822177183" duration="2713000" />
+      <workItem from="1619822177183" duration="2773000" />
+      <workItem from="1619899758678" duration="4012000" />
     </task>
     <servers />
   </component>

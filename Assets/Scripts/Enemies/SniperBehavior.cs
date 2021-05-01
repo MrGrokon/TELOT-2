@@ -16,10 +16,8 @@ public class SniperBehavior : MonsterBehavior
     
     [Header("AI Properties")]
     [SerializeField] private State _state;
-    [SerializeField] GameObject projectilePrefab;
     public float attackInterval; 
     [SerializeField]private float attackCooldown;
-    public float ProjectileSpeed = 50;
     public float attackDistance;
     public float minimumDistance;
     public float distance;
@@ -90,7 +88,6 @@ public class SniperBehavior : MonsterBehavior
                 break;
             case State.Aiming:
                 transform.LookAt(Player.transform.position);
-                shotLocation.transform.LookAt(Player.transform.position);
                 if (Physics.Raycast(transform.position, Player.transform.position - transform.position,
                     out RaycastHit hit, Mathf.Infinity))
                 {
@@ -131,9 +128,24 @@ public class SniperBehavior : MonsterBehavior
             FMODUnity.RuntimeManager.PlayOneShot("event:/Ennemy/Shoot/SniperShot", transform.position);
             if (hit.transform.CompareTag("Player"))
             {
-                var proj = Instantiate(projectilePrefab, shotLocation.position, shotLocation.rotation);
-                proj.GetComponent<EnemieProjectileBehavior>().SetSpeed(ProjectileSpeed);
-                print("J'ai touché le joueur");
+                if (hit.transform.GetComponent<BlockProjectiles>().Shielding)
+                {
+                    float D = Vector3.Dot(hit.transform.position, transform.position);
+                    if (D > 0.8f || D < 0.8f)
+                    {
+                        hit.transform.GetComponent<EnergieStored>().AddEnergie(20);
+                    }
+                    else
+                    {
+                        hit.transform.GetComponent<PlayerLife>().TakeDammage(dammage);
+                        print("Dot : " +D);
+                    }
+                }
+                else
+                {
+                    hit.transform.GetComponent<PlayerLife>().TakeDammage(dammage);
+                }
+               
             }
             else
             {
