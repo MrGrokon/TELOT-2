@@ -127,7 +127,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 1
+  m_Radius: 0.6
   m_Height: 2.5
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -144,15 +144,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartHealth: 50
-  dammage: 50
+  dammage: 10
   MotionSpeed: 5
   _NavMeshAgent: {fileID: 0}
   _state: 0
-  projectilePrefab: {fileID: 6820640431255633222, guid: f6ec28c2b200c1149891856f596282f7,
-    type: 3}
   attackInterval: 5
-  attackCooldown: 7
-  ProjectileSpeed: 300
+  attackCooldown: 0
   attackDistance: 100
   minimumDistance: 10
   distance: 0
