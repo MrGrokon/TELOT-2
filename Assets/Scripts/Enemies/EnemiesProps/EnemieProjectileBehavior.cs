@@ -7,10 +7,12 @@ public class EnemieProjectileBehavior : MonoBehaviour
 {
     [Range(1f, 10f)]
     public float LifeTime = 5f;
+    private bool _LifeTimeIsOveride = false;
     private float _elapsedLifeTime = 0f;
+    private Vector3 _BaseScale;
 
     private float projectilSpeed;
-    [SerializeField] private int DamageDoned;
+    [SerializeField] private int DamageDoned;    
 
     #region Setters
     public void SetSpeed(float _speed){
@@ -28,6 +30,9 @@ public class EnemieProjectileBehavior : MonoBehaviour
 
         #region Projectile Autodestroy
         _elapsedLifeTime += Time.deltaTime;
+        if(_LifeTimeIsOveride){
+            this.transform.localScale = Vector3.Lerp(_BaseScale, Vector3.zero, _elapsedLifeTime/LifeTime);
+        }
         if(_elapsedLifeTime >= LifeTime){
             Destroy(this.gameObject);
         }
@@ -71,10 +76,21 @@ public class EnemieProjectileBehavior : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+        if(_LifeTimeIsOveride){
+            _BaseScale = this.transform.localScale;
+        }
+    }
     #endregion
 
     public int getDammage()
     {
         return DamageDoned;
+    }
+
+    public void OverideLifeTime(float _newLifeTime){
+        LifeTime = _newLifeTime;
+        _LifeTimeIsOveride = true;
     }
 }

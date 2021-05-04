@@ -232,7 +232,7 @@ VisualEffectResource:
       stripData);\r\n\t\t// TODO Change seed to be sure we're deterministic on random
       with strip\r\n#endif\r\n        \r\n        {\n            PositionSphere_0(
       /*inout */attributes.position,  /*inout */attributes.seed,  /*inout */attributes.direction,
-      float3(0, 0, 0), (float)3, (float)6.28318548, (float)1);\n        }\n       
+      float3(0, 0, 0), (float)2, (float)6.28318548, (float)1);\n        }\n       
       {\n            SetAttribute_F01429A3( /*inout */attributes.lifetime,  /*inout
       */attributes.seed, (float)0.300000012, (float)0.800000012);\n        }\n       
       {\n            uint tmp_bc = attributes.particleId ^ asuint(uniform_a);\n           
@@ -1319,7 +1319,7 @@ VisualEffectResource:
         - m_ExpressionIndex: 30
           m_Value: 6.2831855
         - m_ExpressionIndex: 31
-          m_Value: 3
+          m_Value: 2
         - m_ExpressionIndex: 33
           m_Value: 5
         - m_ExpressionIndex: 38
@@ -2831,7 +2831,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEditor.VFX.ArcSphere, Unity.VisualEffectGraph.Editor,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"sphere":{"center":{"x":0.0,"y":0.0,"z":0.0},"radius":3.0},"arc":6.2831854820251469}'
+      m_SerializableObject: '{"sphere":{"center":{"x":0.0,"y":0.0,"z":0.0},"radius":2.0},"arc":6.2831854820251469}'
     m_Space: 0
   m_Property:
     name: ArcSphere
