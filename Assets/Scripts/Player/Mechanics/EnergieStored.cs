@@ -14,13 +14,10 @@ public class EnergieStored : MonoBehaviour
     public int _energiePerShot;
     public int startingEnergie;
 
-    private Animator Weapon_Anim;
-
     #region Unity Functions
 
         private void Start()
         {
-            Weapon_Anim = GameObject.Find("Shotgun_Pivot").GetComponent<Animator>();
             //EnergieFeedback_Text = GameObject.Find("Ammo3DText").GetComponent<TextMesh>();
             _energieStored = startingEnergie;
         }
@@ -31,14 +28,7 @@ public class EnergieStored : MonoBehaviour
             }
             else{
                 EnergieFeedback_Text.text = (_energieStored / 10).ToString();
-            }
-
-            #region Charge % calculation
-                float ChargePercent = Convert.ToSingle(_energieStored) / Convert.ToSingle(MaxEnergieStorable);
-                //Debug.Log( ChargePercent+"%");
-                Weapon_Anim.SetFloat("ChargeLevel", ChargePercent);
-            #endregion
-            
+            }            
         }
     #endregion
 
