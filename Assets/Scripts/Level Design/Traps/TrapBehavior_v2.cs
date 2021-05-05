@@ -37,7 +37,7 @@ public class TrapBehavior_v2 : MonoBehaviour
         }
     }  
 
-    private void TrapTriggered(){
+    public void TrapTriggered(){
         TrapAnimator.SetTrigger("TrapTriggered");
     }
 
