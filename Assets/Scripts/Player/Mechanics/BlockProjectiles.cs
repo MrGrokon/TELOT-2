@@ -17,7 +17,7 @@ public class BlockProjectiles : MonoBehaviour
     private GameObject _Shield_Rendr;
     private Transform _Shield_Pivot;
     private EnergieStored _Energie;
-    private bool Shielding = false;
+    public bool Shielding = false;
     private float _elapsedTime = 0f;
     private Slider shieldRemainSlider;
     public Image SliderFillImage;

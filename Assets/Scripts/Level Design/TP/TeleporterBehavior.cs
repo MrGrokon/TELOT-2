@@ -33,6 +33,7 @@ public class TeleporterBehavior : MonoBehaviour
             _col.transform.position = MyDatas.OtherSide.GetTeleporterPoint().position;
             _col.transform.rotation = MyDatas.OtherSide.GetTeleporterPoint().rotation;
             StartCooldown();
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Envrionnement/TeleporterUse");
             MyDatas.OtherSide.GetComponentInChildren<TeleporterBehavior>().StartCooldown();
         }
     }

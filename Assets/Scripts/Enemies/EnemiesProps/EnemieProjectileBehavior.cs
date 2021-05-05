@@ -26,7 +26,7 @@ public class EnemieProjectileBehavior : MonoBehaviour
     
     #region Unity Functions
     private void Update() {
-        this.transform.Translate(Vector3.forward * projectilSpeed * Time.deltaTime, Space.Self);
+        
 
         #region Projectile Autodestroy
         _elapsedLifeTime += Time.deltaTime;
@@ -41,8 +41,9 @@ public class EnemieProjectileBehavior : MonoBehaviour
 
     private void FixedUpdate()
     {
+        this.transform.Translate(Vector3.forward * projectilSpeed * Time.deltaTime, Space.Self);
         Debug.DrawRay(transform.position, transform.forward, Color.red);
-        if (Physics.Raycast(transform.position, Vector3.forward, out RaycastHit hit, 1f))
+        if (Physics.Raycast(transform.position, Vector3.forward * 2, out RaycastHit hit, 1f))
         {
             
             if (hit.transform.CompareTag("Shield"))
@@ -72,6 +73,7 @@ public class EnemieProjectileBehavior : MonoBehaviour
         }
         else
         {
+            print(other.transform.tag);
             Destroy(gameObject);
         }
     }

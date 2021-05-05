@@ -1086,7 +1086,7 @@ PrefabInstance:
     - target: {fileID: 3241794586385512816, guid: f775957ed795fb241af9de4385f89d40,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3241794586385512816, guid: f775957ed795fb241af9de4385f89d40,
         type: 3}
@@ -4807,7 +4807,7 @@ PrefabInstance:
     - target: {fileID: 5134415914475418651, guid: 94b724fc09f6df7469db5e3c2074f6e2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 22
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 5134415914475418651, guid: 94b724fc09f6df7469db5e3c2074f6e2,
         type: 3}
@@ -6000,7 +6000,7 @@ PrefabInstance:
     - target: {fileID: 3241794586385512816, guid: f775957ed795fb241af9de4385f89d40,
         type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 3241794586385512816, guid: f775957ed795fb241af9de4385f89d40,
         type: 3}
@@ -6168,7 +6168,7 @@ PrefabInstance:
     - target: {fileID: 3241794586385512816, guid: f775957ed795fb241af9de4385f89d40,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 3241794586385512816, guid: f775957ed795fb241af9de4385f89d40,
         type: 3}
@@ -6187,6 +6187,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f775957ed795fb241af9de4385f89d40, type: 3}
+--- !u!1 &1859071310
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1520057894}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1859071311}
+  m_Layer: 0
+  m_Name: ClaymoreMine2 (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1859071311
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1520057894}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859071310}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1859783536
 GameObject:
   m_ObjectHideFlags: 0
@@ -6723,7 +6753,7 @@ PrefabInstance:
     - target: {fileID: 29658187223667097, guid: 4870a223fb1fb6d40a371c706e89cad5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.4
+      value: 12.6
       objectReference: {fileID: 0}
     - target: {fileID: 29658187223667097, guid: 4870a223fb1fb6d40a371c706e89cad5,
         type: 3}
@@ -7259,7 +7289,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1529043928, guid: 5afe7bbb28326d84fadf01bf631dc404, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2434299148609023959, guid: 5afe7bbb28326d84fadf01bf631dc404,
         type: 3}
@@ -7384,7 +7414,7 @@ PrefabInstance:
     - target: {fileID: 8358024895109935771, guid: 5afe7bbb28326d84fadf01bf631dc404,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5afe7bbb28326d84fadf01bf631dc404, type: 3}
