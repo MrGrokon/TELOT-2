@@ -102,13 +102,12 @@ public class WallRunningRigidbody : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
         Motion = transform.forward * v + transform.right * h;
         PostProcessValueManager();
         WallRunFeedbacks();
-        if (canWallRun)
+        if (canWallRun && !GetComponent<PlayerMovementRigidbody>().onGround)
         {
             if (WallOnRight || WallOnLeft)
             {
@@ -147,7 +146,7 @@ public class WallRunningRigidbody : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.layer == 9 && canWallRun)
+        if(other.gameObject.layer == 9 && canWallRun && !GetComponent<PlayerMovementRigidbody>().onGround)
         {
             canOffWall = false;
             #region Detect & Assign the wall i walk on
@@ -178,6 +177,15 @@ public class WallRunningRigidbody : MonoBehaviour
                 Debug.DrawRay(transform.position, wallForwardRun, Color.red, Mathf.Infinity);
                 playerMoveWallRun.start();
                 StartCoroutine(OffWallDelay());
+        }
+        else if (other.gameObject.layer != 9)
+        {
+            WallOnLeft = false;
+            WallOnRight = false;
+            canWallRun = false;
+            StartCoroutine(ReactivateDoubleJump());
+            GetComponentInChildren<MouseLook>().ResetBody();
+            StartCoroutine(wallRunDelayOff());
         }
     }
 

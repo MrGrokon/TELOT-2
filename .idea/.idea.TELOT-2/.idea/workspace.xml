@@ -48,18 +48,20 @@
       <option value="$PROJECT_DIR$/Assets/PresManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovementRemade/PlayerMovementRigidbody.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMouvement/MouseLook.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovementRemade/WallRunningRigidbody.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Navigation/EnemySpawner.cs" />
       <option value="$PROJECT_DIR$/Assets/MusicManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Navigation/RoomTrigger.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/ProssecutorBehavior_v2.cs" />
       <option value="$PROJECT_DIR$/Assets/Deprecated_Files/ProjectilBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerStats/PlayerLife.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyInheritence/MonsterBehavior.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/BlockProjectiles.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/EnergieStored.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/SniperBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemiesProps/EnemieProjectileBehavior.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/BlockProjectiles.cs" />
+      <option value="$PROJECT_DIR$/Assets/FastIK/Scripts/FastIK/FastIKFabric.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/ProssecutorBehavior_v2.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/SniperBehavior.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Level Design/TP/TeleporterBehavior.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovementRemade/WallRunningRigidbody.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1ohtdW9xSpIGpjT50LXGFp67Yso" />
@@ -162,7 +164,11 @@
       <workItem from="1619347586561" duration="3504000" />
       <workItem from="1619723835524" duration="1893000" />
       <workItem from="1619789384796" duration="443000" />
-      <workItem from="1619822177183" duration="2713000" />
+      <workItem from="1619822177183" duration="2773000" />
+      <workItem from="1619899758678" duration="4012000" />
+      <workItem from="1620056833950" duration="204000" />
+      <workItem from="1620059467302" duration="5119000" />
+      <workItem from="1620157906310" duration="287000" />
     </task>
     <servers />
   </component>

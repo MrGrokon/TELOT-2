@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using FMOD.Studio;
 using UnityEngine;
 
 public class SniperBehavior : MonsterBehavior
@@ -13,13 +14,21 @@ public class SniperBehavior : MonsterBehavior
         Flee,
         Aiming
     }
+    private FMOD.Studio.EventInstance WalkEvent;
+    private FMOD.Studio.EventDescription WalkDescription;
+    private FMOD.Studio.PARAMETER_DESCRIPTION pd;
+    FMOD.Studio.PARAMETER_ID parameterID;
+    
+    private FMOD.Studio.EventInstance ChargeShotEvent;
+    private FMOD.Studio.EventDescription ChargeShotDescription;
+    private FMOD.Studio.PARAMETER_DESCRIPTION pd2;
+    FMOD.Studio.PARAMETER_ID parameterID2;
+    private bool walkEventStarted= false;
     
     [Header("AI Properties")]
     [SerializeField] private State _state;
-    [SerializeField] GameObject projectilePrefab;
     public float attackInterval; 
     [SerializeField]private float attackCooldown;
-    public float ProjectileSpeed = 50;
     public float attackDistance;
     public float minimumDistance;
     public float distance;
@@ -40,10 +49,27 @@ public class SniperBehavior : MonsterBehavior
     [SerializeField] private Color shootReadyColor;
 
     private GameObject Player;
+
+    [Header("Absorption related")]
+    [SerializeField] private int energieGivePerShot;
+    [Tooltip("Entre -1 et 1 : voir le dot product sur la doc d'unity")]
+    [SerializeField] private float absorptionAngle;
     // Start is called before the first frame update
     private void Start()
     {
         Player = ObjectReferencer.Instance.Avatar_Object;
+        
+        WalkEvent = FMODUnity.RuntimeManager.CreateInstance("event:/Ennemy/Movement/SniperMovement");
+
+        WalkDescription = FMODUnity.RuntimeManager.GetEventDescription("event:/Ennemy/Movement/SniperMovement");
+        WalkDescription.getParameterDescriptionByName("isWalking", out pd);
+        parameterID = pd.id;
+        
+        ChargeShotEvent = FMODUnity.RuntimeManager.CreateInstance("event:/Ennemy/Shoot/SniperChargeShot");
+
+        ChargeShotDescription = FMODUnity.RuntimeManager.GetEventDescription("event:/Ennemy/Shoot/SniperChargeShot");
+        ChargeShotDescription.getParameterDescriptionByName("ChargeLevel", out pd2);
+        parameterID2 = pd2.id;
     }
 
     override public void Update()
@@ -51,6 +77,9 @@ public class SniperBehavior : MonsterBehavior
         if (attackCooldown < attackInterval)
         {
             attackCooldown += 1 * Time.deltaTime;
+            
+            float charge = Mathf.Lerp(0, 1, attackInterval / attackCooldown);
+            ChargeShotEvent.setParameterByID(parameterID2 , charge);
         }
         Debug.DrawRay(transform.position, (Player.transform.position - transform.position) * 5, Color.red);
         distanceToPlayer = Vector3.Distance(Player.transform.position, transform.position);
@@ -73,6 +102,8 @@ public class SniperBehavior : MonsterBehavior
     private void SwitchState(State newState)
     {
         _state = newState;
+        walkEventStarted = false;
+        WalkEvent.stop(STOP_MODE.IMMEDIATE);
         EnterState();
     }
 
@@ -90,7 +121,6 @@ public class SniperBehavior : MonsterBehavior
                 break;
             case State.Aiming:
                 transform.LookAt(Player.transform.position);
-                shotLocation.transform.LookAt(Player.transform.position);
                 if (Physics.Raycast(transform.position, Player.transform.position - transform.position,
                     out RaycastHit hit, Mathf.Infinity))
                 {
@@ -108,9 +138,17 @@ public class SniperBehavior : MonsterBehavior
                 }
                 break;
             case State.Flee:
+                ChargeShotEvent.setParameterByID(parameterID2 , -50);
                 Vector3 FleeDirection = transform.position - Player.transform.position;
                 transform.rotation = Quaternion.LookRotation(FleeDirection, Vector3.up);
                 _NavMeshAgent.SetDestination(FleeDirection);
+                
+                if (!walkEventStarted)
+                {
+                    walkEventStarted = true;
+                    WalkEvent.start();
+                }
+                    
                 if(distanceToPlayer > attackDistance)
                     SwitchState(State.Idle);
                 else if (distanceToPlayer <= attackDistance && distanceToPlayer > minimumDistance)
@@ -129,11 +167,28 @@ public class SniperBehavior : MonsterBehavior
         if (Physics.Raycast(transform.position, Player.transform.position - transform.position,out RaycastHit hit, Mathf.Infinity))
         {
             FMODUnity.RuntimeManager.PlayOneShot("event:/Ennemy/Shoot/SniperShot", transform.position);
+            ChargeShotEvent.setParameterByID(parameterID2 , -50);
             if (hit.transform.CompareTag("Player"))
             {
-                var proj = Instantiate(projectilePrefab, shotLocation.position, shotLocation.rotation);
-                proj.GetComponent<EnemieProjectileBehavior>().SetSpeed(ProjectileSpeed);
-                print("J'ai touché le joueur");
+                if (hit.transform.GetComponent<BlockProjectiles>().Shielding)
+                {
+                    float D = Vector3.Dot(hit.transform.position, transform.position);
+                    if (D > absorptionAngle)
+                    {
+                        hit.transform.GetComponent<EnergieStored>().AddEnergie(energieGivePerShot);
+                        FMODUnity.RuntimeManager.PlayOneShot("event:/Shield/ShieldTanking"); 
+                    }
+                    else
+                    {
+                        hit.transform.GetComponent<PlayerLife>().TakeDammage(dammage);
+                        print("Dot : " +D);
+                    }
+                }
+                else
+                {
+                    hit.transform.GetComponent<PlayerLife>().TakeDammage(dammage);
+                }
+               
             }
             else
             {
