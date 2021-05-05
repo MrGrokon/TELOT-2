@@ -147,6 +147,7 @@ public class ProssecutorBehavior_v2 : MonsterBehavior
 
         _elapsedTime = 0f;
         _anim.SetTrigger("Shockwave");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Ennemy/Shoot/DroneAttack");
         ShockwaveBehavior _shockwave_obj =  Instantiate(ShockwaveObject, this.transform.position, Quaternion.identity);
         _shockwave_obj.SetLifeTime(Shockwave_Duration);
         _shockwave_obj.SetGrowthCurve(ShockwaveGrowth);
