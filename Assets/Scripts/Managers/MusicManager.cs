@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using FMOD.Studio;
 using UnityEngine;
 
 public class MusicManager : MonoBehaviour
@@ -39,5 +40,10 @@ public class MusicManager : MonoBehaviour
               MusicEvent.setParameterByID(parameterID, 2);
               break;
         }
+    }
+
+    public void StopMusic()
+    {
+        MusicEvent.stop(STOP_MODE.ALLOWFADEOUT);
     }
 }

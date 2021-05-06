@@ -759,6 +759,13 @@
           </e>
         </e>
         <e p="Graphics" t="Include">
+          <e p="Materials" t="Include">
+            <e p="Trap_Mat" t="Include">
+              <e p="Intersect" t="Include">
+                <e p="Intersect_Shader.shader" t="Include" />
+              </e>
+            </e>
+          </e>
           <e p="Shader" t="Include">
             <e p="BasicsDecals.shader" t="Include" />
             <e p="ControlableLaser.shader" t="Include" />
@@ -767,6 +774,11 @@
             </e>
             <e p="ShieldtestShader.shader" t="Include" />
             <e p="ToonShader.shader" t="Include" />
+            <e p="Traps_Related" t="Include">
+              <e p="Trap_Warning.shader" t="Include" />
+              <e p="TrapDecal.shader" t="Include" />
+              <e p="TrapHalos.shader" t="Include" />
+            </e>
           </e>
         </e>
         <e p="Main.cs" t="Include" />
@@ -943,8 +955,15 @@
           </e>
         </e>
         <e p="PresManager.cs" t="Include" />
+        <e p="ProgressionFollow.cs" t="Include" />
         <e p="ResetLineRenderer.cs" t="Include" />
         <e p="Scripts" t="Include">
+          <e p="Debug" t="Include">
+            <e p="CameraRotateAroundObject.cs" t="Include" />
+            <e p="ManualyActivateMine.cs" t="Include" />
+            <e p="PauseGameWhenButtonPressed.cs" t="Include" />
+            <e p="Simplified_CharacterControler.cs" t="Include" />
+          </e>
           <e p="Enemies" t="Include">
             <e p="DummyBehavior.cs" t="Include" />
             <e p="EnemiesProps" t="Include">
@@ -969,7 +988,9 @@
               <e p="TeleporterData.cs" t="Include" />
             </e>
             <e p="Traps" t="Include">
+              <e p="TrapAnimationEvent.cs" t="Include" />
               <e p="TrapBehavior.cs" t="Include" />
+              <e p="TrapBehavior_v2.cs" t="Include" />
               <e p="TrapLauncher.cs" t="Include" />
             </e>
           </e>
@@ -984,9 +1005,6 @@
             <e p="RoomTrigger.cs" t="Include" />
           </e>
           <e p="Player" t="Include">
-            <e p="Debug" t="Include">
-              <e p="PauseGameWhenButtonPressed.cs" t="Include" />
-            </e>
             <e p="Feedbacks" t="Include">
               <e p="UI_Feedbacks.cs" t="Include" />
               <e p="WeaponRecoil.cs" t="Include" />
