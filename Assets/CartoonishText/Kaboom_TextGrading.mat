@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Kaboom_TextGrading
+  m_Shader: {fileID: 4800000, guid: f21a98ebe925fb943853a1fc86d6c099, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 0
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Base_Text:
+        m_Texture: {fileID: 2800000, guid: 6dd8300d92c61c049a086b54edc14bc8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Base_EmisiveColor: 3.7
+    - _Cutoff: 0.5
+    - _EmisiveColor: 1.12
+    - _EmissiveValue: 5.23
+    - _Float0: 1
+    - __dirty: 0
+    - _zdazeazef: 0
+    m_Colors:
+    - _BottomColor: {r: 0.8207547, g: 0.20020166, b: 0.07355818, a: 0}
+    - _TextColor: {r: 1, g: 0, b: 0, a: 0}
+    - _TopColor: {r: 0.96862745, g: 1, b: 0.30588236, a: 0}

@@ -34,8 +34,11 @@ public class PlayerLife : MonoBehaviour
     private void Update()
     {
         HeartBeatEvent.setParameterByID(parameterID , (lifePoint / startingLifePoint) * 100);
-        if(lifePoint <= 0)
-            SceneManager.LoadScene(0);
+        if (lifePoint <= 0)
+        {
+            Death();
+        }
+            
         lifeText.value = lifePoint / startingLifePoint;
     }
 
@@ -43,6 +46,12 @@ public class PlayerLife : MonoBehaviour
     {
         FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Hit"); 
         lifePoint -= dmg;
+    }
+
+    private void Death()
+    {
+        FeedbackManager.Instance.GetComponent<MusicManager>().StopMusic();
+        SceneManager.LoadScene(0);
     }
 
     public float getLifePoint()
