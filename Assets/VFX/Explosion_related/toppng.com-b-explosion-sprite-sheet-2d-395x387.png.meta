@@ -1,0 +1,1760 @@
+fileFormatVersion: 2
+guid: b5d635de8ade6004191e3200dec3d47f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6653549304509104918
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_0
+  - first:
+      213: 8569913017576236009
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_1
+  - first:
+      213: -8096450262004240783
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_2
+  - first:
+      213: 6572724638618493773
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_3
+  - first:
+      213: 6708502504447860604
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_4
+  - first:
+      213: -7747934859332198254
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_5
+  - first:
+      213: -7439656691217161753
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_6
+  - first:
+      213: 2724129075012055137
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_7
+  - first:
+      213: 340339307073961816
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_8
+  - first:
+      213: -395004998898424680
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_9
+  - first:
+      213: 439219145779777876
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_10
+  - first:
+      213: -4706677926808682229
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_11
+  - first:
+      213: -5394078569511446922
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_12
+  - first:
+      213: 5609575296522870387
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_13
+  - first:
+      213: -1521046629789383027
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_14
+  - first:
+      213: 5648402931994551622
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_15
+  - first:
+      213: 2375425434676599278
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_16
+  - first:
+      213: -5498719950900503012
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_17
+  - first:
+      213: -984725311285262489
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_18
+  - first:
+      213: 8287667163154609511
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_19
+  - first:
+      213: 301997775451206126
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_20
+  - first:
+      213: -3680063483741003625
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_21
+  - first:
+      213: -2891199693249058331
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_22
+  - first:
+      213: -8472916729018345156
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_23
+  - first:
+      213: 7443676776191245936
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_24
+  - first:
+      213: 5842112379093526056
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_25
+  - first:
+      213: -7520412012311369893
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_26
+  - first:
+      213: 3784205846516058421
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_27
+  - first:
+      213: 1818292928756682952
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_28
+  - first:
+      213: 6599661792934936369
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_29
+  - first:
+      213: 8194796114901443047
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_30
+  - first:
+      213: -7922082891721715792
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_31
+  - first:
+      213: -1043348758104808707
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_32
+  - first:
+      213: -4262517324825529771
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_33
+  - first:
+      213: 8487982207935901742
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_34
+  - first:
+      213: 4398666207075703950
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_35
+  - first:
+      213: 7069768558530077453
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_36
+  - first:
+      213: 304183255332863646
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_37
+  - first:
+      213: -1252565070433851749
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_38
+  - first:
+      213: -7877455616923457250
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_39
+  - first:
+      213: -4744950176405348486
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_40
+  - first:
+      213: -9149265581735867629
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_41
+  - first:
+      213: -2525401003850629740
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_42
+  - first:
+      213: 4075228937904414006
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_43
+  - first:
+      213: -307122089414683837
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_44
+  - first:
+      213: 3233382850881812870
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_45
+  - first:
+      213: -2919759364365625810
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_46
+  - first:
+      213: -8210906045878674251
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_47
+  - first:
+      213: 8397319124394268709
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_48
+  - first:
+      213: 5117212024202712829
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_49
+  - first:
+      213: -2859181320512817273
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_50
+  - first:
+      213: 5423862645948418651
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_51
+  - first:
+      213: -7374187536090437593
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_52
+  - first:
+      213: 2262943008719625272
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_53
+  - first:
+      213: 7366649639128416214
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_54
+  - first:
+      213: -7868175487005947143
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_55
+  - first:
+      213: -6570268355164615619
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_56
+  - first:
+      213: 3323657415780837047
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_57
+  - first:
+      213: 6043306202130687350
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_58
+  - first:
+      213: 1893563243478187368
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_59
+  - first:
+      213: 59010699771272991
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_60
+  - first:
+      213: 3350012619175952407
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_61
+  - first:
+      213: -2891184687647475266
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_62
+  - first:
+      213: -2916846824717205844
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_63
+  - first:
+      213: 6289560845026679158
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_64
+  - first:
+      213: 4956476603560422335
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_65
+  - first:
+      213: 4347142305047602813
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_66
+  - first:
+      213: -6378875268417327663
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_67
+  - first:
+      213: 7334622073169036663
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_68
+  - first:
+      213: -6350221428762650194
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_69
+  - first:
+      213: -2428064908088523811
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_70
+  - first:
+      213: 6576231591535978175
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_71
+  - first:
+      213: 2971536524998980302
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_72
+  - first:
+      213: -527023969533209677
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_73
+  - first:
+      213: 2331607545596837660
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_74
+  - first:
+      213: 3106600783472291311
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_75
+  - first:
+      213: -4561004018382955887
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_76
+  - first:
+      213: 5042282129560920227
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_77
+  - first:
+      213: -8952160891163661769
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_78
+  - first:
+      213: 803188978462384942
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_79
+  - first:
+      213: 4029071099049395049
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_80
+  - first:
+      213: 9162252024807447502
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_81
+  - first:
+      213: -3243004235648934896
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_82
+  - first:
+      213: 8524570258754009009
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_83
+  - first:
+      213: -7843381442890926924
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_84
+  - first:
+      213: 8636934512630608271
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_85
+  - first:
+      213: -8490279617311897299
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_86
+  - first:
+      213: -1074890575004875077
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_87
+  - first:
+      213: 1415805837837493678
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_88
+  - first:
+      213: 1177287552347435266
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_89
+  - first:
+      213: 4158738944642621324
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_90
+  - first:
+      213: -4449910461425800384
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_91
+  - first:
+      213: -3618605145211831954
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_92
+  - first:
+      213: -3269931566359467308
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_93
+  - first:
+      213: -4794909585992869252
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_94
+  - first:
+      213: 3829160104939153950
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_95
+  - first:
+      213: 7404708371933088181
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_96
+  - first:
+      213: 3374197716403403056
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_97
+  - first:
+      213: -4652105845656305382
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_98
+  - first:
+      213: 1090971682161936042
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_99
+  - first:
+      213: 169219274415611092
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_100
+  - first:
+      213: -2018708809602034383
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_101
+  - first:
+      213: -5195472586326064142
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_102
+  - first:
+      213: 3270803014947464500
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_103
+  - first:
+      213: 3808795453965981331
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_104
+  - first:
+      213: -367273719282155008
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_105
+  - first:
+      213: -8406172013831059413
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_106
+  - first:
+      213: 59387521636752208
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_107
+  - first:
+      213: 4590159273570223129
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_108
+  - first:
+      213: -7535521103439863229
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_109
+  - first:
+      213: -7234952795792823056
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_110
+  - first:
+      213: -2641499874452600849
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_111
+  - first:
+      213: -417628804937661367
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_112
+  - first:
+      213: 119601434608040049
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_113
+  - first:
+      213: -2448844486966370394
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_114
+  - first:
+      213: -6557254333314501087
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_115
+  - first:
+      213: -5247031268625203658
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_116
+  - first:
+      213: -6777307556370132609
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_117
+  - first:
+      213: 6198654837657721540
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_118
+  - first:
+      213: -1346768173012680289
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_119
+  - first:
+      213: 4639857259488799535
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_120
+  - first:
+      213: -784134132929025301
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_121
+  - first:
+      213: -8259107881293024810
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_122
+  - first:
+      213: -1709252765192150923
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_123
+  - first:
+      213: 3224078749122616004
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_124
+  - first:
+      213: 6455381796121465094
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_125
+  - first:
+      213: -1580460818188037212
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_126
+  - first:
+      213: -2124476873266155929
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_127
+  - first:
+      213: -1763395893293547422
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_128
+  - first:
+      213: 3559428771497118688
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_129
+  - first:
+      213: -6928990637016939577
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_130
+  - first:
+      213: -5769165854613004866
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_131
+  - first:
+      213: 7534389206907870697
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_132
+  - first:
+      213: -291145947410635752
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_133
+  - first:
+      213: 36340479859560978
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_134
+  - first:
+      213: -639575262875068664
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_135
+  - first:
+      213: -3567383077647376430
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_136
+  - first:
+      213: 5350274929113720415
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_137
+  - first:
+      213: -1736713536161356521
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_138
+  - first:
+      213: -4175368902796451224
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_139
+  - first:
+      213: 8400132638114896213
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_140
+  - first:
+      213: 722546454063745471
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_141
+  - first:
+      213: 4902360555459635822
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_142
+  - first:
+      213: -7115131274871169924
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_143
+  - first:
+      213: 5269688740342927256
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_144
+  - first:
+      213: -2189187270689014163
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_145
+  - first:
+      213: -5671569133033265009
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_146
+  - first:
+      213: -3721561957419216549
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_147
+  - first:
+      213: -367432695475523630
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_148
+  - first:
+      213: -1423180735522336899
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_149
+  - first:
+      213: -3683256168500388569
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_150
+  - first:
+      213: -2894545201969959115
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_151
+  - first:
+      213: -6051699215480566907
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_152
+  - first:
+      213: -8882278713779173404
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_153
+  - first:
+      213: 6618066853630004552
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_154
+  - first:
+      213: 1906156827955442854
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_155
+  - first:
+      213: -184471319501567136
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_156
+  - first:
+      213: -4751616069828964102
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_157
+  - first:
+      213: 795397271417944106
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_158
+  - first:
+      213: 3626055947484593908
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_159
+  - first:
+      213: -7266091477478475386
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_160
+  - first:
+      213: 8758544128214120346
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_161
+  - first:
+      213: -4867553376611712981
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_162
+  - first:
+      213: 6069321685061340227
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_163
+  - first:
+      213: 3441412944575734206
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_164
+  - first:
+      213: 9033675127763434050
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_165
+  - first:
+      213: -4331568342217862188
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_166
+  - first:
+      213: 7663157549193514046
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_167
+  - first:
+      213: 7901213476036702815
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_168
+  - first:
+      213: 6326521633415192605
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_169
+  - first:
+      213: 430432931648426221
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_170
+  - first:
+      213: 8485485485735691743
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_171
+  - first:
+      213: -5151459275864519489
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_172
+  - first:
+      213: -5317691560562793125
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_173
+  - first:
+      213: 5996529456127875037
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_174
+  - first:
+      213: 7478013160746083057
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_175
+  - first:
+      213: 2281628776494878203
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_176
+  - first:
+      213: 4954217210095618553
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_177
+  - first:
+      213: -7883575715552260928
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_178
+  - first:
+      213: -4345366261600135806
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_179
+  - first:
+      213: -5450889568164816691
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_180
+  - first:
+      213: -3893177161916507918
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_181
+  - first:
+      213: 9123365630041089349
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_182
+  - first:
+      213: -5773275046427911796
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_183
+  - first:
+      213: -7839862834539596302
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_184
+  - first:
+      213: -3135323491670862991
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_185
+  - first:
+      213: -7167067986394945160
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_186
+  - first:
+      213: -4885469160303845967
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_187
+  - first:
+      213: 8478009726273688435
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_188
+  - first:
+      213: 3802203803984920931
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_189
+  - first:
+      213: 2800309985374346569
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_190
+  - first:
+      213: 8475553503591862984
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_191
+  - first:
+      213: 2673033726572363388
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_192
+  - first:
+      213: -2481815396956758295
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_193
+  - first:
+      213: 8686961342271877285
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_194
+  - first:
+      213: -2293639126126204910
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_195
+  - first:
+      213: 7085744391188858463
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_196
+  - first:
+      213: -4088665679358622546
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_197
+  - first:
+      213: -6639898755577397624
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_198
+  - first:
+      213: 4994031256951437040
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_199
+  - first:
+      213: 4220585250897310172
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_200
+  - first:
+      213: -7038789757415082174
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_201
+  - first:
+      213: -6563497027380515256
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_202
+  - first:
+      213: -2673529491033764710
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_203
+  - first:
+      213: -4338073656565397475
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_204
+  - first:
+      213: -6041908394995431275
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_205
+  - first:
+      213: -6523477013708758124
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_206
+  - first:
+      213: -7746860220113108153
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_207
+  - first:
+      213: 2169538838373890154
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_208
+  - first:
+      213: -1049799749406161596
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_209
+  - first:
+      213: 8693869847807130159
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_210
+  - first:
+      213: 9169400791983986169
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_211
+  - first:
+      213: 2391060031880928937
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_212
+  - first:
+      213: 1746927352832340337
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_213
+  - first:
+      213: 4476553995384261028
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_214
+  - first:
+      213: -746314002388114983
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_215
+  - first:
+      213: 2135272595652109355
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_216
+  - first:
+      213: -9148540800859281785
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_217
+  - first:
+      213: -9210392103476785459
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_218
+  - first:
+      213: -2266578598556573263
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_219
+  - first:
+      213: 2071346387742304170
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_220
+  - first:
+      213: -3867813238025745675
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_221
+  - first:
+      213: 7225825559396053212
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_222
+  - first:
+      213: 2476434044024516404
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_223
+  - first:
+      213: -5683668280377708860
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_224
+  - first:
+      213: -6467485773985433540
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_225
+  - first:
+      213: -1707971743337235383
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_226
+  - first:
+      213: -2538442135930792049
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_227
+  - first:
+      213: 1703018240537614790
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_228
+  - first:
+      213: 8459403533358249045
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_229
+  - first:
+      213: 1113220441229170237
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_230
+  - first:
+      213: 8122700085278846985
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_231
+  - first:
+      213: -4536729461524081541
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_232
+  - first:
+      213: -2457079523567929090
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_233
+  - first:
+      213: 2971544396591825747
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_234
+  - first:
+      213: 3943349721520166366
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_235
+  - first:
+      213: -1629050688207568876
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_236
+  - first:
+      213: -2756540987554998055
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_237
+  - first:
+      213: -2196756183775357590
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_238
+  - first:
+      213: -8761543431169952820
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_239
+  - first:
+      213: -6322694215403326115
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_240
+  - first:
+      213: -6161021182789743523
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_241
+  - first:
+      213: -123328232719186550
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_242
+  - first:
+      213: 1170041490567922255
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_243
+  - first:
+      213: -10900825949100964
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_244
+  - first:
+      213: 919124989736553957
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_245
+  - first:
+      213: 1183587941313968648
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_246
+  - first:
+      213: -121935814380138052
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_247
+  - first:
+      213: -8658151044800601403
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_248
+  - first:
+      213: 988543752184597144
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_249
+  - first:
+      213: -9170258593280640560
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_250
+  - first:
+      213: 6615381489244005126
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_251
+  - first:
+      213: 5538865026728767758
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_252
+  - first:
+      213: -7907279454849789264
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_253
+  - first:
+      213: -1742581185891881617
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_254
+  - first:
+      213: 6742404274287549627
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_255
+  - first:
+      213: 2240375559411853481
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_256
+  - first:
+      213: 8887059137156502658
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_257
+  - first:
+      213: -1219311482437037337
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_258
+  - first:
+      213: 7916534780168546769
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_259
+  - first:
+      213: -3512157566968675447
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_260
+  - first:
+      213: 6830667432080594553
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_261
+  - first:
+      213: -956918564357191172
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_262
+  - first:
+      213: -5904652054917091474
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_263
+  - first:
+      213: -2510795446300479724
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_0
+  - first:
+      213: -3592776756099172511
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_1
+  - first:
+      213: -2935628303606703740
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_2
+  - first:
+      213: 3124691865208036979
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_3
+  - first:
+      213: -4018473242568992122
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_4
+  - first:
+      213: -2701200960165647251
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_5
+  - first:
+      213: 8148208813844063761
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_6
+  - first:
+      213: 1073294141613109904
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_7
+  - first:
+      213: -3535473648720203149
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_8
+  - first:
+      213: -5172328616927622180
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_9
+  - first:
+      213: 8254431967116697060
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_10
+  - first:
+      213: 3747571371196646527
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_11
+  - first:
+      213: 7759522597463653575
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_12
+  - first:
+      213: -3752983732685438341
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_13
+  - first:
+      213: -4094094446586260083
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_14
+  - first:
+      213: -6620147543472285169
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_15
+  - first:
+      213: -6645187994391911136
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_16
+  - first:
+      213: 1122124891979302291
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_17
+  - first:
+      213: 15742877786053984
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_18
+  - first:
+      213: -8954150347953297705
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_19
+  - first:
+      213: 3181051079686771877
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_20
+  - first:
+      213: 1135911432841561735
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_21
+  - first:
+      213: 5423667982616491422
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_22
+  - first:
+      213: 3050765212117093704
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_23
+  - first:
+      213: 1192635721421116371
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_24
+  - first:
+      213: -1645073478962447225
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_25
+  - first:
+      213: 2350957889153296236
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_26
+  - first:
+      213: 1324666428577538798
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_27
+  - first:
+      213: -1558496791521618718
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_28
+  - first:
+      213: 6290051122826837176
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_29
+  - first:
+      213: -6444264894683856235
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_30
+  - first:
+      213: -1323239730114154994
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_31
+  - first:
+      213: 6379014183496582807
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_32
+  - first:
+      213: 6293949711658243458
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_33
+  - first:
+      213: -7776436905447183894
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_34
+  - first:
+      213: 2728736143695280834
+    second: toppng.com-b-explosion-sprite-sheet-2d-395x387_35
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: toppng.com-b-explosion-sprite-sheet-2d-395x387_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 681.6667
+        width: 139.16667
+        height: 136.33333
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41f679728dcd72dd0800000000000000
+      internalID: -2510795446300479724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-b-explosion-sprite-sheet-2d-395x387_1
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 681.6667
+        width: 139.16667
+        height: 136.33333
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 167bd6f5394e32ec0800000000000000
+      internalID: -3592776756099172511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-b-explosion-sprite-sheet-2d-395x387_2
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 681.6667
+        width: 139.16667
+        height: 136.33333
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48990fa8c9d8247d0800000000000000
+      internalID: -2935628303606703740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-b-explosion-sprite-sheet-2d-395x387_3
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 681.6667
+        width: 139.16667
+        height: 136.33333
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37e174232b22d5b20800000000000000
+      internalID: 3124691865208036979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-b-explosion-sprite-sheet-2d-395x387_4
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 681.6667
+        width: 139.16667
+        height: 136.33333
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68a534d60e38b38c0800000000000000
+      internalID: -4018473242568992122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-b-explosion-sprite-sheet-2d-395x387_5
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 681.6667
+        width: 139.16667
+        height: 136.33333
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6ce16ec908638ad0800000000000000
+      internalID: -2701200960165647251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-b-explosion-sprite-sheet-2d-395x387_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 545.6667
+        width: 139.16667
+        height: 136.33333
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 116e1e0ceb0441170800000000000000
+      internalID: 8148208813844063761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-b-explosion-sprite-sheet-2d-395x387_7
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 545.6667
+        width: 139.16667
+        height: 136.33333
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0927b52d55b15ee00800000000000000
+      internalID: 1073294141613109904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-b-explosion-sprite-sheet-2d-395x387_8
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 545.6667
+        width: 139.16667
+        height: 136.33333
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 372374fb2797feec0800000000000000
+      internalID: -3535473648720203149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-b-explosion-sprite-sheet-2d-395x387_9
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 545.6667
+        width: 139.16667
+        height: 136.33333
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdb017ee6823838b0800000000000000
+      internalID: -5172328616927622180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-b-explosion-sprite-sheet-2d-395x387_10
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 545.6667
+        width: 139.16667
+        height: 136.33333
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ed9e96e322ad8270800000000000000
+      internalID: 8254431967116697060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-b-explosion-sprite-sheet-2d-395x387_11
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 545.6667
+        width: 139.16667
+        height: 136.33333
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f74899e7e4c020430800000000000000
+      internalID: 3747571371196646527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-b-explosion-sprite-sheet-2d-395x387_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 409.6667
+        width: 139.16667
+        height: 136.33333
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ccff60d0bc5fab60800000000000000
+      internalID: 7759522597463653575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-b-explosion-sprite-sheet-2d-395x387_13
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 409.6667
+        width: 139.16667
+        height: 136.33333
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b720775ed29baebc0800000000000000
+      internalID: -3752983732685438341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-b-explosion-sprite-sheet-2d-395x387_14
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 409.6667
+        width: 139.16667
+        height: 136.33333
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d859352dacade27c0800000000000000
+      internalID: -4094094446586260083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-b-explosion-sprite-sheet-2d-395x387_15
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 409.6667
+        width: 139.16667
+        height: 136.33333
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0ad8ae52e28024a0800000000000000
+      internalID: -6620147543472285169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-b-explosion-sprite-sheet-2d-395x387_16
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 409.6667
+        width: 139.16667
+        height: 136.33333
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02564901abc87c3a0800000000000000
+      internalID: -6645187994391911136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-b-explosion-sprite-sheet-2d-395x387_17
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 409.6667
+        width: 139.16667
+        height: 136.33333
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 395cc0cd4a6929f00800000000000000
+      internalID: 1122124891979302291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-b-explosion-sprite-sheet-2d-395x387_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 273.6667
+        width: 139.16667
+        height: 136.33333
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06d1e2e501ee73000800000000000000
+      internalID: 15742877786053984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-b-explosion-sprite-sheet-2d-395x387_19
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 273.6667
+        width: 139.16667
+        height: 136.33333
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d6adcc13b77cb380800000000000000
+      internalID: -8954150347953297705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-b-explosion-sprite-sheet-2d-395x387_20
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 273.6667
+        width: 139.16667
+        height: 136.33333
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a45a116a1d552c20800000000000000
+      internalID: 3181051079686771877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-b-explosion-sprite-sheet-2d-395x387_21
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 273.6667
+        width: 139.16667
+        height: 136.33333
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78683da0e6193cf00800000000000000
+      internalID: 1135911432841561735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-b-explosion-sprite-sheet-2d-395x387_22
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 273.6667
+        width: 139.16667
+        height: 136.33333
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e95f38b5b4db44b40800000000000000
+      internalID: 5423667982616491422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-b-explosion-sprite-sheet-2d-395x387_23
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 273.6667
+        width: 139.16667
+        height: 136.33333
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84dcb59fbce765a20800000000000000
+      internalID: 3050765212117093704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-b-explosion-sprite-sheet-2d-395x387_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 137.66667
+        width: 139.16667
+        height: 136.33333
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d35fb9aed71d8010800000000000000
+      internalID: 1192635721421116371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-b-explosion-sprite-sheet-2d-395x387_25
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 137.66667
+        width: 139.16667
+        height: 136.33333
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78cf60903668b29e0800000000000000
+      internalID: -1645073478962447225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-b-explosion-sprite-sheet-2d-395x387_26
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 137.66667
+        width: 139.16667
+        height: 136.33333
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6762e88eb740a020800000000000000
+      internalID: 2350957889153296236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-b-explosion-sprite-sheet-2d-395x387_27
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 137.66667
+        width: 139.16667
+        height: 136.33333
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee2ef313919226210800000000000000
+      internalID: 1324666428577538798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-b-explosion-sprite-sheet-2d-395x387_28
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 137.66667
+        width: 139.16667
+        height: 136.33333
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e494c5ec6b1f5ae0800000000000000
+      internalID: -1558496791521618718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-b-explosion-sprite-sheet-2d-395x387_29
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 137.66667
+        width: 139.16667
+        height: 136.33333
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bcf32b8b20ca4750800000000000000
+      internalID: 6290051122826837176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-b-explosion-sprite-sheet-2d-395x387_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1.6666718
+        width: 139.16667
+        height: 136.33333
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59249d1b83f5196a0800000000000000
+      internalID: -6444264894683856235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-b-explosion-sprite-sheet-2d-395x387_31
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 1.6666718
+        width: 139.16667
+        height: 136.33333
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0eacdde978e2ade0800000000000000
+      internalID: -1323239730114154994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-b-explosion-sprite-sheet-2d-395x387_32
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 1.6666718
+        width: 139.16667
+        height: 136.33333
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7960e783a9fc68850800000000000000
+      internalID: 6379014183496582807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-b-explosion-sprite-sheet-2d-395x387_33
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 1.6666718
+        width: 139.16667
+        height: 136.33333
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 285df8d7ae9985750800000000000000
+      internalID: 6293949711658243458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-b-explosion-sprite-sheet-2d-395x387_34
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 1.6666718
+        width: 139.16667
+        height: 136.33333
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae92598f5db841490800000000000000
+      internalID: -7776436905447183894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-b-explosion-sprite-sheet-2d-395x387_35
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 1.6666718
+        width: 139.16667
+        height: 136.33333
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2caf9b2b01b6ed520800000000000000
+      internalID: 2728736143695280834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: df92fc114ae249c47b02b90d381bf4de
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
