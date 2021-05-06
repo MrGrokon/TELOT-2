@@ -30,7 +30,7 @@ public class ProjectilBehavior : MonoBehaviour
     #region Unity Functions
     void Start()
     {
-        Projectil_OnHitSurface_VFX = GameObject.Find("VFX_Hit").GetComponent<VisualEffect>();
+        //Projectil_OnHitSurface_VFX = GameObject.Find("VFX_Hit").GetComponent<VisualEffect>();
     }
 
     private void FixedUpdate()

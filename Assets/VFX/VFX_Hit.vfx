@@ -89,10 +89,10 @@ MonoBehaviour:
   - title: SUB-PARTICULES
     position:
       serializedVersion: 2
-      x: 2479
-      y: -213
+      x: 2449
+      y: -204
       width: 767
-      height: 2010
+      height: 2060
     contents:
     - model: {fileID: 8926484042661615085}
       id: 0
@@ -143,10 +143,10 @@ MonoBehaviour:
   categories: []
   uiBounds:
     serializedVersion: 2
-    x: -0
+    x: 459
     y: -571
-    width: 4006
-    height: 2581
+    width: 3572
+    height: 2449
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4421,7 +4421,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614787}
       inputSlot: {fileID: 8926484042661615116}
-    position: {x: 2504, y: 1695}
+    position: {x: 2474, y: 1704}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661614787
@@ -6390,7 +6390,7 @@ MonoBehaviour:
   m_Children:
   - {fileID: 8926484042661615086}
   - {fileID: 8926484042661615089}
-  m_UIPosition: {x: 2796, y: -156}
+  m_UIPosition: {x: 2766, y: -147}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -6566,7 +6566,7 @@ MonoBehaviour:
   m_Children:
   - {fileID: 8926484042661615103}
   - {fileID: 8926484042661615122}
-  m_UIPosition: {x: 2796, y: 272}
+  m_UIPosition: {x: 2766, y: 281}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -7062,7 +7062,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615144}
   - {fileID: 8926484042661615113}
   - {fileID: 8926484042661615115}
-  m_UIPosition: {x: 2797, y: 1001}
+  m_UIPosition: {x: 2767, y: 1060}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -7365,7 +7365,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children:
   - {fileID: 8926484042661615131}
-  m_UIPosition: {x: 2796, y: 751}
+  m_UIPosition: {x: 2766, y: 760}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -9801,7 +9801,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
+  m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
   m_OutputSlots:
@@ -9841,7 +9841,7 @@ MonoBehaviour:
       inputSlot: {fileID: 8926484042661615125}
     - outputSlot: {fileID: 8926484042661615257}
       inputSlot: {fileID: 8926484042661615133}
-    position: {x: 2532, y: 750}
+    position: {x: 2502, y: 759}
     expandedSlots: []
     expanded: 0
   - m_Id: 3

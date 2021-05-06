@@ -21,11 +21,6 @@ public class FeedbackManager : MonoBehaviour
     private Transform Camera_Transform;
     private GameObject Avatar_Object;
 
-    [Header("Dash Feedbacks & related")]
-    private ParticleSystem PS_Dash;
-    private Transform PS_Pivot;
-    [Range(1f, 10f)]
-    public float ParticuleSystemeDistanceFromPlayer = 5f;
     //public float FOV_MaxDeformation =
 
     private void Awake() {
@@ -41,12 +36,6 @@ public class FeedbackManager : MonoBehaviour
         Camera_Transform = GameObject.Find("Main Camera").transform;
         if(Camera_Transform == null){
             Debug.Log("Main camera not found");
-        }
-
-       /* PS_Pivot = GameObject.Find("DashParticule_Pivot").transform;
-        PS_Dash = GameObject.Find("PS_Dash").GetComponent<ParticleSystem>();*/
-        if(PS_Dash == null || PS_Pivot == null){
-            Debug.Log("Particule element not defined");
         }
     }
 
@@ -103,10 +92,10 @@ public class FeedbackManager : MonoBehaviour
         float _elapsedTime = 0f;
         //PS_Dash.time = _DashTime;
         //
-        PS_Dash.transform.position = (ObjectReferencer.Instance.Avatar_Object.transform.position + _DashDir) * ParticuleSystemeDistanceFromPlayer;
+        /*PS_Dash.transform.position = (ObjectReferencer.Instance.Avatar_Object.transform.position + _DashDir) * ParticuleSystemeDistanceFromPlayer;
         PS_Dash.transform.LookAt(Avatar_Object.transform);
 
-        PS_Dash.Play();
+        PS_Dash.Play();*/
 
         while(_elapsedTime < _DashTime){
             _elapsedTime += Time.deltaTime;

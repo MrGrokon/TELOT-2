@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class TurretBehavior : MonsterBehavior
 {
@@ -35,8 +36,14 @@ public class TurretBehavior : MonsterBehavior
 
     private GameObject Player;
 
+    private VisualEffect VFX_Loading;
+    private VisualEffect VFX_TurretFlare;
+    private bool Vfx_triggerOnce = false;
+
     private void Start()
     {
+        VFX_Loading = this.transform.GetChild(1).GetComponent<VisualEffect>();
+        VFX_TurretFlare = this.transform.GetChild(2).GetComponent<VisualEffect>();
         Player = ObjectReferencer.Instance.Avatar_Object;
     }
 
@@ -48,6 +55,11 @@ public class TurretBehavior : MonsterBehavior
         if (attackCooldown > 0)
         {
             attackCooldown -= 1 * Time.deltaTime;
+            if(Vfx_triggerOnce == false){
+                Vfx_triggerOnce = true;
+                VFX_Loading.SendEvent("StartLoading");
+            }
+
         }
 
         distanceToPlayer = Vector3.Distance(Player.transform.position, transform.position);
@@ -117,11 +129,15 @@ public class TurretBehavior : MonsterBehavior
 
     IEnumerator Burst()
     {
+        VFX_Loading.SendEvent("StopLoading");
+        Vfx_triggerOnce = false;
         bursted = false;
         for (int i = 0; i < burst; i++)
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Ennemy/Shoot/TurretShot", transform.position);
             var proj = Instantiate(projectilePrefab, transform.forward + projectileThrower.transform.position, projectileThrower.transform.rotation);
             proj.GetComponent<EnemieProjectileBehavior>().SetSpeed(ProjectileSpeed);
+            VFX_TurretFlare.SendEvent("Shoot");
             yield return new WaitForSeconds(burstInterval);
         }
         attackCooldown = attackInterval;
