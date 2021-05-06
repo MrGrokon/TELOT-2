@@ -11,7 +11,7 @@ public class PlayerLife : MonoBehaviour
 
     [SerializeField] private float lifePoint;
     public float startingLifePoint;
-    private Slider lifeText;
+    public Image lifeText;
     private FMOD.Studio.EventInstance HeartBeatEvent;
     private FMOD.Studio.EventDescription heartbeatDescription;
     private FMOD.Studio.PARAMETER_DESCRIPTION pd;
@@ -19,9 +19,8 @@ public class PlayerLife : MonoBehaviour
 
     private void Start()
     {
-        lifeText = GameObject.Find("LifeSlider").GetComponent<Slider>();
         lifePoint = startingLifePoint;
-        lifeText.value = lifePoint / startingLifePoint;
+        lifeText.fillAmount = lifePoint / startingLifePoint;
         HeartBeatEvent = FMODUnity.RuntimeManager.CreateInstance("event:/Player/LowHpHeart");
         HeartBeatEvent.start();
 
@@ -39,7 +38,7 @@ public class PlayerLife : MonoBehaviour
             Death();
         }
             
-        lifeText.value = lifePoint / startingLifePoint;
+        lifeText.fillAmount = lifePoint / startingLifePoint;
     }
 
     public void TakeDammage(float dmg)

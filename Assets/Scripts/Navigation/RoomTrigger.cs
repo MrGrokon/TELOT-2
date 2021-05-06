@@ -20,6 +20,7 @@ public class RoomTrigger : MonoBehaviour
     [HideInInspector]
     public List<MonsterBehavior> monsters;
     private bool WaveIsActive = false;
+    public bool hasAnotherWave;
     private MusicManager _musicManager;
 
     private void OnTriggerEnter(Collider _col) {
@@ -57,6 +58,7 @@ public class RoomTrigger : MonoBehaviour
         if(WaveIsActive == true && (monsters.Count == 0 || _elapsedWaveTime >= TimeUntilWaveTwo)){
             if(WaveTwoLaunched == false){
                 WaveTwoLaunched = true;
+                _elapsedWaveTime = Mathf.NegativeInfinity;
                 foreach (var _spawn in Spawners_Wave2)
             {
                 monsters.Add(_spawn.SpawnAnEnemy());
@@ -64,10 +66,10 @@ public class RoomTrigger : MonoBehaviour
             }
             else{
                 Debug.Log("wave ended");
-                _musicManager.ChangeSituation(2);
                 foreach (var door in DoorsAnimator)
                 {
                     door.SetTrigger("Opening");
+                    _musicManager.ChangeSituation(2); 
                 }
 
                 activeRoom = false;

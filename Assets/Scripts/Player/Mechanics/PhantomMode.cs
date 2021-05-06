@@ -18,6 +18,7 @@ public class PhantomMode : MonoBehaviour
     //change later to animation curve
     public float TimeToLerpToNormal = 1f;
     private ParticleSystem Phantom_PS;
+    public UnityEngine.UI.Image PhantomCD;
 
     #region unity function
 
@@ -31,9 +32,19 @@ public class PhantomMode : MonoBehaviour
             //feedback phantom ammo
         }
 
+        if (HasPhantomAmmoStored)
+        {
+            PhantomCD.color = Color.white;
+        }
+        else
+        {
+            PhantomCD.color = Color.black;
+        }
+
         if((Input.GetButtonDown("Fire3")) && UsingPhantom == false && HasPhantomAmmoStored){
             StartCoroutine(PhantomModeLaunch());
         }
+
     }
     #endregion
 
@@ -66,6 +77,8 @@ public class PhantomMode : MonoBehaviour
         _elapsedTime = 0f;
         while(_elapsedTime < TimeToLerpToNormal){
             _elapsedTime += Time.deltaTime / PhantomTimeFlowModifier;
+
+            PhantomCD.fillAmount = _elapsedTime / PhantomTime;
             float _value = Mathf.Lerp(PhantomTimeFlowModifier, 1f, _elapsedTime / TimeToLerpToNormal);
             Time.timeScale = _value;
             Physics.gravity = new Vector3(0f, baseGravity.y / _value, 0f);
@@ -76,6 +89,7 @@ public class PhantomMode : MonoBehaviour
         //values back to normals
         Time.timeScale = 1f;
         Time.fixedDeltaTime = 0.02f;
+        PhantomCD.fillAmount = 1;
         Physics.gravity = baseGravity;
         UsingPhantom = false;
         yield return null;

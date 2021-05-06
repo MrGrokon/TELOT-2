@@ -734,6 +734,9 @@
             <e p="TraumaInducer.cs" t="Include" />
           </e>
         </e>
+        <e p="CartoonishText" t="Include">
+          <e p="TextGrading.shader" t="Include" />
+        </e>
         <e p="Deprecated_Files" t="Include">
           <e p="Blaster.cs" t="Include" />
           <e p="ProjectilBehavior.cs" t="Include" />
@@ -953,6 +956,9 @@
               </e>
             </e>
           </e>
+          <e p="VFX_Objects" t="Include">
+            <e p="Kill_VFX.cs" t="Include" />
+          </e>
         </e>
         <e p="PresManager.cs" t="Include" />
         <e p="ProgressionFollow.cs" t="Include" />
@@ -963,6 +969,7 @@
             <e p="ManualyActivateMine.cs" t="Include" />
             <e p="PauseGameWhenButtonPressed.cs" t="Include" />
             <e p="Simplified_CharacterControler.cs" t="Include" />
+            <e p="TriggerAllChildren_PS.cs" t="Include" />
           </e>
           <e p="Enemies" t="Include">
             <e p="DummyBehavior.cs" t="Include" />
@@ -978,6 +985,7 @@
             <e p="SniperBehavior.cs" t="Include" />
             <e p="TurretBehavior.cs" t="Include" />
           </e>
+          <e p="GameTime.cs" t="Include" />
           <e p="Level Design" t="Include">
             <e p="BumperBehavior.cs" t="Include" />
             <e p="CollectiblesManager.cs" t="Include" />
@@ -1064,6 +1072,11 @@
           </e>
           <e p="Sprites" t="Include">
             <e p="EmojiOne Attribution.txt" t="Include" />
+          </e>
+        </e>
+        <e p="VFX" t="Include">
+          <e p="Explosion_related" t="Include">
+            <e p="BasicFresnel.shader" t="Include" />
           </e>
         </e>
       </e>
