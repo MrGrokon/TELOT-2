@@ -5,8 +5,15 @@ using UnityEngine;
 
 public class RoomTrigger : MonoBehaviour
 {
+
     public int roomNumber;
-    public List<EnemySpawner> Spawners;
+    public List<EnemySpawner> Spawners_Wave1;
+    public List<EnemySpawner> Spawners_Wave2;
+
+    public float TimeUntilWaveTwo = 35f;
+    private float _elapsedWaveTime = 0f;
+    private bool WaveTwoLaunched = false;
+
     public List<Animator> DoorsAnimator;
     public bool activeRoom;
 
@@ -27,7 +34,7 @@ public class RoomTrigger : MonoBehaviour
             
             WaveIsActive = true;
             Debug.Log("Player enter a room");
-            foreach (var _spawn in Spawners)
+            foreach (var _spawn in Spawners_Wave1)
             {
                 monsters.Add(_spawn.SpawnAnEnemy());
                 //do some shit like closing door, etc ...
@@ -42,20 +49,30 @@ public class RoomTrigger : MonoBehaviour
     private void Update() {
         if (activeRoom)
         {
+            _elapsedWaveTime += Time.deltaTime;
             ProgressionFollow PF = UI_Feedbacks.Instance.GetComponent<ProgressionFollow>();
             PF.UpdateEnnemiesRemainingCount(monsters.Count);  
         }
         
-        if(WaveIsActive == true && monsters.Count == 0){
-            Debug.Log("wave ended");
-            _musicManager.ChangeSituation(2);
-            foreach (var door in DoorsAnimator)
+        if(WaveIsActive == true && (monsters.Count == 0 || _elapsedWaveTime >= TimeUntilWaveTwo)){
+            if(WaveTwoLaunched == false){
+                WaveTwoLaunched = true;
+                foreach (var _spawn in Spawners_Wave2)
             {
-                door.SetTrigger("Opening");
+                monsters.Add(_spawn.SpawnAnEnemy());
             }
+            }
+            else{
+                Debug.Log("wave ended");
+                _musicManager.ChangeSituation(2);
+                foreach (var door in DoorsAnimator)
+                {
+                    door.SetTrigger("Opening");
+                }
 
-            activeRoom = false;
-            this.enabled = false;
+                activeRoom = false;
+                this.enabled = false;
+            }
         }
     }
 }
