@@ -147,11 +147,11 @@ public class BlockProjectiles : MonoBehaviour
             shieldIdle.start();
         }
 
-        private void OnDrawGizmos()
+        /*private void OnDrawGizmos()
         {
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(_Shield_Pivot.position, ShieldHitboxRange);
-        }
+        }*/
 
         #endregion
     
