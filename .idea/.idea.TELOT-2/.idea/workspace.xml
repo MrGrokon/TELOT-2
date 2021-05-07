@@ -19,6 +19,8 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameTime.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ProgressionFollow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Unity/Hub/Editor/2019.4.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/InputModules/BaseInput.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerStats/PlayerLife.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovementRemade/PlayerMovementRigidbody.cs" root0="FORCE_HIGHLIGHTING" />
@@ -50,18 +52,22 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMouvement/MouseLook.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Navigation/EnemySpawner.cs" />
       <option value="$PROJECT_DIR$/Assets/MusicManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Navigation/RoomTrigger.cs" />
       <option value="$PROJECT_DIR$/Assets/Deprecated_Files/ProjectilBehavior.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerStats/PlayerLife.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyInheritence/MonsterBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/EnergieStored.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemiesProps/EnemieProjectileBehavior.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/BlockProjectiles.cs" />
       <option value="$PROJECT_DIR$/Assets/FastIK/Scripts/FastIK/FastIKFabric.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/ProssecutorBehavior_v2.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/SniperBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Level Design/TP/TeleporterBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovementRemade/WallRunningRigidbody.cs" />
+      <option value="$PROJECT_DIR$/Assets/ProgressionFollow.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Navigation/RoomTrigger.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/MusicManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerStats/PlayerLife.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/PhantomMode.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/BlockProjectiles.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameTime.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1ohtdW9xSpIGpjT50LXGFp67Yso" />
@@ -169,6 +175,9 @@
       <workItem from="1620056833950" duration="204000" />
       <workItem from="1620059467302" duration="5119000" />
       <workItem from="1620157906310" duration="287000" />
+      <workItem from="1620304289838" duration="340000" />
+      <workItem from="1620304658099" duration="3276000" />
+      <workItem from="1620326450037" duration="5536000" />
     </task>
     <servers />
   </component>

@@ -2285,10 +2285,45 @@ PrefabInstance:
       propertyPath: m_UseCustomVertexStreams
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7924548152984587153, guid: 02160efa3b1ae524d8987257bb825a2c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c67692d220e13a846aee98948a772a26, type: 2}
+    - target: {fileID: 7924548152984587153, guid: 02160efa3b1ae524d8987257bb825a2c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c67692d220e13a846aee98948a772a26, type: 2}
+    - target: {fileID: 7924548152984587153, guid: 02160efa3b1ae524d8987257bb825a2c,
+        type: 3}
+      propertyPath: m_ApplyActiveColorSpace
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7924548152984587153, guid: 02160efa3b1ae524d8987257bb825a2c,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7924548152984587153, guid: 02160efa3b1ae524d8987257bb825a2c,
+        type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7924548152984587153, guid: 02160efa3b1ae524d8987257bb825a2c,
+        type: 3}
+      propertyPath: m_MotionVectors
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7924548152984587182, guid: 02160efa3b1ae524d8987257bb825a2c,
         type: 3}
       propertyPath: ShapeModule.enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7924548152984587182, guid: 02160efa3b1ae524d8987257bb825a2c,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7924548152984587183, guid: 02160efa3b1ae524d8987257bb825a2c,
         type: 3}
@@ -2348,17 +2383,17 @@ PrefabInstance:
     - target: {fileID: 7924548152984587183, guid: 02160efa3b1ae524d8987257bb825a2c,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.875
+      value: 2.2554133
       objectReference: {fileID: 0}
     - target: {fileID: 7924548152984587183, guid: 02160efa3b1ae524d8987257bb825a2c,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.5
+      value: 1.8043303
       objectReference: {fileID: 0}
     - target: {fileID: 7924548152984587183, guid: 02160efa3b1ae524d8987257bb825a2c,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.875
+      value: 2.2554133
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02160efa3b1ae524d8987257bb825a2c, type: 3}
@@ -2433,22 +2468,37 @@ PrefabInstance:
     - target: {fileID: 8401995676320436496, guid: ea1491232a78b6f478f35318ee538e56,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.075
+      value: 0.09021653
       objectReference: {fileID: 0}
     - target: {fileID: 8401995676320436496, guid: ea1491232a78b6f478f35318ee538e56,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.15
+      value: 0.18043306
       objectReference: {fileID: 0}
     - target: {fileID: 8401995676320436496, guid: ea1491232a78b6f478f35318ee538e56,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.15
+      value: 0.18043306
       objectReference: {fileID: 0}
     - target: {fileID: 8401995676320436501, guid: ea1491232a78b6f478f35318ee538e56,
         type: 3}
       propertyPath: m_Name
       value: Particle System (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8401995676320436501, guid: ea1491232a78b6f478f35318ee538e56,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8401995676320436502, guid: ea1491232a78b6f478f35318ee538e56,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8401995676320436502, guid: ea1491232a78b6f478f35318ee538e56,
+        type: 3}
+      propertyPath: m_RenderAlignment
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea1491232a78b6f478f35318ee538e56, type: 3}

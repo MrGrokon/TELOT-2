@@ -176,7 +176,7 @@ public class SniperBehavior : MonsterBehavior
                     if (D > absorptionAngle)
                     {
                         hit.transform.GetComponent<EnergieStored>().AddEnergie(energieGivePerShot);
-                        FMODUnity.RuntimeManager.PlayOneShot("event:/Shield/ShieldTanking"); 
+                        FMODUnity.RuntimeManager.PlayOneShot("event:/Absorption/ShieldTanking"); 
                     }
                     else
                     {
