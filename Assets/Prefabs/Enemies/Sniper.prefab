@@ -113,6 +113,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartHealth: 50
+  DyingEffect: {fileID: 2584825564016751764, guid: 2e068f8f0107c164997147527f05ea95,
+    type: 3}
   dammage: 50
   MotionSpeed: 5
   _NavMeshAgent: {fileID: 0}
@@ -124,9 +126,12 @@ MonoBehaviour:
   distance: 0
   shootFeedback: {fileID: 1711871467}
   knockbackForce: 40
+  shotLocation: {fileID: 0}
   distanceToPlayer: 0
   nonShootReadyColor: {r: 0, g: 1, b: 0.022618055, a: 0}
   shootReadyColor: {r: 1, g: 0, b: 0, a: 0}
+  energieGivePerShot: 0
+  absorptionAngle: 0
 --- !u!195 &6106855031906571514
 NavMeshAgent:
   m_ObjectHideFlags: 0

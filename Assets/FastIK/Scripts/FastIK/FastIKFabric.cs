@@ -231,7 +231,7 @@ namespace DitzelGames.FastIK
                 current.rotation = Root.rotation * rotation;
         }
 
-        void OnDrawGizmos()
+        /*void OnDrawGizmos()
         {
 #if UNITY_EDITOR
             var current = this.transform;
@@ -244,7 +244,7 @@ namespace DitzelGames.FastIK
                 current = current.parent;
             }
         }
-#endif
+#endif*/
 
     }
 }

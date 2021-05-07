@@ -29,8 +29,8 @@ public class RoomTrigger : MonoBehaviour
             _musicManager = UI_Feedbacks.Instance.GetComponent<MusicManager>();
             _musicManager.StartMusic();
 
-            //ProgressionFollow PF = UI_Feedbacks.Instance.GetComponent<ProgressionFollow>();
-            //PF.UpdateRoomCount(roomNumber, 5);
+            /*ProgressionFollow PF = UI_Feedbacks.Instance.GetComponent<ProgressionFollow>();
+            PF.UpdateRoomCount(roomNumber, 5);*/
             
             WaveIsActive = true;
             Debug.Log("Player enter a room");
@@ -50,8 +50,8 @@ public class RoomTrigger : MonoBehaviour
         if (activeRoom)
         {
             _elapsedWaveTime += Time.deltaTime;
-            //ProgressionFollow PF = UI_Feedbacks.Instance.GetComponent<ProgressionFollow>();
-            //PF.UpdateEnnemiesRemainingCount(monsters.Count);  
+            /*ProgressionFollow PF = UI_Feedbacks.Instance.GetComponent<ProgressionFollow>();
+            PF.UpdateEnnemiesRemainingCount(monsters.Count);*/
         }
         
         if(WaveIsActive == true && (monsters.Count == 0 || _elapsedWaveTime >= TimeUntilWaveTwo)){
