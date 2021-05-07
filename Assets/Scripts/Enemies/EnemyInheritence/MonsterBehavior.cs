@@ -9,6 +9,7 @@ public class MonsterBehavior : MonoBehaviour
     [Range(1, 1000)]
     public int StartHealth = 100;
     private int _Health;
+    public GameObject DyingEffect;
 
     [Header("Weaponery Parameters")]
     public int dammage;
@@ -69,6 +70,8 @@ public class MonsterBehavior : MonoBehaviour
                 }
             }
             // dying feedbacks
+            
+            Instantiate(DyingEffect, this.transform.position + (Vector3.up * 2f), Quaternion.identity);
         }
     #endregion
 }
