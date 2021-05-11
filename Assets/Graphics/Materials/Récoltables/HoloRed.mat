@@ -71,16 +71,16 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Intensity: 1
+    - _Intensity: 0.74
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _RimPower: 5
-    - _ScanLines: 80
+    - _ScanLines: 500
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _Speed: 2
+    - _Speed: 77.5
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
