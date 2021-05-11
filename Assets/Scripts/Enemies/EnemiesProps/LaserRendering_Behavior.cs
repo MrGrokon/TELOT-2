@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LaserRendering_Behavior : MonoBehaviour
-{
-    private LineRenderer _LR;
+{   
+    [HideInInspector]
+    public LineRenderer _LR;
     private Material _mat;
 
     void Start()
@@ -13,7 +14,7 @@ public class LaserRendering_Behavior : MonoBehaviour
         _mat = _LR.material;
     }
 
-    private void Update(){
+    virtual public void Update(){
         RaycastHit _hit;
         int _layer =~ LayerMask.GetMask("EnemieProjectile");
         Physics.Raycast(this.transform.position, this.transform.forward, out _hit, Mathf.Infinity, _layer);
@@ -41,5 +42,9 @@ public class LaserRendering_Behavior : MonoBehaviour
         }
 
         yield return null;
+    }
+
+    public void StopShootingLaserProcedure(){
+        StopCoroutine("StartShootChrono");
     }
 }
