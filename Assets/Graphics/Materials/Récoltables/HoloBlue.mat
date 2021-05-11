@@ -76,11 +76,11 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _RimPower: 5
-    - _ScanLines: 80
+    - _RimPower: 0
+    - _ScanLines: 117.64706
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _Speed: 2
+    - _Speed: 68.45689
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
