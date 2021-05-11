@@ -1,0 +1,614 @@
+fileFormatVersion: 2
+guid: 6bcdeb66483ac1e4a8705f131fc73e0b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2167597780489414309
+    second: PNGIX.com_smoke-plume-png_6688861_0
+  - first:
+      213: -4101340203675918557
+    second: PNGIX.com_smoke-plume-png_6688861_1
+  - first:
+      213: -6796738589834055315
+    second: PNGIX.com_smoke-plume-png_6688861_2
+  - first:
+      213: 5499319364052781615
+    second: PNGIX.com_smoke-plume-png_6688861_3
+  - first:
+      213: 4180979415323396858
+    second: PNGIX.com_smoke-plume-png_6688861_4
+  - first:
+      213: 5638514737953837525
+    second: PNGIX.com_smoke-plume-png_6688861_5
+  - first:
+      213: -5716833969709500318
+    second: PNGIX.com_smoke-plume-png_6688861_6
+  - first:
+      213: -1794181321781116452
+    second: PNGIX.com_smoke-plume-png_6688861_7
+  - first:
+      213: -6795816368656647363
+    second: PNGIX.com_smoke-plume-png_6688861_8
+  - first:
+      213: 5336477566105940082
+    second: PNGIX.com_smoke-plume-png_6688861_9
+  - first:
+      213: 4505690847858289662
+    second: PNGIX.com_smoke-plume-png_6688861_10
+  - first:
+      213: -5305595772107066219
+    second: PNGIX.com_smoke-plume-png_6688861_11
+  - first:
+      213: -720762612573655007
+    second: PNGIX.com_smoke-plume-png_6688861_12
+  - first:
+      213: 6921759551337080366
+    second: PNGIX.com_smoke-plume-png_6688861_13
+  - first:
+      213: 3022292669595707505
+    second: PNGIX.com_smoke-plume-png_6688861_14
+  - first:
+      213: -6352731303750907997
+    second: PNGIX.com_smoke-plume-png_6688861_15
+  - first:
+      213: 5877436396767239244
+    second: PNGIX.com_smoke-plume-png_6688861_16
+  - first:
+      213: 2597493070070127669
+    second: PNGIX.com_smoke-plume-png_6688861_17
+  - first:
+      213: -5031253768202970499
+    second: PNGIX.com_smoke-plume-png_6688861_18
+  - first:
+      213: 5144608249143993902
+    second: PNGIX.com_smoke-plume-png_6688861_19
+  - first:
+      213: 6434269880280180855
+    second: PNGIX.com_smoke-plume-png_6688861_20
+  - first:
+      213: 4400606751405730348
+    second: PNGIX.com_smoke-plume-png_6688861_21
+  - first:
+      213: -9197895763882102173
+    second: PNGIX.com_smoke-plume-png_6688861_22
+  - first:
+      213: -7984883792554071422
+    second: PNGIX.com_smoke-plume-png_6688861_23
+  - first:
+      213: 7079953097238841682
+    second: PNGIX.com_smoke-plume-png_6688861_24
+  - first:
+      213: 8093203843775617742
+    second: PNGIX.com_smoke-plume-png_6688861_25
+  - first:
+      213: -2932149701580015848
+    second: PNGIX.com_smoke-plume-png_6688861_26
+  - first:
+      213: -136636813140097941
+    second: PNGIX.com_smoke-plume-png_6688861_27
+  - first:
+      213: -4064748262578036153
+    second: PNGIX.com_smoke-plume-png_6688861_28
+  - first:
+      213: 8548724931569017197
+    second: PNGIX.com_smoke-plume-png_6688861_29
+  - first:
+      213: -2315571187846195561
+    second: PNGIX.com_smoke-plume-png_6688861_30
+  - first:
+      213: 1913052345504920909
+    second: PNGIX.com_smoke-plume-png_6688861_31
+  - first:
+      213: 4411055336516140046
+    second: PNGIX.com_smoke-plume-png_6688861_32
+  - first:
+      213: 6632041000883963684
+    second: PNGIX.com_smoke-plume-png_6688861_33
+  - first:
+      213: -1381475592111604679
+    second: PNGIX.com_smoke-plume-png_6688861_34
+  - first:
+      213: 7225416545106505389
+    second: PNGIX.com_smoke-plume-png_6688861_35
+  - first:
+      213: -1842148209719820955
+    second: PNGIX.com_smoke-plume-png_6688861_36
+  - first:
+      213: 1503291952715607103
+    second: PNGIX.com_smoke-plume-png_6688861_37
+  - first:
+      213: 2378722280328597516
+    second: PNGIX.com_smoke-plume-png_6688861_38
+  - first:
+      213: 7215013817985690369
+    second: PNGIX.com_smoke-plume-png_6688861_39
+  - first:
+      213: 4038851930281295838
+    second: PNGIX.com_smoke-plume-png_6688861_40
+  - first:
+      213: 8045685522264256904
+    second: PNGIX.com_smoke-plume-png_6688861_41
+  - first:
+      213: -8566918104858566760
+    second: PNGIX.com_smoke-plume-png_6688861_42
+  - first:
+      213: -7129334920054123572
+    second: PNGIX.com_smoke-plume-png_6688861_43
+  - first:
+      213: 4355286344916131821
+    second: PNGIX.com_smoke-plume-png_6688861_44
+  - first:
+      213: 812389620802907549
+    second: PNGIX.com_smoke-plume-png_6688861_45
+  - first:
+      213: -6767991882156896573
+    second: PNGIX.com_smoke-plume-png_6688861_46
+  - first:
+      213: 8178055791337153352
+    second: PNGIX.com_smoke-plume-png_6688861_47
+  - first:
+      213: -6426317301967148889
+    second: PNGIX.com_smoke-plume-png_6688861_48
+  - first:
+      213: 5107378369139590776
+    second: PNGIX.com_smoke-plume-png_6688861_49
+  - first:
+      213: -1521050143283167510
+    second: PNGIX.com_smoke-plume-png_6688861_50
+  - first:
+      213: -4194725313125990520
+    second: PNGIX.com_smoke-plume-png_6688861_51
+  - first:
+      213: -4576684394884660194
+    second: PNGIX.com_smoke-plume-png_6688861_52
+  - first:
+      213: 2738322054409033306
+    second: PNGIX.com_smoke-plume-png_6688861_53
+  - first:
+      213: 809734041602649047
+    second: PNGIX.com_smoke-plume-png_6688861_54
+  - first:
+      213: -1941948180083726396
+    second: PNGIX.com_smoke-plume-png_6688861_55
+  - first:
+      213: 5433854500737663330
+    second: PNGIX.com_smoke-plume-png_6688861_56
+  - first:
+      213: 1511847557695630402
+    second: PNGIX.com_smoke-plume-png_6688861_57
+  - first:
+      213: -8954242293252516648
+    second: PNGIX.com_smoke-plume-png_6688861_58
+  - first:
+      213: -7887733791717676349
+    second: PNGIX.com_smoke-plume-png_6688861_59
+  - first:
+      213: 6880141914771947547
+    second: PNGIX.com_smoke-plume-png_6688861_60
+  - first:
+      213: -4178375030392438592
+    second: PNGIX.com_smoke-plume-png_6688861_61
+  - first:
+      213: -2008512831428152658
+    second: PNGIX.com_smoke-plume-png_6688861_62
+  - first:
+      213: -5502045332293822963
+    second: PNGIX.com_smoke-plume-png_6688861_63
+  - first:
+      213: 1410474285321876486
+    second: PNGIX.com_smoke-plume-png_6688861_64
+  - first:
+      213: -4776562668408161266
+    second: PNGIX.com_smoke-plume-png_6688861_65
+  - first:
+      213: -4210328826519555723
+    second: PNGIX.com_smoke-plume-png_6688861_66
+  - first:
+      213: 6122753856322105844
+    second: PNGIX.com_smoke-plume-png_6688861_67
+  - first:
+      213: 674511733449004161
+    second: PNGIX.com_smoke-plume-png_6688861_68
+  - first:
+      213: -6415505630980784402
+    second: PNGIX.com_smoke-plume-png_6688861_69
+  - first:
+      213: 7692639342478791797
+    second: PNGIX.com_smoke-plume-png_6688861_70
+  - first:
+      213: -5981033969212850940
+    second: PNGIX.com_smoke-plume-png_6688861_71
+  - first:
+      213: 6188277943374603404
+    second: PNGIX.com_smoke-plume-png_6688861_72
+  - first:
+      213: 5834625111804885922
+    second: PNGIX.com_smoke-plume-png_6688861_73
+  - first:
+      213: -1762015837393181125
+    second: PNGIX.com_smoke-plume-png_6688861_74
+  - first:
+      213: 2036700335788509083
+    second: PNGIX.com_smoke-plume-png_6688861_75
+  - first:
+      213: 7646843149533135490
+    second: PNGIX.com_smoke-plume-png_6688861_76
+  - first:
+      213: -9128390238616121646
+    second: PNGIX.com_smoke-plume-png_6688861_77
+  - first:
+      213: -4144584050040722097
+    second: PNGIX.com_smoke-plume-png_6688861_78
+  - first:
+      213: -6504298334264395858
+    second: PNGIX.com_smoke-plume-png_6688861_79
+  - first:
+      213: -8829395463753047850
+    second: PNGIX.com_smoke-plume-png_6688861_80
+  - first:
+      213: -6854911128323464664
+    second: PNGIX.com_smoke-plume-png_6688861_81
+  - first:
+      213: -3662597950346535365
+    second: PNGIX.com_smoke-plume-png_6688861_82
+  - first:
+      213: -4213195441910992849
+    second: PNGIX.com_smoke-plume-png_6688861_83
+  - first:
+      213: -6057766503167734470
+    second: PNGIX.com_smoke-plume-png_6688861_84
+  - first:
+      213: -2851692993378563635
+    second: PNGIX.com_smoke-plume-png_6688861_85
+  - first:
+      213: 7954619266557999732
+    second: PNGIX.com_smoke-plume-png_6688861_86
+  - first:
+      213: 8760677128504610086
+    second: PNGIX.com_smoke-plume-png_6688861_87
+  - first:
+      213: 2689687806985278411
+    second: PNGIX.com_smoke-plume-png_6688861_88
+  - first:
+      213: -6970948932159583719
+    second: PNGIX.com_smoke-plume-png_6688861_89
+  - first:
+      213: -2154270943384861775
+    second: PNGIX.com_smoke-plume-png_6688861_90
+  - first:
+      213: -2437960437699403756
+    second: PNGIX.com_smoke-plume-png_6688861_91
+  - first:
+      213: 4620770538245872606
+    second: PNGIX.com_smoke-plume-png_6688861_92
+  - first:
+      213: 624394988828738880
+    second: PNGIX.com_smoke-plume-png_6688861_93
+  - first:
+      213: 6786944940191386576
+    second: PNGIX.com_smoke-plume-png_6688861_94
+  - first:
+      213: 1516614747383326565
+    second: PNGIX.com_smoke-plume-png_6688861_95
+  - first:
+      213: 3681456488777612958
+    second: PNGIX.com_smoke-plume-png_6688861_96
+  - first:
+      213: 9208197065572010866
+    second: PNGIX.com_smoke-plume-png_6688861_97
+  - first:
+      213: 4974790196160323119
+    second: PNGIX.com_smoke-plume-png_6688861_98
+  - first:
+      213: -7729746698283888084
+    second: PNGIX.com_smoke-plume-png_6688861_99
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PNGIX.com_smoke-plume-png_6688861_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1492.5
+        width: 489.33334
+        height: 497.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b59d0069d452be1e0800000000000000
+      internalID: -2167597780489414309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PNGIX.com_smoke-plume-png_6688861_1
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 1492.5
+        width: 489.33334
+        height: 497.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32f5ed880dc1517c0800000000000000
+      internalID: -4101340203675918557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PNGIX.com_smoke-plume-png_6688861_2
+      rect:
+        serializedVersion: 2
+        x: 978
+        y: 1492.5
+        width: 489.33334
+        height: 497.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6170c163422da1a0800000000000000
+      internalID: -6796738589834055315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PNGIX.com_smoke-plume-png_6688861_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 995.5
+        width: 489.33334
+        height: 497.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2a0bc033d1815c40800000000000000
+      internalID: 5499319364052781615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PNGIX.com_smoke-plume-png_6688861_4
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 995.5
+        width: 489.33334
+        height: 497.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afa429f50a2d50a30800000000000000
+      internalID: 4180979415323396858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PNGIX.com_smoke-plume-png_6688861_5
+      rect:
+        serializedVersion: 2
+        x: 978
+        y: 995.5
+        width: 489.33334
+        height: 497.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d11b80b747004e40800000000000000
+      internalID: 5638514737953837525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PNGIX.com_smoke-plume-png_6688861_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 498.5
+        width: 489.33334
+        height: 497.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 268349b2bc9b9a0b0800000000000000
+      internalID: -5716833969709500318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PNGIX.com_smoke-plume-png_6688861_7
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 498.5
+        width: 489.33334
+        height: 497.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd188940899c917e0800000000000000
+      internalID: -1794181321781116452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PNGIX.com_smoke-plume-png_6688861_8
+      rect:
+        serializedVersion: 2
+        x: 978
+        y: 498.5
+        width: 489.33334
+        height: 497.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3b7f6bb40960b1a0800000000000000
+      internalID: -6795816368656647363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PNGIX.com_smoke-plume-png_6688861_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1.5
+        width: 489.33334
+        height: 497.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 270f59f821afe0a40800000000000000
+      internalID: 5336477566105940082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
