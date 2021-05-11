@@ -5,10 +5,12 @@ using UnityEngine;
 public class LaserRendering_Behavior : MonoBehaviour
 {
     private LineRenderer _LR;
+    private Material _mat;
 
     void Start()
     {
         _LR = this.GetComponent<LineRenderer>();
+        _mat = _LR.material;
     }
 
     private void Update(){
@@ -24,5 +26,20 @@ public class LaserRendering_Behavior : MonoBehaviour
         /* position in world space */
         _LR.SetPosition(0, this.transform.position);
         _LR.SetPosition(1, _hit.point);
+    }
+
+    public IEnumerator StartShootChrono(float _time){
+        float _elapsedTime = 0f;
+        float LerpedValue;
+
+        while(_elapsedTime <= _time){
+            _elapsedTime += Time.deltaTime;
+            LerpedValue = _elapsedTime / _time;
+            _mat.SetFloat("_Activness", LerpedValue);
+
+            yield return null;
+        }
+
+        yield return null;
     }
 }
