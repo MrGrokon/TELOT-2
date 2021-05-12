@@ -36,7 +36,9 @@ public class RoomTrigger : MonoBehaviour
             Debug.Log("Player enter a room");
             foreach (var _spawn in Spawners_Wave1)
             {
-                monsters.Add(_spawn.SpawnAnEnemy());
+                //monsters.Add(_spawn.SpawnAnEnemy());
+                _spawn.SetRoomParent(this);
+                _spawn.LaunchSpawnProcedure();
                 //do some shit like closing door, etc ...
             }
             foreach (var door in DoorsAnimator)
@@ -46,6 +48,10 @@ public class RoomTrigger : MonoBehaviour
         }
     }
 
+    public void ManualyAddMonster(MonsterBehavior _monster){
+        monsters.Add(_monster);
+    }
+
     private void Update() {
         if (activeRoom)
         {
@@ -53,14 +59,15 @@ public class RoomTrigger : MonoBehaviour
             ProgressionFollow PF = UI_Feedbacks.Instance.GetComponent<ProgressionFollow>();
             PF.UpdateEnnemiesRemainingCount(monsters.Count);  
         }
-        
-        if(WaveIsActive == true && (monsters.Count == 0 || _elapsedWaveTime >= TimeUntilWaveTwo)){
+        /*if(WaveIsActive == true && (monsters.Count == 0 || _elapsedWaveTime >= TimeUntilWaveTwo)){
             if(WaveTwoLaunched == false){
                 WaveTwoLaunched = true;
                 _elapsedWaveTime = Mathf.NegativeInfinity;
                 foreach (var _spawn in Spawners_Wave2)
-            {
-                monsters.Add(_spawn.SpawnAnEnemy());
+                {
+                //monsters.Add(_spawn.SpawnAnEnemy());
+                _spawn.SetRoomParent(this);
+                _spawn.LaunchSpawnProcedure();
             }
             }
             else{
@@ -68,11 +75,37 @@ public class RoomTrigger : MonoBehaviour
                 _musicManager.ChangeSituation(2);
                 foreach (var door in DoorsAnimator)
                 {
+                    if(_elapsedWaveTime < 0f){
+                        door.SetTrigger("Opening");
+                    }
+                }
+                activeRoom = false;
+                //this.enabled = false;
+            }
+        }*/
+
+        if(WaveIsActive && (monsters.Count == 0 || _elapsedWaveTime >= TimeUntilWaveTwo) ){
+            if(WaveTwoLaunched == false && _elapsedWaveTime >= 5f){
+                 WaveTwoLaunched = true;
+                //_elapsedWaveTime = Mathf.NegativeInfinity;
+                _elapsedWaveTime = 0f;
+                foreach (var _spawn in Spawners_Wave2)
+                {
+                //monsters.Add(_spawn.SpawnAnEnemy());
+                _spawn.SetRoomParent(this);
+                _spawn.LaunchSpawnProcedure();
+                }
+            }
+
+            if(WaveTwoLaunched == true && _elapsedWaveTime >= 5f){
+                //Debug.Log("wave ended");
+                _musicManager.ChangeSituation(2);
+                foreach (var door in DoorsAnimator)
+                {
                     door.SetTrigger("Opening");
                 }
-
                 activeRoom = false;
-                this.enabled = false;
+                //this.enabled = false;
             }
         }
     }
