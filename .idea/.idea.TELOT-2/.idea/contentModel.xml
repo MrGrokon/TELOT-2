@@ -1042,6 +1042,9 @@
           <e p="UI" t="Include">
             <e p="ResetShootBoolean_AnimEvent.cs" t="Include" />
           </e>
+          <e p="WristScene" t="Include">
+            <e p="ControlWrist.cs" t="Include" />
+          </e>
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">
