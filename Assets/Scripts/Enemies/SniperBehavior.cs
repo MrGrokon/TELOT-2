@@ -28,11 +28,10 @@ public class SniperBehavior : MonsterBehavior
     [Header("AI Properties")]
     [SerializeField] private State _state;
     public float attackInterval; 
-    [SerializeField]private float attackCooldown;
+    [SerializeField]private float attackCooldown = 0f;
     public float attackDistance;
     public float minimumDistance;
     public float distance;
-    [SerializeField] private LineRenderer shootFeedback;
     [Range(15,100)]
     [Tooltip("Force de recul infligée au joueur")]
     [SerializeField] private float knockbackForce;
@@ -42,21 +41,19 @@ public class SniperBehavior : MonsterBehavior
     [Header("Debug")]
     public float distanceToPlayer;
 
-    [Header("Feedback Properties")] 
-    [Tooltip("Couleur de départ, quand la visée vient d'être commencé")]
-    [SerializeField] private Color nonShootReadyColor;
-    [Tooltip("Couleur de fin, quand le shoot va être initié")]
-    [SerializeField] private Color shootReadyColor;
-
     private GameObject Player;
 
     [Header("Absorption related")]
     [SerializeField] private int energieGivePerShot;
     [Tooltip("Entre -1 et 1 : voir le dot product sur la doc d'unity")]
     [SerializeField] private float absorptionAngle;
-    // Start is called before the first frame update
+    
+    [Header("Feedbacks Related")]
+    private SniperLaserRendering_Behavior _laser;
+
     private void Start()
     {
+        _laser = this.GetComponentInChildren<SniperLaserRendering_Behavior>();
         Player = ObjectReferencer.Instance.Avatar_Object;
         
         WalkEvent = FMODUnity.RuntimeManager.CreateInstance("event:/Ennemy/Movement/SniperMovement");
@@ -76,7 +73,7 @@ public class SniperBehavior : MonsterBehavior
     {
         if (attackCooldown < attackInterval)
         {
-            attackCooldown += 1 * Time.deltaTime;
+            attackCooldown += Time.deltaTime;
             
             float charge = Mathf.Lerp(0, 1, attackInterval / attackCooldown);
             ChargeShotEvent.setParameterByID(parameterID2 , charge);
@@ -85,26 +82,32 @@ public class SniperBehavior : MonsterBehavior
         distanceToPlayer = Vector3.Distance(Player.transform.position, transform.position);
 
         UpdateState();
-    }
-    
-    private void EnterState()
-    {
-        switch (_state)
-        {
-            case State.Idle:
-                transform.rotation = Quaternion.identity;
-                break;
-        }
-    }
-
-    
+    }    
     
     private void SwitchState(State newState)
-    {
-        _state = newState;
-        walkEventStarted = false;
-        WalkEvent.stop(STOP_MODE.IMMEDIATE);
-        EnterState();
+    {  
+        if(newState != _state){
+            switch(newState){
+                case State.Idle:
+                transform.rotation = Quaternion.identity;
+                break;
+
+                case State.Flee:
+                _laser.StopAiming();
+                break;
+
+                case State.Attack:
+                _laser.StopAiming();
+                break;
+
+                case State.Aiming:
+                StartCoroutine(_laser.StartShootChrono(attackInterval));
+                break;
+            }   
+            _state = newState;
+            walkEventStarted = false;
+            WalkEvent.stop(STOP_MODE.IMMEDIATE);
+        }
     }
 
     private void UpdateState()
@@ -116,27 +119,30 @@ public class SniperBehavior : MonsterBehavior
                 {
                     SwitchState(State.Aiming);
                 }
-                else if(distanceToPlayer <= minimumDistance)
+
+                else if(distanceToPlayer <= minimumDistance){
                     SwitchState(State.Flee);
+                }  
                 break;
+
+
             case State.Aiming:
                 transform.LookAt(Player.transform.position);
-                if (Physics.Raycast(transform.position, Player.transform.position - transform.position,
-                    out RaycastHit hit, Mathf.Infinity))
-                {
-                    shootFeedback.SetPosition(0, transform.position);
-                    shootFeedback.SetPosition(1, hit.point);
-                }
-                shootFeedback.material.color = Color.Lerp(nonShootReadyColor, shootReadyColor, attackCooldown/attackInterval);
-                if(distanceToPlayer > attackDistance)
+                _laser.AimAt(ObjectReferencer.Instance.Avatar_Object.transform);
+                if(distanceToPlayer > attackDistance){
                     SwitchState(State.Idle);
-                else if(distanceToPlayer <= minimumDistance)
+                }
+                    
+                else if(distanceToPlayer <= minimumDistance){
                     SwitchState(State.Flee);
-                else if (attackCooldown >= attackInterval)
-                {
+                }
+
+                else if (attackCooldown >= attackInterval){
                     SwitchState(State.Attack);   
                 }
                 break;
+
+
             case State.Flee:
                 ChargeShotEvent.setParameterByID(parameterID2 , -50);
                 Vector3 FleeDirection = transform.position - Player.transform.position;
@@ -149,16 +155,20 @@ public class SniperBehavior : MonsterBehavior
                     WalkEvent.start();
                 }
                     
-                if(distanceToPlayer > attackDistance)
+                if(distanceToPlayer > attackDistance){
+                    
                     SwitchState(State.Idle);
+                }
                 else if (distanceToPlayer <= attackDistance && distanceToPlayer > minimumDistance)
                 {
                     SwitchState(State.Aiming);
                 }
                 break;
+
+
             case State.Attack:
-                    Shoot();
-                    break;
+                Shoot();
+                break;
         }
     }
     

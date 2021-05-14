@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class MonsterBehavior : MonoBehaviour
 {
     [Header("Health Parameters")]
+    private bool isDead = false;
     [Range(1, 1000)]
     public int StartHealth = 100;
     private int _Health;
@@ -59,19 +60,22 @@ public class MonsterBehavior : MonoBehaviour
         }
 
         void Die(){
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Ennemy/Death/TurretDrone Death", transform.position);
-            Destroy(this.gameObject);
-            GameObject[] triggerlist = GameObject.FindGameObjectsWithTag("RoomTrigger");
-            foreach (var _trigger in triggerlist)
-            {
-                RoomTrigger roomTrigger = _trigger.GetComponent<RoomTrigger>();
-                if(roomTrigger.monsters.Contains(this)){
-                    roomTrigger.monsters.Remove(this);
+            if(isDead==false){
+                isDead = true;
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Ennemy/Death/TurretDrone Death", transform.position);
+                Destroy(this.gameObject);
+                GameObject[] triggerlist = GameObject.FindGameObjectsWithTag("RoomTrigger");
+                foreach (var _trigger in triggerlist)
+                {
+                    RoomTrigger roomTrigger = _trigger.GetComponent<RoomTrigger>();
+                    if(roomTrigger.monsters.Contains(this)){
+                        roomTrigger.monsters.Remove(this);
+                    }
                 }
+                // dying feedbacks
+                
+                Instantiate(DyingEffect, this.transform.position + (Vector3.up * 2f), Quaternion.identity);
             }
-            // dying feedbacks
-            
-            Instantiate(DyingEffect, this.transform.position + (Vector3.up * 2f), Quaternion.identity);
         }
     #endregion
 }

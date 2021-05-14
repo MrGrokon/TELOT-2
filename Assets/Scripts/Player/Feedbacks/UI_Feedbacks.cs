@@ -77,7 +77,7 @@ public class UI_Feedbacks : MonoBehaviour
 
     private void Update() {
         float _HealthPercent = _LifeManager.getLifePoint() / _LifeManager.startingLifePoint * 100f;
-        Debug.Log("HP% -> " + _HealthPercent);
+        //Debug.Log("HP% -> " + _HealthPercent);
         if(_HealthPercent <= LevelBeforeHaloAppearance){
             float _intensity = Mathf.Lerp(0f, BaseIntensity, 1 - (_HealthPercent / 100f) );
             _vignette.intensity.value = _intensity;

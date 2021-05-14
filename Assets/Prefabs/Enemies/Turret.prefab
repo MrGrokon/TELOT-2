@@ -426,7 +426,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3d546d745a83db24c9ac95ab259ff815, type: 2}
+  - {fileID: 2100000, guid: fae67536c8090924aa0f8038395273a0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -458,7 +458,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.37680817
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -468,19 +468,19 @@ LineRenderer:
       - serializedVersion: 3
         time: 0.990566
         value: 0.35971224
-        inSlope: -1.2582735
-        outSlope: -1.2582735
+        inSlope: 0
+        outSlope: 0
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.12698409
+        inWeight: 0.2084051
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0, g: 1, b: 0.032458067, a: 1}
-      key1: {r: 0.99547505, g: 1, b: 0, a: 1}
+      key0: {r: 1, g: 0.79509217, b: 0.21226418, a: 1}
+      key1: {r: 1, g: 0, b: 0, a: 0}
       key2: {r: 0.96415, g: 0.07323387, b: 0.08524191, a: 0}
       key3: {r: 1, g: 0, b: 0.9291334, a: 0}
       key4: {r: 0, g: 0.024237156, b: 1, a: 0}
@@ -488,7 +488,7 @@ LineRenderer:
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 0
-      ctime1: 10601
+      ctime1: 37008
       ctime2: 22745
       ctime3: 38165
       ctime4: 54934
@@ -504,7 +504,7 @@ LineRenderer:
       atime6: 0
       atime7: 0
       m_Mode: 0
-      m_NumColorKeys: 6
+      m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 0
     numCapVertices: 0

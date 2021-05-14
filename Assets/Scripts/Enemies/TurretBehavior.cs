@@ -58,6 +58,7 @@ public class TurretBehavior : MonsterBehavior
             if(Vfx_triggerOnce == false){
                 Vfx_triggerOnce = true;
                 VFX_Loading.SendEvent("StartLoading");
+                StartCoroutine(this.GetComponentInChildren<LaserRendering_Behavior>().StartShootChrono(attackCooldown));
             }
 
         }
