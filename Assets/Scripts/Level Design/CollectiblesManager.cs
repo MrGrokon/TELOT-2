@@ -21,10 +21,6 @@ public class CollectiblesManager : MonoBehaviour
     [SerializeField] private int[] ammoAmountByLevel;
     [SerializeField] private int[] lifeAmountByLevel;
     // Start is called before the first frame update
-    void Update()
-    {
-        transform.Rotate(Vector3.up * 70f * Time.deltaTime);
-    }
 
     private void OnTriggerEnter(Collider other)
     {

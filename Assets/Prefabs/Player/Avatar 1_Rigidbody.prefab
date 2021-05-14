@@ -12528,7 +12528,7 @@ MonoBehaviour:
   MaxEnergieStorable: 300
   EnergieFeedback_Text: {fileID: 810100689}
   _energiePerShot: 10
-  startingEnergie: 80
+  startingEnergie: 10
 --- !u!114 &5776894925316817838
 MonoBehaviour:
   m_ObjectHideFlags: 0
