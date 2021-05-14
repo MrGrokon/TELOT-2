@@ -121,7 +121,7 @@ public class BlockProjectiles : MonoBehaviour
                     {
                         Destroy(Projectiles);
                         _Energie.StoreEnergie(energieStoredPerShot);
-                        FMODUnity.RuntimeManager.PlayOneShot("event:/Shield/ShieldTanking"); 
+                        FMODUnity.RuntimeManager.PlayOneShot("event:/Absorption/ShieldTanking"); 
                     }
                 }
                 else if(shieldEnergy <= 0) 
@@ -130,7 +130,7 @@ public class BlockProjectiles : MonoBehaviour
                     _Shield_Rendr.SetActive(false);
                     Weapon_Animator.SetTrigger("ShieldActivate");
                     shieldIdle.stop(STOP_MODE.ALLOWFADEOUT);
-                    FMODUnity.RuntimeManager.PlayOneShot("event:/Shield/ShieldOff", transform.position);
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/Absorption/ShieldOff", transform.position);
                     shieldEnergy = 0;
                     shieldDepleted = true;
                     SliderFillImage.color = Color.gray;
@@ -142,7 +142,7 @@ public class BlockProjectiles : MonoBehaviour
 
         IEnumerator ShieldSoundManager()
         {
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Shield/AbsorptionOn", transform.position);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Absorption/AbsorptionOn", transform.position);
             yield return new WaitForSeconds(0.15f);
             shieldIdle.start();
         }
