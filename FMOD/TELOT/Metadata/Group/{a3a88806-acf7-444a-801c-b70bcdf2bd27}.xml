@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="MixerGroup" id="{a3a88806-acf7-444a-801c-b70bcdf2bd27}">
+		<property name="name">
+			<value>Shoot</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{cb30575d-0599-41f5-a1d7-64700d7ce122}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{9fa96009-fef7-43f0-809e-fb0c9d314f60}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{4a3dcf07-b4ff-4d15-9831-a64cd6b1df60}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{cb30575d-0599-41f5-a1d7-64700d7ce122}">
+		<relationship name="effects">
+			<destination>{203b73f2-c439-4529-ae7a-2010184f7797}</destination>
+			<destination>{08a7c4b3-e054-43c7-97c2-57a810adc163}</destination>
+			<destination>{d0c60ee1-2946-449f-8eb1-56d25152142a}</destination>
+			<destination>{21de6b2e-a85d-404d-add3-6956245b8f93}</destination>
+			<destination>{3d96168c-c9d1-4eef-a0d2-3e009ce593bb}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{9fa96009-fef7-43f0-809e-fb0c9d314f60}" />
+	<object class="MixerSend" id="{203b73f2-c439-4529-ae7a-2010184f7797}">
+		<property name="level">
+			<value>-16</value>
+		</property>
+		<property name="inputFormat">
+			<value>1</value>
+		</property>
+		<relationship name="mixerReturn">
+			<destination>{3a525acd-176b-47c8-a106-e9980f65cba1}</destination>
+		</relationship>
+	</object>
+	<object class="CompressorEffect" id="{08a7c4b3-e054-43c7-97c2-57a810adc163}">
+		<property name="threshold">
+			<value>-23.5</value>
+		</property>
+		<property name="ratio">
+			<value>7.80000019</value>
+		</property>
+		<property name="gain">
+			<value>15.5</value>
+		</property>
+	</object>
+	<object class="ThreeEQEffect" id="{d0c60ee1-2946-449f-8eb1-56d25152142a}" />
+	<object class="Sidechain" id="{21de6b2e-a85d-404d-add3-6956245b8f93}" />
+	<object class="MixerBusFader" id="{3d96168c-c9d1-4eef-a0d2-3e009ce593bb}" />
+</objects>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="MixerGroup" id="{685eb748-99cb-4330-9ae7-63fd042d7126}">
+		<property name="name">
+			<value>EnnemyAttack</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{136aa08e-e7ae-4ef6-976f-e9b24b0c8f49}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{ccd7c58d-e8d5-43d6-a320-822e5019058d}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{5e8eef4f-0ee0-4945-820a-206247fdd723}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{136aa08e-e7ae-4ef6-976f-e9b24b0c8f49}">
+		<relationship name="effects">
+			<destination>{f0c9eac1-6ab5-4c01-8055-11f928a82f7a}</destination>
+			<destination>{c3527d6b-37cb-4ef8-b5a2-9b00ad1dc945}</destination>
+			<destination>{28d7ffea-b0f7-4aab-a761-0be52fc2aa52}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{ccd7c58d-e8d5-43d6-a320-822e5019058d}" />
+	<object class="ThreeEQEffect" id="{f0c9eac1-6ab5-4c01-8055-11f928a82f7a}" />
+	<object class="CompressorEffect" id="{c3527d6b-37cb-4ef8-b5a2-9b00ad1dc945}">
+		<property name="threshold">
+			<value>-8</value>
+		</property>
+		<property name="ratio">
+			<value>2.89999986</value>
+		</property>
+		<property name="attackTime">
+			<value>9.60000038</value>
+		</property>
+		<property name="releaseTime">
+			<value>300</value>
+		</property>
+	</object>
+	<object class="MixerBusFader" id="{28d7ffea-b0f7-4aab-a761-0be52fc2aa52}" />
+</objects>
