@@ -2,11 +2,14 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="MixerGroup" id="{f9dda1f0-b145-46f3-b47a-7b1c30aaca7a}">
 		<property name="volume">
-			<value>-30</value>
+			<value>-23.5</value>
 		</property>
 		<property name="name">
 			<value>OST</value>
 		</property>
+		<relationship name="modulators">
+			<destination>{a185949b-b6ef-47fa-896c-b9196630615b}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{83fa3b5a-169a-4efd-acb4-80d528bd4bda}</destination>
 		</relationship>
@@ -15,6 +18,20 @@
 		</relationship>
 		<relationship name="output">
 			<destination>{626f21ad-b30b-452a-ad86-c3b0cc722de2}</destination>
+		</relationship>
+	</object>
+	<object class="SidechainModulator" id="{a185949b-b6ef-47fa-896c-b9196630615b}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="amount">
+			<value>15</value>
+		</property>
+		<property name="minimumThreshold">
+			<value>-80</value>
+		</property>
+		<relationship name="sidechains">
+			<destination>{21de6b2e-a85d-404d-add3-6956245b8f93}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{83fa3b5a-169a-4efd-acb4-80d528bd4bda}">

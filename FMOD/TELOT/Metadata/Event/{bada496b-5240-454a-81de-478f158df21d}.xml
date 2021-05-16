@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="Event" id="{bada496b-5240-454a-81de-478f158df21d}">
 		<property name="name">
-			<value>ShieldOff</value>
+			<value>AbsorptionOff</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
 		</property>
 		<relationship name="folder">
-			<destination>{a917aca7-0a5c-4c85-9f23-12c4bb01d95f}</destination>
+			<destination>{af30e654-6614-4bd7-ae42-8e65f7d73a8f}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{8bb9964d-314f-40dc-92bd-fe001a22dbfa}</destination>

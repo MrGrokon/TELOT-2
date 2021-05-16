@@ -19,14 +19,17 @@ public class PlayerLife : MonoBehaviour
 
     private void Start()
     {
-        lifePoint = startingLifePoint;
+        lifePoint = startingLifePoint;  //Je mets les points de vie du joueur au maximum
         lifeText.fillAmount = lifePoint / startingLifePoint;
-        HeartBeatEvent = FMODUnity.RuntimeManager.CreateInstance("event:/Player/LowHpHeart");
-        HeartBeatEvent.start();
+        HeartBeatEvent = FMODUnity.RuntimeManager.CreateInstance("event:/Player/LowHpHeart"); //Je créer une instance de mon
+                                                                                              //son afin de le garden en mémoire
+        HeartBeatEvent.start();  //Je joue l'instance de mon son
 
-        heartbeatDescription = FMODUnity.RuntimeManager.GetEventDescription("event:/Player/LowHpHeart");
-        heartbeatDescription.getParameterDescriptionByName("Health", out pd);
-        parameterID = pd.id;
+        heartbeatDescription = FMODUnity.RuntimeManager.GetEventDescription("event:/Player/LowHpHeart"); //Je récupère la description
+                                                                                                         //de mon évènement
+        heartbeatDescription.getParameterDescriptionByName("Health", out pd); //Et je stockes son paramètre appelé
+                                                                              //Health dans une variable de sortie
+        parameterID = pd.id; //J'assigne son paramètre à une variable interne
     }
 
 
