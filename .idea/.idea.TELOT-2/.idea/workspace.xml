@@ -46,9 +46,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Level Design/CollectiblesManager.cs" />
       <option value="$PROJECT_DIR$/Assets/PresManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemiesProps/EnemieProjectileBehavior.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovementRemade/PlayerMovementRigidbody.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMouvement/MouseLook.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovementRemade/WallRunningRigidbody.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Navigation/EnemySpawner.cs" />
       <option value="$PROJECT_DIR$/Assets/MusicManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Navigation/RoomTrigger.cs" />
@@ -59,6 +57,8 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerStats/PlayerLife.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/BlockProjectiles.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/ProjectEnergie.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovementRemade/PlayerMovementRigidbody.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovementRemade/WallRunningRigidbody.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1ohtdW9xSpIGpjT50LXGFp67Yso" />
@@ -162,7 +162,7 @@
       <workItem from="1619723835524" duration="1893000" />
       <workItem from="1620996657965" duration="790000" />
       <workItem from="1621089679829" duration="1282000" />
-      <workItem from="1621195600314" duration="2413000" />
+      <workItem from="1621195600314" duration="3452000" />
     </task>
     <servers />
   </component>

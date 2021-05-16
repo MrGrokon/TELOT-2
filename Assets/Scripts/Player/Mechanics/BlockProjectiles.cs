@@ -72,14 +72,11 @@ public class BlockProjectiles : MonoBehaviour
                 if (Shielding)
                 {
                     VFXAbs.Play();
+                    StartCoroutine(ShieldSoundManager());
                 }
                 else
                 {
                     VFXAbs.Stop();
-                }
-                StartCoroutine(ShieldSoundManager());
-                if (!Shielding)
-                {
                     Shielding = false;
                     _Shield_Rendr.SetActive(false);
                     shieldIdle.stop(STOP_MODE.ALLOWFADEOUT);
