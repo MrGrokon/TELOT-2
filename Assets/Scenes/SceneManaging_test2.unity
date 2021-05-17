@@ -1957,7 +1957,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1460570177, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1514129941, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
       propertyPath: m_Convex
@@ -1981,7 +1981,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1665798970, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1998380564, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1998380564, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1998380564, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1544188812562984144, guid: f6540eafabbd2364c9b59fba55b80675,
         type: 3}
@@ -2061,7 +2073,7 @@ PrefabInstance:
     - target: {fileID: 2889352710569835206, guid: f6540eafabbd2364c9b59fba55b80675,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4654035621977098900, guid: f6540eafabbd2364c9b59fba55b80675,
         type: 3}
@@ -2073,10 +2085,15 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4654035621977098900, guid: f6540eafabbd2364c9b59fba55b80675,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5112777779515525469, guid: f6540eafabbd2364c9b59fba55b80675,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5776894925316817838, guid: f6540eafabbd2364c9b59fba55b80675,
         type: 3}
@@ -5214,7 +5231,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!73398921 &1715510189
 VFXRenderer:
   m_ObjectHideFlags: 2
@@ -5222,7 +5239,7 @@ VFXRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1715510188}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -5233,8 +5250,6 @@ VFXRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   m_StaticBatchInfo:
@@ -5265,7 +5280,7 @@ VisualEffect:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1715510188}
   m_Enabled: 1
-  m_Asset: {fileID: 8926484042661614526, guid: caae60e40e6dcc541a9df407da84e9bc, type: 3}
+  m_Asset: {fileID: 8926484042661614526, guid: 62389707084942142aaf1be60e9f5ab2, type: 3}
   m_InitialEventName: OnPlay
   m_InitialEventNameOverriden: 0
   m_StartSeed: 0

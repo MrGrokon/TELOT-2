@@ -80,6 +80,9 @@
 			<destination>{436d23ec-e955-4285-969b-9aedebf923c2}</destination>
 			<destination>{2035b21f-999b-4f69-9d20-53bd32ae57b3}</destination>
 		</relationship>
+		<relationship name="markers">
+			<destination>{a6db1710-1985-484a-a439-ffec848a787e}</destination>
+		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{90a48cdc-cb1b-4e2f-8649-916bae809652}">
 		<relationship name="effectChain">
@@ -107,9 +110,6 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{64f4f98e-0d68-47b9-9190-84b3b525a3e0}">
-		<property name="volume">
-			<value>-80</value>
-		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -136,7 +136,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{862df1cf-e536-4fe9-903d-3809c3a82e6b}">
 		<property name="volume">
-			<value>-27.5</value>
+			<value>-6</value>
 		</property>
 		<property name="name">
 			<value>Audio 2</value>
@@ -151,6 +151,20 @@
 			<destination>{90a48cdc-cb1b-4e2f-8649-916bae809652}</destination>
 		</relationship>
 	</object>
+	<object class="LoopRegion" id="{a6db1710-1985-484a-a439-ffec848a787e}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="length">
+			<value>14.231999999999999</value>
+		</property>
+		<relationship name="timeline">
+			<destination>{af25a4ef-4718-4f19-a7da-dbf78f9afb0e}</destination>
+		</relationship>
+		<relationship name="markerTrack">
+			<destination>{443ab337-1459-4fe9-9c1c-7e80ade6dcf6}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusEffectChain" id="{b724c7a0-aed3-4c23-8247-4d37d81cf69a}">
 		<relationship name="effects">
 			<destination>{2e95415c-0388-4066-b999-62e4ceadd50b}</destination>
@@ -161,6 +175,7 @@
 	<object class="MixerBusEffectChain" id="{363a0efa-41eb-40f6-8204-728db1036bb0}">
 		<relationship name="effects">
 			<destination>{f4a0c73b-c611-4698-8abe-d79b69454def}</destination>
+			<destination>{e80adeac-56f1-4efd-9db1-3599f9f37706}</destination>
 			<destination>{6189524a-6dd1-4448-92a1-e85eaf1461d1}</destination>
 		</relationship>
 	</object>
@@ -185,6 +200,7 @@
 			<value>-0.5</value>
 		</property>
 	</object>
+	<object class="CompressorEffect" id="{e80adeac-56f1-4efd-9db1-3599f9f37706}" />
 	<object class="MixerBusFader" id="{6189524a-6dd1-4448-92a1-e85eaf1461d1}" />
 	<object class="SFXReverbEffect" id="{7a3d039f-a018-4d1e-a918-e7f3216e0c0e}" />
 	<object class="MixerBusFader" id="{ee0fe16d-d0cb-48d4-b150-43dc207f65e6}" />

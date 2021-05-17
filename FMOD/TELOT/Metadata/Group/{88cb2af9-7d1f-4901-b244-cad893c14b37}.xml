@@ -7,6 +7,9 @@
 		<property name="name">
 			<value>Environnement</value>
 		</property>
+		<relationship name="modulators">
+			<destination>{8e1a4d1b-73e1-45aa-a9bc-6077b432d9a3}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{042cd091-787f-4570-b8fc-59d436815404}</destination>
 		</relationship>
@@ -15,6 +18,14 @@
 		</relationship>
 		<relationship name="output">
 			<destination>{626f21ad-b30b-452a-ad86-c3b0cc722de2}</destination>
+		</relationship>
+	</object>
+	<object class="SidechainModulator" id="{8e1a4d1b-73e1-45aa-a9bc-6077b432d9a3}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<relationship name="sidechains">
+			<destination>{21de6b2e-a85d-404d-add3-6956245b8f93}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{042cd091-787f-4570-b8fc-59d436815404}">

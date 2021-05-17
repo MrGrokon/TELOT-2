@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Exo_Plasma_Sphere
+  m_Shader: {fileID: 4800000, guid: f65beeda7f4144a46b35d917dc609af7, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 0
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Lighting_Map:
+        m_Texture: {fileID: 2800000, guid: d70a159171ab8684f98565d61a976d8e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _BaseOpacity: 0.041
+    - _IntersectionDistance: 0.054
+    - _IntersectionDistance1: 0
+    - _Panner_TimeMult: 0.15
+    - _VertexDisplacement_NoiseForce: 0.15
+    - _VertexDisplacement_NoiseScale: 3.09
+    - _VertexDisplacement_NoiseScale1: 1.57
+    - _VertexDisplacement_TimeScale: 0.51
+    - _VertexDisplacement_TimeScale2: 2.81
+    - __dirty: 0
+    m_Colors:
+    - _Lighting_Color: {r: 5.992157, g: 1.4724456, b: 1.0666666, a: 0.5019608}

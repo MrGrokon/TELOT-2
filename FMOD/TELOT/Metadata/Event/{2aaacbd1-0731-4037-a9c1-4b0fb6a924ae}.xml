@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="Event" id="{2aaacbd1-0731-4037-a9c1-4b0fb6a924ae}">
 		<property name="name">
-			<value>ShieldTanking</value>
+			<value>AbsorptionTanking</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
 		</property>
 		<relationship name="folder">
-			<destination>{a917aca7-0a5c-4c85-9f23-12c4bb01d95f}</destination>
+			<destination>{af30e654-6614-4bd7-ae42-8e65f7d73a8f}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{69b320ce-9451-4cf4-a65c-ccf7c11b6a29}</destination>

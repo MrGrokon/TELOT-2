@@ -176,7 +176,7 @@ public class PlayerMovementRigidbody : MonoBehaviour
             CA.intensity.value = 1f;
             actualChromaticLerpTimeValue = 0;
             //DashParticles.Play();
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Movement/Dash"); 
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Movement/Dash"); 
         }
     }
 
@@ -188,11 +188,11 @@ public class PlayerMovementRigidbody : MonoBehaviour
             StartCoroutine(DelayedJump(UI_Feedbacks.Instance.OffsetTime));
             UI_Feedbacks.Instance.CallFeedback(UI_Feedbacks.FeedbackType.Jump);
             //onGround = false;
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Movement/Jump", transform.position);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Movement/Jump", transform.position);
         }
         else if (doubleJump && !GetComponent<WallRunningRigidbody>().OnWallRun)
         {
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Movement/Jump", transform.position);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Movement/Jump", transform.position);
             _rb.AddForce((transform.up + Motion).normalized * jumpForce * dJumpFactor, ForceMode.Impulse);
             doubleJump = false;
         }
@@ -219,7 +219,7 @@ public class PlayerMovementRigidbody : MonoBehaviour
                 if (onGround == false && GetComponent<Rigidbody>().velocity.y < 0)
                 {
                     UI_Feedbacks.Instance.CallFeedback(UI_Feedbacks.FeedbackType.Jump);
-                    FMODUnity.RuntimeManager.PlayOneShot("event:/Movement/LandOnGround", transform.position);
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Movement/LandOnGround", transform.position);
                     print("Atté");
                 }
                 onGround = true;
@@ -232,7 +232,7 @@ public class PlayerMovementRigidbody : MonoBehaviour
     {
         if (actualStepInterval <= 0)
         {
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Movement/Footstep", transform.position);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Movement/Footstep", transform.position);
             if(GetComponent<WallRunningRigidbody>().OnWallRun)
                 actualStepInterval = stepInterval / 2;
             else
