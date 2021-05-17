@@ -37,7 +37,7 @@ public class BlockProjectiles : MonoBehaviour
         private void Awake() {
             Weapon_Animator = GameObject.Find("Shotgun_Pivot").GetComponent<Animator>();
 
-            shieldIdle = FMODUnity.RuntimeManager.CreateInstance("event:/Absorption/AbsorptionIdle");
+            shieldIdle = FMODUnity.RuntimeManager.CreateInstance("event:/Player/Absorption/AbsorptionIdle");
             FMODUnity.RuntimeManager.AttachInstanceToGameObject(shieldIdle, transform,
                 GetComponent<Rigidbody>());
             _Shield_Rendr = GameObject.Find("ShieldDebug");
@@ -88,7 +88,7 @@ public class BlockProjectiles : MonoBehaviour
                     Shielding = false;
                     //_Shield_Rendr.SetActive(false);
                     shieldIdle.stop(STOP_MODE.ALLOWFADEOUT);
-                    FMODUnity.RuntimeManager.PlayOneShot("event:/Shield/ShieldOff", transform.position);
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Absorption/AbsorptionOff", transform.position);
                 }
             }
 
@@ -127,7 +127,7 @@ public class BlockProjectiles : MonoBehaviour
                     {
                         Destroy(Projectiles);
                         _Energie.StoreEnergie(energieStoredPerShot);
-                        FMODUnity.RuntimeManager.PlayOneShot("event:/Shield/ShieldTanking"); 
+                        FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Absorption/AbsorptionTanking"); 
                     }
                 }
                 else if(shieldEnergy <= 0) 
@@ -137,7 +137,7 @@ public class BlockProjectiles : MonoBehaviour
                     Weapon_Animator.SetTrigger("ShieldActivate");
                     VFXAbs.SendEvent("StopShield");
                     shieldIdle.stop(STOP_MODE.ALLOWFADEOUT);
-                    FMODUnity.RuntimeManager.PlayOneShot("event:/Shield/ShieldOff", transform.position);
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Absorption/AbsorptionOff", transform.position);
                     shieldEnergy = 0;
                     shieldDepleted = true;
                     SliderFillImage.color = Color.gray;
@@ -148,7 +148,7 @@ public class BlockProjectiles : MonoBehaviour
 
         IEnumerator ShieldSoundManager()
         {
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Shield/AbsorptionOn", transform.position);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Absorption/AbsorptionOn", transform.position);
             yield return new WaitForSeconds(0.15f);
             shieldIdle.start();
         }
