@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Exo_Plasma_Sphere
-  m_Shader: {fileID: 4800000, guid: f65beeda7f4144a46b35d917dc609af7, type: 3}
+  m_Name: Exo_DistortionEffects
+  m_Shader: {fileID: 4800000, guid: ec3c46cbebc361f4fbe7217ada3468fe, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
@@ -19,8 +19,8 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _Lighting_Map:
-        m_Texture: {fileID: 2800000, guid: d70a159171ab8684f98565d61a976d8e, type: 3}
+    - _Application_Mask:
+        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _texcoord:
@@ -28,15 +28,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _BaseOpacity: 0.041
-    - _IntersectionDistance: 0.054
-    - _IntersectionDistance1: 0
-    - _Panner_TimeMult: 0.15
-    - _VertexDisplacement_NoiseForce: 0.15
-    - _VertexDisplacement_NoiseScale: 3.09
-    - _VertexDisplacement_NoiseScale1: 1.57
-    - _VertexDisplacement_TimeScale: 0.51
-    - _VertexDisplacement_TimeScale2: 2.81
+    - _Activness: 1
+    - _DistortionForce: 2.9
+    - _NoiseForceMultiplier: 0.55
     - __dirty: 0
     m_Colors:
-    - _Lighting_Color: {r: 5.992157, g: 1.4724456, b: 1.0666666, a: 0.5019608}
+    - _Base_Color: {r: 0.4481132, g: 1, b: 0.8859279, a: 0.3254902}
