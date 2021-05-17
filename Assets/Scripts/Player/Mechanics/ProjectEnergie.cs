@@ -96,7 +96,7 @@ public class ProjectEnergie : MonoBehaviour
             UI_Feedbacks.Instance.CallFeedback(UI_Feedbacks.FeedbackType.FOV_zoom);
 
             Debug.Log("shoot " + _nmbOfPellet + " pellets");
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Shoot/PrimaryShot");
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Shoot/PrimaryShot");
             for (int i = 0; i < _nmbOfPellet; i++)
             {
                 Quaternion Spread = Quaternion.Euler(Camera.main.transform.rotation.eulerAngles + new Vector3( (Random.Range(-AmountOfSpread, AmountOfSpread)), (Random.Range(-AmountOfSpread, AmountOfSpread)), 0f));
