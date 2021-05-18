@@ -28,6 +28,7 @@ public class BlockProjectiles : MonoBehaviour
     public float depletationFactor = 1;
 
     public VisualEffect VFXAbs;
+    private Material VFX_Distorded_mat;
 
     private FMOD.Studio.EventInstance shieldIdle;
 
@@ -41,10 +42,12 @@ public class BlockProjectiles : MonoBehaviour
                 GetComponent<Rigidbody>());
             _Shield_Rendr = GameObject.Find("ShieldDebug");
             _Shield_Pivot = GameObject.Find("Shield_Pivot").transform;
-            _Shield_Rendr.SetActive(false);
+            //_Shield_Rendr.SetActive(false);
             _Energie = this.GetComponent<EnergieStored>();
             SliderFillImage.fillAmount = TimeToBeActive / TimeToBeActive;
-            VFXAbs.Stop(); 
+            VFXAbs.SendEvent("StopShield");
+            VFX_Distorded_mat = _Shield_Rendr.GetComponent<MeshRenderer>().material;
+            VFX_Distorded_mat.SetFloat("_Activness", 0f);
             if(_Energie == null){
                 Debug.Log("EnergieStored not defined");
                    
@@ -71,14 +74,19 @@ public class BlockProjectiles : MonoBehaviour
                 Shielding = !Shielding;
                 if (Shielding)
                 {
-                    VFXAbs.Play();
-                    StartCoroutine(ShieldSoundManager());
+                    VFXAbs.SendEvent("StartShield");
+                    StartCoroutine(Shield_Material_Manager(true));
                 }
                 else
                 {
-                    VFXAbs.Stop();
+                    VFXAbs.SendEvent("StopShield");
+                    StartCoroutine(Shield_Material_Manager(false));
+                }
+                StartCoroutine(ShieldSoundManager());
+                if (!Shielding)
+                {
                     Shielding = false;
-                    _Shield_Rendr.SetActive(false);
+                    //_Shield_Rendr.SetActive(false);
                     shieldIdle.stop(STOP_MODE.ALLOWFADEOUT);
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Absorption/AbsorptionOff", transform.position);
                 }
@@ -109,8 +117,9 @@ public class BlockProjectiles : MonoBehaviour
             {
                 if (shieldEnergy > 0)
                 {
-                    _Shield_Rendr.SetActive(true);
+                    //_Shield_Rendr.SetActive(true);
                     Weapon_Animator.SetTrigger("ShieldActivate");
+
                     shieldEnergy -= 1 * Time.deltaTime * depletationFactor;
                     Collider[] _hits = Physics.OverlapSphere(_Shield_Pivot.position, ShieldHitboxRange, ProjectileLayerMask);
 
@@ -126,12 +135,12 @@ public class BlockProjectiles : MonoBehaviour
                     Shielding = false;
                     _Shield_Rendr.SetActive(false);
                     Weapon_Animator.SetTrigger("ShieldActivate");
+                    VFXAbs.SendEvent("StopShield");
                     shieldIdle.stop(STOP_MODE.ALLOWFADEOUT);
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Absorption/AbsorptionOff", transform.position);
                     shieldEnergy = 0;
                     shieldDepleted = true;
                     SliderFillImage.color = Color.gray;
-                    VFXAbs.Stop();
                 }
                 
             }
@@ -149,6 +158,21 @@ public class BlockProjectiles : MonoBehaviour
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(_Shield_Pivot.position, ShieldHitboxRange);
         }*/
+
+        IEnumerator Shield_Material_Manager(bool Active){
+            float _elapsedTime = 0f, TimeToGrow = 0.25f;
+            while(_elapsedTime <= TimeToGrow){
+                _elapsedTime += Time.deltaTime;
+                if(Active == true){
+                    VFX_Distorded_mat.SetFloat("_Activness", Mathf.Lerp(0f, 1f, _elapsedTime/TimeToGrow));
+                }
+                else if(Active == false){
+                    VFX_Distorded_mat.SetFloat("_Activness", Mathf.Lerp(1f , 0f, _elapsedTime/TimeToGrow));
+                }
+                yield return null;
+            }
+            yield return null;
+        }
 
         #endregion
     
