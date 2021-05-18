@@ -1943,18 +1943,6 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 367756282, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a7d1366a58da8c3449008a66dc8a3d90, type: 2}
-    - target: {fileID: 367756282, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 367756283, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 429121892, guid: f6540eafabbd2364c9b59fba55b80675, type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
