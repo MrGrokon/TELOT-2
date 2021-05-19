@@ -89,11 +89,13 @@ public class WallRunningRigidbody : MonoBehaviour
 
         if(Input.GetButtonDown("Jump") && OnWallRun)
         {
-            _rb.AddForce((Vector3.up + LastWall_normal * 2 + transform.forward).normalized * (JumpForce * 2.5f), ForceMode.Impulse);
+            _rb.velocity = Vector3.zero;
+            _rb.AddForce((Vector3.up * 2 + LastWall_normal * 2 + transform.forward).normalized * (JumpForce * 3.5f), ForceMode.Impulse);
             GetComponent<PlayerMovementRigidbody>().Motion = Vector3.zero;
             WallOnLeft = false;
             WallOnRight = false;
             canWallRun = false;
+            GetComponent<PlayerMovementRigidbody>().doubleJump = false;
             StartCoroutine(ReactivateDoubleJump());
             GetComponentInChildren<MouseLook>().ResetBody();
         }
@@ -168,7 +170,7 @@ public class WallRunningRigidbody : MonoBehaviour
                 CA.intensity.value = 0.25f;
                 actualChromaticLerpTimeValue = 0;
                 
-                transform.rotation = Quaternion.LookRotation(wallForwardRun, Vector3.up);
+                
                 GetComponent<MouseLook>().locked = true;
                 GetComponent<PlayerMovementRigidbody>().doubleJump = true;
                 GetComponentInChildren<MouseLook>().ResetBody();
@@ -205,6 +207,8 @@ public class WallRunningRigidbody : MonoBehaviour
         if (OnWallRun)
         {
             interpolationTime += interpolationSpeed * Time.deltaTime;
+            Vector3 wallRunLook = Vector3.Lerp(transform.forward, wallForwardRun, interpolationTime);
+            transform.rotation = Quaternion.LookRotation(wallRunLook, Vector3.up);
         }
         else if(!OnWallRun)
         {
@@ -222,7 +226,7 @@ public class WallRunningRigidbody : MonoBehaviour
 
     private IEnumerator ReactivateDoubleJump()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.15f);
         GetComponent<PlayerMovementRigidbody>().doubleJump = true;
         canWallRun = true;
     }
@@ -232,7 +236,7 @@ public class WallRunningRigidbody : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         canOffWall = true;
     }
-    
+
     private void PostProcessValueManager()
     {
         if (actualChromaticLerpTimeValue < chromaticLerpTime)
