@@ -9,6 +9,8 @@ public class MusicManager : MonoBehaviour
     private FMOD.Studio.EventDescription MusicEventDescription;
     private FMOD.Studio.PARAMETER_DESCRIPTION pd;
     FMOD.Studio.PARAMETER_ID parameterID;
+
+    public bool musicStarted = false;
     // Start is called before the first frame update
     void Start()
     {
