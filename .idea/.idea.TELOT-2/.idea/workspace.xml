@@ -49,16 +49,17 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMouvement/MouseLook.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Navigation/EnemySpawner.cs" />
       <option value="$PROJECT_DIR$/Assets/MusicManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Navigation/RoomTrigger.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/ProssecutorBehavior_v2.cs" />
       <option value="$PROJECT_DIR$/Assets/Deprecated_Files/ProjectilBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyInheritence/MonsterBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/EnergieStored.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerStats/PlayerLife.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/BlockProjectiles.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/ProjectEnergie.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovementRemade/PlayerMovementRigidbody.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mechanics/BlockProjectiles.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/MusicManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Navigation/RoomTrigger.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovementRemade/WallRunningRigidbody.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovementRemade/PlayerMovementRigidbody.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1ohtdW9xSpIGpjT50LXGFp67Yso" />
@@ -163,6 +164,8 @@
       <workItem from="1620996657965" duration="790000" />
       <workItem from="1621089679829" duration="1282000" />
       <workItem from="1621195600314" duration="3452000" />
+      <workItem from="1621361765659" duration="769000" />
+      <workItem from="1621428848137" duration="2484000" />
     </task>
     <servers />
   </component>

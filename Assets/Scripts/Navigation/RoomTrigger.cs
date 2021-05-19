@@ -27,8 +27,11 @@ public class RoomTrigger : MonoBehaviour
         {
             activeRoom = true;
             _musicManager = UI_Feedbacks.Instance.GetComponent<MusicManager>();
-            _musicManager.StartMusic();
-
+            if (_musicManager.musicStarted == false)
+            {
+                _musicManager.StartMusic();
+                _musicManager.musicStarted = true;  
+            }
             ProgressionFollow PF = UI_Feedbacks.Instance.GetComponent<ProgressionFollow>();
             PF.UpdateRoomCount(roomNumber, 5);
             
@@ -100,6 +103,7 @@ public class RoomTrigger : MonoBehaviour
             if(WaveTwoLaunched == true && _elapsedWaveTime >= 5f){
                 //Debug.Log("wave ended");
                 _musicManager.ChangeSituation(2);
+                _musicManager.musicStarted = false;
                 foreach (var door in DoorsAnimator)
                 {
                     door.SetTrigger("Opening");
