@@ -192,8 +192,9 @@ public class PlayerMovementRigidbody : MonoBehaviour
         }
         else if (doubleJump && !GetComponent<WallRunningRigidbody>().OnWallRun)
         {
+            _rb.velocity = Vector3.zero;
             FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Movement/Jump", transform.position);
-            _rb.AddForce((transform.up + Motion).normalized * jumpForce * dJumpFactor, ForceMode.Impulse);
+            _rb.AddForce((transform.up * 2 + Motion).normalized * (jumpForce) * dJumpFactor + Motion, ForceMode.Impulse);
             doubleJump = false;
         }
     }
@@ -294,7 +295,7 @@ public class PlayerMovementRigidbody : MonoBehaviour
             yield return null;
         }
 
-        _rb.AddForce((transform.up * 2 + Motion * 2.5f).normalized * jumpForce, ForceMode.Impulse);
+        _rb.AddForce((transform.up * 2 + Motion).normalized * jumpForce * 1.25f, ForceMode.Impulse);
         onGround = false;
         yield return null;
         
