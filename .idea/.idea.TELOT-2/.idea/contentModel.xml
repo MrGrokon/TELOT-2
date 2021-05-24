@@ -1084,6 +1084,9 @@
           <e p="Explosion_related" t="Include">
             <e p="BasicFresnel.shader" t="Include" />
           </e>
+          <e p="Shield" t="Include">
+            <e p="DistortionEffects.shader" t="Include" />
+          </e>
           <e p="Shockwave_Related" t="Include">
             <e p="Plasma_Sphere.shader" t="Include" />
           </e>

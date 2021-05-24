@@ -76,20 +76,17 @@ public class BlockProjectiles : MonoBehaviour
                 {
                     VFXAbs.SendEvent("StartShield");
                     StartCoroutine(Shield_Material_Manager(true));
+                    StartCoroutine(ShieldSoundManager());
                 }
                 else
                 {
                     VFXAbs.SendEvent("StopShield");
                     StartCoroutine(Shield_Material_Manager(false));
-                }
-                StartCoroutine(ShieldSoundManager());
-                if (!Shielding)
-                {
                     Shielding = false;
-                    //_Shield_Rendr.SetActive(false);
                     shieldIdle.stop(STOP_MODE.ALLOWFADEOUT);
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Absorption/AbsorptionOff", transform.position);
                 }
+                
             }
 
             if (shieldEnergy >= TimeToBeActive)
