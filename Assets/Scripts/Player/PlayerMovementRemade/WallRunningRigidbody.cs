@@ -199,6 +199,7 @@ public class WallRunningRigidbody : MonoBehaviour
         {
             playerMoveWallRun.stop(STOP_MODE.ALLOWFADEOUT);
            StartCoroutine(wallRunDelayOff());
+           StartCoroutine(ReactivateWallRun());
         }
     }
     
