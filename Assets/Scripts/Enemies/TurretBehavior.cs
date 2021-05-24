@@ -89,7 +89,8 @@ public class TurretBehavior : MonsterBehavior
         switch (_state)
         {
             case State.Attack:
-                transform.LookAt(predictedPosition(Player.transform.position, projectileThrower.transform.position, Player.transform.GetComponent<PlayerMovementRigidbody>().Motion * Player.transform.GetComponent<PlayerMovementRigidbody>().GetSpeed(), ProjectileSpeed));
+                //transform.LookAt(predictedPosition(Player.transform.position, projectileThrower.transform.position, Player.transform.GetComponent<PlayerMovementRigidbody>().Motion * Player.transform.GetComponent<PlayerMovementRigidbody>().GetSpeed(), ProjectileSpeed));
+                transform.LookAt(Player.transform.position);
                 if (attackCooldown <= 0 && bursted)
                 {
                     Shoot();
@@ -109,7 +110,7 @@ public class TurretBehavior : MonsterBehavior
         StartCoroutine(Burst());
     }
 
-    private Vector3 predictedPosition(Vector3 targetPosition, Vector3 shooterPosition, Vector3 targetVelocity,
+    /*private Vector3 predictedPosition(Vector3 targetPosition, Vector3 shooterPosition, Vector3 targetVelocity,
         float projectileSpeed)
     {
         Vector3 displacement = targetPosition - shooterPosition;
@@ -126,7 +127,7 @@ public class TurretBehavior : MonsterBehavior
         float shootAngle = Mathf.Asin(Mathf.Sin(targetMoveAngle) * targetVelocity.magnitude / projectileSpeed);
         return targetPosition + targetVelocity * displacement.magnitude /
             Mathf.Sin(Mathf.PI - targetMoveAngle - shootAngle) * Mathf.Sin(shootAngle) / targetVelocity.magnitude;
-    }
+    }*/
 
     IEnumerator Burst()
     {

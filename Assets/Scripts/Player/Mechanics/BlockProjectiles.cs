@@ -30,7 +30,7 @@ public class BlockProjectiles : MonoBehaviour
     public VisualEffect VFXAbs;
     private Material VFX_Distorded_mat;
 
-    private FMOD.Studio.EventInstance shieldIdle;
+    public FMOD.Studio.EventInstance shieldIdle;
 
     #region Unity Functions
 
@@ -104,7 +104,6 @@ public class BlockProjectiles : MonoBehaviour
                     depletationFactor = 2;
                 }
             }
-            
         }
 
         private void ActivateShield()
@@ -127,19 +126,18 @@ public class BlockProjectiles : MonoBehaviour
                         FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Absorption/AbsorptionTanking"); 
                     }
                 }
-                else if(shieldEnergy <= 0) 
+                else
                 {
                     Shielding = false;
-                    _Shield_Rendr.SetActive(false);
+                    //_Shield_Rendr.SetActive(false);
                     Weapon_Animator.SetTrigger("ShieldActivate");
                     VFXAbs.SendEvent("StopShield");
                     shieldIdle.stop(STOP_MODE.ALLOWFADEOUT);
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Absorption/AbsorptionOff", transform.position);
-                    shieldEnergy = 0;
                     shieldDepleted = true;
                     SliderFillImage.color = Color.gray;
+                    StartCoroutine(Shield_Material_Manager(false));
                 }
-                
             }
         }
 

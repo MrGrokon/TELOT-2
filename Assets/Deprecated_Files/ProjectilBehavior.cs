@@ -52,6 +52,7 @@ public class ProjectilBehavior : MonoBehaviour
 
                 /*Projectil_OnHitSurface_VFX.SetVector3(1, new Vector3());
                 Projectil_OnHitSurface_VFX.Play();*/
+                Destroy(this.gameObject);
             }
         }
 
