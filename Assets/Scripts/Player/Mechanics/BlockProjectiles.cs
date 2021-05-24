@@ -30,7 +30,7 @@ public class BlockProjectiles : MonoBehaviour
     public VisualEffect VFXAbs;
     private Material VFX_Distorded_mat;
 
-    private FMOD.Studio.EventInstance shieldIdle;
+    public FMOD.Studio.EventInstance shieldIdle;
 
     #region Unity Functions
 
