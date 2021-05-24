@@ -770,6 +770,9 @@
             <e p="Laser_Mat" t="Include">
               <e p="LaserShader_v2.shader" t="Include" />
             </e>
+            <e p="MaterialsPortail" t="Include">
+              <e p="Portal.shader" t="Include" />
+            </e>
           </e>
           <e p="Shader" t="Include">
             <e p="BasicsDecals.shader" t="Include" />
