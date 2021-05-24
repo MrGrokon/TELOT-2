@@ -35,7 +35,7 @@ public class PlayerMovementRigidbody : MonoBehaviour
     private float actualChromaticLerpTimeValue;
 
     [Header("Particle System")] 
-    private List<ParticleSystem> DashParticles;
+    public List<ParticleSystem> DashParticles;
 
     [Header("Sound Effect")]
     [SerializeField] private float stepInterval;
@@ -155,6 +155,7 @@ public class PlayerMovementRigidbody : MonoBehaviour
 
     private void Dash(Vector3 motion)
     {
+        Debug.Log("Dash -> " + motion);
         if (actualDashCD <= 0)
         {
             if(motion == this.transform.forward){
