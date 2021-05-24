@@ -31,6 +31,8 @@ public class WallRunningRigidbody : MonoBehaviour
     [HideInInspector]
     public Vector3 wallForwardRun;
 
+    public float wallRunReactivationDelay;
+
     [Header("Wall Run Feedbacks")] 
     private float interpolationTime;
 
@@ -197,6 +199,7 @@ public class WallRunningRigidbody : MonoBehaviour
         {
             playerMoveWallRun.stop(STOP_MODE.ALLOWFADEOUT);
            StartCoroutine(wallRunDelayOff());
+           StartCoroutine(ReactivateWallRun());
         }
     }
     
@@ -228,6 +231,12 @@ public class WallRunningRigidbody : MonoBehaviour
     {
         yield return new WaitForSeconds(0.15f);
         GetComponent<PlayerMovementRigidbody>().doubleJump = true;
+        StartCoroutine(ReactivateWallRun());
+    }
+
+    private IEnumerator ReactivateWallRun()
+    {
+        yield return new WaitForSeconds(wallRunReactivationDelay);
         canWallRun = true;
     }
 
