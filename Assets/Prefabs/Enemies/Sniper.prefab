@@ -261,7 +261,7 @@ MonoBehaviour:
   _NavMeshAgent: {fileID: 0}
   _state: 0
   attackInterval: 5
-  attackCooldown: 7
+  attackCooldown: 5
   attackDistance: 100
   minimumDistance: 10
   distance: 0
@@ -270,7 +270,6 @@ MonoBehaviour:
   distanceToPlayer: 0
   energieGivePerShot: 0
   absorptionAngle: 0
-  _laser: {fileID: 0}
 --- !u!195 &6106855031906571514
 NavMeshAgent:
   m_ObjectHideFlags: 0
