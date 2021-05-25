@@ -2155,6 +2155,11 @@ PrefabInstance:
       propertyPath: maxRecoil_z
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 5776894925316817838, guid: f6540eafabbd2364c9b59fba55b80675,
+        type: 3}
+      propertyPath: Weapon
+      value: 
+      objectReference: {fileID: 1323326239}
     - target: {fileID: 6945830922706310441, guid: f6540eafabbd2364c9b59fba55b80675,
         type: 3}
       propertyPath: HeadBobbingSpeed_Multiplier
@@ -4354,6 +4359,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 29658187223667097, guid: 4870a223fb1fb6d40a371c706e89cad5,
     type: 3}
   m_PrefabInstance: {fileID: 511636688}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1323326239 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 780606944976696558, guid: f6540eafabbd2364c9b59fba55b80675,
+    type: 3}
+  m_PrefabInstance: {fileID: 588157381}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1355580066
 PrefabInstance:
