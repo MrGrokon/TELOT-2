@@ -11,7 +11,7 @@ public class ReloadScene : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F5))
         {
-            SceneManager.LoadScene(0);
+            GetComponent<PlayerLife>().Death();
         }
     }
 }

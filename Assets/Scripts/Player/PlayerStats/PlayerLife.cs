@@ -50,9 +50,11 @@ public class PlayerLife : MonoBehaviour
         lifePoint -= dmg;
     }
 
-    private void Death()
+    public void Death()
     {
         FeedbackManager.Instance.GetComponent<MusicManager>().StopMusic();
+        HeartBeatEvent.stop(STOP_MODE.ALLOWFADEOUT);
+        GetComponent<BlockProjectiles>().shieldIdle.stop(STOP_MODE.ALLOWFADEOUT);
         SceneManager.LoadScene(0);
     }
 

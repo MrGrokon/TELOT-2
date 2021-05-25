@@ -736,6 +736,7 @@
         </e>
         <e p="CartoonishText" t="Include">
           <e p="TextGrading.shader" t="Include" />
+          <e p="TextGrading_v2.shader" t="Include" />
         </e>
         <e p="Deprecated_Files" t="Include">
           <e p="Blaster.cs" t="Include" />
@@ -763,8 +764,14 @@
         </e>
         <e p="Graphics" t="Include">
           <e p="Materials" t="Include">
+            <e p="Bumper" t="Include">
+              <e p="ToonShaderEmissive.shader" t="Include" />
+            </e>
             <e p="Laser_Mat" t="Include">
               <e p="LaserShader_v2.shader" t="Include" />
+            </e>
+            <e p="MaterialsPortail" t="Include">
+              <e p="Portal.shader" t="Include" />
             </e>
           </e>
           <e p="Shader" t="Include">
@@ -950,9 +957,6 @@
           <e p="LD_Elements" t="Include">
             <e p="Bumper" t="Include">
               <e p="ActivationBumper.cs" t="Include" />
-              <e p="Texture" t="Include">
-                <e p="_oon 1.shader" t="Include" />
-              </e>
             </e>
           </e>
           <e p="VFX_Objects" t="Include">
