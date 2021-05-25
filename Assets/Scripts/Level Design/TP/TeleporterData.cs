@@ -9,7 +9,7 @@ public class TeleporterData : MonoBehaviour
     private Transform TP_Point;
 
     private void Awake() {
-        TP_Point = this.transform.GetChild(2);
+        TP_Point = this.transform.GetChild(1);
     }
 
     public Transform GetTeleporterPoint(){
