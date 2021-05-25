@@ -31,20 +31,26 @@ public class TurretBehavior : MonsterBehavior
     private float actualBurstInterval;
     private bool bursted = true;
 
-    [Header("Debug")]
-    public float distanceToPlayer;
 
     private GameObject Player;
 
-    private VisualEffect VFX_Loading;
-    private VisualEffect VFX_TurretFlare;
+    public VisualEffect VFX_Loading;
+    public VisualEffect VFX_TurretFlare;
     private bool Vfx_triggerOnce = false;
+    private LaserRendering_Behavior _laser;
+
+    [Header("Body Parts")]
+    public Transform Turret_Body;
+    public Transform Turret_Head;
+    private Animator _animator;
 
     private void Start()
     {
-        VFX_Loading = this.transform.GetChild(1).GetComponent<VisualEffect>();
-        VFX_TurretFlare = this.transform.GetChild(2).GetComponent<VisualEffect>();
+        //VFX_Loading = this.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(0).GetComponent<VisualEffect>();
+        //VFX_TurretFlare = this.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(1).GetComponent<VisualEffect>();
         Player = ObjectReferencer.Instance.Avatar_Object;
+        _laser = this.GetComponentInChildren<LaserRendering_Behavior>();
+        _animator = this.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -58,13 +64,11 @@ public class TurretBehavior : MonsterBehavior
             if(Vfx_triggerOnce == false){
                 Vfx_triggerOnce = true;
                 VFX_Loading.SendEvent("StartLoading");
+                _animator.SetTrigger("TurretSpotPlayer");
                 StartCoroutine(this.GetComponentInChildren<LaserRendering_Behavior>().StartShootChrono(attackCooldown));
             }
 
         }
-
-        distanceToPlayer = Vector3.Distance(Player.transform.position, transform.position);
-
         UpdateState();
     }
 
@@ -90,7 +94,13 @@ public class TurretBehavior : MonsterBehavior
         {
             case State.Attack:
                 //transform.LookAt(predictedPosition(Player.transform.position, projectileThrower.transform.position, Player.transform.GetComponent<PlayerMovementRigidbody>().Motion * Player.transform.GetComponent<PlayerMovementRigidbody>().GetSpeed(), ProjectileSpeed));
-                transform.LookAt(Player.transform.position);
+                //transform.LookAt(Player.transform.position);
+
+                Turret_Body.transform.LookAt(new Vector3(Player.transform.position.x, this.transform.position.y, Player.transform.position.z));
+                //Turret_Head.LookAt(new Vector3(this.transform.position.x, Player.transform.position.y, Player.transform.position.z));
+                Turret_Head.LookAt(Player.transform);
+
+
                 if (attackCooldown <= 0 && bursted)
                 {
                     Shoot();
@@ -137,7 +147,7 @@ public class TurretBehavior : MonsterBehavior
         for (int i = 0; i < burst; i++)
         {
             FMODUnity.RuntimeManager.PlayOneShot("event:/Ennemy/Shoot/TurretShot", transform.position);
-            var proj = Instantiate(projectilePrefab, transform.forward + projectileThrower.transform.position, projectileThrower.transform.rotation);
+            var proj = Instantiate(projectilePrefab, projectileThrower.transform.position, projectileThrower.transform.rotation);
             proj.GetComponent<EnemieProjectileBehavior>().SetSpeed(ProjectileSpeed);
             VFX_TurretFlare.SendEvent("Shoot");
             yield return new WaitForSeconds(burstInterval);

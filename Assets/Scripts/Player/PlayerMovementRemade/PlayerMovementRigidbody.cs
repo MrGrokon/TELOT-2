@@ -155,7 +155,6 @@ public class PlayerMovementRigidbody : MonoBehaviour
 
     private void Dash(Vector3 motion)
     {
-        Debug.Log("Dash -> " + motion);
         if (actualDashCD <= 0)
         {
             if(motion == this.transform.forward){

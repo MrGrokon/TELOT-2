@@ -50,7 +50,7 @@ public class ProjectEnergie : MonoBehaviour
 
     #region Unity Functions
         private void Awake() {
-            Weapon_Anim = Weapon.GetComponentInParent<Animator>();
+            Weapon_Anim = Weapon.transform.parent.GetComponentInParent<Animator>();
             TimeBetweenShootConverted = 1/(RateOfFire/60f);
             _Energie = this.GetComponent<EnergieStored>();
             if(_Energie == null){
