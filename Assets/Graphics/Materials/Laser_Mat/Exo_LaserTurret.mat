@@ -25,7 +25,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _Activness: 0
-    - _OscilationTimeMultiplier: 11.5
+    - _OscilationTimeMultiplier: 11.4
     - __dirty: 0
     m_Colors:
     - _ChargedColor: {r: 1.4008719, g: 0.7144868, b: 0.08590256, a: 0}
