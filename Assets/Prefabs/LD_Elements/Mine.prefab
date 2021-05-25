@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 1920718381756160368}
   - component: {fileID: 1920718381756160370}
   - component: {fileID: 1920718381756160369}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Danger_PS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4919,7 +4919,7 @@ GameObject:
   - component: {fileID: 1920718383401120913}
   - component: {fileID: 1920718383401120915}
   - component: {fileID: 1920718383401120914}
-  m_Layer: 13
+  m_Layer: 16
   m_Name: MineTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5060,6 +5060,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DangerZone_Renderer
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9142192e22b62994499493110f9730cb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9142192e22b62994499493110f9730cb, type: 3}
