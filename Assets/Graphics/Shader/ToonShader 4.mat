@@ -47,7 +47,7 @@ Material:
     - _Shadowscale: 0.5
     - _SpecIntensity: 1
     - __dirty: 0
-    - _gloss: 0.097
+    - _gloss: 0
     m_Colors:
     - _ASEOutlineColor: {r: 0, g: 0, b: 0, a: 0}
     - _RimTint: {r: 0.5, g: 0.5, b: 0.5, a: 1}
