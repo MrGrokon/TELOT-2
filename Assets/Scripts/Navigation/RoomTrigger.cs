@@ -17,7 +17,7 @@ public class RoomTrigger : MonoBehaviour
     public List<Animator> DoorsAnimator;
     public bool activeRoom;
 
-    [HideInInspector]
+    
     public List<MonsterBehavior> monsters;
     private bool WaveIsActive = false;
     private MusicManager _musicManager;
@@ -37,6 +37,10 @@ public class RoomTrigger : MonoBehaviour
             
             WaveIsActive = true;
             Debug.Log("Player enter a room");
+            if (roomNumber > 0)
+            {
+                UI_Feedbacks.Instance.GetComponent<RoomLoader>().DesactivateRoom();
+            }
             foreach (var _spawn in Spawners_Wave1)
             {
                 //monsters.Add(_spawn.SpawnAnEnemy());
@@ -108,6 +112,7 @@ public class RoomTrigger : MonoBehaviour
                 {
                     door.SetTrigger("Opening");
                 }
+                UI_Feedbacks.Instance.GetComponent<RoomLoader>().ActivateRoom(roomNumber+1);
                 activeRoom = false;
                 //this.enabled = false;
             }
