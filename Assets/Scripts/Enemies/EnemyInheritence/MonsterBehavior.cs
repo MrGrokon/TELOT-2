@@ -59,7 +59,7 @@ public class MonsterBehavior : MonoBehaviour
             return false;
         }
 
-        void Die(){
+        virtual public void Die(){
             if(isDead==false){
                 isDead = true;
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Ennemy/Death/TurretDrone Death", transform.position);
