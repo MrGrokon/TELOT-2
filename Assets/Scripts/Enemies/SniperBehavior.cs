@@ -50,6 +50,8 @@ public class SniperBehavior : MonsterBehavior
     
     [Header("Feedbacks Related")]
     private SniperLaserRendering_Behavior _laser;
+    private Animator _anim;
+    private bool fleeing = false;
 
     private void Start()
     {
@@ -67,11 +69,13 @@ public class SniperBehavior : MonsterBehavior
         ChargeShotDescription = FMODUnity.RuntimeManager.GetEventDescription("event:/Ennemy/Shoot/SniperChargeShot");
         ChargeShotDescription.getParameterDescriptionByName("ChargeLevel", out pd2);
         parameterID2 = pd2.id;
+        
+        _anim = this.GetComponentInChildren<Animator>();
     }
 
     override public void Update()
     {
-        if (attackCooldown < attackInterval)
+        if (attackCooldown < attackInterval && fleeing == false)
         {
             attackCooldown += Time.deltaTime;
             
@@ -89,18 +93,25 @@ public class SniperBehavior : MonsterBehavior
         if(newState != _state){
             switch(newState){
                 case State.Idle:
+                fleeing = false;
                 transform.rotation = Quaternion.identity;
+                _anim.SetTrigger("Stop");
                 break;
 
                 case State.Flee:
+                fleeing = true;
                 _laser.StopAiming();
+                _anim.SetTrigger("Move");
                 break;
 
                 case State.Attack:
+                fleeing = false;
                 _laser.StopAiming();
+                _anim.SetTrigger("Aim");
                 break;
 
                 case State.Aiming:
+                fleeing = false;
                 StartCoroutine(_laser.StartShootChrono(attackInterval));
                 break;
             }   
@@ -146,7 +157,7 @@ public class SniperBehavior : MonsterBehavior
             case State.Flee:
                 ChargeShotEvent.setParameterByID(parameterID2 , -50);
                 Vector3 FleeDirection = transform.position - Player.transform.position;
-                transform.rotation = Quaternion.LookRotation(FleeDirection, Vector3.up);
+                //transform.rotation = Quaternion.LookRotation(FleeDirection, Vector3.up);
                 _NavMeshAgent.SetDestination(FleeDirection);
                 
                 if (!walkEventStarted)
@@ -155,11 +166,11 @@ public class SniperBehavior : MonsterBehavior
                     WalkEvent.start();
                 }
                     
-                if(distanceToPlayer > attackDistance){
+                /*if(distanceToPlayer > attackDistance){
                     
                     SwitchState(State.Idle);
                 }
-                else if (distanceToPlayer <= attackDistance && distanceToPlayer > minimumDistance)
+                else*/ if (distanceToPlayer <= attackDistance && distanceToPlayer > minimumDistance)
                 {
                     SwitchState(State.Aiming);
                 }
@@ -174,6 +185,7 @@ public class SniperBehavior : MonsterBehavior
     
     private void Shoot()
     {
+        _anim.SetTrigger("Shoot");
         if (Physics.Raycast(transform.position, Player.transform.position - transform.position,out RaycastHit hit, Mathf.Infinity))
         {
             FMODUnity.RuntimeManager.PlayOneShot("event:/Ennemy/Shoot/SniperShot", transform.position);
@@ -207,5 +219,11 @@ public class SniperBehavior : MonsterBehavior
         }
         attackCooldown = 0;
         SwitchState(State.Aiming);
+    }
+
+    public override void Die()
+    {
+        base.Die();
+        _anim.SetTrigger("Die");
     }
 }
