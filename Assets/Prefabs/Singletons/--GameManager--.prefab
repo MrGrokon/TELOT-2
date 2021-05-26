@@ -58,7 +58,7 @@ MonoBehaviour:
     type: 3}
   ProsecutorEnemy_prefab: {fileID: 7074193039533441571, guid: 8e22c3c0d155d7548bd656f5e87ecb90,
     type: 3}
-  SniperEnemy_prefab: {fileID: 6106855031906571488, guid: f70426cbd8455cc4cb9d20e8843fd701,
+  SniperEnemy_prefab: {fileID: 4670172729923084977, guid: 43d9df652428fdd43801de7c394a4c10,
     type: 3}
   InComingHit_Pivot: {fileID: 0}
   UI_particle_container: {fileID: 0}
