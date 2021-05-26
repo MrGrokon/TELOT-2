@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class RoomLoader : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject[] Rooms;
+    public int currentRoom = 0;
+    public int previousRoom;
+
+    public void ActivateRoom(int nextRoomId)
     {
-        
+        print("Activation !");
+        Rooms[nextRoomId].SetActive(true);
+        currentRoom = nextRoomId;
+        previousRoom = currentRoom - 1;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void DesactivateRoom()
     {
-        
+        print("Desactivation !");
+        Rooms[previousRoom].SetActive(false);
     }
 }

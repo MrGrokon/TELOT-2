@@ -74,7 +74,7 @@ public class EnemySpawner : MonoBehaviour
         }
         _spawn_VFX.SendEvent("StopLoading");
         _parentRoom.ManualyAddMonster(Instantiate(_enemyToSpawn, this.transform.position, this.transform.rotation).GetComponent<MonsterBehavior>());
-
+        print("Spawning");
         yield return null;
     }
 }
