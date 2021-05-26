@@ -965,6 +965,7 @@
         </e>
         <e p="PresManager.cs" t="Include" />
         <e p="ResetLineRenderer.cs" t="Include" />
+        <e p="RoomLoader.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="Debug" t="Include">
             <e p="Call_Coroutine.cs" t="Include" />
