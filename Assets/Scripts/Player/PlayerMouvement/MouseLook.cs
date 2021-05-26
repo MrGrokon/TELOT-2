@@ -30,7 +30,7 @@ public class MouseLook : MonoBehaviour
         //get Mouse Motion from Inputs
         float _mouseX, _mouseY; 
 
-        if(_phantomMode.UsingPhantom){
+        if(_phantomMode && _phantomMode.UsingPhantom){
              _mouseX = Input.GetAxis("Mouse X") * MouseSensitivity * (Time.deltaTime / _phantomMode.PhantomTimeFlowModifier);
             _mouseY = Input.GetAxis("Mouse Y") * MouseSensitivity * (Time.deltaTime / _phantomMode.PhantomTimeFlowModifier);
         }
@@ -47,7 +47,7 @@ public class MouseLook : MonoBehaviour
     
 
             //Apply rotations
-        if (!GetComponent<WallRunningRigidbody>().OnWallRun)
+        if (GetComponent<WallRunningRigidbody>() && !GetComponent<WallRunningRigidbody>().OnWallRun)
         {
             PlayerView.localRotation = Quaternion.Euler(X_Rotation, 0f, 0);
             PlayerBody.Rotate(this.transform.up * _mouseX);
