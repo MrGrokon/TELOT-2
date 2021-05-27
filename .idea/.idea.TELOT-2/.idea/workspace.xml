@@ -44,9 +44,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/WallRunningRigidbody.cs" />
       <option value="$PROJECT_DIR$/Assets/WeaponRecoil.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Level Design/CollectiblesManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/PresManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemiesProps/EnemieProjectileBehavior.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Navigation/EnemySpawner.cs" />
       <option value="$PROJECT_DIR$/Assets/MusicManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/ProssecutorBehavior_v2.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyInheritence/MonsterBehavior.cs" />
@@ -61,6 +59,8 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovementRemade/WallRunningRigidbody.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMouvement/MouseLook.cs" />
       <option value="$PROJECT_DIR$/Assets/RoomLoader.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Navigation/EnemySpawner.cs" />
+      <option value="$PROJECT_DIR$/Assets/PresManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Navigation/RoomTrigger.cs" />
     </changedPaths>
   </component>
@@ -170,7 +170,8 @@
       <workItem from="1621428848137" duration="2484000" />
       <workItem from="1621868653703" duration="1583000" />
       <workItem from="1621963280712" duration="857000" />
-      <workItem from="1622033610669" duration="2091000" />
+      <workItem from="1622033610669" duration="2534000" />
+      <workItem from="1622071928279" duration="1043000" />
     </task>
     <servers />
   </component>

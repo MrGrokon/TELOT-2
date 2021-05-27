@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PresManager : MonoBehaviour
 {
@@ -21,6 +22,9 @@ public class PresManager : MonoBehaviour
     [SerializeField] private GameObject[] NMIprefabs;
 
     [SerializeField] private KeyCode Godmode;
+    [SerializeField] private KeyCode LoadMusem;
+    [SerializeField] private KeyCode LoadMeca;
+    [SerializeField] private KeyCode LoadMain;
 
     private bool isGod = false;
     // Start is called before the first frame update
@@ -88,6 +92,18 @@ public class PresManager : MonoBehaviour
                 ObjectReferencer.Instance.Avatar_Object.GetComponent<EnergieStored>().UnsetGodmode();
             }
             
+        }
+        else if (Input.GetKeyDown(LoadMusem))
+        {
+            SceneManager.LoadScene(1);
+        }
+        else if (Input.GetKeyDown(LoadMeca))
+        {
+            SceneManager.LoadScene(2);
+        }
+        else if (Input.GetKeyDown(LoadMain))
+        {
+            SceneManager.LoadScene(0);
         }
     }
 }

@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7788165504191467588}
   - component: {fileID: 7783708159862263952}
   - component: {fileID: 4641900541896950231}
+  - component: {fileID: 191720842}
   m_Layer: 0
   m_Name: --GameManager--
   m_TagString: Untagged
@@ -232,4 +233,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41b64c4380e4e8b48beda0429b9b2964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Rooms: []
+  Rooms:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  currentRoom: 0
+  previousRoom: 0
+--- !u!114 &191720842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700065792340058860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5444cbe3ae665754f9ffd23d8da176bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerMovement: 0
+  AddTurret: 285
+  AddSniper: 286
+  AddProbe: 287
+  AllEnnemiesActivation: 0
+  LD_Elements: 0
+  Groups: []
+  NMIprefabs: []
+  Godmode: 0
+  LoadMusem: 283
+  LoadMeca: 284
+  LoadMain: 282
