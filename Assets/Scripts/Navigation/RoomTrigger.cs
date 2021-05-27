@@ -114,6 +114,10 @@ public class RoomTrigger : MonoBehaviour
                 }
                 UI_Feedbacks.Instance.GetComponent<RoomLoader>().ActivateRoom(roomNumber+1);
                 activeRoom = false;
+                if (roomNumber == 4)
+                {
+                    UI_Feedbacks.Instance.GetComponent<GameTime>().StopChrono();
+                }
                 //this.enabled = false;
             }
         }
