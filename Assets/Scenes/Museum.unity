@@ -4460,6 +4460,7 @@ GameObject:
   - component: {fileID: 1906948301}
   - component: {fileID: 1906948305}
   - component: {fileID: 1906948304}
+  - component: {fileID: 1906948306}
   m_Layer: 0
   m_Name: Free Camera
   m_TagString: Untagged
@@ -4539,7 +4540,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1906948304
 MonoBehaviour:
@@ -4618,6 +4619,30 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &1906948306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906948300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5444cbe3ae665754f9ffd23d8da176bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerMovement: 0
+  AddTurret: 0
+  AddSniper: 0
+  AddProbe: 0
+  AllEnnemiesActivation: 0
+  LD_Elements: 0
+  Groups: []
+  NMIprefabs: []
+  Godmode: 0
+  LoadMusem: 283
+  LoadMeca: 284
+  LoadMain: 282
 --- !u!1001 &1917923214
 PrefabInstance:
   m_ObjectHideFlags: 0

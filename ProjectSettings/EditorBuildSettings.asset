@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Museum.unity
     guid: 6837957855a328142b120b08fc9fb062
+  - enabled: 1
+    path: Assets/Scenes/SceneMeca.unity
+    guid: 0f8946d28a8c962479c7a265af27e03c
   m_configObjects: {}
